@@ -38,5 +38,54 @@ namespace WebGerenciamenttoPedidos.src.dao
 			}
 
 		}
+
+		public bool editar(Produto produto, int idProdutoEditado)
+		{
+			//Query de edição
+			String query = @"UPDATE produto SET descricao = @descricao, vlr_unitario = @vlr_unitario WHERE id_produto = @id_produto";
+			try
+			{
+				//Obtendo conexão co banco
+				using (SqlConnection connection = DB_Connection.getConnection())
+				{
+					connection.Open();
+					SqlCommand command = new SqlCommand(query, connection);
+					command.Parameters.AddWithValue("@descricao", produto.Descricao);
+					command.Parameters.AddWithValue("@vlr_unitario", produto.VlrUnitario);
+					command.Parameters.AddWithValue("@id_produto", idProdutoEditado);
+					command.ExecuteNonQuery();
+					connection.Close();
+					return true;
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception("Erro ao editar produto: " + e.Message);
+			}
+		}
+
+		public bool excluir(int idProduto)
+		{
+			//Query de exclusão
+			String query = @"DELETE FROM produto WHERE id_produto = @id_produto";
+			try
+			{
+				//Obtendo conexão co banco
+				using (SqlConnection connection = DB_Connection.getConnection())
+				{
+					connection.Open();
+					SqlCommand command = new SqlCommand(query, connection);
+					command.Parameters.AddWithValue("@id_produto", idProduto);
+					command.ExecuteNonQuery();
+					connection.Close();
+					return true;
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception("Erro ao excluir produto: " + e.Message);
+			}
+		}
+
 	}
 }
