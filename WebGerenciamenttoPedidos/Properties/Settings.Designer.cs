@@ -25,9 +25,18 @@ namespace WebGerenciamenttoPedidos.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool nada {
+            get {
+                return ((bool)(this["nada"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=GABRIELSILVA\\SQLEXPRESS;Initial Catalog=DB_Gerenciamento_Pedidos;Inte" +
-            "grated Security=True;Encrypt=False")]
+            "grated Security=True;Encrypt=False;TrustServerCertificate=True")]
         public string db_connection {
             get {
                 return ((string)(this["db_connection"]));

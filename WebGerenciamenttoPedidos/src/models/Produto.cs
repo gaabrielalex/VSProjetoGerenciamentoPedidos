@@ -7,12 +7,12 @@ namespace WebGerenciamenttoPedidos.src.models
 {
 	public class Produto
 	{
-		public int IdPproduto { get; set; }
+		public int? IdPproduto { get; set; }
 		public String Descricao { get; set; }
 		
 		public decimal VlrUnitario { get; set; }
 
-		public Produto(int idProduto, String descricao, decimal vlrUnitario) {
+		public Produto(int? idProduto, String descricao, decimal vlrUnitario) {
 			IdPproduto = idProduto;
 			Descricao = descricao;
 			VlrUnitario = vlrUnitario;
