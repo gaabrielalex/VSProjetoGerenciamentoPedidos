@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="others\tablesDB.txt" />
     <Content Include="resources\css\masterStyles.css" />
     <Content Include="src\pages\home\HomePage.aspx" />
     <Content Include="Web.config" />
@@ -80,6 +81,12 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="src\dao\ProdutoDAO.cs" />
     <Compile Include="src\models\Produto.cs" />
     <Compile Include="src\pages\home\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
@@ -88,10 +95,15 @@
     <Compile Include="src\pages\home\HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="src\utils\DB_Connection.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -101,7 +113,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\" />
-    <Folder Include="src\dao\" />
     <Folder Include="src\pages\produto\" />
   </ItemGroup>
   <PropertyGroup>
