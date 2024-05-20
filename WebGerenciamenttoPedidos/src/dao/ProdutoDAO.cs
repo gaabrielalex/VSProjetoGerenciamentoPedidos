@@ -39,7 +39,7 @@ namespace WebGerenciamenttoPedidos.src.dao
 
 		}
 
-		public bool editar(Produto produto, int idProdutoEditado)
+		public bool editar(Produto produto, int idProduto)
 		{
 			//Query de edição
 			String query = @"UPDATE produto SET descricao = @descricao, vlr_unitario = @vlr_unitario WHERE id_produto = @id_produto";
@@ -52,7 +52,7 @@ namespace WebGerenciamenttoPedidos.src.dao
 					SqlCommand command = new SqlCommand(query, connection);
 					command.Parameters.AddWithValue("@descricao", produto.Descricao);
 					command.Parameters.AddWithValue("@vlr_unitario", produto.VlrUnitario);
-					command.Parameters.AddWithValue("@id_produto", idProdutoEditado);
+					command.Parameters.AddWithValue("@id_produto", idProduto);
 					command.ExecuteNonQuery();
 					connection.Close();
 					return true;

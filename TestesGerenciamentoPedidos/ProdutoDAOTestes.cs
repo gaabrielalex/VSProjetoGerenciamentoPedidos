@@ -40,19 +40,19 @@ namespace TestesGerenciamentoPedidos
 			// Arrange
 			Produto produto = new Produto(null, "Produto Teste", 10.0M);
 			ProdutoDAO produtoDAO = new ProdutoDAO();
-			int idProdutoEditado = 0;
+			int idProduto = 0;
 			bool resultado = false;
 
 			// Act
 			try {
 				// Inserindo produto para editar, obtendo o id
-				idProdutoEditado = produtoDAO.inserir(produto);
+				idProduto = produtoDAO.inserir(produto);
 				produto.Descricao = "Produto Teste Editado";
 				produto.VlrUnitario = 20.0M;
-				resultado  = produtoDAO.editar(produto, idProdutoEditado);
+				resultado  = produtoDAO.editar(produto, idProduto);
 
 				if(resultado)
-					Console.WriteLine("Produto editado com sucesso. Id: " + idProdutoEditado);
+					Console.WriteLine("Produto editado com sucesso. Id: " + idProduto);
 			} catch (Exception e) {
 				
 				// Assert
@@ -66,6 +66,34 @@ namespace TestesGerenciamentoPedidos
 			}
 		}
 
+		[TestMethod]
+		public void AoRealizarExclusaoDeveRetonarTrue()
+		{
+			// Arrange
+			Produto produto = new Produto(null, "Produto Teste", 10.0M);
+			ProdutoDAO produtoDAO = new ProdutoDAO();
+			int idProduto = 0;
+			bool resultado = false;
 
+			// Act
+			try {
+				// Inserindo produto para excluir, obtendo o id
+				idProduto = produtoDAO.inserir(produto);
+				resultado  = produtoDAO.excluir(idProduto);
+
+				if(resultado)
+					Console.WriteLine("Produto excluído com sucesso. Id: " + idProduto);
+			} catch (Exception e) {
+				
+				// Assert
+				Assert.Fail("Erro ao excluir produto: " + e.Message);
+			}
+
+			// Assert
+			if(!resultado)
+			{
+				Assert.Fail("Erro ao excluir produto");
+			}
+		}	
 	}
 }
