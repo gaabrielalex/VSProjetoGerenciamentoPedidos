@@ -1,7 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using WebGerenciamenttoPedidos.src.dao;
-using WebGerenciamenttoPedidos.src.models;
+using System.Collections.Generic;
+using WebGereciamentoPedidos.src.dao;
+using WebGereciamentoPedidos.src.models;
 
 namespace TestesGerenciamentoPedidos
 {
@@ -94,6 +95,47 @@ namespace TestesGerenciamentoPedidos
 			{
 				Assert.Fail("Erro ao excluir produto");
 			}
-		}	
+		}
+
+		[TestMethod]
+		public void AoRealizarListagemDeveRetonarUmaListaDeProdutos()
+		{
+			// Arrange
+			ProdutoDAO produtoDAO = new ProdutoDAO();
+			int idProduto1 = 0;
+			int idProduto2 = 0;
+			List<Produto> produtos = new List<Produto>();
+			bool resultado = false;
+
+			// Act
+			try {
+				// Inserindo 2 produtos para listar
+				idProduto1 = produtoDAO.inserir(new Produto(null, "Produto Teste", 10.0M));
+				idProduto2 = produtoDAO.inserir(new Produto(null, "Produto Teste 2", 20.0M));
+				produtos = produtoDAO.listar();
+				resultado = produtos.Count > 0;
+
+				if (resultado)
+				{
+					Console.WriteLine("Produtos listados com sucesso.");
+					foreach (Produto produto in produtos)
+					{
+						Console.WriteLine("Id: " + produto.IdProduto ?? 0 + " - Descrição: " + produto.Descricao + " - Valor: " + produto.VlrUnitario);
+					}
+
+				}
+					
+			} catch (Exception e) {
+				
+				// Assert
+				Assert.Fail("Erro ao listar produtos: " + e.Message);
+			}
+
+			// Assert
+			if(!resultado)
+			{
+				Assert.Fail("Erro ao listar produtos");
+			}
+		}
 	}
 }

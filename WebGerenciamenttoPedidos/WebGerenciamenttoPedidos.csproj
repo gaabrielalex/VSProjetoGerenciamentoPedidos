@@ -70,6 +70,7 @@
     <Content Include="others\tablesDB.txt" />
     <Content Include="resources\css\masterStyles.css" />
     <Content Include="src\pages\home\HomePage.aspx" />
+    <Content Include="src\pages\produto\ProdutoListPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +96,13 @@
     <Compile Include="src\pages\home\HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="src\pages\produto\ProdutoListPage.aspx.cs">
+      <DependentUpon>ProdutoListPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\pages\produto\ProdutoListPage.aspx.designer.cs">
+      <DependentUpon>ProdutoListPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="src\utils\DB_Connection.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -113,7 +121,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\" />
-    <Folder Include="src\pages\produto\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -87,5 +87,65 @@ namespace WebGerenciamenttoPedidos.src.dao
 			}
 		}
 
+		public List<Produto> listar()
+		{
+			//Query de listagem
+			String query = @"SELECT id_produto, descricao, vlr_unitario FROM produto";
+			List<Produto> produtos = new List<Produto>();
+			try
+			{
+				//Obtendo conexão co banco
+				using (SqlConnection connection = DB_Connection.getConnection())
+				{
+					connection.Open();
+					SqlCommand command = new SqlCommand(query, connection);
+					SqlDataReader reader = command.ExecuteReader();
+					while (reader.Read())
+					{
+						Produto produto = new Produto(reader.GetInt32(0), reader.GetString(1), reader.GetDecimal(2));
+						produtos.Add(produto);
+					}
+					connection.Close();
+					return produtos;
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception("Erro ao listar produtos: " + e.Message);
+			}
+		}
+
+		public List<Produto> listarPorEmail(String email)
+		{
+			//Query de listagem por email
+			String query = @"SELECT p.id_produto, p.descricao, p.vlr_unitario FROM produto p
+										INNER JOIN pedido_produto pp ON p.id_produto = pp.id_produto
+																	INNER JOIN pedido pe ON pp.id_pedido = pe.id_pedido
+																								WHERE pe.email = @email";
+			List<Produto> produtos = new List<Produto>();
+			try
+			{
+				//Obtendo conexão co banco
+				using (SqlConnection connection = DB_Connection.getConnection())
+				{
+					connection.Open();
+					SqlCommand command = new SqlCommand(query, connection);
+					command.Parameters.AddWithValue("@email", email);
+					SqlDataReader reader = command.ExecuteReader();
+					while (reader.Read())
+					{
+						Produto produto = new Produto(reader.GetInt32(0), reader.GetString(1), reader.GetDecimal(2));
+						produtos.Add(produto);
+					}
+					connection.Close();
+					return produtos;
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception("Erro ao listar produtos por email: " + e.Message);
+			}
+		}
+
 	}
 }

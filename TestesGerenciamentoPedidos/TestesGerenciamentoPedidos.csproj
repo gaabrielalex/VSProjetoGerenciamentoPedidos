@@ -56,9 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WebGerenciamenttoPedidos\WebGerenciamenttoPedidos.csproj">
-      <Project>{27689505-7958-4dc8-ae95-78817966efa2}</Project>
-      <Name>WebGerenciamenttoPedidos</Name>
+    <ProjectReference Include="..\WebGereciamentoPedidos\WebGereciamentoPedidos.csproj">
+      <Project>{d3a4c337-a8da-4949-aa91-754cf443cd29}</Project>
+      <Name>WebGereciamentoPedidos</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
