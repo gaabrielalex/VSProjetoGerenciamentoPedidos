@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %>Gerenciamentos Pedidos</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -49,7 +49,7 @@
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="#">Produtos</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/src/pages/ProdutoPages/Produtos/Produtos">Produtos</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="#">Pedidos</a></li>
                     </ul>
                 </div>
@@ -64,6 +64,48 @@
             </footer>--%>
         </div>
     </form>
+
+    <!-- Toast Component -->
+    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+        <div id="toastContainer" style="position: absolute; top: 0; right: 0;">
+            <div id="toastMessage" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000">
+                <div class="toast-header">
+                    <strong class="mr-auto"></strong>
+                    <small>Agora</small>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body">
+                    <!-- Mensagem será inserida aqui -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+		function showToast(message, type) {
+			var toastElement = document.getElementById('toastMessage');
+			var toastHeader = document.querySelector('#toastMessage .toast-header strong');
+			var toastBody = document.querySelector('#toastMessage .toast-body');
+
+			// Set the message
+			toastBody.innerHTML = message;
+
+			// Set the type of toast
+			if (type === 'success') {
+				toastHeader.innerHTML = 'Sucesso';
+				toastElement.className = 'toast bg-success text-white'; // You can add more classes as needed
+			} else if (type === 'error') {
+				toastHeader.innerHTML = 'Erro';
+				toastElement.className = 'toast bg-danger text-white'; // You can add more classes as needed
+			}
+
+			// Show the toast
+			$(toastElement).toast('show');
+		}
+	</script>
+
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>
     </asp:PlaceHolder>
