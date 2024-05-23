@@ -65,49 +65,49 @@
         </div>
     </form>
 
-    <!-- Toast Component -->
-    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
-        <div id="toastContainer" style="position: absolute; top: 0; right: 0;">
-            <div id="toastMessage" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000">
-                <div class="toast-header">
-                    <strong class="mr-auto"></strong>
-                    <small>Agora</small>
-                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="toast-body">
-                    <!-- Mensagem será inserida aqui -->
-                </div>
-            </div>
+    <!-- Flexbox container for aligning the toasts -->
+    <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-end align-items-end w-100 ;" style="position: fixed; top: 85px; right: 30px; z-index: 9999;  overflow: hidden;">
+
+      <!-- Then put toasts within -->
+      <div id="toastMessage" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <%--<img src="" class="rounded me-2" alt="...">--%>
+          <strong class="me-auto">Bootstrap</strong>
+          <small>Agora</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
+        <div class="toast-body">
+          <!-- Mensagem será inserida aqui -->
+        </div>
+      </div>
     </div>
 
     <script type="text/javascript">
-		function showToast(message, type) {
-			var toastElement = document.getElementById('toastMessage');
-			var toastHeader = document.querySelector('#toastMessage .toast-header strong');
-			var toastBody = document.querySelector('#toastMessage .toast-body');
+	  function showToast(message, type) {
+		  var toastElement = document.getElementById('toastMessage');
+		  var toastHeader = document.querySelector('#toastMessage .toast-header strong');
+		  var toastBody = document.querySelector('#toastMessage .toast-body');
 
-			// Set the message
-			toastBody.innerHTML = message;
+		  // Set the message
+		  toastBody.innerHTML = message;
 
-			// Set the type of toast
-			if (type === 'success') {
-				toastHeader.innerHTML = 'Sucesso';
-				toastElement.className = 'toast bg-success text-white'; // You can add more classes as needed
-			} else if (type === 'error') {
-				toastHeader.innerHTML = 'Erro';
-				toastElement.className = 'toast bg-danger text-white'; // You can add more classes as needed
-			}
+		  // Set the type of toast
+		  if (type === 'success') {
+			  toastHeader.innerHTML = 'Sucesso';
+			  toastElement.className = 'toast bg-success text-white'; // You can add more classes as needed
+		  } else if (type === 'error') {
+			  toastHeader.innerHTML = 'Erro';
+			  toastElement.className = 'toast bg-danger text-white'; // You can add more classes as needed
+		  }
 
-			// Show the toast
-			$(toastElement).toast('show');
-		}
-	</script>
+		  // Show the toast
+		  $(toastElement).toast('show');
+	  }
+    </script>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>
     </asp:PlaceHolder>
+
 </body>
 </html>

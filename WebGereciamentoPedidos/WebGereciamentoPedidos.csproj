@@ -122,6 +122,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="others\ScriptsSQL.txt" />
     <Content Include="others\tablesDB.txt" />
     <Content Include="resources\css\masterStyles.css" />
     <Content Include="resources\css\stilosGerais.css" />
