@@ -22,15 +22,15 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		public ProdutoDAO ProdutoDAO;
 		public List<Produto> DadosProdutosAtual
 		{
-			get 
+			get
 			{
-				if(ViewState["DadosProdutosAtual"] != null)
+				if (ViewState["DadosProdutosAtual"] != null)
 				{
 					return (List<Produto>)ViewState["DadosProdutosAtual"];
 				}
 				return new List<Produto>();
 			}
-			set 
+			set
 			{
 				ViewState["DadosProdutosAtual"] = value;
 			}
@@ -45,7 +45,6 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			//Page.ClientScript.RegisterStartupScript(typeof(Page), "showToast", "showToast('Erro ao deletar produto.', 'error');", true);
 			//Não funciona tb, nem isso
 			//Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "showModalMessage", "alert('teste');", true);
-
 
 			if (!IsPostBack)
 			{
@@ -93,19 +92,18 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 						ProdutoDAO.excluir(produtoADeletar.IdProduto ?? 0);
 						TratarCarregamentoDeDados();
 
-						// Redirecionar para evitar resubmissão de formulário
-						Response.Redirect(Request.RawUrl, false);
-						Context.ApplicationInstance.CompleteRequest();
 					} catch (Exception ex) {
-						PageUtils.mostrarMensagem($"Erro ao deletar produto: {ex.Message}", "E", this);	
+						PageUtils.mostrarMensagem($"Erro ao deletar produto: {ex.Message}", "E", this);
 					}
 				}
 
 			}
+
+			RedirecionarClienteParaEvitarResubimissaoDeFormulario();
 		}
 
 		protected void FiltrarButton_Click(object sender, EventArgs e)
-		{	
+		{
 			String filtro = FiltrarTextBox.Text;
 			//Obtem apenas a url sem possíveis query parameters no meio, desta forma, o usuário não faz ter o mesmo query parametres na url
 			String urlAtual = Request.Url.GetLeftPart(UriPartial.Path);
@@ -118,6 +116,14 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			}
 
 			Response.Redirect(novaUrl, false);
+		}
+
+		public void RedirecionarClienteParaEvitarResubimissaoDeFormulario()
+		{
+			//Daí antes de redirecionar vc pode guardar o estado dos componentes e atributo
+			//necessários da página para daí vc fazer o processod e redirecionamento
+			Response.Redirect(Request.RawUrl, false);
+			Context.ApplicationInstance.CompleteRequest();
 		}
 
 	}
