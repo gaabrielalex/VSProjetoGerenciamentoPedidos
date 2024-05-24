@@ -37,8 +37,8 @@ namespace WebGereciamentoPedidos.src.util
 			//string script = "$('#modalMessage').modal('show'); ";
 			//page.ClientScript.RegisterStartupScript(typeof(Page), "showModalMessage", script, true);
 
-			//Não funciona tb
-			//page.ClientScript.RegisterStartupScript(typeof(Page), "showModalMessage", "alert('teste');", true);
+			//Funciona, mas se eu redireciono minhas página para impedir resubmissão o script que eu jogo no client é perdido
+			//page.ClientScript.RegisterClientScriptBlock(typeof(Page), "showmodalmessage", "alert('teste');", true);
 
 			//Funciona
 			MessageBoxButtons buttons = MessageBoxButtons.OK;
@@ -55,6 +55,14 @@ namespace WebGereciamentoPedidos.src.util
 				return true;
 			}
 			return false;
+		}
+
+		public static void RedirecionarClienteParaEvitarResubimissaoDeFormulario(HttpResponse response, HttpRequest request, HttpContext context) 
+		{
+			//Daí antes de redirecionar vc pode guardar o estado dos componentes e atributo
+			//necessários da página para daí vc fazer o processod e redirecionamento
+			response.Redirect(request.RawUrl, false);
+			context.ApplicationInstance.CompleteRequest();
 		}
 	}
 }

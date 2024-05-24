@@ -80,26 +80,31 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 				if (indice < 0)
 				{
 					PageUtils.mostrarMensagem("Houve um erro ao slecionar o produto para exclusão, entre em contato com suporte caso o erro persista.", "E", this);
-					return;
-				}
+				} 
+				else 
+					{
+					Produto produtoADeletar = DadosProdutosAtual[indice];
+					bool confirmacaoExclusao = PageUtils.solicitarConfirmacao($"Deseja realmente excluir o produto \"{produtoADeletar.Descricao}\"?");
 
-				Produto produtoADeletar = DadosProdutosAtual[indice];
-				bool confirmacaoExclusao = PageUtils.solicitarConfirmacao($"Deseja realmente excluir o produto \"{produtoADeletar.Descricao}\"?");
+						if (confirmacaoExclusao)
+						{
+							try {
+								ProdutoDAO.excluir(produtoADeletar.IdProduto ?? 0);
+								TratarCarregamentoDeDados();
+							} catch (Exception ex) {
+								PageUtils.mostrarMensagem($"Erro ao deletar produto: {ex.Message}", "E", this);
 
-				if (confirmacaoExclusao)
-				{
-					try {
-						ProdutoDAO.excluir(produtoADeletar.IdProduto ?? 0);
-						TratarCarregamentoDeDados();
-
-					} catch (Exception ex) {
-						PageUtils.mostrarMensagem($"Erro ao deletar produto: {ex.Message}", "E", this);
+							} finally
+							{
+								//Se cair no catch ele não vai executar esse função que esta tb sendo acionado no final
+								//dessa função, desta forme o mesmo deve ser chamado aqui tb
+								PageUtils.RedirecionarClienteParaEvitarResubimissaoDeFormulario(Response, Request, Context);
+							}
+						}
 					}
 				}
 
-			}
-
-			RedirecionarClienteParaEvitarResubimissaoDeFormulario();
+			PageUtils.RedirecionarClienteParaEvitarResubimissaoDeFormulario(Response, Request, Context);
 		}
 
 		protected void FiltrarButton_Click(object sender, EventArgs e)
@@ -117,14 +122,5 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 
 			Response.Redirect(novaUrl, false);
 		}
-
-		public void RedirecionarClienteParaEvitarResubimissaoDeFormulario()
-		{
-			//Daí antes de redirecionar vc pode guardar o estado dos componentes e atributo
-			//necessários da página para daí vc fazer o processod e redirecionamento
-			Response.Redirect(Request.RawUrl, false);
-			Context.ApplicationInstance.CompleteRequest();
-		}
-
 	}
 }
