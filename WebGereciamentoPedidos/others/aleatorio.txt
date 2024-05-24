@@ -1,0 +1,30 @@
+﻿			// Registrando e chamando a função showToast
+			string script = @"
+            <script type='text/javascript'>
+                function showToast(message, type) {
+                    var toastElement = document.getElementById('toastMessage');
+                    var toastHeader = toastElement.querySelector('.toast-header strong');
+                    var toastBody = toastElement.querySelector('.toast-body');
+
+                    // Set the message
+                    toastBody.innerHTML = message;
+
+                    // Set the type of toast
+                    if (type === 'success') {
+                        toastHeader.innerHTML = 'Sucesso';
+                        toastElement.className = 'toast bg-success text-white'; // You can add more classes as needed
+                    } else if (type === 'error') {
+                        toastHeader.innerHTML = 'Erro';
+                        toastElement.className = 'toast bg-danger text-white'; // You can add more classes as needed
+                    }
+
+                    // Show the toast
+                    var toast = new bootstrap.Toast(toastElement);
+                    toast.show();
+                }
+
+                showToast('Erro ao deletar produto.', 'error');
+            </script>";
+
+			// Registra o script no cliente
+			Page.ClientScript.RegisterStartupScript(this.GetType(), "MostrarToast", script);

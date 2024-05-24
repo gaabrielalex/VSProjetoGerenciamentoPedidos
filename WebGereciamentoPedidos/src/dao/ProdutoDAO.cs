@@ -44,7 +44,7 @@ namespace WebGereciamentoPedidos.src.dao
 		public bool editar(Produto produto, int idProduto)
 		{
 			//Query de edição
-			String query = @"UPDATE produto SET descricao = @descricao, vlr_unitario = @vlr_unitario WHERE id_produto = @id_produto";
+			String query = "UPDATE produto SET descricao = @descricao, vlr_unitario = @vlr_unitario WHERE id_produto = @id_produto";
 			try
 			{
 				//Obtendo conexão co banco
@@ -69,7 +69,7 @@ namespace WebGereciamentoPedidos.src.dao
 		public bool excluir(int idProduto)
 		{
 			//Query de exclusão
-			String query = @"DELETE FROM produto WHERE id_produto = @id_produto";
+			String query = "DELETE FROM produto WHERE id_produto = @id_produto";
 			try
 			{
 				//Obtendo conexão co banco
@@ -92,7 +92,7 @@ namespace WebGereciamentoPedidos.src.dao
 		public List<Produto> listar()
 		{
 			//Query de listagem
-			String query = @"SELECT id_produto, descricao, vlr_unitario FROM produto";
+			String query = "SELECT id_produto, descricao, vlr_unitario FROM produto";
 			List<Produto> produtos = new List<Produto>();
 			try
 			{
@@ -117,13 +117,10 @@ namespace WebGereciamentoPedidos.src.dao
 			}
 		}
 
-		public List<Produto> listarPorEmail(String email)
+		public List<Produto> listarPorDescricao(String descricao)
 		{
-			//Query de listagem por email
-			String query = @"SELECT p.id_produto, p.descricao, p.vlr_unitario FROM produto p
-											INNER JOIN pedido_produto pp ON p.id_produto = pp.id_produto
-																		INNER JOIN pedido pe ON pp.id_pedido = pe.id_pedido
-																									WHERE pe.email = @email";
+			//Query de listagem
+			String query = "SELECT id_produto, descricao, vlr_unitario FROM produto WHERE descricao LIKE @descricao";
 			List<Produto> produtos = new List<Produto>();
 			try
 			{
@@ -132,7 +129,7 @@ namespace WebGereciamentoPedidos.src.dao
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
-					command.Parameters.AddWithValue("@email", email);
+					command.Parameters.AddWithValue("@descricao", "%" + descricao + "%");
 					SqlDataReader reader = command.ExecuteReader();
 					while (reader.Read())
 					{
@@ -145,9 +142,8 @@ namespace WebGereciamentoPedidos.src.dao
 			}
 			catch (Exception e)
 			{
-				throw new Exception("Erro ao listar produtos por email: " + e.Message);
+				throw new Exception("Erro ao listar produtos: " + e.Message);
 			}
-		}
-
+		}	
 	}
 }

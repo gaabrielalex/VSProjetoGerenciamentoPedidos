@@ -5,6 +5,7 @@ using System.Web;
 
 namespace WebGereciamentoPedidos.src.models
 {
+	[Serializable]
 	public class Produto
 	{
 		public int? IdProduto { get; set; }

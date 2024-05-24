@@ -14,6 +14,7 @@
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/resources/css/masterStyles.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="Head" runat="server">
     </asp:ContentPlaceHolder>
 
@@ -65,6 +66,50 @@
         </div>
     </form>
 
+      <!-- Button trigger modal -->
+  <%--  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMessage">
+      Launch demo modal
+    </button>--%>
+
+    <!-- ModalMessage -->
+    <div class="modal fade" id="modalMessage" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- MOdal confirmation -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Flexbox container for aligning the toasts -->
     <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-end align-items-end w-100 ;" style="position: fixed; top: 85px; right: 30px; z-index: 9999;  overflow: hidden;">
 
@@ -82,28 +127,64 @@
       </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
     <script type="text/javascript">
-	  function showToast(message, type) {
-		  var toastElement = document.getElementById('toastMessage');
-		  var toastHeader = document.querySelector('#toastMessage .toast-header strong');
-		  var toastBody = document.querySelector('#toastMessage .toast-body');
+    //Tándo declarando pelo JQuery tanto pelo JavaScript puro não funciona
+		$(document).ready(function () {
+			function showToast(message, type) {
+				var toastElement = document.getElementById('toastMessage');
+				var toastHeader = document.querySelector('#toastMessage .toast-header strong');
+				var toastBody = document.querySelector('#toastMessage .toast-body');
 
-		  // Set the message
-		  toastBody.innerHTML = message;
+				// Set the message
+				toastBody.innerHTML = message;
 
-		  // Set the type of toast
-		  if (type === 'success') {
-			  toastHeader.innerHTML = 'Sucesso';
-			  toastElement.className = 'toast bg-success text-white'; // You can add more classes as needed
-		  } else if (type === 'error') {
-			  toastHeader.innerHTML = 'Erro';
-			  toastElement.className = 'toast bg-danger text-white'; // You can add more classes as needed
-		  }
+				// Set the type of toast
+				if (type === 'success') {
+					toastHeader.innerHTML = 'Sucesso';
+					toastElement.className = 'toast bg-success text-white'; // You can add more classes as needed
+				} else if (type === 'error') {
+					toastHeader.innerHTML = 'Erro';
+					toastElement.className = 'toast bg-danger text-white'; // You can add more classes as needed
+				}
 
-		  // Show the toast
-		  $(toastElement).toast('show');
-	  }
-    </script>
+				// Show the toast
+				var toast = new bootstrap.Toast(toastElement);
+				toast.show();
+			}
+
+			//// Test the function
+			// showtoast('this is a test message', 'success');
+        });
+
+		function showToast(message, type) {
+			var toastElement = document.getElementById('toastMessage');
+			var toastHeader = document.querySelector('#toastMessage .toast-header strong');
+			var toastBody = document.querySelector('#toastMessage .toast-body');
+
+			// Set the message
+			toastBody.innerHTML = message;
+
+			// Set the type of toast
+			if (type === 'success') {
+				toastHeader.innerHTML = 'Sucesso';
+				toastElement.className = 'toast bg-success text-white'; // You can add more classes as needed
+			} else if (type === 'error') {
+				toastHeader.innerHTML = 'Erro';
+				toastElement.className = 'toast bg-danger text-white'; // You can add more classes as needed
+			}
+
+			// Show the toast
+			var toast = new bootstrap.Toast(toastElement);
+			toast.show();
+		}
+
+		//// Test the function
+		//showtoast('this is a test message', 'success');
+	</script>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>
