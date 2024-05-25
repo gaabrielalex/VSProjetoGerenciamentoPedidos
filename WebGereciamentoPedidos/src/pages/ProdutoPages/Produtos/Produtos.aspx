@@ -85,9 +85,37 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
+    <!-- Modal para edição de produtos -->
+    <!-- Botão para abrir o modal -->
+    <button type="button" class="btn btn-primary">
+      Launch static backdrop modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Understood</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Parte de cadastro de produtos -->
 	<div class="divCadastrarProdutoLinkButton">
 		<asp:LinkButton CssClass="CadastrarProdutoLinkButton" ID="CadastrarProdutoLinkButton" runat="server" OnClick="CadastrarProdutoLinkButton_Click">
-            <h1>Cadastrar Produto</h1>
+            <h1 runat="server">
+                <asp:Label ID="TituloPanelLabel" runat="server" Text="Cadastrar Produto"></asp:Label>
+            </h1>
 		</asp:LinkButton>
 	</div>
 	<asp:Panel class="camposProdutoPanel" ID="CamposProdutoPanel" runat="server" Visible="true">
@@ -114,6 +142,8 @@
 
     <hr class="separadorCamposRegistros" />
     
+
+    <!-- Parte de listagem de produtos -->
     <div class="filtrar-container">
         <asp:TextBox cssClass="FiltrarTextBox" class="FiltrarTextBox" runat="server" ID="FiltrarTextBox" placeholder="Filtre pela descrição..." > </asp:TextBox>
         <asp:Button class="FiltrarButton" runat="server" ID="FiltrarButton" Text="Filtrar" OnClick="FiltrarButton_Click" />
@@ -137,10 +167,10 @@
                 <Columns>
                     <asp:BoundColumn DataField="Descricao" HeaderText="Descrição" ></asp:BoundColumn>
                     <asp:BoundColumn DataField="VlrUnitario" HeaderText="Valor Unitário" ></asp:BoundColumn>
-                    <asp:ButtonColumn Text="Editar" CommandName="Update" ButtonType="LinkButton">
+                    <asp:ButtonColumn Text="Editar" CommandName="Editar" ButtonType="LinkButton">
                         <ItemStyle Width="100px" />
                     </asp:ButtonColumn>
-                    <asp:ButtonColumn Text="Excluir" CommandName="Delete" ButtonType="LinkButton">
+                    <asp:ButtonColumn Text="Excluir" CommandName="Excluir" ButtonType="LinkButton">
                         <ItemStyle Width="100px" />
                     </asp:ButtonColumn>
                 </Columns>         
