@@ -64,6 +64,7 @@
 
         .camposProdutoPanel  input[type="text"] {
             min-height: 30px;
+            width: 280px;
         }
         .camposProdutoPanel {
             font-size: 18px
@@ -73,6 +74,7 @@
             display: inline-flex;
             flex-direction: column;
             margin: 0px 15px;
+            max-width: 280px;
         }
 
         .erro {
@@ -102,9 +104,9 @@
 		<asp:Label class="teste" ID="VlrUnitarioProdutoLabel" runat="server" Text="Vlr. Unitário:">
 		</asp:Label>
         <div class="div-campo">
-			<asp:TextBox ID="VlrUnitarioProdutoTxtBox" runat="server"></asp:TextBox>
+			<asp:TextBox ID="VlrUnitarioProdutoTxtBox" runat="server" CssClass="dinheiro"></asp:TextBox>
             <asp:CustomValidator ID="VlrUnitarioProdutoCV" runat="server" ControlToValidate="VlrUnitarioProdutoTxtBox"  ErrorMessage="" 
-            CssClass="erro" ValidationGroup="CamposProduto" OnServerValidate="VlrUnitarioProdutoCV_ServerValidate" ValidateEmptyText="true"></asp:CustomValidator>
+            CssClass="erro " ValidationGroup="CamposProduto" OnServerValidate="VlrUnitarioProdutoCV_ServerValidate" ValidateEmptyText="true"></asp:CustomValidator>
         </div>
 
 		<asp:Button runat="server" ID="CadastrarProdutoButton" Text="Cadastrar" ValidationGroup="CamposProduto"/>

@@ -230,13 +230,17 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			}
 
 			//Validação de valor numérico
-			if (!decimal.TryParse(vlrUnitario, out decimal vlrUnitarioDouble)) {
+			if (!decimal.TryParse(vlrUnitario, out decimal vlrUnitarioDecimal)) {
 				VlrUnitarioProdutoCV.ErrorMessage = "Valor inválido!";
 				args.IsValid = false;
 			}
 
 			//Validação de valor máximo de dígitos
-			string[] digitos = (vlrUnitarioDouble.ToString()).Split(',');
+			string digitosString = vlrUnitarioDecimal.ToString();
+			if(!digitosString.Contains(',')) {
+				digitosString += ",0";
+			}
+			string[] digitos = (digitosString).Split(',');
 			if (digitos[0].Length > 6 || digitos[1].Length > 2) {
 				VlrUnitarioProdutoCV.ErrorMessage = "Valor deve ter no máximo 2 casas decimais e 6 dígitos!";
 				args.IsValid = false;
