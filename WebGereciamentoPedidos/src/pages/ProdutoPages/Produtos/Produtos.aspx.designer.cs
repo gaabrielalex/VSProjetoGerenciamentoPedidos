@@ -69,6 +69,15 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		protected global::System.Web.UI.WebControls.TextBox VlrUnitarioProdutoTxtBox;
 
 		/// <summary>
+		/// CadastrarProdutoButton control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button CadastrarProdutoButton;
+
+		/// <summary>
 		/// FiltrarTextBox control.
 		/// </summary>
 		/// <remarks>

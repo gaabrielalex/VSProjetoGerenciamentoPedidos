@@ -84,9 +84,12 @@
         <asp:Label ID="DescricaoProdutoLabel" runat="server" Text="Descrição:">
             <asp:TextBox ID="DescricaoProdutoTxtBox" runat="server"></asp:TextBox>
         </asp:Label>
+
         <asp:Label class= "teste" ID="VlrUnitarioProdutoLabel" runat="server" Text="Vlr. Unitário:">
             <asp:TextBox ID="VlrUnitarioProdutoTxtBox" runat="server"></asp:TextBox>
         </asp:Label>
+
+        <asp:Button runat="server" ID="CadastrarProdutoButton" Text="Cadastrar" />
     </asp:Panel>
 
     <hr class="separadorCamposRegistros" />
