@@ -76,7 +76,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		{
 			//Teste: da erro
 			//Page.ClientScript.RegisterStartupScript(typeof(Page), "showToast", "showToast('Erro ao deletar produto.', 'error');", true);
-			if (e.CommandName == "Delete")
+			if (e.CommandName == "Excluir")
 			{
 				int indice = e.Item.ItemIndex;
 				if (indice < 0)
@@ -107,6 +107,18 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 							ImpedirResubimissaoDeFormulario(Response, Request, Context);
 						}
 					}
+				}
+			}
+			if(e.CommandName == "Editar") {
+				int indice = e.Item.ItemIndex;
+				if (indice < 0)
+				{
+					PageUtils.mostrarMensagem("Houve um erro ao slecionar o produto para edição, entre em contato com suporte caso o erro persista.", "E", this);
+				}
+				else
+				{
+					Produto produtoAEditar = DadosProdutosAtual[indice];
+
 				}
 			}
 
