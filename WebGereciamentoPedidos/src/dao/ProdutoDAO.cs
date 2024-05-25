@@ -144,6 +144,34 @@ namespace WebGereciamentoPedidos.src.dao
 			{
 				throw new Exception("Erro ao listar produtos: " + e.Message);
 			}
-		}	
+		}
+
+		public bool DescricaoJaExiste(String descricao) {
+			//Obs.: COLLATE Latin1_General_CI_A -- Determina que a comparação será incanse sentive e que será ignorado acentuações
+			String query = "SELECT * FROM produto WHERE descricao COLLATE Latin1_General_CI_A = @descricao";
+			List<Produto> produtos = new List<Produto>();
+			try
+			{
+				//Obtendo conexão co banco
+				using (SqlConnection connection = DB_Connection.getConnection())
+				{
+					connection.Open();
+					SqlCommand command = new SqlCommand(query, connection);
+					command.Parameters.AddWithValue("@descricao", descricao);
+					SqlDataReader reader = command.ExecuteReader();
+					int quantidadeRegistros = 0;
+					while (reader.Read())
+					{
+						quantidadeRegistros += 1;
+					}
+					connection.Close();
+					return quantidadeRegistros > 0;
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception("Erro ao realizar verificação da já existência do produto: " + e.Message);
+			}
+		}
 	}
 }
