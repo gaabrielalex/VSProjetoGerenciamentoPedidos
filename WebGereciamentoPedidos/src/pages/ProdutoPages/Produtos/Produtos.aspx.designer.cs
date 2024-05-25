@@ -51,6 +51,15 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		protected global::System.Web.UI.WebControls.TextBox DescricaoProdutoTxtBox;
 
 		/// <summary>
+		/// DescricaoProdutoRFV control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator DescricaoProdutoRFV;
+
+		/// <summary>
 		/// VlrUnitarioProdutoLabel control.
 		/// </summary>
 		/// <remarks>

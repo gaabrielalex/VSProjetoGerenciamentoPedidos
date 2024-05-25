@@ -64,33 +64,47 @@
 
         .camposProdutoPanel  input[type="text"] {
             min-height: 30px;
-            margin: 0px 15px;
         }
         .camposProdutoPanel {
             font-size: 18px
         }
 
+        .div-campo {
+            display: inline-flex;
+            flex-direction: column;
+            margin: 0px 15px;
+        }
+
+        .erro {
+	        color: #dc3545;
+        }
         
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="divCadastrarProdutoLinkButton">
-        <asp:LinkButton CssClass="CadastrarProdutoLinkButton" ID="CadastrarProdutoLinkButton" runat="server" OnClick="CadastrarProdutoLinkButton_Click">
+	<div class="divCadastrarProdutoLinkButton">
+		<asp:LinkButton CssClass="CadastrarProdutoLinkButton" ID="CadastrarProdutoLinkButton" runat="server" OnClick="CadastrarProdutoLinkButton_Click">
             <h1>Cadastrar Produto</h1>
-        </asp:LinkButton>
-    </div>
-    <asp:Panel class="camposProdutoPanel" ID="CamposProdutoPanel" runat="server" Visible="true">
-        <asp:Label ID="DescricaoProdutoLabel" runat="server" Text="Descrição:">
-            <asp:TextBox ID="DescricaoProdutoTxtBox" runat="server"></asp:TextBox>
-        </asp:Label>
+		</asp:LinkButton>
+	</div>
+	<asp:Panel class="camposProdutoPanel" ID="CamposProdutoPanel" runat="server" Visible="true">
+		<asp:Label ID="DescricaoProdutoLabel" runat="server" Text="Descrição:">
+		</asp:Label>
+        <div class="div-campo container-campo-DescricaoProdutoTxtBox">
+			<asp:TextBox ID="DescricaoProdutoTxtBox" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="DescricaoProdutoRFV" runat="server" ControlToValidate="DescricaoProdutoTxtBox"
+            ErrorMessage="Campo obrigatório" CssClass="erro" ValidationGroup="CamposProduto"></asp:RequiredFieldValidator>
+        </div>
 
-        <asp:Label class= "teste" ID="VlrUnitarioProdutoLabel" runat="server" Text="Vlr. Unitário:">
-            <asp:TextBox ID="VlrUnitarioProdutoTxtBox" runat="server"></asp:TextBox>
-        </asp:Label>
+		<asp:Label class="teste" ID="VlrUnitarioProdutoLabel" runat="server" Text="Vlr. Unitário:">
+		</asp:Label>
+        <div class="div-campo">
+			<asp:TextBox ID="VlrUnitarioProdutoTxtBox" runat="server"></asp:TextBox>
+        </div>
 
-        <asp:Button runat="server" ID="CadastrarProdutoButton" Text="Cadastrar" />
-    </asp:Panel>
+		<asp:Button runat="server" ID="CadastrarProdutoButton" Text="Cadastrar" ValidationGroup="CamposProduto"/>
+	</asp:Panel>
 
     <hr class="separadorCamposRegistros" />
     
