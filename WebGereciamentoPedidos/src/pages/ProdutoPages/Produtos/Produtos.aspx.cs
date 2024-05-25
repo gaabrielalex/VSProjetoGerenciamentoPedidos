@@ -246,5 +246,37 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 				args.IsValid = false;
 			}
 		}
+
+		protected void CadastrarProdutoButton_Click(object sender, EventArgs e)
+		{
+			if (!Page.IsValid) {
+				return;
+			}
+			string descricao = DescricaoProdutoTxtBox.Text;
+			if(decimal.TryParse(VlrUnitarioProdutoTxtBox.Text, out decimal vlrUnitario)) {
+				Produto produto = new Produto(null, descricao, vlrUnitario);
+				try {
+					ProdutoDAO.inserir(produto);
+					PageUtils.mostrarMensagem("Produto cadastrado com sucesso!", "S", this);
+					LimparCamposProduto();
+					TratarCarregamentoDeDados();
+				} catch (Exception ex) {
+					
+					PageUtils.mostrarMensagem($"Erro ao cadastrar produto: {ex.Message}", "E", this);
+				} finally {
+					ImpedirResubimissaoDeFormulario(Response, Request, Context);
+				}
+			} else {
+				PageUtils.mostrarMensagem("Erro ao cadastrar produto: Valor unitário inválido!", "E", this);
+			}
+			ImpedirResubimissaoDeFormulario(Response, Request, Context);
+
+		}
+
+		private void LimparCamposProduto() {
+			DescricaoProdutoTxtBox.Text = "";
+			VlrUnitarioProdutoTxtBox.Text = "";
+		}
 	}
+
 }

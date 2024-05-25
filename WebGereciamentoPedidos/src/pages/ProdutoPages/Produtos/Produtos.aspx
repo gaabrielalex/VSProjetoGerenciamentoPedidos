@@ -5,7 +5,7 @@
 
         .container-table {
 			width: 100%;
-            height: 55vh;
+            height: 60vh;
 			overflow-x: auto;
             margin-top: 35px;
 		}
@@ -109,7 +109,7 @@
             CssClass="erro " ValidationGroup="CamposProduto" OnServerValidate="VlrUnitarioProdutoCV_ServerValidate" ValidateEmptyText="true"></asp:CustomValidator>
         </div>
 
-		<asp:Button runat="server" ID="CadastrarProdutoButton" Text="Cadastrar" ValidationGroup="CamposProduto"/>
+		<asp:Button runat="server" ID="CadastrarProdutoButton" Text="Cadastrar" ValidationGroup="CamposProduto" OnClick="CadastrarProdutoButton_Click"/>
 	</asp:Panel>
 
     <hr class="separadorCamposRegistros" />
