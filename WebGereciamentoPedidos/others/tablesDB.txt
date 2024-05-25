@@ -5,7 +5,7 @@
 
 CREATE TABLE produto (
     id_produto INT IDENTITY(1, 1) PRIMARY KEY,
-    descricao varchar(200) NOT NULL,
+    descricao varchar(200) UNIQUE NOT NULL,
     vlr_unitario numeric(8,2)
 );
 
