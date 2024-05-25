@@ -87,7 +87,7 @@
 
     <!-- Modal para edição de produtos -->
     <!-- Botão para abrir o modal -->
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
       Launch static backdrop modal
     </button>
 
