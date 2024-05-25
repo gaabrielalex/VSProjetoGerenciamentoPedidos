@@ -53,12 +53,30 @@
         .divCadastrarProdutoLinkButton, .camposProdutoPanel, .separadorCamposRegistros, .filtrar-container, .container-table {
             margin-top: 35px;
         }
+
+        .divCadastrarProdutoLinkButton h1 {
+            color: black;
+        }
+
+        .divCadastrarProdutoLinkButton a {
+            text-decoration: none;
+        }
+
+        .camposProdutoPanel  input[type="text"] {
+            min-height: 30px;
+            margin: 0px 15px;
+        }
+        .camposProdutoPanel {
+            font-size: 18px
+        }
+
+        
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="divCadastrarProdutoLinkButton">
-        <asp:LinkButton class="CadastrarProdutoLinkButton" ID="CadastrarProdutoLinkButton" runat="server" OnClick="CadastrarProdutoLinkButton_Click">
+        <asp:LinkButton CssClass="CadastrarProdutoLinkButton" ID="CadastrarProdutoLinkButton" runat="server" OnClick="CadastrarProdutoLinkButton_Click">
             <h1>Cadastrar Produto</h1>
         </asp:LinkButton>
     </div>
@@ -66,10 +84,11 @@
         <asp:Label ID="DescricaoProdutoLabel" runat="server" Text="Descrição:">
             <asp:TextBox ID="DescricaoProdutoTxtBox" runat="server"></asp:TextBox>
         </asp:Label>
-        <asp:Label ID="VlrUnitarioProdutoLabel" runat="server" Text="Vlr. Unitário:">
+        <asp:Label class= "teste" ID="VlrUnitarioProdutoLabel" runat="server" Text="Vlr. Unitário:">
             <asp:TextBox ID="VlrUnitarioProdutoTxtBox" runat="server"></asp:TextBox>
         </asp:Label>
     </asp:Panel>
+
     <hr class="separadorCamposRegistros" />
     
     <div class="filtrar-container">
