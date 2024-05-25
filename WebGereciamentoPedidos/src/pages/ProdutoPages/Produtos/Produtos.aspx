@@ -5,7 +5,7 @@
 
         .container-table {
 			width: 100%;
-            height: 55vh;
+            height: 70vh;
 			overflow-x: auto;
             margin-top: 35px;
 		}
@@ -50,28 +50,14 @@
             border-bottom: 1px solid #ccc; /* Adjust color and style as needed */
         }
 
-        .divCadastrarProdutoLinkButton, .camposProdutoPanel, .separadorCamposRegistros, .filtrar-container, .container-table {
-            margin-top: 35px;
-        }
+        .filtrar-container {
+			margin-top: 40px;
+		}
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="divCadastrarProdutoLinkButton">
-        <asp:LinkButton class="CadastrarProdutoLinkButton" ID="CadastrarProdutoLinkButton" runat="server" OnClick="CadastrarProdutoLinkButton_Click">
-            <h1>Cadastrar Produto</h1>
-        </asp:LinkButton>
-    </div>
-    <asp:Panel class="camposProdutoPanel" ID="CamposProdutoPanel" runat="server" Visible="true">
-        <asp:Label ID="DescricaoProdutoLabel" runat="server" Text="Descrição:">
-            <asp:TextBox ID="DescricaoProdutoTxtBox" runat="server"></asp:TextBox>
-        </asp:Label>
-        <asp:Label ID="VlrUnitarioProdutoLabel" runat="server" Text="Vlr. Unitário:">
-            <asp:TextBox ID="VlrUnitarioProdutoTxtBox" runat="server"></asp:TextBox>
-        </asp:Label>
-    </asp:Panel>
-    <hr class="separadorCamposRegistros" />
-    
     <div class="filtrar-container">
         <asp:TextBox cssClass="FiltrarTextBox" class="FiltrarTextBox" runat="server" ID="FiltrarTextBox" placeholder="Filtre pela descrição..." > </asp:TextBox>
         <asp:Button class="FiltrarButton" runat="server" ID="FiltrarButton" Text="Filtrar" OnClick="FiltrarButton_Click" />

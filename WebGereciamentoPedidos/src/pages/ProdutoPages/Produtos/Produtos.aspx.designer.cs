@@ -15,60 +15,6 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 	{
 
 		/// <summary>
-		/// CadastrarProdutoLinkButton control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.LinkButton CadastrarProdutoLinkButton;
-
-		/// <summary>
-		/// CamposProdutoPanel control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel CamposProdutoPanel;
-
-		/// <summary>
-		/// DescricaoProdutoLabel control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label DescricaoProdutoLabel;
-
-		/// <summary>
-		/// DescricaoProdutoTxtBox control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox DescricaoProdutoTxtBox;
-
-		/// <summary>
-		/// VlrUnitarioProdutoLabel control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label VlrUnitarioProdutoLabel;
-
-		/// <summary>
-		/// VlrUnitarioProdutoTxtBox control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox VlrUnitarioProdutoTxtBox;
-
-		/// <summary>
 		/// FiltrarTextBox control.
 		/// </summary>
 		/// <remarks>

@@ -49,7 +49,6 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			if (!IsPostBack)
 			{
 				TratarCarregamentoDeDados();
-				CarregarEstadoDeVariaveisEComponentesNecesarios();
 			}
 		}
 		private void TratarCarregamentoDeDados() {
@@ -99,20 +98,19 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 							{
 								//Se cair no catch ele não vai executar esse função que esta tb sendo acionado no final
 								//dessa função, desta forme o mesmo deve ser chamado aqui tb
-								ImpedirResubimissaoDeFormulario(Response, Request, Context);
+								PageUtils.RedirecionarClienteParaEvitarResubimissaoDeFormulario(Response, Request, Context);
 							}
 						}
 					}
 				}
 
-			ImpedirResubimissaoDeFormulario(Response, Request, Context);
+			PageUtils.RedirecionarClienteParaEvitarResubimissaoDeFormulario(Response, Request, Context);
 		}
 
 		protected void FiltrarButton_Click(object sender, EventArgs e)
 		{
 			String filtro = FiltrarTextBox.Text;
-			//Obtem apenas a url sem possíveis query parameters no meio, desta
-			//forma, ousuário não faz ter o mesmo query parametres na url
+			//Obtem apenas a url sem possíveis query parameters no meio, desta forma, o usuário não faz ter o mesmo query parametres na url
 			String urlAtual = Request.Url.GetLeftPart(UriPartial.Path);
 			String novaUrl;
 			if (filtro == "" || filtro == null)
@@ -123,61 +121,6 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			}
 
 			Response.Redirect(novaUrl, false);
-		}
-		protected void CadastrarProdutoLinkButton_Click(object sender, EventArgs e)
-		{
-			CamposProdutoPanel.Visible = !CamposProdutoPanel.Visible;
-		}
-		private void ArmazenarEstadoDeVariaveisEComponentesNecesarios()
-		{
-			Session["CamposProdutoPanelVisible"] = CamposProdutoPanel.Visible;
-			Session["DescricaoProdutoTxtBoxText"] = DescricaoProdutoTxtBox.Text;
-			Session["VlrUnitarioProdutoTxtBoxText"] = VlrUnitarioProdutoTxtBox.Text;
-		}
-		private void CarregarEstadoDeVariaveisEComponentesNecesarios()
-		{
-			// Verificar e carregar o estado do painel
-			if (Session["CamposProdutoPanelVisible"] != null)
-			{
-				CamposProdutoPanel.Visible = (bool)Session["CamposProdutoPanelVisible"];
-			}
-			else
-			{
-				CamposProdutoPanel.Visible = true; // Valor padrão
-			}
-
-			// Verificar e carregar o texto da descrição do produto
-			if (Session["DescricaoProdutoTxtBoxText"] != null)
-			{
-				DescricaoProdutoTxtBox.Text = Session["DescricaoProdutoTxtBoxText"].ToString();
-			}
-			else
-			{
-				DescricaoProdutoTxtBox.Text = ""; // Valor padrão
-			}
-
-			// Verificar e carregar o texto do valor unitário do produto
-			if (Session["VlrUnitarioProdutoTxtBoxText"] != null)
-			{
-				VlrUnitarioProdutoTxtBox.Text = Session["VlrUnitarioProdutoTxtBoxText"].ToString();
-			}
-			else
-			{
-				VlrUnitarioProdutoTxtBox.Text = ""; // Valor padrão
-			}
-		}
-		
-		private void ImpedirResubimissaoDeFormulario(HttpResponse response, HttpRequest request, HttpContext context)
-		{
-			//A técnica usada exige que gerenciamos o estado de componentes
-			//e variáveis necessáris através de recurso "Session"
-			//O usuário é redirecionado para que seja impedido a resubimissao do formulario
-			PageUtils.RedirecionarClienteParaEvitarResubimissaoDeFormulario(Response, Request, Context);
-			//Porém, nesse momento o estado da página é perdido, o que não era a intenção
-			//Desta forma, realizamos o gerenciamento de estado "manualmente"
-			ArmazenarEstadoDeVariaveisEComponentesNecesarios();
-			//No paload, se não for postback, carregamos novamente o estado anteior da página
-			//recuperrabdo as informações via seesion
 		}
 	}
 }
