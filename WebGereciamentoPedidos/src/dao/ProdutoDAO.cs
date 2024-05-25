@@ -148,7 +148,7 @@ namespace WebGereciamentoPedidos.src.dao
 
 		public bool DescricaoJaExiste(String descricao) {
 			//Obs.: COLLATE Latin1_General_CI_A -- Determina que a comparação será incanse sentive e que será ignorado acentuações
-			String query = "SELECT * FROM produto WHERE descricao COLLATE Latin1_General_CI_A = @descricao";
+			String query = "SELECT * FROM produto WHERE descricao COLLATE Latin1_General_CI_AI = @descricao";
 			List<Produto> produtos = new List<Produto>();
 			try
 			{

@@ -51,13 +51,13 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		protected global::System.Web.UI.WebControls.TextBox DescricaoProdutoTxtBox;
 
 		/// <summary>
-		/// DescricaoProdutoRFV control.
+		/// DescricaoProdutCV control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.RequiredFieldValidator DescricaoProdutoRFV;
+		protected global::System.Web.UI.WebControls.CustomValidator DescricaoProdutCV;
 
 		/// <summary>
 		/// VlrUnitarioProdutoLabel control.
@@ -76,6 +76,15 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.TextBox VlrUnitarioProdutoTxtBox;
+
+		/// <summary>
+		/// VlrUnitarioProdutoCV control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.CustomValidator VlrUnitarioProdutoCV;
 
 		/// <summary>
 		/// CadastrarProdutoButton control.

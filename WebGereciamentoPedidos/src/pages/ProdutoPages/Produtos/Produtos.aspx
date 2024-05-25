@@ -93,14 +93,18 @@
 		</asp:Label>
         <div class="div-campo container-campo-DescricaoProdutoTxtBox">
 			<asp:TextBox ID="DescricaoProdutoTxtBox" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="DescricaoProdutoRFV" runat="server" ControlToValidate="DescricaoProdutoTxtBox"
-            ErrorMessage="Campo obrigatório" CssClass="erro" ValidationGroup="CamposProduto"></asp:RequiredFieldValidator>
+            <%--ValidateEmptyText="true" serve para que o validation seja chamado mesmo que o 
+            campo seja nulo, desta pode ser feito também validação de campo obrigatório--%>
+            <asp:CustomValidator ID="DescricaoProdutCV" runat="server" ControlToValidate="DescricaoProdutoTxtBox"  ErrorMessage="" 
+            CssClass="erro" ValidationGroup="CamposProduto" OnServerValidate="DescricaoProdutCV_ServerValidate" ValidateEmptyText="true"></asp:CustomValidator>
         </div>
 
 		<asp:Label class="teste" ID="VlrUnitarioProdutoLabel" runat="server" Text="Vlr. Unitário:">
 		</asp:Label>
         <div class="div-campo">
 			<asp:TextBox ID="VlrUnitarioProdutoTxtBox" runat="server"></asp:TextBox>
+            <asp:CustomValidator ID="VlrUnitarioProdutoCV" runat="server" ControlToValidate="VlrUnitarioProdutoTxtBox"  ErrorMessage="" 
+            CssClass="erro" ValidationGroup="CamposProduto" OnServerValidate="VlrUnitarioProdutoCV_ServerValidate" ValidateEmptyText="true"></asp:CustomValidator>
         </div>
 
 		<asp:Button runat="server" ID="CadastrarProdutoButton" Text="Cadastrar" ValidationGroup="CamposProduto"/>

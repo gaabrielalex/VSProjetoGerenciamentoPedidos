@@ -186,5 +186,61 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			//No paload, se não for postback, carregamos novamente o estado anteior da página
 			//recuperrabdo as informações via seesion
 		}
+
+		protected void DescricaoProdutCV_ServerValidate(object source, ServerValidateEventArgs args)
+		{
+			string descricao = args.Value;
+
+			//Validação se campo obrigatório
+			if(descricao == "") {
+				DescricaoProdutCV.ErrorMessage = "Campo obrigatório!";
+				args.IsValid = false;
+			}
+
+			//Validação de tamanho limite da string
+			if(descricao.Length > 200)
+			{
+				DescricaoProdutCV.ErrorMessage = "Tamanho máximo de 200 caracteres excedido!";
+				args.IsValid = false;
+			}
+
+			//Validação da já existência do produto
+			bool produtoJaExiste = false;
+			try {
+				produtoJaExiste = ProdutoDAO.DescricaoJaExiste(descricao);
+			} catch (Exception ex) {
+				PageUtils.mostrarMensagem($"{ex.Message}", "E", this);
+			}
+			if (produtoJaExiste) {
+				DescricaoProdutCV.ErrorMessage = "Produto já existente!";
+				args.IsValid = false ;
+			}
+		}
+
+		protected void VlrUnitarioProdutoCV_ServerValidate(object source, ServerValidateEventArgs args)
+		{
+			string vlrUnitario = args.Value;
+
+			//Continua para mim copilot
+			//Validação se campo obrigatório
+			if(vlrUnitario == "") {
+				VlrUnitarioProdutoCV.ErrorMessage = "Campo obrigatório!";
+				args.IsValid = false;
+				return;
+			}
+
+			//Validação de valor numérico
+			if (!decimal.TryParse(vlrUnitario, out decimal vlrUnitarioDouble)) {
+				VlrUnitarioProdutoCV.ErrorMessage = "Valor inválido!";
+				args.IsValid = false;
+			}
+
+			//Validação de valor máximo de dígitos
+			string[] digitos = (vlrUnitarioDouble.ToString()).Split(',');
+			if (digitos[0].Length > 6 || digitos[1].Length > 2) {
+				VlrUnitarioProdutoCV.ErrorMessage = "Valor deve ter no máximo 2 casas decimais e 6 dígitos!";
+				args.IsValid = false;
+			}
+		}
 	}
 }
