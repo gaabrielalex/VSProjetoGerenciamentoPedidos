@@ -77,12 +77,21 @@
             max-width: 280px;
         }
 
+        .CancelarEdicaoButton {
+            margin-left: 15px;
+        }
+
         .erro {
 	        color: #dc3545;
         }
+
+        .container-editar-produto {
+            display: flex;
+            flex-direction: column;
+        }
         
     </style>
-     <script type="text/javascript">
+    <script type="text/javascript">
         function abrirModal(linkButton) {
             var id = linkButton.getAttribute("data-id");
             // Use o ID para carregar dados ou configurar o modal
@@ -93,26 +102,21 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <!-- Modal para edição de produtos -->
-    <!-- Botão para abrir o modal -->
-    <button type="button" class="btn btn-primary">
-      Launch static backdrop modal
-    </button>
-
-    <!-- Modal -->
+    <!-- Modal para edição de produtos(Era para ser, vão deixar aqui como consulta futura -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Produto</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
-            ...
+          <div class="modal-body container-editar-produto">
+
+                
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Understood</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Salvar</button>
           </div>
         </div>
       </div>
@@ -127,8 +131,7 @@
 		</asp:LinkButton>
 	</div>
 	<asp:Panel class="camposProdutoPanel" ID="CamposProdutoPanel" runat="server" Visible="true">
-		<asp:Label ID="DescricaoProdutoLabel" runat="server" Text="Descrição:">
-		</asp:Label>
+		<asp:Label ID="DescricaoProdutoLabel" runat="server" Text="Descrição:"></asp:Label>
         <div class="div-campo container-campo-DescricaoProdutoTxtBox">
 			<asp:TextBox ID="DescricaoProdutoTxtBox" runat="server"></asp:TextBox>
             <%--ValidateEmptyText="true" serve para que o validation seja chamado mesmo que o 
@@ -137,8 +140,7 @@
             CssClass="erro" ValidationGroup="CamposProduto" OnServerValidate="DescricaoProdutCV_ServerValidate" ValidateEmptyText="true"></asp:CustomValidator>
         </div>
 
-		<asp:Label class="teste" ID="VlrUnitarioProdutoLabel" runat="server" Text="Vlr. Unitário:">
-		</asp:Label>
+		<asp:Label class="teste" ID="VlrUnitarioProdutoLabel" runat="server" Text="Vlr. Unitário:"></asp:Label>
         <div class="div-campo">
 			<asp:TextBox ID="VlrUnitarioProdutoTxtBox" runat="server" CssClass="dinheiro"></asp:TextBox>
             <asp:CustomValidator ID="VlrUnitarioProdutoCV" runat="server" ControlToValidate="VlrUnitarioProdutoTxtBox"  ErrorMessage="" 
@@ -146,6 +148,8 @@
         </div>
 
 		<asp:Button runat="server" ID="CadastrarProdutoButton" Text="Cadastrar" ValidationGroup="CamposProduto" OnClick="CadastrarProdutoButton_Click"/>
+        <asp:Button runat="server" CssClass="CancelarEdicaoButton" ID="CancelarEdicaoButton" Text="Cancelar" OnClick="CancelarEdicaoButton_Click"
+            ValidationGroup="NuloParaNaoMeImpedirDeCancelarAEdicaoSemQueTodosOsCamposEstejamValidos" Visible="false"/>
 	</asp:Panel>
 
     <hr class="separadorCamposRegistros" />
@@ -178,7 +182,7 @@
                 <asp:TemplateField>
                     <ItemTemplate>
                         <asp:LinkButton ID="EditarLK" runat="server" CommandName="Editar" CommandArgument='<%# Eval("IdProduto") %>'
-                            Text="Editar" OnClientClick="return abrirModal(this);">
+                            Text="Editar">
                         </asp:LinkButton>
                     </ItemTemplate>
                     <ItemStyle Width="100px" />

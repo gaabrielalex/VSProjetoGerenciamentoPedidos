@@ -35,6 +35,12 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 				ViewState["DadosProdutosAtual"] = value;
 			}
 		}
+		public readonly string VALOR_PADRAO_TITULO_PANEL_CADASTRO = "Cadastrar Produto";
+		public readonly string VALOR_PADRAO_TEXTO_BOTAO_CADASTRAR = "Cadastrar";
+		public readonly string VALOR_PADRAO_TITULO_PANEL_EDICAO = "Editar Produto";
+		public readonly string VALOR_PADRAO_TEXTO_BOTAO_EDITAR = "Editar";
+		public readonly string VALOR_PADRAO_TEXTO_BOTAO_CANCELAR = "Cancelar";
+		public readonly bool VALOR_PADRAO_VISIBILIDADE_BOTAO_CANCELAR = false;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -77,7 +83,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			//Teste: da erro
 			//Page.ClientScript.RegisterStartupScript(typeof(Page), "showToast", "showToast('Erro ao deletar produto.', 'error');", true);
 			int idProduto = Convert.ToInt32(e.CommandArgument);
-			if (idProduto > 0)
+			if (idProduto < 0)
 			{
 				PageUtils.mostrarMensagem("Houve um erro ao selecionar o produto para ação selecionada, entre em contato com suporte caso o erro persista.", "E", this);
 			}
@@ -120,7 +126,13 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 				}
 
 				else if(e.CommandName == "Editar") {
-					
+					TituloPanelLabel.Text = VALOR_PADRAO_TITULO_PANEL_EDICAO;
+					CadastrarProdutoButton.Text = VALOR_PADRAO_TEXTO_BOTAO_EDITAR;
+					DescricaoProdutoTxtBox.Text = produtoSelecionado.Descricao;
+					VlrUnitarioProdutoTxtBox.Text = produtoSelecionado.VlrUnitario.ToString();
+					CancelarEdicaoButton.Visible = true;
+					CamposProdutoPanel.Visible = true;
+
 				}
 			}
 
@@ -152,6 +164,9 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		private void ArmazenarEstadoDeVariaveisEComponentesNecesarios()
 		{
 			Session["CamposProdutoPanelVisible"] = CamposProdutoPanel.Visible;
+			Session["TituloPanelLabel.Text"] = TituloPanelLabel.Text;
+			Session["CadastrarProdutoButton.Text"] = CadastrarProdutoButton.Text;
+			Session["CancelarEdicaoButton.Visible"] = CancelarEdicaoButton.Visible;
 			Session["DescricaoProdutoTxtBoxText"] = DescricaoProdutoTxtBox.Text;
 			Session["VlrUnitarioProdutoTxtBoxText"] = VlrUnitarioProdutoTxtBox.Text;
 		}
@@ -165,6 +180,36 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			else
 			{
 				CamposProdutoPanel.Visible = true; // Valor padrão
+			}
+
+			// Verificar e carregar o texto do título do painel
+			if (Session["TituloPanelLabel.Text"] != null)
+			{
+				TituloPanelLabel.Text = Session["TituloPanelLabel.Text"].ToString();
+			}
+			else
+			{
+				TituloPanelLabel.Text = VALOR_PADRAO_TITULO_PANEL_CADASTRO; // Valor padrão
+			}
+
+			// Verificar e carregar o texto do botão de cadastro de produto
+			if (Session["CadastrarProdutoButton.Text"] != null)
+			{
+				CadastrarProdutoButton.Text = Session["CadastrarProdutoButton.Text"].ToString();
+			}
+			else
+			{
+				CadastrarProdutoButton.Text = VALOR_PADRAO_TEXTO_BOTAO_CADASTRAR; // Valor padrão
+			}
+
+			// Verificar e carregar a visibilidade do botão de cancelar edição
+			if (Session["CancelarEdicaoButton.Visible"] != null)
+			{
+				CancelarEdicaoButton.Visible = (bool)Session["CancelarEdicaoButton.Visible"];
+			}
+			else
+			{
+				CancelarEdicaoButton.Visible = false; // Valor padrão
 			}
 
 			// Verificar e carregar o texto da descrição do produto
@@ -290,6 +335,15 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		private void LimparCamposProduto() {
 			DescricaoProdutoTxtBox.Text = "";
 			VlrUnitarioProdutoTxtBox.Text = "";
+		}
+
+		protected void CancelarEdicaoButton_Click(object sender, EventArgs e)
+		{
+			TituloPanelLabel.Text = VALOR_PADRAO_TITULO_PANEL_CADASTRO;
+			CadastrarProdutoButton.Text = VALOR_PADRAO_TEXTO_BOTAO_CADASTRAR;
+			DescricaoProdutoTxtBox.Text = "";
+			VlrUnitarioProdutoTxtBox.Text = "";
+			CancelarEdicaoButton.Visible = false;
 		}
 	}
 
