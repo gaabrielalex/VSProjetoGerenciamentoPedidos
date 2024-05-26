@@ -19,6 +19,12 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 {
 	public partial class Produtos : System.Web.UI.Page
 	{
+		public readonly string VALOR_PADRAO_TITULO_PANEL_CADASTRO = "Cadastrar Produto";
+		public readonly string VALOR_PADRAO_TEXTO_BOTAO_CADASTRAR = "Cadastrar";
+		public readonly string VALOR_PADRAO_TITULO_PANEL_EDICAO = "Editar Produto";
+		public readonly string VALOR_PADRAO_TEXTO_BOTAO_EDITAR = "Editar";
+		public readonly string VALOR_PADRAO_TEXTO_BOTAO_CANCELAR = "Cancelar";
+		public readonly bool VALOR_PADRAO_VISIBILIDADE_BOTAO_CANCELAR = false;
 		public ProdutoDAO ProdutoDAO;
 		public List<Produto> DadosProdutosAtual
 		{
@@ -35,12 +41,21 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 				ViewState["DadosProdutosAtual"] = value;
 			}
 		}
-		public readonly string VALOR_PADRAO_TITULO_PANEL_CADASTRO = "Cadastrar Produto";
-		public readonly string VALOR_PADRAO_TEXTO_BOTAO_CADASTRAR = "Cadastrar";
-		public readonly string VALOR_PADRAO_TITULO_PANEL_EDICAO = "Editar Produto";
-		public readonly string VALOR_PADRAO_TEXTO_BOTAO_EDITAR = "Editar";
-		public readonly string VALOR_PADRAO_TEXTO_BOTAO_CANCELAR = "Cancelar";
-		public readonly bool VALOR_PADRAO_VISIBILIDADE_BOTAO_CANCELAR = false;
+		public int IdUltimoProdutoSelecionadoParaEdicao
+		{
+			get
+			{
+				if (Session["IdUltimoProdutoSelecionadoParaEdicao"] != null)
+				{
+					return (int)Session["IdUltimoProdutoSelecionadoParaEdicao"];
+				}
+				return -1;
+			}
+			set
+			{
+				Session["IdUltimoProdutoSelecionadoParaEdicao"] = value;
+			}
+		}
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -82,8 +97,8 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		{
 			//Teste: da erro
 			//Page.ClientScript.RegisterStartupScript(typeof(Page), "showToast", "showToast('Erro ao deletar produto.', 'error');", true);
-			int idProduto = Convert.ToInt32(e.CommandArgument);
-			if (idProduto < 0)
+			int idProdutoSelecionado = Convert.ToInt32(e.CommandArgument);
+			if (idProdutoSelecionado < 0)
 			{
 				PageUtils.mostrarMensagem("Houve um erro ao selecionar o produto para ação selecionada, entre em contato com suporte caso o erro persista.", "E", this);
 			}
@@ -92,7 +107,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 				Produto produtoSelecionado = new Produto();
 				foreach (Produto produto in DadosProdutosAtual)
 				{
-					if (produto.IdProduto == idProduto)
+					if (produto.IdProduto == idProdutoSelecionado)
 					{
 						produtoSelecionado = produto;
 						break;
@@ -107,8 +122,15 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 					{
 						try
 						{
-							ProdutoDAO.excluir(produtoSelecionado.IdProduto ?? 0);
-							TratarCarregamentoDeDados();
+							var houveSucesso = ProdutoDAO.excluir(produtoSelecionado.IdProduto ?? 0);
+							if (houveSucesso)
+							{
+								PageUtils.mostrarMensagem("Produto excluído com sucesso!", "S", this);
+								TratarCarregamentoDeDados();
+							} 
+							else{
+								PageUtils.mostrarMensagem("Erro ao excluir produto, tente novamente!", "E", this);
+							}
 						}
 						catch (Exception ex)
 						{
@@ -126,8 +148,9 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 				}
 
 				else if(e.CommandName == "Editar") {
+					IdUltimoProdutoSelecionadoParaEdicao = idProdutoSelecionado;
 					TituloPanelLabel.Text = VALOR_PADRAO_TITULO_PANEL_EDICAO;
-					CadastrarProdutoButton.Text = VALOR_PADRAO_TEXTO_BOTAO_EDITAR;
+					CadastrarEditarProdutoButton.Text = VALOR_PADRAO_TEXTO_BOTAO_EDITAR;
 					DescricaoProdutoTxtBox.Text = produtoSelecionado.Descricao;
 					VlrUnitarioProdutoTxtBox.Text = produtoSelecionado.VlrUnitario.ToString();
 					CancelarEdicaoButton.Visible = true;
@@ -165,7 +188,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		{
 			Session["CamposProdutoPanelVisible"] = CamposProdutoPanel.Visible;
 			Session["TituloPanelLabel.Text"] = TituloPanelLabel.Text;
-			Session["CadastrarProdutoButton.Text"] = CadastrarProdutoButton.Text;
+			Session["CadastrarProdutoButton.Text"] = CadastrarEditarProdutoButton.Text;
 			Session["CancelarEdicaoButton.Visible"] = CancelarEdicaoButton.Visible;
 			Session["DescricaoProdutoTxtBoxText"] = DescricaoProdutoTxtBox.Text;
 			Session["VlrUnitarioProdutoTxtBoxText"] = VlrUnitarioProdutoTxtBox.Text;
@@ -195,11 +218,11 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			// Verificar e carregar o texto do botão de cadastro de produto
 			if (Session["CadastrarProdutoButton.Text"] != null)
 			{
-				CadastrarProdutoButton.Text = Session["CadastrarProdutoButton.Text"].ToString();
+				CadastrarEditarProdutoButton.Text = Session["CadastrarProdutoButton.Text"].ToString();
 			}
 			else
 			{
-				CadastrarProdutoButton.Text = VALOR_PADRAO_TEXTO_BOTAO_CADASTRAR; // Valor padrão
+				CadastrarEditarProdutoButton.Text = VALOR_PADRAO_TEXTO_BOTAO_CADASTRAR; // Valor padrão
 			}
 
 			// Verificar e carregar a visibilidade do botão de cancelar edição
@@ -306,27 +329,58 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			}
 		}
 
-		protected void CadastrarProdutoButton_Click(object sender, EventArgs e)
+		protected void CadastrarEditarProdutoButton_Click(object sender, EventArgs e)
 		{
 			if (!Page.IsValid) {
 				return;
 			}
+
 			string descricao = DescricaoProdutoTxtBox.Text;
-			if(decimal.TryParse(VlrUnitarioProdutoTxtBox.Text, out decimal vlrUnitario)) {
+			if(!decimal.TryParse(VlrUnitarioProdutoTxtBox.Text, out decimal vlrUnitario))
+				PageUtils.mostrarMensagem("Valor unitário inválido, por favor insira apenas valores númericos!", "E", this);
+
+			if(CadastrarEditarProdutoButton.Text == VALOR_PADRAO_TEXTO_BOTAO_CADASTRAR)
+			{
 				Produto produto = new Produto(null, descricao, vlrUnitario);
-				try {
+				try
+				{
 					ProdutoDAO.inserir(produto);
 					PageUtils.mostrarMensagem("Produto cadastrado com sucesso!", "S", this);
 					LimparCamposProduto();
 					TratarCarregamentoDeDados();
-				} catch (Exception ex) {
-					
+				}
+				catch (Exception ex)
+				{
 					PageUtils.mostrarMensagem($"Erro ao cadastrar produto: {ex.Message}", "E", this);
-				} finally {
+				}
+				finally
+				{
 					ImpedirResubimissaoDeFormulario(Response, Request, Context);
 				}
-			} else {
-				PageUtils.mostrarMensagem("Erro ao cadastrar produto: Valor unitário inválido!", "E", this);
+			}
+			else if(CadastrarEditarProdutoButton.Text == VALOR_PADRAO_TEXTO_BOTAO_EDITAR)
+			{
+				Produto produto = new Produto(null, descricao, vlrUnitario);
+				try
+				{
+					bool houveSucesso = ProdutoDAO.editar(produto, IdUltimoProdutoSelecionadoParaEdicao);
+					if (houveSucesso)
+					{
+						PageUtils.mostrarMensagem("Produto editado com sucesso!", "S", this);
+						RetornarPaginaParaConfigsPadrao();
+						TratarCarregamentoDeDados();
+					} else {
+						PageUtils.mostrarMensagem("Erro ao editar produto, tente novamente!", "E", this);
+					}
+				}
+				catch (Exception ex)
+				{
+					PageUtils.mostrarMensagem($"Erro ao cadastrar produto: {ex.Message}", "E", this);
+				}
+				finally
+				{
+					ImpedirResubimissaoDeFormulario(Response, Request, Context);
+				}
 			}
 			ImpedirResubimissaoDeFormulario(Response, Request, Context);
 
@@ -339,8 +393,13 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 
 		protected void CancelarEdicaoButton_Click(object sender, EventArgs e)
 		{
+			RetornarPaginaParaConfigsPadrao();
+		}
+
+		private void RetornarPaginaParaConfigsPadrao()
+		{
 			TituloPanelLabel.Text = VALOR_PADRAO_TITULO_PANEL_CADASTRO;
-			CadastrarProdutoButton.Text = VALOR_PADRAO_TEXTO_BOTAO_CADASTRAR;
+			CadastrarEditarProdutoButton.Text = VALOR_PADRAO_TEXTO_BOTAO_CADASTRAR;
 			DescricaoProdutoTxtBox.Text = "";
 			VlrUnitarioProdutoTxtBox.Text = "";
 			CancelarEdicaoButton.Visible = false;

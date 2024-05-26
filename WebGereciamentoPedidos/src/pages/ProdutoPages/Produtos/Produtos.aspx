@@ -147,7 +147,7 @@
             CssClass="erro " ValidationGroup="CamposProduto" OnServerValidate="VlrUnitarioProdutoCV_ServerValidate" ValidateEmptyText="true"></asp:CustomValidator>
         </div>
 
-		<asp:Button runat="server" ID="CadastrarProdutoButton" Text="Cadastrar" ValidationGroup="CamposProduto" OnClick="CadastrarProdutoButton_Click"/>
+		<asp:Button runat="server" ID="CadastrarEditarProdutoButton" Text="Cadastrar" ValidationGroup="CamposProduto" OnClick="CadastrarEditarProdutoButton_Click" />
         <asp:Button runat="server" CssClass="CancelarEdicaoButton" ID="CancelarEdicaoButton" Text="Cancelar" OnClick="CancelarEdicaoButton_Click"
             ValidationGroup="NuloParaNaoMeImpedirDeCancelarAEdicaoSemQueTodosOsCamposEstejamValidos" Visible="false"/>
 	</asp:Panel>
