@@ -13,6 +13,9 @@ namespace WebGereciamentoPedidos.src.models
 
 		public decimal VlrUnitario { get; set; }
 
+		public Produto()
+		{
+		}
 		public Produto(int? idProduto, String descricao, decimal vlrUnitario)
 		{
 			IdProduto = idProduto;

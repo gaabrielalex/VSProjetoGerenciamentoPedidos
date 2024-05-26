@@ -68,31 +68,40 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		}
 		private void BindData()
 		{
-			dgProdutos.DataSource = DadosProdutosAtual;
-			dgProdutos.DataBind();
+			ProdutosGW.DataSource = DadosProdutosAtual;
+			ProdutosGW.DataBind();
 		}
 
-		protected void dgProdutos_ItemCommand(object source, DataGridCommandEventArgs e)
+		protected void ProdutosGW_RowCommand(object sender, GridViewCommandEventArgs e)
 		{
 			//Teste: da erro
 			//Page.ClientScript.RegisterStartupScript(typeof(Page), "showToast", "showToast('Erro ao deletar produto.', 'error');", true);
-			if (e.CommandName == "Excluir")
+			int idProduto = Convert.ToInt32(e.CommandArgument);
+			if (idProduto > 0)
 			{
-				int indice = e.Item.ItemIndex;
-				if (indice < 0)
+				PageUtils.mostrarMensagem("Houve um erro ao selecionar o produto para ação selecionada, entre em contato com suporte caso o erro persista.", "E", this);
+			}
+			else
+			{
+				Produto produtoSelecionado = new Produto();
+				foreach (Produto produto in DadosProdutosAtual)
 				{
-					PageUtils.mostrarMensagem("Houve um erro ao slecionar o produto para exclusão, entre em contato com suporte caso o erro persista.", "E", this);
+					if (produto.IdProduto == idProduto)
+					{
+						produtoSelecionado = produto;
+						break;
+					}
 				}
-				else
+
+				if(e.CommandName == "Excluir")
 				{
-					Produto produtoADeletar = DadosProdutosAtual[indice];
-					bool confirmacaoExclusao = PageUtils.solicitarConfirmacao($"Deseja realmente excluir o produto \"{produtoADeletar.Descricao}\"?");
+					bool confirmacaoExclusao = PageUtils.solicitarConfirmacao($"Deseja realmente excluir o produto \"{produtoSelecionado.Descricao}\"?");
 
 					if (confirmacaoExclusao)
 					{
 						try
 						{
-							ProdutoDAO.excluir(produtoADeletar.IdProduto ?? 0);
+							ProdutoDAO.excluir(produtoSelecionado.IdProduto ?? 0);
 							TratarCarregamentoDeDados();
 						}
 						catch (Exception ex)
@@ -107,18 +116,11 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 							ImpedirResubimissaoDeFormulario(Response, Request, Context);
 						}
 					}
+					
 				}
-			}
-			if(e.CommandName == "Editar") {
-				int indice = e.Item.ItemIndex;
-				if (indice < 0)
-				{
-					PageUtils.mostrarMensagem("Houve um erro ao slecionar o produto para edição, entre em contato com suporte caso o erro persista.", "E", this);
-				}
-				else
-				{
-					Produto produtoAEditar = DadosProdutosAtual[indice];
 
+				else if(e.CommandName == "Editar") {
+					
 				}
 			}
 

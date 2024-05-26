@@ -82,12 +82,20 @@
         }
         
     </style>
+     <script type="text/javascript">
+        function abrirModal(linkButton) {
+            var id = linkButton.getAttribute("data-id");
+            // Use o ID para carregar dados ou configurar o modal
+            $('#staticBackdrop').modal('show');
+            return false; // Retorne false para evitar postback
+        }
+	 </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <!-- Modal para edição de produtos -->
     <!-- Botão para abrir o modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <button type="button" class="btn btn-primary">
       Launch static backdrop modal
     </button>
 
@@ -148,33 +156,43 @@
         <asp:TextBox cssClass="FiltrarTextBox" class="FiltrarTextBox" runat="server" ID="FiltrarTextBox" placeholder="Filtre pela descrição..." > </asp:TextBox>
         <asp:Button class="FiltrarButton" runat="server" ID="FiltrarButton" Text="Filtrar" OnClick="FiltrarButton_Click" />
     </div>
-	<div class="container-table">
+    <div class="container-table">
         <table class="table table-striped " cellSpacing="1" cellPadding="1" width="100%" border="0">
             <tr>
-		        <td>
-			        <asp:Label ID="lblTitulo" runat="server" Text="Produtos"></asp:Label>
-		        </td>
+	            <td>
+		            <asp:Label ID="lblTitulo" runat="server" Text="Produtos"></asp:Label>
+	            </td>
             </tr>
-            <asp:DataGrid 
-                id="dgProdutos" 
+            <asp:GridView 
+                ID="ProdutosGW" 
                 runat="server" 
-                Width="100%"
                 AutoGenerateColumns="False"
+                Width="100%"
                 AllowPaging="false"
-                OnItemCommand="dgProdutos_ItemCommand"
-               >
+                OnRowCommand="ProdutosGW_RowCommand"
+                >
             <HeaderStyle BackColor="#212529" ForeColor="White" Font-Bold="True" />
-                <Columns>
-                    <asp:BoundColumn DataField="Descricao" HeaderText="Descrição" ></asp:BoundColumn>
-                    <asp:BoundColumn DataField="VlrUnitario" HeaderText="Valor Unitário" ></asp:BoundColumn>
-                    <asp:ButtonColumn Text="Editar" CommandName="Editar" ButtonType="LinkButton">
-                        <ItemStyle Width="100px" />
-                    </asp:ButtonColumn>
-                    <asp:ButtonColumn Text="Excluir" CommandName="Excluir" ButtonType="LinkButton">
-                        <ItemStyle Width="100px" />
-                    </asp:ButtonColumn>
-                </Columns>         
-            </asp:DataGrid>
+            <Columns>
+                <asp:BoundField DataField="Descricao" HeaderText="Descrição" />
+                <asp:BoundField DataField="VlrUnitario" HeaderText="Valor Unitário" />
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:LinkButton ID="EditarLK" runat="server" CommandName="Editar" CommandArgument='<%# Eval("IdProduto") %>'
+                            Text="Editar" OnClientClick="return abrirModal(this);">
+                        </asp:LinkButton>
+                    </ItemTemplate>
+                    <ItemStyle Width="100px" />
+                </asp:TemplateField>
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:LinkButton ID="ExcluirLK" runat="server" CommandName="Excluir" CommandArgument='<%# Eval("IdProduto") %>'
+                            Text="Excluir">
+                        </asp:LinkButton>
+                    </ItemTemplate>
+                    <ItemStyle Width="100px" />
+                </asp:TemplateField>
+            </Columns>
+            </asp:GridView>
         </table>
     </div>
 </asp:Content>
