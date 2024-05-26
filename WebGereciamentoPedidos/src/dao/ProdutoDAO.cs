@@ -55,9 +55,9 @@ namespace WebGereciamentoPedidos.src.dao
 					command.Parameters.AddWithValue("@descricao", produto.Descricao);
 					command.Parameters.AddWithValue("@vlr_unitario", produto.VlrUnitario);
 					command.Parameters.AddWithValue("@id_produto", idProduto);
-					command.ExecuteNonQuery();
+					var linhasAfetadas = command.ExecuteNonQuery();
 					connection.Close();
-					return true;
+					return linhasAfetadas > 0;
 				}
 			}
 			catch (Exception e)
@@ -78,9 +78,9 @@ namespace WebGereciamentoPedidos.src.dao
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
 					command.Parameters.AddWithValue("@id_produto", idProduto);
-					command.ExecuteNonQuery();
+					var linhasAfetadas = command.ExecuteNonQuery();
 					connection.Close();
-					return true;
+					return linhasAfetadas > 0;
 				}
 			}
 			catch (Exception e)
