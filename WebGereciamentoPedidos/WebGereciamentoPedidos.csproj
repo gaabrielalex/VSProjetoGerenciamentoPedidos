@@ -220,6 +220,7 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="src\dao\ProdutoDAO.cs" />
+    <Compile Include="src\models\Pedido.cs" />
     <Compile Include="src\models\Produto.cs" />
     <Compile Include="src\pages\ProdutoPages\Produtos\Produtos.aspx.cs">
       <DependentUpon>Produtos.aspx</DependentUpon>
@@ -230,6 +231,7 @@
     </Compile>
     <Compile Include="src\util\DataBaseUtils.cs" />
     <Compile Include="src\util\DB_Connection.cs" />
+    <Compile Include="src\util\ModelUtils.cs" />
     <Compile Include="src\util\PageUtils.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

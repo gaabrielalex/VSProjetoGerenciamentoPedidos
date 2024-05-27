@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.AccessControl;
 using System.Web;
 using System.Web.UI.WebControls.WebParts;
+using WebGereciamentoPedidos.src.util;
 
 namespace WebGereciamentoPedidos.src.models
 {
@@ -22,9 +23,9 @@ namespace WebGereciamentoPedidos.src.models
 
 		private const int MaxLengthNomeCliente = 100;
 		private const decimal MinVlrTotal = 0;
-		private const decimal MaxVlrTotal = 9999999M;
+		private const int MaxDigitosParteInteiraVlrTotal = 7;
 		private const decimal MinDesconto = 0;
-		private const decimal MaxDesconto = 999999M;
+		private const int MaxDigitosParteInteiraDesconto = 6;
 		private const int MaxLengthObservacoes = 200;
 		private string _nomeCliente;
 		private decimal _vlrTotal;
@@ -49,9 +50,9 @@ namespace WebGereciamentoPedidos.src.models
 			get { return _vlrTotal; }
 			set 
 			{
-				if(value < MinVlrTotal || value > MaxVlrTotal)
+				if(value < MinVlrTotal || MaxDigitosParteInteiraVlrTotal < ModelUtils.ObterQuantidadeDeDigitosAntesDoSeparadorDecimal(value))
 				{
-					throw new ArgumentOutOfRangeException(nameof(value), $"O valor deve estar entre {MinVlrTotal} e {MaxVlrTotal}.");
+					throw new ArgumentOutOfRangeException(nameof(value), $"O valor deve ser maior ou igual a {MinVlrTotal} e ter no máximo {MaxDigitosParteInteiraVlrTotal} dígitos na sua parte inteira.");
 				}
 				_vlrTotal = value;
 			}	
@@ -61,9 +62,9 @@ namespace WebGereciamentoPedidos.src.models
 			get { return _desconto; }
 			set
 			{
-				if (value < MinDesconto || value > MaxDesconto)
+				if (value < MinDesconto || MaxDigitosParteInteiraDesconto < ModelUtils.ObterQuantidadeDeDigitosAntesDoSeparadorDecimal(value))
 				{
-					throw new ArgumentOutOfRangeException(nameof(value), $"O valor deve estar entre {MinDesconto} e {MaxDesconto}.");
+					throw new ArgumentOutOfRangeException(nameof(value), $"ser maior ou igual a  {MinDesconto}  e ter no máximo  {MaxDigitosParteInteiraVlrTotal}  dígitos na sua parte inteira.");
 				}
 				_desconto = value;
 			}
