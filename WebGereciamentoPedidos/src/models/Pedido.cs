@@ -1,0 +1,128 @@
+﻿using Microsoft.Ajax.Utilities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.AccessControl;
+using System.Web;
+using System.Web.UI.WebControls.WebParts;
+
+namespace WebGereciamentoPedidos.src.models
+{
+	public class Pedido
+	{
+		//Com o nome "eEum" para evitar conflito com o atributo "StatusPedido"
+		//que representa o respectivo campo na tabela "Pedido"
+		public enum EnumStatusPedido
+		{
+			AguardandoPagamento= 'A',
+			EmSeparacao = 'S',
+			Entregue = 'E',
+			Cancelado = 'C',
+		}
+
+		private const int MaxLengthNomeCliente = 100;
+		private const decimal MinVlrTotal = 0;
+		private const decimal MaxVlrTotal = 9999999M;
+		private const decimal MinDesconto = 0;
+		private const decimal MaxDesconto = 999999M;
+		private const int MaxLengthObservacoes = 200;
+		private string _nomeCliente;
+		private decimal _vlrTotal;
+		private decimal _desconto;
+		private string _observacoes;
+
+		public int? IdPedido{  get; set; }
+		public string NomeCliente 
+		{
+			get { return _nomeCliente; }
+			set 
+			{ 
+				if(value.Length > MaxLengthNomeCliente)
+				{
+					throw new ArgumentOutOfRangeException(nameof(value), $"O valor deve uma tamnho máximo de {MaxLengthNomeCliente} caracteres.");
+				}
+				_nomeCliente = value;
+			}
+		}
+		public decimal VlrTotal 
+		{
+			get { return _vlrTotal; }
+			set 
+			{
+				if(value < MinVlrTotal || value > MaxVlrTotal)
+				{
+					throw new ArgumentOutOfRangeException(nameof(value), $"O valor deve estar entre {MinVlrTotal} e {MaxVlrTotal}.");
+				}
+				_vlrTotal = value;
+			}	
+		}
+		public decimal Desconto
+		{
+			get { return _desconto; }
+			set
+			{
+				if (value < MinDesconto || value > MaxDesconto)
+				{
+					throw new ArgumentOutOfRangeException(nameof(value), $"O valor deve estar entre {MinDesconto} e {MaxDesconto}.");
+				}
+				_desconto = value;
+			}
+		}
+		public DateTime DtHrPedido { get; set; }
+		public EnumStatusPedido StatusPedido { get; set; }
+		public string Observacoes
+		{
+			get { return _observacoes; }
+			set
+			{
+				if (value.Length > MaxLengthObservacoes)
+				{
+					throw new ArgumentOutOfRangeException(nameof(value), $"O valor deve uma tamnho máximo de {MaxLengthObservacoes} caracteres.");
+				}
+				_observacoes = value;
+			}
+		}
+		public string MetodoPagemento { get; set; }
+
+		public Pedido(){ }
+
+		public Pedido(int? idPedido, string nomeCliente, decimal vlrTotal, decimal desconto, DateTime dtHrPedido, EnumStatusPedido statusPedido, string observacoes, string metodoPagemento)
+		{
+			IdPedido = idPedido;
+			NomeCliente = nomeCliente;
+			VlrTotal = vlrTotal;
+			Desconto = desconto;
+			DtHrPedido = dtHrPedido;
+			StatusPedido = statusPedido;
+			Observacoes = observacoes;
+			MetodoPagemento = metodoPagemento;
+		}
+
+		public override bool Equals(object obj)
+		{
+			return obj is Pedido pedido &&
+				   IdPedido == pedido.IdPedido &&
+				   NomeCliente == pedido.NomeCliente &&
+				   VlrTotal == pedido.VlrTotal &&
+				   Desconto == pedido.Desconto &&
+				   DtHrPedido == pedido.DtHrPedido &&
+				   StatusPedido == pedido.StatusPedido &&
+				   Observacoes == pedido.Observacoes &&
+				   MetodoPagemento == pedido.MetodoPagemento;
+		}
+
+		public override int GetHashCode()
+		{
+			int hashCode = -1499515728;
+			hashCode = hashCode * -1521134295 + IdPedido.GetHashCode();
+			hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(NomeCliente);
+			hashCode = hashCode * -1521134295 + VlrTotal.GetHashCode();
+			hashCode = hashCode * -1521134295 + Desconto.GetHashCode();
+			hashCode = hashCode * -1521134295 + DtHrPedido.GetHashCode();
+			hashCode = hashCode * -1521134295 + StatusPedido.GetHashCode();
+			hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Observacoes);
+			hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(MetodoPagemento);
+			return hashCode;
+		}
+	}
+}
