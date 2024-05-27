@@ -22,5 +22,22 @@ namespace WebGereciamentoPedidos.src.models
 			Descricao = descricao;
 			VlrUnitario = vlrUnitario;
 		}
+
+		public override bool Equals(object obj)
+		{
+			return obj is Produto produto &&
+				   IdProduto == produto.IdProduto &&
+				   Descricao == produto.Descricao &&
+				   VlrUnitario == produto.VlrUnitario;
+		}
+
+		public override int GetHashCode()
+		{
+			int hashCode = -974680947;
+			hashCode = hashCode * -1521134295 + IdProduto.GetHashCode();
+			hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Descricao);
+			hashCode = hashCode * -1521134295 + VlrUnitario.GetHashCode();
+			return hashCode;
+		}
 	}
 }
