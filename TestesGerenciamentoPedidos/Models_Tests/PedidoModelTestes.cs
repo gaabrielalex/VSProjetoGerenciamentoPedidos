@@ -1,8 +1,8 @@
 ﻿using FluentAssertions;
 using FluentAssertions.Specialized;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ModelsGerenciamentoPedidos.Src;
 using System;
-using WebGereciamentoPedidos.src.models;
 
 namespace TestesGerenciamentoPedidos
 {

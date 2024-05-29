@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace WebGereciamentoPedidos.src.util
+namespace DAOGerenciamentoPedidos.Src.Data_Base
 {
 	public class DB_Connection
 	{

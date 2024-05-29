@@ -1,9 +1,9 @@
-﻿using FluentAssertions;
+﻿using DAOGerenciamentoPedidos.Src;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ModelsGerenciamentoPedidos.Src;
 using System;
 using System.Collections.Generic;
-using WebGereciamentoPedidos.src.dao;
-using WebGereciamentoPedidos.src.models;
 
 namespace TestesGerenciamentoPedidos
 {

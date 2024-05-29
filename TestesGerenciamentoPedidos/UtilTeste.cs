@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using DAOGerenciamentoPedidos.Src.Data_Base;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Data.SqlClient;

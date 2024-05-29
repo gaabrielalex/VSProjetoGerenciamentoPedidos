@@ -1,13 +1,11 @@
-﻿using Microsoft.Ajax.Utilities;
+﻿using ModelsGerenciamentoPedidos.Src.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.AccessControl;
-using System.Web;
-using System.Web.UI.WebControls.WebParts;
-using WebGereciamentoPedidos.src.util;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace WebGereciamentoPedidos.src.models
+namespace ModelsGerenciamentoPedidos.Src
 {
 	public class Pedido
 	{

@@ -1,4 +1,6 @@
-﻿using Microsoft.Ajax.Utilities;
+﻿using DAOGerenciamentoPedidos.Src;
+using Microsoft.Ajax.Utilities;
+using ModelsGerenciamentoPedidos.Src;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,8 +12,6 @@ using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
-using WebGereciamentoPedidos.src.dao;
-using WebGereciamentoPedidos.src.models;
 using WebGereciamentoPedidos.src.pages.ProdutoPages;
 using WebGereciamentoPedidos.src.util;
 
