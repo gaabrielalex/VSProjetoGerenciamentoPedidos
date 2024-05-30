@@ -97,15 +97,11 @@
 		</asp:LinkButton>
 	</div>
 	<asp:Panel class="camposProdutoPanel" ID="CamposProdutoPanel" runat="server" Visible="true">
-        <gp:TextFormField runat="server" ID="DescricaoTextFormField" 
-            LabelText="Descrição" ValidationGroup="CamposProduto" OnServerValidate="DescricaoTextFormField_ServerValidate"/>
+        <gp:TextFormField runat="server" ID="DescricaoTextFormField" LabelText="Descrição"
+            ValidationGroup="CamposProduto" OnServerValidate="DescricaoTextFormField_ServerValidate"/>
 
-		<asp:Label class="teste" ID="VlrUnitarioProdutoLabel" runat="server" Text="Vlr. Unitário:"></asp:Label>
-        <div class="div-campo">
-			<asp:TextBox ID="VlrUnitarioProdutoTxtBox" runat="server" CssClass="dinheiro"></asp:TextBox>
-            <asp:CustomValidator ID="VlrUnitarioProdutoCV" runat="server" ControlToValidate="VlrUnitarioProdutoTxtBox"  ErrorMessage="" 
-            CssClass="erro" ValidationGroup="CamposProduto" OnServerValidate="VlrUnitarioProdutoCV_ServerValidate" ValidateEmptyText="true"></asp:CustomValidator>
-        </div>
+        <gp:TextFormField runat="server" ID="VlrUnitarioTextFormField" LabelText="Valor Unitário" format="dinheiro"
+        ValidationGroup="CamposProduto" OnServerValidate="VlrUnitarioTextFormField_ServerValidate"/>
 
 		<asp:Button runat="server" ID="CadastrarEditarProdutoButton" Text="Cadastrar" ValidationGroup="CamposProduto" OnClick="CadastrarEditarProdutoButton_Click" />
         <asp:Button runat="server" CssClass="CancelarEdicaoButton" ID="CancelarEdicaoButton" Text="Cancelar" OnClick="CancelarEdicaoButton_Click"

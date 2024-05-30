@@ -153,7 +153,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 					TituloPanelLabel.Text = VALOR_PADRAO_TITULO_PANEL_EDICAO;
 					CadastrarEditarProdutoButton.Text = VALOR_PADRAO_TEXTO_BOTAO_EDITAR;
 					DescricaoTextFormField.Text = produtoSelecionado.Descricao;
-					VlrUnitarioProdutoTxtBox.Text = produtoSelecionado.VlrUnitario.ToString();
+					VlrUnitarioTextFormField.Text = produtoSelecionado.VlrUnitario.ToString();
 					CancelarEdicaoButton.Visible = true;
 					CamposProdutoPanel.Visible = true;
 
@@ -192,7 +192,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			Session["CadastrarProdutoButton.Text"] = CadastrarEditarProdutoButton.Text;
 			Session["CancelarEdicaoButton.Visible"] = CancelarEdicaoButton.Visible;
 			Session["DescricaoProdutoTxtBoxText"] = DescricaoTextFormField.Text;
-			Session["VlrUnitarioProdutoTxtBoxText"] = VlrUnitarioProdutoTxtBox.Text;
+			Session["VlrUnitarioProdutoTxtBoxText"] = VlrUnitarioTextFormField.Text;
 		}
 		private void CarregarEstadoDeVariaveisEComponentesNecesarios()
 		{
@@ -249,11 +249,11 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			// Verificar e carregar o texto do valor unitário do produto
 			if (Session["VlrUnitarioProdutoTxtBoxText"] != null)
 			{
-				VlrUnitarioProdutoTxtBox.Text = Session["VlrUnitarioProdutoTxtBoxText"].ToString();
+				VlrUnitarioTextFormField.Text = Session["VlrUnitarioProdutoTxtBoxText"].ToString();
 			}
 			else
 			{
-				VlrUnitarioProdutoTxtBox.Text = ""; // Valor padrão
+				VlrUnitarioTextFormField.Text = ""; // Valor padrão
 			}
 		}
 
@@ -306,21 +306,21 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 
 		}
 
-		protected void VlrUnitarioProdutoCV_ServerValidate(object source, ServerValidateEventArgs args)
+		protected void VlrUnitarioTextFormField_ServerValidate(object source, ServerValidateEventArgs args)
 		{
 			string vlrUnitario = args.Value;
 
 			//Continua para mim copilot
 			//Validação se campo obrigatório
 			if(vlrUnitario == "") {
-				VlrUnitarioProdutoCV.ErrorMessage = "Campo obrigatório!";
+				VlrUnitarioTextFormField.ErrorMessage = "Campo obrigatório!";
 				args.IsValid = false;
 				return;
 			}
 
 			//Validação de valor numérico
 			if (!decimal.TryParse(vlrUnitario, out decimal vlrUnitarioDecimal)) {
-				VlrUnitarioProdutoCV.ErrorMessage = "Valor inválido!";
+				VlrUnitarioTextFormField.ErrorMessage = "Valor inválido!";
 				args.IsValid = false;
 			}
 
@@ -331,7 +331,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			}
 			string[] digitos = (digitosString).Split(',');
 			if (digitos[0].Length > 6 || digitos[1].Length > 2) {
-				VlrUnitarioProdutoCV.ErrorMessage = "Valor deve ter no máximo 2 casas decimais e 6 dígitos!";
+				VlrUnitarioTextFormField.ErrorMessage = "Valor deve ter no máximo 2 casas decimais e 6 dígitos!";
 				args.IsValid = false;
 			}
 		}
@@ -343,7 +343,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			}
 
 			string descricao = DescricaoTextFormField.Text;
-			if(!decimal.TryParse(VlrUnitarioProdutoTxtBox.Text, out decimal vlrUnitario))
+			if(!decimal.TryParse(VlrUnitarioTextFormField.Text, out decimal vlrUnitario))
 				PageUtils.mostrarMensagem("Valor unitário inválido, por favor insira apenas valores númericos!", "E", this);
 
 			if(CadastrarEditarProdutoButton.Text == VALOR_PADRAO_TEXTO_BOTAO_CADASTRAR)
@@ -395,7 +395,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 
 		private void LimparCamposProduto() {
 			DescricaoTextFormField.Text = "";
-			VlrUnitarioProdutoTxtBox.Text = "";
+			VlrUnitarioTextFormField.Text = "";
 		}
 
 		protected void CancelarEdicaoButton_Click(object sender, EventArgs e)
@@ -408,7 +408,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			TituloPanelLabel.Text = VALOR_PADRAO_TITULO_PANEL_CADASTRO;
 			CadastrarEditarProdutoButton.Text = VALOR_PADRAO_TEXTO_BOTAO_CADASTRAR;
 			DescricaoTextFormField.Text = "";
-			VlrUnitarioProdutoTxtBox.Text = "";
+			VlrUnitarioTextFormField.Text = "";
 			CancelarEdicaoButton.Visible = false;
 		}
 

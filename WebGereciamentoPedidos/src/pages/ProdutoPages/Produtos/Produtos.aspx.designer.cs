@@ -51,31 +51,13 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		protected global::WebGereciamentoPedidos.src.components.TextFormField DescricaoTextFormField;
 
 		/// <summary>
-		/// VlrUnitarioProdutoLabel control.
+		/// VlrUnitarioTextFormField control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label VlrUnitarioProdutoLabel;
-
-		/// <summary>
-		/// VlrUnitarioProdutoTxtBox control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox VlrUnitarioProdutoTxtBox;
-
-		/// <summary>
-		/// VlrUnitarioProdutoCV control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.CustomValidator VlrUnitarioProdutoCV;
+		protected global::WebGereciamentoPedidos.src.components.TextFormField VlrUnitarioTextFormField;
 
 		/// <summary>
 		/// CadastrarEditarProdutoButton control.
