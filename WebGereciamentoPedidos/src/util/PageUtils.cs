@@ -10,7 +10,7 @@ namespace WebGereciamentoPedidos.src.util
 	public class PageUtils
 	{
 		//Tipos válidos: S (sucesso) e E (erro)
-		public static void mostrarMensagem(string mensagem, string tipo, System.Web.UI.Page page)
+		public static void MostrarMensagem(string mensagem, string tipo, System.Web.UI.Page page)
 		{
 			string titulo;
 
@@ -45,7 +45,7 @@ namespace WebGereciamentoPedidos.src.util
 			MessageBox.Show(mensagem, titulo, buttons);
 		}
 
-		public static bool solicitarConfirmacao(string mensagem)
+		public static bool SolicitarConfirmacao(string mensagem)
 		{
 			MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 			DialogResult result;
