@@ -9,7 +9,32 @@ namespace WebGereciamentoPedidos.src.components
 {
 	public partial class TextFormField : System.Web.UI.UserControl
 	{
-		public string CssClass { get; set; }
+		private string _cssClass;
+		public string CssClass
+		{
+			get
+			{
+				return _cssClass;
+			}
+			set
+			{
+				_cssClass += value.Insert(0, " ");
+			}
+		}
+		private string _format;
+		public string Format
+		{
+			get
+			{
+				return _format;
+			}
+			set 
+			{
+				if (value == "dinheiro")
+					TextBoxControl.CssClass += "dinheiro".Insert(0, " ");
+			}
+		}
+
 		public Label LabelControl
 		{
 			get

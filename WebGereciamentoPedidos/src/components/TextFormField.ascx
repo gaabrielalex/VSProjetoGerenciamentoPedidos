@@ -18,9 +18,9 @@
     }
 </style>
 
-<div class="gp-text-form-field">
+<div class="gp-text-form-field <%=CssClass%>">
     <asp:Label ID="Label" runat="server"></asp:Label>
-    <div class="gp-text-box <%=CssClass%>">
+    <div class="gp-text-box">
 	    <asp:TextBox ID="TextBox" runat="server"></asp:TextBox>
         <asp:CustomValidator ID="CustomValidator" runat="server" ControlToValidate="TextBox" ErrorMessage=""
         CssClass="erro" OnServerValidate="CustomValidator_ServerValidate" ValidateEmptyText="true"></asp:CustomValidator>
