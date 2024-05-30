@@ -65,24 +65,7 @@
             text-decoration: none;
         }
 
-        .camposProdutoPanel  input[type="text"] {
-            min-height: 30px;
-            width: 280px;
-        }
-        .camposProdutoPanel {
-            font-size: 18px
-        }
 
-        .div-campo {
-            display: inline-flex;
-            flex-direction: column;
-            margin: 0px 15px;
-            max-width: 280px;
-        }
-
-        .CancelarEdicaoButton {
-            margin-left: 15px;
-        }
         
     </style>
 </asp:Content>
@@ -97,15 +80,21 @@
 		</asp:LinkButton>
 	</div>
 	<asp:Panel class="camposProdutoPanel" ID="CamposProdutoPanel" runat="server" Visible="true">
-        <gp:TextFormField runat="server" ID="DescricaoTextFormField" LabelText="Descrição"
-            ValidationGroup="CamposProduto" OnServerValidate="DescricaoTextFormField_ServerValidate"/>
+        <div style="display: inline-block; width: auto; gap: 20px">
+            <div style="gap: 20px">     
+                <gp:TextFormField runat="server" ID="DescricaoTextFormField" LabelText="Descrição" style="margin-right: 20px"
+                    ValidationGroup="CamposProduto" OnServerValidate="DescricaoTextFormField_ServerValidate"/>
+         
+                <gp:TextFormField runat="server" ID="VlrUnitarioTextFormField" LabelText="Valor Unitário" format="dinheiro"
+                ValidationGroup="CamposProduto" OnServerValidate="VlrUnitarioTextFormField_ServerValidate"/>
+            </div>
+            <div style="display: flex; justify-content: end; gap: 20px; margin-top: 20px">
+		        <asp:Button runat="server" ID="CadastrarEditarProdutoButton" Text="Cadastrar" ValidationGroup="CamposProduto" OnClick="CadastrarEditarProdutoButton_Click" />
+                <asp:Button runat="server" ID="CancelarEdicaoButton" Text="Cancelar" OnClick="CancelarEdicaoButton_Click"
+                 ValidationGroup="NuloParaNaoMeImpedirDeCancelarAEdicaoSemQueTodosOsCamposEstejamValidos" Visible="false"/>
+            </div>
+        </div>
 
-        <gp:TextFormField runat="server" ID="VlrUnitarioTextFormField" LabelText="Valor Unitário" format="dinheiro"
-        ValidationGroup="CamposProduto" OnServerValidate="VlrUnitarioTextFormField_ServerValidate"/>
-
-		<asp:Button runat="server" ID="CadastrarEditarProdutoButton" Text="Cadastrar" ValidationGroup="CamposProduto" OnClick="CadastrarEditarProdutoButton_Click" />
-        <asp:Button runat="server" CssClass="CancelarEdicaoButton" ID="CancelarEdicaoButton" Text="Cancelar" OnClick="CancelarEdicaoButton_Click"
-            ValidationGroup="NuloParaNaoMeImpedirDeCancelarAEdicaoSemQueTodosOsCamposEstejamValidos" Visible="false"/>
 	</asp:Panel>
 
     <hr class="separadorCamposRegistros" />

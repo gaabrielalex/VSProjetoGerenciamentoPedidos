@@ -101,7 +101,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			int idProdutoSelecionado = Convert.ToInt32(e.CommandArgument);
 			if (idProdutoSelecionado < 0)
 			{
-				PageUtils.mostrarMensagem("Houve um erro ao selecionar o produto para ação selecionada, entre em contato com suporte caso o erro persista.", "E", this);
+				PageUtils.MostrarMensagem("Houve um erro ao selecionar o produto para ação selecionada, entre em contato com suporte caso o erro persista.", "E", this);
 			}
 			else
 			{
@@ -117,7 +117,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 
 				if(e.CommandName == "Excluir")
 				{
-					bool confirmacaoExclusao = PageUtils.solicitarConfirmacao($"Deseja realmente excluir o produto \"{produtoSelecionado.Descricao}\"?");
+					bool confirmacaoExclusao = PageUtils.SolicitarConfirmacao($"Deseja realmente excluir o produto \"{produtoSelecionado.Descricao}\"?");
 
 					if (confirmacaoExclusao)
 					{
@@ -126,16 +126,16 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 							var houveSucesso = ProdutoDAO.excluir(produtoSelecionado.IdProduto ?? 0);
 							if (houveSucesso)
 							{
-								PageUtils.mostrarMensagem("Produto excluído com sucesso!", "S", this);
+								PageUtils.MostrarMensagem("Produto excluído com sucesso!", "S", this);
 								TratarCarregamentoDeDados();
 							} 
 							else{
-								PageUtils.mostrarMensagem("Erro ao excluir produto, tente novamente!", "E", this);
+								PageUtils.MostrarMensagem("Erro ao excluir produto, tente novamente!", "E", this);
 							}
 						}
 						catch (Exception ex)
 						{
-							PageUtils.mostrarMensagem($"Erro ao deletar produto: {ex.Message}", "E", this);
+							PageUtils.MostrarMensagem($"Erro ao deletar produto: {ex.Message}", "E", this);
 
 						}
 						finally
@@ -301,7 +301,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			}
 			catch (Exception ex)
 			{
-				PageUtils.mostrarMensagem($"{ex.Message}", "E", this);
+				PageUtils.MostrarMensagem($"{ex.Message}", "E", this);
 			}
 
 		}
@@ -344,7 +344,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 
 			string descricao = DescricaoTextFormField.Text;
 			if(!decimal.TryParse(VlrUnitarioTextFormField.Text, out decimal vlrUnitario))
-				PageUtils.mostrarMensagem("Valor unitário inválido, por favor insira apenas valores númericos!", "E", this);
+				PageUtils.MostrarMensagem("Valor unitário inválido, por favor insira apenas valores númericos!", "E", this);
 
 			if(CadastrarEditarProdutoButton.Text == VALOR_PADRAO_TEXTO_BOTAO_CADASTRAR)
 			{
@@ -352,13 +352,13 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 				try
 				{
 					ProdutoDAO.inserir(produto);
-					PageUtils.mostrarMensagem("Produto cadastrado com sucesso!", "S", this);
+					PageUtils.MostrarMensagem("Produto cadastrado com sucesso!", "S", this);
 					LimparCamposProduto();
 					TratarCarregamentoDeDados();
 				}
 				catch (Exception ex)
 				{
-					PageUtils.mostrarMensagem($"Erro ao cadastrar produto: {ex.Message}", "E", this);
+					PageUtils.MostrarMensagem($"Erro ao cadastrar produto: {ex.Message}", "E", this);
 				}
 				finally
 				{
@@ -373,16 +373,16 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 					bool houveSucesso = ProdutoDAO.editar(produto, IdUltimoProdutoSelecionadoParaEdicao);
 					if (houveSucesso)
 					{
-						PageUtils.mostrarMensagem("Produto editado com sucesso!", "S", this);
+						PageUtils.MostrarMensagem("Produto editado com sucesso!", "S", this);
 						RetornarPaginaParaConfigsPadrao();
 						TratarCarregamentoDeDados();
 					} else {
-						PageUtils.mostrarMensagem("Erro ao editar produto, tente novamente!", "E", this);
+						PageUtils.MostrarMensagem("Erro ao editar produto, tente novamente!", "E", this);
 					}
 				}
 				catch (Exception ex)
 				{
-					PageUtils.mostrarMensagem($"Erro ao cadastrar produto: {ex.Message}", "E", this);
+					PageUtils.MostrarMensagem($"Erro ao cadastrar produto: {ex.Message}", "E", this);
 				}
 				finally
 				{
