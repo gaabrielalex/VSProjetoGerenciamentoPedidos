@@ -15,10 +15,15 @@
     .gp-text-form-field {
         display: inline-flex;
         flex-direction: column;
+        font-size: 18px;
+    }
+
+    .gp-text-form-field input {
+        width: 280px;
     }
 </style>
 
-<div class="gp-text-form-field <%=CssClass%>">
+<div class="gp-text-form-field <%=CssClass%>" style="<%=Style%>">
     <asp:Label ID="Label" runat="server"></asp:Label>
     <div class="gp-text-box">
 	    <asp:TextBox ID="TextBox" runat="server"></asp:TextBox>

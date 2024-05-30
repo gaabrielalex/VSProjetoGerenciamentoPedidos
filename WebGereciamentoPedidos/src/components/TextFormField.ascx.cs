@@ -9,6 +9,7 @@ namespace WebGereciamentoPedidos.src.components
 {
 	public partial class TextFormField : System.Web.UI.UserControl
 	{
+		public string Style { get; set; }
 		private string _cssClass;
 		public string CssClass
 		{
