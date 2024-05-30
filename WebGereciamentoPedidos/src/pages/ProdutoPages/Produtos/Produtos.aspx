@@ -12,41 +12,10 @@
 			overflow-x: auto;
             margin-top: 35px;
 		}
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-            max-height: 100px;
-        }
 
         .table th, .table td {
             padding: 10px;
             border: 1px solid #ddd;
-        }
-
-        .table th {
-            background-color: #212529;
-            color: white;
-            font-weight: bold;
-        }
-
-        .table-striped tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        .table-header {
-            background-color: #212529;
-            color: white;
-            font-weight: bold;
-        }
-
-        .table-cell {
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-
-        .table-cell-header {
-            background-color: #212529;
-            color: white;
         }
 
         td {
