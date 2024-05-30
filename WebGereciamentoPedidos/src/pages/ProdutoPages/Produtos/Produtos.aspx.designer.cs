@@ -42,31 +42,13 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		protected global::System.Web.UI.WebControls.Panel CamposProdutoPanel;
 
 		/// <summary>
-		/// DescricaoProdutoLabel control.
+		/// DescricaoTextFormField control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label DescricaoProdutoLabel;
-
-		/// <summary>
-		/// DescricaoProdutoTxtBox control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox DescricaoProdutoTxtBox;
-
-		/// <summary>
-		/// DescricaoProdutCV control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.CustomValidator DescricaoProdutCV;
+		protected global::WebGereciamentoPedidos.src.components.TextFormField DescricaoTextFormField;
 
 		/// <summary>
 		/// VlrUnitarioProdutoLabel control.

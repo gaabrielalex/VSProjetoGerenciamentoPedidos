@@ -1,11 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Produtos.aspx.cs" Inherits="WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos" %>
+
+<%@ Register TagPrefix="gp" TagName="TextFormField" Src="~/src/components/TextFormField.ascx" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 	<link href="ProdutosStyles.css" rel="stylesheet" />
     <style>
 
         .container-table {
 			width: 100%;
-            height: 60vh;
+            height: 55vh;
 			overflow-x: auto;
             margin-top: 35px;
 		}
@@ -80,47 +83,10 @@
         .CancelarEdicaoButton {
             margin-left: 15px;
         }
-
-        .erro {
-	        color: #dc3545;
-        }
-
-        .container-editar-produto {
-            display: flex;
-            flex-direction: column;
-        }
         
     </style>
-    <script type="text/javascript">
-        function abrirModal(linkButton) {
-            var id = linkButton.getAttribute("data-id");
-            // Use o ID para carregar dados ou configurar o modal
-            $('#staticBackdrop').modal('show');
-            return false; // Retorne false para evitar postback
-        }
-	 </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-    <!-- Modal para edição de produtos(Era para ser, vão deixar aqui como consulta futura -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Produto</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body container-editar-produto">
-
-                
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Salvar</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Parte de cadastro de produtos -->
 	<div class="divCadastrarProdutoLinkButton">
@@ -131,20 +97,14 @@
 		</asp:LinkButton>
 	</div>
 	<asp:Panel class="camposProdutoPanel" ID="CamposProdutoPanel" runat="server" Visible="true">
-		<asp:Label ID="DescricaoProdutoLabel" runat="server" Text="Descrição:"></asp:Label>
-        <div class="div-campo container-campo-DescricaoProdutoTxtBox">
-			<asp:TextBox ID="DescricaoProdutoTxtBox" runat="server"></asp:TextBox>
-            <%--ValidateEmptyText="true" serve para que o validation seja chamado mesmo que o 
-            campo seja nulo, desta pode ser feito também validação de campo obrigatório--%>
-            <asp:CustomValidator ID="DescricaoProdutCV" runat="server" ControlToValidate="DescricaoProdutoTxtBox"  ErrorMessage="" 
-            CssClass="erro" ValidationGroup="CamposProduto" OnServerValidate="DescricaoProdutCV_ServerValidate" ValidateEmptyText="true"></asp:CustomValidator>
-        </div>
+        <gp:TextFormField runat="server" ID="DescricaoTextFormField" 
+            LabelText="Descrição" ValidationGroup="CamposProduto" OnServerValidate="DescricaoTextFormField_ServerValidate"/>
 
 		<asp:Label class="teste" ID="VlrUnitarioProdutoLabel" runat="server" Text="Vlr. Unitário:"></asp:Label>
         <div class="div-campo">
 			<asp:TextBox ID="VlrUnitarioProdutoTxtBox" runat="server" CssClass="dinheiro"></asp:TextBox>
             <asp:CustomValidator ID="VlrUnitarioProdutoCV" runat="server" ControlToValidate="VlrUnitarioProdutoTxtBox"  ErrorMessage="" 
-            CssClass="erro " ValidationGroup="CamposProduto" OnServerValidate="VlrUnitarioProdutoCV_ServerValidate" ValidateEmptyText="true"></asp:CustomValidator>
+            CssClass="erro" ValidationGroup="CamposProduto" OnServerValidate="VlrUnitarioProdutoCV_ServerValidate" ValidateEmptyText="true"></asp:CustomValidator>
         </div>
 
 		<asp:Button runat="server" ID="CadastrarEditarProdutoButton" Text="Cadastrar" ValidationGroup="CamposProduto" OnClick="CadastrarEditarProdutoButton_Click" />

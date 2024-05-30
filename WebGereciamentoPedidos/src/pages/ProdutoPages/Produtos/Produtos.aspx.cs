@@ -12,6 +12,7 @@ using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using WebGereciamentoPedidos.src.components;
 using WebGereciamentoPedidos.src.pages.ProdutoPages;
 using WebGereciamentoPedidos.src.util;
 
@@ -59,13 +60,13 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			//Inicializando atributos
-			ProdutoDAO = new ProdutoDAO();
-
 			//Quando eu coloco esse ação aqui para chmar minha função que mostra o toast ele aparece no console do browser que a função não foi encontrada(not defined)
 			//Page.ClientScript.RegisterStartupScript(typeof(Page), "showToast", "showToast('Erro ao deletar produto.', 'error');", true);
 			//Não funciona tb, nem isso
 			//Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "showModalMessage", "alert('teste');", true);
+
+			//Inicializando atributos
+			ProdutoDAO = new ProdutoDAO();
 
 			if (!IsPostBack)
 			{
@@ -151,7 +152,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 					IdUltimoProdutoSelecionadoParaEdicao = idProdutoSelecionado;
 					TituloPanelLabel.Text = VALOR_PADRAO_TITULO_PANEL_EDICAO;
 					CadastrarEditarProdutoButton.Text = VALOR_PADRAO_TEXTO_BOTAO_EDITAR;
-					DescricaoProdutoTxtBox.Text = produtoSelecionado.Descricao;
+					DescricaoTextFormField.Text = produtoSelecionado.Descricao;
 					VlrUnitarioProdutoTxtBox.Text = produtoSelecionado.VlrUnitario.ToString();
 					CancelarEdicaoButton.Visible = true;
 					CamposProdutoPanel.Visible = true;
@@ -190,7 +191,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			Session["TituloPanelLabel.Text"] = TituloPanelLabel.Text;
 			Session["CadastrarProdutoButton.Text"] = CadastrarEditarProdutoButton.Text;
 			Session["CancelarEdicaoButton.Visible"] = CancelarEdicaoButton.Visible;
-			Session["DescricaoProdutoTxtBoxText"] = DescricaoProdutoTxtBox.Text;
+			Session["DescricaoProdutoTxtBoxText"] = DescricaoTextFormField.Text;
 			Session["VlrUnitarioProdutoTxtBoxText"] = VlrUnitarioProdutoTxtBox.Text;
 		}
 		private void CarregarEstadoDeVariaveisEComponentesNecesarios()
@@ -238,11 +239,11 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			// Verificar e carregar o texto da descrição do produto
 			if (Session["DescricaoProdutoTxtBoxText"] != null)
 			{
-				DescricaoProdutoTxtBox.Text = Session["DescricaoProdutoTxtBoxText"].ToString();
+				DescricaoTextFormField.Text = Session["DescricaoProdutoTxtBoxText"].ToString();
 			}
 			else
 			{
-				DescricaoProdutoTxtBox.Text = ""; // Valor padrão
+				DescricaoTextFormField.Text = ""; // Valor padrão
 			}
 
 			// Verificar e carregar o texto do valor unitário do produto
@@ -269,34 +270,40 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			//recuperrabdo as informações via seesion
 		}
 
-		protected void DescricaoProdutCV_ServerValidate(object source, ServerValidateEventArgs args)
+		protected void DescricaoTextFormField_ServerValidate(object source, ServerValidateEventArgs args)
 		{
 			string descricao = args.Value;
 
 			//Validação se campo obrigatório
-			if(descricao == "") {
-				DescricaoProdutCV.ErrorMessage = "Campo obrigatório!";
+			if (descricao == "")
+			{
+				DescricaoTextFormField.ErrorMessage = "Campo obrigatório!";
 				args.IsValid = false;
 			}
 
 			//Validação de tamanho limite da string
-			if(descricao.Length > 200)
+			if (descricao.Length > 200)
 			{
-				DescricaoProdutCV.ErrorMessage = "Tamanho máximo de 200 caracteres excedido!";
+				DescricaoTextFormField.ErrorMessage = "Tamanho máximo de 200 caracteres excedido!";
 				args.IsValid = false;
 			}
 
 			//Validação da já existência do produto
 			bool produtoJaExiste = false;
-			try {
+			try
+			{
 				produtoJaExiste = ProdutoDAO.DescricaoJaExiste(descricao);
-			} catch (Exception ex) {
+				if (produtoJaExiste)
+				{
+					DescricaoTextFormField.ErrorMessage = "Produto já existente!";
+					args.IsValid = false;
+				}
+			}
+			catch (Exception ex)
+			{
 				PageUtils.mostrarMensagem($"{ex.Message}", "E", this);
 			}
-			if (produtoJaExiste) {
-				DescricaoProdutCV.ErrorMessage = "Produto já existente!";
-				args.IsValid = false ;
-			}
+
 		}
 
 		protected void VlrUnitarioProdutoCV_ServerValidate(object source, ServerValidateEventArgs args)
@@ -335,7 +342,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 				return;
 			}
 
-			string descricao = DescricaoProdutoTxtBox.Text;
+			string descricao = DescricaoTextFormField.Text;
 			if(!decimal.TryParse(VlrUnitarioProdutoTxtBox.Text, out decimal vlrUnitario))
 				PageUtils.mostrarMensagem("Valor unitário inválido, por favor insira apenas valores númericos!", "E", this);
 
@@ -387,7 +394,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		}
 
 		private void LimparCamposProduto() {
-			DescricaoProdutoTxtBox.Text = "";
+			DescricaoTextFormField.Text = "";
 			VlrUnitarioProdutoTxtBox.Text = "";
 		}
 
@@ -400,10 +407,11 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		{
 			TituloPanelLabel.Text = VALOR_PADRAO_TITULO_PANEL_CADASTRO;
 			CadastrarEditarProdutoButton.Text = VALOR_PADRAO_TEXTO_BOTAO_CADASTRAR;
-			DescricaoProdutoTxtBox.Text = "";
+			DescricaoTextFormField.Text = "";
 			VlrUnitarioProdutoTxtBox.Text = "";
 			CancelarEdicaoButton.Visible = false;
 		}
+
 	}
 
 }
