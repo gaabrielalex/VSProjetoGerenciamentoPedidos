@@ -8,6 +8,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Optimization;
+using System.Web.Script.Serialization;
+using System.Web.Script.Services;
+using System.Web.Services;
 using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -115,40 +118,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 					}
 				}
 
-				if(e.CommandName == "Excluir")
-				{
-					bool confirmacaoExclusao = PageUtils.SolicitarConfirmacao($"Deseja realmente excluir o produto \"{produtoSelecionado.Descricao}\"?");
-
-					if (confirmacaoExclusao)
-					{
-						try
-						{
-							var houveSucesso = ProdutoDAO.excluir(produtoSelecionado.IdProduto ?? 0);
-							if (houveSucesso)
-							{
-								PageUtils.MostrarMensagem("Produto excluído com sucesso!", "S", this);
-								TratarCarregamentoDeDados();
-							} 
-							else{
-								PageUtils.MostrarMensagem("Erro ao excluir produto, tente novamente!", "E", this);
-							}
-						}
-						catch (Exception ex)
-						{
-							PageUtils.MostrarMensagem($"Erro ao deletar produto: {ex.Message}", "E", this);
-
-						}
-						finally
-						{
-							//Se cair no catch ele não vai executar esse função que esta tb sendo acionado no final
-							//dessa função, desta forme o mesmo deve ser chamado aqui tb
-							ImpedirResubimissaoDeFormulario(Response, Request, Context);
-						}
-					}
-					
-				}
-
-				else if(e.CommandName == "Editar") {
+				if(e.CommandName == "Editar") {
 					IdUltimoProdutoSelecionadoParaEdicao = idProdutoSelecionado;
 					TituloPanelLabel.Text = VALOR_PADRAO_TITULO_PANEL_EDICAO;
 					CadastrarEditarProdutoButton.Text = VALOR_PADRAO_TEXTO_BOTAO_EDITAR;
@@ -412,6 +382,29 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			CancelarEdicaoButton.Visible = false;
 		}
 
+		[WebMethod]
+		[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+		public static string ExcluirProduto(int id)
+		{
+			var houveSucesso = new ProdutoDAO().excluir(id);
+			if(!houveSucesso) 
+				throw new Exception("Erro ao deletar o produto");
+		
+			var response = new
+			{
+				Message = $"Registro {id} excluído com sucesso",
+				Success = true
+			};
+
+			// Serializa o objeto para JSON
+			JavaScriptSerializer js = new JavaScriptSerializer();
+			return js.Serialize(response);
+		}
+
+		protected void DepoisDeExcluirProduto(object sender, EventArgs e)
+		{
+			TratarCarregamentoDeDados();
+		}
 	}
 
 }

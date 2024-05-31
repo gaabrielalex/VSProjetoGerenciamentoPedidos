@@ -3,7 +3,6 @@
 <%@ Register TagPrefix="gp" TagName="TextFormField" Src="~/src/components/TextFormField.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
-	<link href="ProdutosStyles.css" rel="stylesheet" />
     <style>
 
         .container-table {
@@ -33,9 +32,6 @@
         .divCadastrarProdutoLinkButton a {
             text-decoration: none;
         }
-
-
-        
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -59,7 +55,7 @@
             </div>
             <div style="display: flex; justify-content: end; gap: 20px; margin-top: 20px">
 		        <asp:Button runat="server" ID="CadastrarEditarProdutoButton" Text="Cadastrar" ValidationGroup="CamposProduto" OnClick="CadastrarEditarProdutoButton_Click" />
-                <asp:Button runat="server" ID="CancelarEdicaoButton" Text="Cancelar" OnClick="CancelarEdicaoButton_Click"
+                <asp:Button runat="server" ID="CancelarEdicaoButton" Text="Cancelar" OnClick="CancelarEdicaoButton_Click" OnClientClick="abrirModalConfirmacao()"
                  ValidationGroup="NuloParaNaoMeImpedirDeCancelarAEdicaoSemQueTodosOsCamposEstejamValidos" Visible="false"/>
             </div>
         </div>
@@ -104,7 +100,7 @@
                 <asp:TemplateField>
                     <ItemTemplate>
                         <asp:LinkButton ID="ExcluirLK" runat="server" CommandName="Excluir" CommandArgument='<%# Eval("IdProduto") %>'
-                            Text="Excluir">
+                            Text="Excluir" CssClass="excluirLK" data-idproduto='<%# Eval("IdProduto") %>' data-descricao='<%# Eval("Descricao") %>'>
                         </asp:LinkButton>
                     </ItemTemplate>
                     <ItemStyle Width="100px" />
@@ -113,4 +109,40 @@
             </asp:GridView>
         </table>
     </div>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="PageScripts" runat="server">
+    <script>
+		$(document).ready(function () {
+			$(".excluirLK").click(function (event) {
+				event.preventDefault(); // Evita o comportamento padrão do link que seria realizar o postBack
+				const idRegistro = $(this).data('idproduto');
+                const descricaoRegistro = $(this).data('descricao');
+				const urlMetodo = "Produtos.aspx/ExcluirProduto";
+                const callbackSucesso = () => {
+                    showToast({ message: "Produto excluído com sucesso", type: "s" });
+					delay(2500).then(function () {
+						__doPostBack('DepoisDeExcluirProduto', '');
+					});
+                }
+                const callbackErro = (xhr, status, error) => {
+                    var errorPayload = JSON.parse(xhr.responseText);
+                    showToast({
+                        message: `Houve um erro ao excluir o produto: ${errorPayload.ExceptionType} - ${errorPayload.Message}`,
+                        type: "e"
+                    })
+                }
+               
+                abriModalConfirmacaoExclusao(
+                    { idRegistro, descricaoRegistro, urlMetodo, callbackSucesso, callbackErro }
+                );
+
+            });
+
+		    function delay(ms) {
+			    return new Promise(resolve => setTimeout(resolve, ms));
+		    }
+
+        });
+	</script>
 </asp:Content>
