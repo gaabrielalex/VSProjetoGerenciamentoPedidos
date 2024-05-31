@@ -4,185 +4,186 @@
 
 <html lang="en">
 <head runat="server">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %>Gerenciamentos Pedidos</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title><%: Page.Title %>Gerenciamentos Pedidos</title>
 
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
+	<asp:PlaceHolder runat="server">
+		<%: Scripts.Render("~/bundles/modernizr") %>
+	</asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="~/resources/css/masterStyles.css" rel="stylesheet" />
-    <link href="resources/css/stilosGerais.css" rel="stylesheet" />
-    <asp:ContentPlaceHolder ID="Head" runat="server">
-    </asp:ContentPlaceHolder>
+	<webopt:BundleReference runat="server" Path="~/Content/css" />
+	<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link href="~/resources/css/masterStyles.css" rel="stylesheet" />
+	<link href="resources/css/stilosGerais.css" rel="stylesheet" />
+	<asp:ContentPlaceHolder ID="Head" runat="server">
+	</asp:ContentPlaceHolder>
 
 </head>
 <body>
-    <form runat="server">
-        <asp:ScriptManager runat="server">
-            <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
-                <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
-            </Scripts>
-        </asp:ScriptManager>
+	<form runat="server">
+		<asp:ScriptManager runat="server">
+			<Scripts>
+				<%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+				<%--Framework Scripts--%>
+				<asp:ScriptReference Name="MsAjaxBundle" />
+				<asp:ScriptReference Name="jquery" />
+				<asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+				<asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+				<asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+				<asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+				<asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+				<asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+				<asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+				<asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+				<asp:ScriptReference Name="WebFormsBundle" />
+				<%--Site Scripts--%>
+			</Scripts>
+		</asp:ScriptManager>
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" runat="server" href="~/">Gerenciamento Pedidos</a>
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/src/pages/ProdutoPages/Produtos/Produtos">Produtos</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="#">Pedidos</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-          
-           <!--No html final que é renderizado hr eo footer estão indo para fora da div "<div class="container body-content">" -->
-            <%--<hr />
+		<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+			<div class="container">
+				<a class="navbar-brand" runat="server" href="~/">Gerenciamento Pedidos</a>
+				<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+					<ul class="navbar-nav flex-grow-1">
+						<li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
+						<li class="nav-item"><a class="nav-link" runat="server" href="#">Produtos</a></li>
+						<li class="nav-item"><a class="nav-link" runat="server" href="#">Pedidos</a></li>
+						<li class="nav-item"><a class="nav-link" runat="server" href="~/src/pages/ProdutoPages/Produtos/Produtos">Produtos(Antigo)</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container body-content">
+			<asp:ContentPlaceHolder ID="MainContent" runat="server">
+			</asp:ContentPlaceHolder>
+
+			<!--No html final que é renderizado hr eo footer estão indo para fora da div "<div class="container body-content">" -->
+			<%--<hr />
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
             </footer>--%>
-        </div>
-    </form>
+		</div>
+	</form>
 
-    <!-------- Scripts diversos -------->
+	<!-------- Scripts diversos -------->
 
-        <!-- Máscara para formato monetário -->
-        <script src="//code.jquery.com/jquery.js"></script>
-        <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+	<!-- Máscara para formato monetário -->
+	<script src="//code.jquery.com/jquery.js"></script>
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 
-        <script type="text/javascript">
-	        $('.dinheiro').mask('#.##0,00', { reverse: true });
-        </script>
+	<script type="text/javascript">
+		$('.dinheiro').mask('#.##0,00', { reverse: true });
+	</script>
 
-    <!-------- Componentes de uso compartilhado -------->
+	<!-------- Componentes de uso compartilhado -------->
 
-        <!-- Modal confirmação exclusão -->
-        <div class="modal fade" id="modalConfirmacaoExclusao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="modalConfirmacaoExclusaoLabel">Confirmação</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-                        <button type="button" class="btn btn-primary btn-sim">Sim</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+	<!-- Modal confirmação exclusão -->
+	<div class="modal fade" id="modalConfirmacaoExclusao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="modalConfirmacaoExclusaoLabel">Confirmação</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+					<button type="button" class="btn btn-primary btn-sim">Sim</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
-        <script type="text/javascript">
-            function abriModalConfirmacaoExclusao({ idRegistro, descricaoRegistro, urlMetodo, callbackSucesso, callbackErro, complete }) {
-				const dados = {
-					id: idRegistro,
-                }
-				const beforeSend = fecharModal;
-
-                $('#modalConfirmacaoExclusao .modal-body').text(`Tem certeza que deseja excluir o registro "${descricaoRegistro}"?`);
-                $('#modalConfirmacaoExclusao .btn-sim').off('click').on('click', () => confirmarExclusao(
-					{ urlMetodo, dados, beforeSend, callbackSucesso, callbackErro, complete }
-                ));
-		        $('#modalConfirmacaoExclusao').modal('show');
-		        return false; // Retorne false para evitar postback
-            }
-
-            function fecharModal() {
-				$('#modalConfirmacaoExclusao').modal('hide');
-            }
-
-			function confirmarExclusao({ urlMetodo, dados, beforeSend, callbackSucesso, callbackErro, complete }) {
-                $.ajax({
-                    type: "POST",
-                    url: urlMetodo,
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    data: JSON.stringify(dados),
-					beforeSend: beforeSend,
-                    success: callbackSucesso,
-                    error: callbackErro,
-                    complete: complete
-                });
+	<script type="text/javascript">
+		function abriModalConfirmacaoExclusao({ idRegistro, descricaoRegistro, urlMetodo, callbackSucesso, callbackErro, complete }) {
+			const dados = {
+				id: idRegistro,
 			}
-		</script>
+			const beforeSend = fecharModal;
+
+			$('#modalConfirmacaoExclusao .modal-body').text(`Tem certeza que deseja excluir o registro "${descricaoRegistro}"?`);
+			$('#modalConfirmacaoExclusao .btn-sim').off('click').on('click', () => confirmarExclusao(
+				{ urlMetodo, dados, beforeSend, callbackSucesso, callbackErro, complete }
+			));
+			$('#modalConfirmacaoExclusao').modal('show');
+			return false; // Retorne false para evitar postback
+		}
+
+		function fecharModal() {
+			$('#modalConfirmacaoExclusao').modal('hide');
+		}
+
+		function confirmarExclusao({ urlMetodo, dados, beforeSend, callbackSucesso, callbackErro, complete }) {
+			$.ajax({
+				type: "POST",
+				url: urlMetodo,
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				data: JSON.stringify(dados),
+				beforeSend: beforeSend,
+				success: callbackSucesso,
+				error: callbackErro,
+				complete: complete
+			});
+		}
+	</script>
 
 
-        <!-- Toast -->
-        <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-end align-items-end w-100 ;" style="position: fixed; top: 85px; right: 30px; z-index: 9999;  overflow: hidden;">
+	<!-- Toast -->
+	<div aria-live="polite" aria-atomic="true" class="d-flex justify-content-end align-items-end w-100 ;" style="position: fixed; top: 85px; right: 30px; z-index: 9999; overflow: hidden;">
 
-          <!-- Then put toasts within -->
-          <div runat="server" id="toastMessage" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-              <%--<img src="" class="rounded me-2" alt="...">--%>
-              <strong class="me-auto">Bootstrap</strong>
-              <small>Agora</small>
-              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body">
-              <!-- Mensagem será inserida aqui -->
-            </div>
-          </div>
-        </div>
+		<!-- Then put toasts within -->
+		<div runat="server" id="toastMessage" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="toast-header">
+				<%--<img src="" class="rounded me-2" alt="...">--%>
+				<strong class="me-auto">Bootstrap</strong>
+				<small>Agora</small>
+				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+			<div class="toast-body">
+				<!-- Mensagem será inserida aqui -->
+			</div>
+		</div>
+	</div>
 
-        <script type="text/javascript">
-            function showToast({ message, type }) {
-				var toastElement = document.getElementById('toastMessage');
-				var toastHeader = document.querySelector('#toastMessage .toast-header strong');
-				var toastBody = document.querySelector('#toastMessage .toast-body');
+	<script type="text/javascript">
+		function showToast({ message, type }) {
+			var toastElement = document.getElementById('toastMessage');
+			var toastHeader = document.querySelector('#toastMessage .toast-header strong');
+			var toastBody = document.querySelector('#toastMessage .toast-body');
 
-				// Set the message
-				toastBody.innerHTML = message;
+			// Set the message
+			toastBody.innerHTML = message;
 
-				// Set the type of toast
-				if (type === 's') {
-					toastHeader.innerHTML = 'Sucesso';
-					toastElement.className = 'toast bg-success text-white'; // You can add more classes as needed
-				} else if (type === 'e') {
-					toastHeader.innerHTML = 'Erro';
-					toastElement.className = 'toast bg-danger text-white'; // You can add more classes as needed
-				}
-
-				// Show the toast
-				var toast = new bootstrap.Toast(toastElement);
-				toast.show();
+			// Set the type of toast
+			if (type === 's') {
+				toastHeader.innerHTML = 'Sucesso';
+				toastElement.className = 'toast bg-success text-white'; // You can add more classes as needed
+			} else if (type === 'e') {
+				toastHeader.innerHTML = 'Erro';
+				toastElement.className = 'toast bg-danger text-white'; // You can add more classes as needed
 			}
-        </script>
+
+			// Show the toast
+			var toast = new bootstrap.Toast(toastElement);
+			toast.show();
+		}
+	</script>
 
 
-    <asp:ContentPlaceHolder ID="PageScripts" runat="server">
-    </asp:ContentPlaceHolder>
+	<asp:ContentPlaceHolder ID="PageScripts" runat="server">
+	</asp:ContentPlaceHolder>
 
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
-    </asp:PlaceHolder>
+	<asp:PlaceHolder runat="server">
+		<%: Scripts.Render("~/Scripts/bootstrap.js") %>
+	</asp:PlaceHolder>
 
 </body>
 </html>
