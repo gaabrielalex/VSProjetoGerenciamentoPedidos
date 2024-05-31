@@ -187,9 +187,11 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
-    <Content Include="src\components\TextFormField.ascx" />
-    <Content Include="src\pages\ProdutoPages\Produtos\Produtos.aspx" />
-    <Content Include="src\pages\ProdutoPages\Produtos\ProdutosStyles.css" />
+    <Content Include="src\components\Filtro\Filtro.ascx" />
+    <Content Include="src\components\TextFormField\TextFormField.ascx" />
+    <Content Include="src\pages\ProdutoPages\Produtos%28Antigo%29\Produtos.aspx" />
+    <Content Include="src\pages\ProdutoPages\Produtos%28Antigo%29\ProdutosStyles.css" />
+    <Content Include="src\pages\ProdutoPages\Produtos%28Novo%29\ProdutosNovo.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -223,19 +225,33 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="src\components\TextFormField.ascx.cs">
+    <Compile Include="src\components\Filtro\Filtro.ascx.cs">
+      <DependentUpon>Filtro.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\components\Filtro\Filtro.ascx.designer.cs">
+      <DependentUpon>Filtro.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="src\components\TextFormField\TextFormField.ascx.cs">
       <DependentUpon>TextFormField.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="src\components\TextFormField.ascx.designer.cs">
+    <Compile Include="src\components\TextFormField\TextFormField.ascx.designer.cs">
       <DependentUpon>TextFormField.ascx</DependentUpon>
     </Compile>
-    <Compile Include="src\pages\ProdutoPages\Produtos\Produtos.aspx.cs">
+    <Compile Include="src\pages\ProdutoPages\Produtos%28Antigo%29\Produtos.aspx.cs">
       <DependentUpon>Produtos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="src\pages\ProdutoPages\Produtos\Produtos.aspx.designer.cs">
+    <Compile Include="src\pages\ProdutoPages\Produtos%28Antigo%29\Produtos.aspx.designer.cs">
       <DependentUpon>Produtos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\pages\ProdutoPages\Produtos%28Novo%29\ProdutosNovo.aspx.cs">
+      <DependentUpon>ProdutosNovo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\pages\ProdutoPages\Produtos%28Novo%29\ProdutosNovo.aspx.designer.cs">
+      <DependentUpon>ProdutosNovo.aspx</DependentUpon>
     </Compile>
     <Compile Include="src\util\PageUtils.cs" />
     <Compile Include="src\util\ResponseMessage.cs" />

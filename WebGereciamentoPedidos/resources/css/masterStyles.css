@@ -4,12 +4,3 @@ body {
 	background-color: #f0f0f0 !important;
 }
 
-.FiltrarTextBox, .FiltrarButton{
-	min-height: 42px;
-	margin-right: 0;
-}
-
-.FiltrarTextBox {
-	width: 400px;
-	max-width: 400px;
-}
