@@ -15,31 +15,31 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 	{
 
 		/// <summary>
-		/// TituloPanelLabel control.
+		/// TituloLabel control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label TituloPanelLabel;
+		protected global::System.Web.UI.WebControls.Label TituloLabel;
 
 		/// <summary>
-		/// Filtro control.
+		/// ProdutoFiltro control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::WebGereciamentoPedidos.src.components.Filtro Filtro;
+		protected global::WebGereciamentoPedidos.src.components.Filtro ProdutoFiltro;
 
 		/// <summary>
-		/// lblTitulo control.
+		/// NovoProdutoButton control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label lblTitulo;
+		protected global::System.Web.UI.WebControls.Button NovoProdutoButton;
 
 		/// <summary>
 		/// ProdutosGW control.

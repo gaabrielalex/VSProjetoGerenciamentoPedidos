@@ -1,10 +1,8 @@
-﻿
-<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebGereciamentoPedidos.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebGereciamentoPedidos.SiteMaster" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head runat="server">
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +16,7 @@
 	<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<link href="~/resources/css/masterStyles.css" rel="stylesheet" />
 	<link href="resources/css/stilosGerais.css" rel="stylesheet" />
-	<style>
+	<style type="text/css">
 		input[type="submit"] {
 			height: 42px;
 			padding: 0 20px;
@@ -53,7 +51,8 @@
 			<div class="container">
 				<a class="navbar-brand" runat="server" href="~/">Gerenciamento Pedidos</a>
 				<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-					aria-expanded="false" aria-label="Toggle navigation">B
+					aria-expanded="false" aria-label="Toggle navigation">
+					B
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
@@ -114,18 +113,21 @@
 			$('#modalConfirmacaoExclusao').modal('hide');
 		}
 
-		function abriModalConfirmacaoExclusaoComPostBack({ idRegistro, descricaoRegistro, urlMetodo, callbackSucesso, callbackErro, complete }) {
-			const dados = {
-				id: idRegistro,
-			}
-			const beforeSend = fecharModal;
+		//Trechos de códigos incompletos, não terminei de implementar
+		//function abriModalConfirmacaoExclusaoComPostBack({ nomeMetodoParaRealizarExclusao, idRegistro, descricaoRegistro }) {
+		//	const beforeSend = fecharModal;
 
-			$('#modalConfirmacaoExclusao .modal-body').text(`Tem certeza que deseja excluir o registro "${descricaoRegistro}"?`);
-			$('#modalConfirmacaoExclusao .btn-sim').off('click').on('click', () => confirmarExclusaoComAjax(
-				{ urlMetodo, dados, beforeSend, callbackSucesso, callbackErro, complete }
-			));
-			$('#modalConfirmacaoExclusao').modal('show');
-		}
+		//	$('#modalConfirmacaoExclusao .modal-body').text(`Tem certeza que deseja excluir o registro "${descricaoRegistro}"?`);
+		//	$('#modalConfirmacaoExclusao .btn-sim').off('click').on('click', () => confirmarExclusaoComPostBack(
+		//		{ nomeMetodoParaRealizarExclusao, idRegistro, beforeSend }
+		//	));
+		//	$('#modalConfirmacaoExclusao').modal('show');
+		//}
+
+		//function confirmarExclusaoComPostBack({ nomeMetodoParaRealizarExclusao, idRegistro, beforeSend }) {
+		//	beforeSend();
+		//	__doPostBack("ExcluirProduto", "");
+		//}
 
 		function abriModalConfirmacaoExclusaoComAjax({ idRegistro, descricaoRegistro, urlMetodo, callbackSucesso, callbackErro, complete }) {
 			const dados = {
@@ -197,7 +199,6 @@
 			toast.show();
 		}
 	</script>
-
 
 	<asp:ContentPlaceHolder ID="PageScripts" runat="server">
 	</asp:ContentPlaceHolder>
