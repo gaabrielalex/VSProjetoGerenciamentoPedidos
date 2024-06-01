@@ -1,8 +1,10 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebGereciamentoPedidos.SiteMaster" %>
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebGereciamentoPedidos.SiteMaster" %>
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,6 +18,12 @@
 	<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<link href="~/resources/css/masterStyles.css" rel="stylesheet" />
 	<link href="resources/css/stilosGerais.css" rel="stylesheet" />
+	<style>
+		input[type="submit"] {
+			height: 42px;
+			padding: 0 20px;
+		}
+	</style>
 	<asp:ContentPlaceHolder ID="Head" runat="server">
 	</asp:ContentPlaceHolder>
 
@@ -63,10 +71,10 @@
 			</asp:ContentPlaceHolder>
 
 			<!--No html final que é renderizado hr eo footer estão indo para fora da div "<div class="container body-content">" -->
-			<hr />
+			<%--<hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Gerenciamento Pedidos</p>
-            </footer>
+               <p>&copy; <%: DateTime.Now.Year %> - Gerenciamento Pedidos</p>
+            </footer>--%>
 		</div>
 	</form>
 
@@ -102,25 +110,38 @@
 	</div>
 
 	<script type="text/javascript">
-		function abriModalConfirmacaoExclusao({ idRegistro, descricaoRegistro, urlMetodo, callbackSucesso, callbackErro, complete }) {
+		function fecharModal() {
+			$('#modalConfirmacaoExclusao').modal('hide');
+		}
+
+		function abriModalConfirmacaoExclusaoComPostBack({ idRegistro, descricaoRegistro, urlMetodo, callbackSucesso, callbackErro, complete }) {
 			const dados = {
 				id: idRegistro,
 			}
 			const beforeSend = fecharModal;
 
 			$('#modalConfirmacaoExclusao .modal-body').text(`Tem certeza que deseja excluir o registro "${descricaoRegistro}"?`);
-			$('#modalConfirmacaoExclusao .btn-sim').off('click').on('click', () => confirmarExclusao(
+			$('#modalConfirmacaoExclusao .btn-sim').off('click').on('click', () => confirmarExclusaoComAjax(
+				{ urlMetodo, dados, beforeSend, callbackSucesso, callbackErro, complete }
+			));
+			$('#modalConfirmacaoExclusao').modal('show');
+		}
+
+		function abriModalConfirmacaoExclusaoComAjax({ idRegistro, descricaoRegistro, urlMetodo, callbackSucesso, callbackErro, complete }) {
+			const dados = {
+				id: idRegistro,
+			}
+			const beforeSend = fecharModal;
+
+			$('#modalConfirmacaoExclusao .modal-body').text(`Tem certeza que deseja excluir o registro "${descricaoRegistro}"?`);
+			$('#modalConfirmacaoExclusao .btn-sim').off('click').on('click', () => confirmarExclusaoComAjax(
 				{ urlMetodo, dados, beforeSend, callbackSucesso, callbackErro, complete }
 			));
 			$('#modalConfirmacaoExclusao').modal('show');
 			return false; // Retorne false para evitar postback
 		}
 
-		function fecharModal() {
-			$('#modalConfirmacaoExclusao').modal('hide');
-		}
-
-		function confirmarExclusao({ urlMetodo, dados, beforeSend, callbackSucesso, callbackErro, complete }) {
+		function confirmarExclusaoComAjax({ urlMetodo, dados, beforeSend, callbackSucesso, callbackErro, complete }) {
 			$.ajax({
 				type: "POST",
 				url: urlMetodo,
@@ -186,4 +207,4 @@
 	</asp:PlaceHolder>
 
 </body>
-</html>
+</>
