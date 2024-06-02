@@ -37,9 +37,9 @@
 				</div>
 				<div class="row">
 					<div class="buttons-FormAddEditProdutoPanel">
-						<asp:Button runat="server" ID="Button1" ValidationGroup="CamposProduto" Text="Cancelar"
+						<asp:Button runat="server" ID="CancelarButton" ValidationGroup="CamposProduto" Text="Cancelar" Onclick="CancelarButton_Click"
 							CssClass="btn btn-lg btn-secondary SubmitButtonModalFormAddEditProduto" CausesValidation="false" />
-						<asp:Button runat="server" ID="Button2" ValidationGroup="CamposProduto" Text="Salvar"
+						<asp:Button runat="server" ID="SalvarButton" ValidationGroup="CamposProduto" Text="Salvar"
 							CssClass="btn btn-lg btn-primary SubmitButtonModalFormAddEditProduto" />
 					</div>
 				</div>

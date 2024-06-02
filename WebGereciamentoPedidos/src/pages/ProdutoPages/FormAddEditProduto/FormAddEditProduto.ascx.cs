@@ -106,5 +106,10 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 				args.IsValid = false;
 			}
 		}
+
+		protected void CancelarButton_Click(object sender, EventArgs e)
+		{
+			Response.Redirect(Request.RawUrl, false);
+		}
 	}
 }
