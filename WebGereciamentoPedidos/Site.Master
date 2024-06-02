@@ -177,7 +177,7 @@
 	</div>
 
 	<script type="text/javascript">
-		function showToast({ message, type }) {
+		function showToast(message, type) {
 			var toastElement = document.getElementById('toastMessage');
 			var toastHeader = document.querySelector('#toastMessage .toast-header strong');
 			var toastBody = document.querySelector('#toastMessage .toast-body');
