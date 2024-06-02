@@ -31,8 +31,10 @@ namespace WebGereciamentoPedidos.src.components
 			}
 			set 
 			{
-				if (value == "dinheiro")
+				if (value == "dinheiro") {
 					TextBoxControl.CssClass += "dinheiro".Insert(0, " ");
+					_format = value;
+				}
 			}
 		}
 
