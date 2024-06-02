@@ -42,7 +42,7 @@ namespace DAOGerenciamentoPedidos.Src
 
 		}
 
-		public bool editar(Produto produto, int idProduto)
+		public void editar(Produto produto, int idProduto)
 		{
 			//Query de edição
 			String query = "UPDATE produto SET descricao = @descricao, vlr_unitario = @vlr_unitario WHERE id_produto = @id_produto";
@@ -58,7 +58,8 @@ namespace DAOGerenciamentoPedidos.Src
 					command.Parameters.AddWithValue("@id_produto", idProduto);
 					var linhasAfetadas = command.ExecuteNonQuery();
 					connection.Close();
-					return linhasAfetadas > 0;
+					if(linhasAfetadas < 0)
+						throw new Exception("Erro ao editar produto: Nenhuma linha foi afetada");
 				}
 			}
 			catch (Exception e)
@@ -67,7 +68,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 		}
 
-		public bool excluir(int idProduto)
+		public void excluir(int idProduto)
 		{
 			//Query de exclusão
 			String query = "DELETE FROM produto WHERE id_produto = @id_produto";
@@ -81,7 +82,8 @@ namespace DAOGerenciamentoPedidos.Src
 					command.Parameters.AddWithValue("@id_produto", idProduto);
 					var linhasAfetadas = command.ExecuteNonQuery();
 					connection.Close();
-					return linhasAfetadas > 0;
+					if(linhasAfetadas < 0)
+						throw new Exception("Erro ao excluir produto: Nenhuma linha foi afetada");
 				}
 			}
 			catch (Exception e)

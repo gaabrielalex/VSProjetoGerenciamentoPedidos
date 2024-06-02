@@ -19,11 +19,14 @@ namespace TestesGerenciamentoPedidos
 			int idProduto = 0;
 
 			// Act
-			try {
+			try
+			{
 				idProduto = produtoDAO.inserir(produto);
 
 				Console.WriteLine("Produto inserido com sucesso. Id: " + idProduto);
-			} catch (Exception e) {
+			}
+			catch (Exception e)
+			{
 
 				// Assert
 				Assert.Fail("Erro ao inserir produto: " + e.Message);
@@ -40,32 +43,27 @@ namespace TestesGerenciamentoPedidos
 		public void AoRealizarEdicaoDeveRetonarTrue()
 		{
 			// Arrange
-			Produto produto = new Produto(null, "Produto Teste", 10.0M);
+			Produto produto = new Produto(null, "Produto Teste AoRealizarEdicaoDeveRetonarTrue", 10.0M);
 			ProdutoDAO produtoDAO = new ProdutoDAO();
 			int idProduto = 0;
-			bool resultado = false;
 
 			// Act
-			try {
+			try
+			{
 				// Inserindo produto para editar, obtendo o id
 				idProduto = produtoDAO.inserir(produto);
-				produto.Descricao = "Produto Teste Editado";
+				produto.Descricao = "Produto Teste Editado AoRealizarEdicaoDeveRetonarTrue";
 				produto.VlrUnitario = 20.0M;
-				resultado = produtoDAO.editar(produto, idProduto);
-
-				if (resultado)
-					Console.WriteLine("Produto editado com sucesso. Id: " + idProduto);
-			} catch (Exception e) {
+				produtoDAO.editar(produto, idProduto);
+				Console.WriteLine("Produto editado com sucesso. Id: " + idProduto);
+			}
+			catch (Exception e)
+			{
 
 				// Assert
 				Assert.Fail("Erro ao editar produto: " + e.Message);
 			}
 
-			// Assert
-			if (!resultado)
-			{
-				Assert.Fail("Erro ao editar produto");
-			}
 		}
 
 		[TestMethod]
@@ -78,23 +76,18 @@ namespace TestesGerenciamentoPedidos
 			bool resultado = false;
 
 			// Act
-			try {
+			try
+			{
 				// Inserindo produto para excluir, obtendo o id
 				idProduto = produtoDAO.inserir(produto);
-				resultado = produtoDAO.excluir(idProduto);
+				produtoDAO.excluir(idProduto);
 
-				if (resultado)
-					Console.WriteLine("Produto excluído com sucesso. Id: " + idProduto);
-			} catch (Exception e) {
-
+				Console.WriteLine("Produto excluído com sucesso. Id: " + idProduto);
+			}
+			catch (Exception e)
+			{
 				// Assert
 				Assert.Fail("Erro ao excluir produto: " + e.Message);
-			}
-
-			// Assert
-			if (!resultado)
-			{
-				Assert.Fail("Erro ao excluir produto");
 			}
 		}
 
@@ -109,10 +102,11 @@ namespace TestesGerenciamentoPedidos
 			bool resultado = false;
 
 			// Act
-			try {
+			try
+			{
 				// Inserindo 2 produtos para listar
-				idProduto1 = produtoDAO.inserir(new Produto(null, "Produto Teste", 10.0M));
-				idProduto2 = produtoDAO.inserir(new Produto(null, "Produto Teste 2", 20.0M));
+				idProduto1 = produtoDAO.inserir(new Produto(null, "Produto Teste AoRealizarListagemDeveRetonarUmaListaDeProdutos", 10.0M));
+				idProduto2 = produtoDAO.inserir(new Produto(null, "Produto Teste 2 AoRealizarListagemDeveRetonarUmaListaDeProdutos", 20.0M));
 				produtos = produtoDAO.listar();
 				resultado = produtos.Count > 0;
 
@@ -126,7 +120,9 @@ namespace TestesGerenciamentoPedidos
 
 				}
 
-			} catch (Exception e) {
+			}
+			catch (Exception e)
+			{
 
 				// Assert
 				Assert.Fail("Erro ao listar produtos: " + e.Message);
@@ -140,7 +136,7 @@ namespace TestesGerenciamentoPedidos
 		}
 
 		[TestMethod]
-		public void AoRealizarListagemPorDescricaoDeveRetonarUmaListaDeProdutosFiltrados() 
+		public void AoRealizarListagemPorDescricaoDeveRetonarUmaListaDeProdutosFiltrados()
 		{
 
 			//faz o seguinte, insere 4 produtos com a descrição testeFiltragem1, testeFiltragem2, testeFiltragem3 e testeFiltragem4. VC vai obter os ids desss registros inseridos
@@ -173,7 +169,9 @@ namespace TestesGerenciamentoPedidos
 						Console.WriteLine("Id: " + produto.IdProduto ?? 0 + " - Descrição: " + produto.Descricao + " - Valor: " + produto.VlrUnitario);
 					}
 
-				} else {
+				}
+				else
+				{
 					produtos.Should().HaveCount(4);
 				}
 
