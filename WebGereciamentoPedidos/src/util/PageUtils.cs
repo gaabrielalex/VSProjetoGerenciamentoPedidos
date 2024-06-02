@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services.Description;
 using System.Web.UI;
 using System.Windows.Forms;
 
@@ -10,6 +11,19 @@ namespace WebGereciamentoPedidos.src.util
 	public class PageUtils
 	{
 		//Tipos válidos: S (sucesso) e E (erro)
+		public static void MostrarMensagemComToast(string mensagem, string tipo, System.Web.UI.Page page)
+		{	
+			tipo = tipo.ToLower();
+			if (tipo != "s" && tipo != "e")
+			{
+				throw new ArgumentException("Tipo inválido. Deve ser 'S' ou 'E'.");
+			}
+
+			string script = $"showToast('{mensagem}', '{tipo}');";
+			ScriptManager.RegisterStartupScript(page, page.GetType(), "showToast", script, true);
+		}
+
+		/* Métodos antigos */
 		public static void MostrarMensagem(string mensagem, string tipo, System.Web.UI.Page page)
 		{
 			string titulo;
