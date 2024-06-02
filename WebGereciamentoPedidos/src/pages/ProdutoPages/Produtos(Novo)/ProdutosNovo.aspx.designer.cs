@@ -15,6 +15,24 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 	{
 
 		/// <summary>
+		/// FormAddEditProduto control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto.FormAddEditProduto FormAddEditProduto;
+
+		/// <summary>
+		/// ListsagemProdutoPanel control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Panel ListsagemProdutoPanel;
+
+		/// <summary>
 		/// TituloLabel control.
 		/// </summary>
 		/// <remarks>
@@ -22,15 +40,6 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.Label TituloLabel;
-
-		/// <summary>
-		/// Repeater1 control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Repeater Repeater1;
 
 		/// <summary>
 		/// ProdutoFiltro control.

@@ -56,7 +56,7 @@
             <div style="display: flex; justify-content: end; gap: 20px; margin-top: 20px">
 		        <asp:Button runat="server" ID="CadastrarEditarProdutoButton" Text="Cadastrar" ValidationGroup="CamposProduto" OnClick="CadastrarEditarProdutoButton_Click" />
                 <asp:Button runat="server" ID="CancelarEdicaoButton" Text="Cancelar" OnClick="CancelarEdicaoButton_Click" OnClientClick="abrirModalConfirmacao()"
-                 ValidationGroup="NuloParaNaoMeImpedirDeCancelarAEdicaoSemQueTodosOsCamposEstejamValidos" Visible="false"/>
+                 CauseValidation="false" Visible="false"/>
             </div>
         </div>
 

@@ -9,6 +9,5 @@ namespace WebGereciamentoPedidos.src.util
 	{
 		Cadastrar,
 		Editar
-
 	}
 }

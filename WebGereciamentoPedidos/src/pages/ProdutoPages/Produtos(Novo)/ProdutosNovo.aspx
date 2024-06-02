@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProdutosNovo.aspx.cs" Inherits="WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_.ProdutosNovo" %>
 
 <%@ Register TagPrefix="gp" TagName="Filtro" Src="~/src/components/Filtro/Filtro.ascx" %>
+<%@ Register TagPrefix="gp" TagName="FormAddEditProduto" Src="~/src/pages/ProdutoPages/FormAddEditProduto/FormAddEditProduto.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 	<style>
@@ -31,51 +32,56 @@
 	</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+	<gp:FormAddEditProduto runat="server" ID="FormAddEditProduto" />
+
 	<asp:UpdatePanel runat="server">
 		<ContentTemplate>
-			<div class="title-container">
-				<h1 runat="server">
-					<asp:Label ID="TituloLabel" runat="server" Text="Produtos"></asp:Label>
-				</h1>
-			</div>
-			<div class="filtro-container">
-				<gp:Filtro ID="ProdutoFiltro" runat="server" Placeholder="Filtra pela descrição..." OnFiltrarClick="ProdutoFiltro_FiltrarClick" />
-				<asp:Button runat="server" ID="NovoProdutoButton" Text="Novo Produto" />
-			</div>
-			<div class="table-container">
-				<table class="table">
+			<asp:Panel runat="server" ID="ListsagemProdutoPanel">
+				<div class="title-container">
+					<h1 runat="server">
+						<asp:Label ID="TituloLabel" runat="server" Text="Produtos"></asp:Label>
+					</h1>
+				</div>
+				<div class="filtro-container">
+					<gp:Filtro ID="ProdutoFiltro" runat="server" Placeholder="Filtra pela descrição..." OnFiltrarClick="ProdutoFiltro_FiltrarClick" />
+					<asp:Button runat="server" ID="NovoProdutoButton" Text="Novo Produto" OnClick="NovoProdutoButton_Click" />
+				</div>
+				<div class="table-container">
+					<table class="table">
 
-					<asp:GridView
-						ID="ProdutosGW"
-						runat="server"
-						AutoGenerateColumns="False"
-						Width="100%"
-						AllowPaging="false"
-						OnRowCommand="ProdutosGW_RowCommand">
-						<HeaderStyle BackColor="#212529" ForeColor="White" Font-Bold="True" />
-						<Columns>
-							<asp:BoundField DataField="Descricao" HeaderText="Descrição" />
-							<asp:BoundField DataField="VlrUnitario" HeaderText="Valor Unitário" />
-							<asp:TemplateField>
-								<ItemTemplate>
-									<asp:LinkButton ID="EditarLK" runat="server" CommandName="Editar"
-										CommandArgument='<%# Eval("IdProduto") %>' Text="Editar" CausesValidation="False">
-									</asp:LinkButton>
-								</ItemTemplate>
-								<ItemStyle Width="100px" />
-							</asp:TemplateField>
-							<asp:TemplateField>
-								<ItemTemplate>
-									<asp:LinkButton ID="ExcluirLK" runat="server" CommandName="Excluir" CommandArgument='<%# Eval("IdProduto") %>'
-										Text="Excluir" CssClass="excluirLK" data-id-produto='<%# Eval("IdProduto") %>' data-descricao='<%# Eval("Descricao") %>'>
-									</asp:LinkButton>
-								</ItemTemplate>
-								<ItemStyle Width="100px" />
-							</asp:TemplateField>
-						</Columns>
-					</asp:GridView>
-				</table>
-			</div>
+						<asp:GridView
+							ID="ProdutosGW"
+							runat="server"
+							AutoGenerateColumns="False"
+							Width="100%"
+							AllowPaging="false"
+							OnRowCommand="ProdutosGW_RowCommand">
+							<HeaderStyle BackColor="#212529" ForeColor="White" Font-Bold="True" />
+							<Columns>
+								<asp:BoundField DataField="Descricao" HeaderText="Descrição" />
+								<asp:BoundField DataField="VlrUnitario" HeaderText="Valor Unitário" />
+								<asp:TemplateField>
+									<ItemTemplate>
+										<asp:LinkButton ID="EditarLK" runat="server" CommandName="Editar"
+											CommandArgument='<%# Eval("IdProduto") %>' Text="Editar" CausesValidation="False">
+										</asp:LinkButton>
+									</ItemTemplate>
+									<ItemStyle Width="100px" />
+								</asp:TemplateField>
+								<asp:TemplateField>
+									<ItemTemplate>
+										<asp:LinkButton ID="ExcluirLK" runat="server" CommandName="Excluir" CommandArgument='<%# Eval("IdProduto") %>'
+											Text="Excluir" CssClass="excluirLK" data-id-produto='<%# Eval("IdProduto") %>' data-descricao='<%# Eval("Descricao") %>'>
+										</asp:LinkButton>
+									</ItemTemplate>
+									<ItemStyle Width="100px" />
+								</asp:TemplateField>
+							</Columns>
+						</asp:GridView>
+					</table>
+				</div>
+			</asp:Panel>
 		</ContentTemplate>
 	</asp:UpdatePanel>
 </asp:Content>

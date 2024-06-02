@@ -104,7 +104,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			int idProdutoSelecionado = Convert.ToInt32(e.CommandArgument);
 			if (idProdutoSelecionado < 0)
 			{
-				PageUtils.MostrarMensagem("Houve um erro ao selecionar o produto para ação selecionada, entre em contato com suporte caso o erro persista.", "E", this);
+				PageUtils.MostrarMensagemViaAPISistemaOperacionalLocal("Houve um erro ao selecionar o produto para ação selecionada, entre em contato com suporte caso o erro persista.", "E", this);
 			}
 			else
 			{
@@ -272,7 +272,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			}
 			catch (Exception ex)
 			{
-				PageUtils.MostrarMensagem($"{ex.Message}", "E", this);
+				PageUtils.MostrarMensagemViaAPISistemaOperacionalLocal($"{ex.Message}", "E", this);
 			}
 
 		}
@@ -320,7 +320,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 
 			string descricao = DescricaoTextFormField.Text;
 			if (!decimal.TryParse(VlrUnitarioTextFormField.Text, out decimal vlrUnitario))
-				PageUtils.MostrarMensagem("Valor unitário inválido, por favor insira apenas valores númericos!", "E", this);
+				PageUtils.MostrarMensagemViaAPISistemaOperacionalLocal("Valor unitário inválido, por favor insira apenas valores númericos!", "E", this);
 
 			if (CadastrarEditarProdutoButton.Text == VALOR_PADRAO_TEXTO_BOTAO_CADASTRAR)
 			{
@@ -328,13 +328,13 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 				try
 				{
 					ProdutoDAO.inserir(produto);
-					PageUtils.MostrarMensagem("Produto cadastrado com sucesso!", "S", this);
+					PageUtils.MostrarMensagemViaAPISistemaOperacionalLocal("Produto cadastrado com sucesso!", "S", this);
 					LimparCamposProduto();
 					TratarCarregamentoDeDados();
 				}
 				catch (Exception ex)
 				{
-					PageUtils.MostrarMensagem($"Erro ao cadastrar produto: {ex.Message}", "E", this);
+					PageUtils.MostrarMensagemViaAPISistemaOperacionalLocal($"Erro ao cadastrar produto: {ex.Message}", "E", this);
 				}
 				finally
 				{
@@ -347,13 +347,13 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 				try
 				{
 					ProdutoDAO.editar(produto, IdUltimoProdutoSelecionadoParaEdicao);
-					PageUtils.MostrarMensagem("Produto editado com sucesso!", "S", this);
+					PageUtils.MostrarMensagemViaAPISistemaOperacionalLocal("Produto editado com sucesso!", "S", this);
 					RetornarPaginaParaConfigsPadrao();
 					TratarCarregamentoDeDados();
 				}
 				catch (Exception ex)
 				{
-					PageUtils.MostrarMensagem($"Erro ao cadastrar produto: {ex.Message}", "E", this);
+					PageUtils.MostrarMensagemViaAPISistemaOperacionalLocal($"Erro ao cadastrar produto: {ex.Message}", "E", this);
 				}
 				finally
 				{

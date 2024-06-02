@@ -189,6 +189,7 @@
     <Content Include="Site.Master" />
     <Content Include="src\components\Filtro\Filtro.ascx" />
     <Content Include="src\components\TextFormField\TextFormField.ascx" />
+    <Content Include="src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx" />
     <Content Include="src\pages\ProdutoPages\Produtos%28Antigo%29\Produtos.aspx" />
     <Content Include="src\pages\ProdutoPages\Produtos%28Antigo%29\ProdutosStyles.css" />
     <Content Include="src\pages\ProdutoPages\Produtos%28Novo%29\ProdutosNovo.aspx" />
@@ -239,6 +240,13 @@
     <Compile Include="src\components\TextFormField\TextFormField.ascx.designer.cs">
       <DependentUpon>TextFormField.ascx</DependentUpon>
     </Compile>
+    <Compile Include="src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx.cs">
+      <DependentUpon>FormAddEditProduto.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx.designer.cs">
+      <DependentUpon>FormAddEditProduto.ascx</DependentUpon>
+    </Compile>
     <Compile Include="src\pages\ProdutoPages\Produtos%28Antigo%29\Produtos.aspx.cs">
       <DependentUpon>Produtos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -253,6 +261,7 @@
     <Compile Include="src\pages\ProdutoPages\Produtos%28Novo%29\ProdutosNovo.aspx.designer.cs">
       <DependentUpon>ProdutosNovo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="src\util\ModosFomularios.cs" />
     <Compile Include="src\util\PageUtils.cs" />
     <Compile Include="src\util\ResponseMessage.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
