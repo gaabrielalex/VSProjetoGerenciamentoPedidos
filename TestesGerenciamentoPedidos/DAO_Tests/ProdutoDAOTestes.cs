@@ -73,7 +73,6 @@ namespace TestesGerenciamentoPedidos
 			Produto produto = new Produto(null, "Produto Teste", 10.0M);
 			ProdutoDAO produtoDAO = new ProdutoDAO();
 			int idProduto = 0;
-			bool resultado = false;
 
 			// Act
 			try

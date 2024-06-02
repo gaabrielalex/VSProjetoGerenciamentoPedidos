@@ -9,6 +9,7 @@ using System.Web.Script.Services;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using UtilsGerenciamentoPedidos;
 using WebGereciamentoPedidos.src.util;
 
 namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
@@ -81,35 +82,50 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 			Response.Redirect(novaUrl, false);
 		}
 
-		//protected void ProdutosGW_RowCommand(object sender, GridViewCommandEventArgs e)
-		//{
-		//	int idProdutoSelecionado = Convert.ToInt32(e.CommandArgument);
-		//	if (idProdutoSelecionado > 0)
-		//	{
-		//		ClientScript.RegisterClientScriptBlock(typeof(Page), "Alerta", "<script>alert('Houve um erro ao selecionar o produto para ação selecionada, entre em contato com suporte caso o erro persista.!');</script>");
-		//		//"Houve um erro ao selecionar o produto para ação selecionada, entre em contato com suporte caso o erro persista." mostrar essa msg de eror
-		//	}
-		//	else
-		//	{
-		//		Produto produtoSelecionado = new Produto();
-		//		foreach (Produto produto in DadosProdutosAtual)
-		//		{
-		//			if (produto.IdProduto == idProdutoSelecionado)
-		//			{
-		//				produtoSelecionado = produto;
-		//				break;
-		//			}
-		//		}
+		protected void ProdutosGW_RowCommand(object sender, GridViewCommandEventArgs e)
+		{
+			int idProdutoSelecionado = Convert.ToInt32(e.CommandArgument);
+			if (idProdutoSelecionado < 0)
+			{
+				string menssagem = "Houve um erro ao selecionar o produto para ação selecionada, entre em contato com suporte caso o erro persista!";
+				PageUtils.MostrarMensagemViaToast(menssagem, "E", this);
+				return;
+			}
+			else
+			{
+				Produto produtoSelecionado = new Produto();
+				foreach (Produto produto in DadosProdutosAtual)
+				{
+					if (produto.IdProduto == idProdutoSelecionado)
+					{
+						produtoSelecionado = produto;
+						break;
+					}
+				}
 
-		//		if (e.CommandName == "Excluir")
-		//		{
-					
+				if (e.CommandName == "Excluir")
+				{
+					var ehParaExcluir = PageUtils.SolicitarConfirmacaoViaAPISistemaOperacionalLocal("Deseja realmente excluir o produto?");
+					if (!ehParaExcluir)
+						return;
+					try
+					{
+						ProdutoDAO.excluir(idProdutoSelecionado);
+						string mensagem = $"Registro excluído com sucesso";
+						TratarCarregamentoDeDados();
+						PageUtils.MostrarMensagemViaToast(mensagem, "S", this);
+					}
+					catch (Exception ex)
+					{
+						RegistroLog.Log($"Erro ao excluir produto '{ idProdutoSelecionado }' - '{ produtoSelecionado.Descricao }' : '{ex.Message}");
+						string mensagem = "Erro ao deletar o produto";
+						PageUtils.MostrarMensagemViaToast(mensagem, "E", this);
+					}
 
-		//		}
-		//	}
+				}
+			}
 
-		//}
-
+		}
 
 		/* Formas antigas que eu estava tentando usar para excluir um projeto colocando um 
 		 * painel de confirmação antes de excluir o produto */

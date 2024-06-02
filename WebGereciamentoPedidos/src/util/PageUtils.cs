@@ -11,7 +11,7 @@ namespace WebGereciamentoPedidos.src.util
 	public class PageUtils
 	{
 		//Tipos válidos: S (sucesso) e E (erro)
-		public static void MostrarMensagemComToast(string mensagem, string tipo, System.Web.UI.Page page)
+		public static void MostrarMensagemViaToast(string mensagem, string tipo, System.Web.UI.Page page)
 		{	
 			tipo = tipo.ToLower();
 			if (tipo != "s" && tipo != "e")
@@ -23,8 +23,7 @@ namespace WebGereciamentoPedidos.src.util
 			ScriptManager.RegisterStartupScript(page, page.GetType(), "showToast", script, true);
 		}
 
-		/* Métodos antigos */
-		public static void MostrarMensagem(string mensagem, string tipo, System.Web.UI.Page page)
+		public static void MostrarMensagemViaAPISistemaOperacionalLocal(string mensagem, string tipo, System.Web.UI.Page page)
 		{
 			string titulo;
 
@@ -43,23 +42,11 @@ namespace WebGereciamentoPedidos.src.util
 				titulo = "Erro";
 			}
 
-			//Não funciona por enquanto por esse método
-			//string script = $"showToast('{mensagem}', '{tipo}');";
-			//page.ClientScript.RegisterClientScriptBlock(typeof(Page), "showToast", script, true);
-
-			//Não funciona tb
-			//string script = "$('#modalMessage').modal('show'); ";
-			//page.ClientScript.RegisterStartupScript(typeof(Page), "showModalMessage", script, true);
-
-			//Funciona, mas se eu redireciono minhas página para impedir resubmissão o script que eu jogo no client é perdido
-			//page.ClientScript.RegisterClientScriptBlock(typeof(Page), "showmodalmessage", "alert('teste');", true);
-
-			//Funciona
 			MessageBoxButtons buttons = MessageBoxButtons.OK;
 			MessageBox.Show(mensagem, titulo, buttons);
 		}
 
-		public static bool SolicitarConfirmacao(string mensagem)
+		public static bool SolicitarConfirmacaoViaAPISistemaOperacionalLocal(string mensagem)
 		{
 			MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 			DialogResult result;

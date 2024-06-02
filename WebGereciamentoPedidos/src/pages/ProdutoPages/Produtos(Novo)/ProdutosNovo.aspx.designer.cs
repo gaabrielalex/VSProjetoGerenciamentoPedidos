@@ -24,6 +24,15 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 		protected global::System.Web.UI.WebControls.Label TituloLabel;
 
 		/// <summary>
+		/// Repeater1 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Repeater Repeater1;
+
+		/// <summary>
 		/// ProdutoFiltro control.
 		/// </summary>
 		/// <remarks>

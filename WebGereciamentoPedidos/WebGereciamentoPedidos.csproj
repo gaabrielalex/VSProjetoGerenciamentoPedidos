@@ -287,6 +287,10 @@
       <Project>{3551a45a-4117-4969-828f-d1298922be39}</Project>
       <Name>ModelsGerenciamentoPedidos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UtilsGerenciamentoPedidos\UtilsGerenciamentoPedidos.csproj">
+      <Project>{e8505ac8-6139-43e0-ad6f-2072ed6208cd}</Project>
+      <Name>UtilsGerenciamentoPedidos</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

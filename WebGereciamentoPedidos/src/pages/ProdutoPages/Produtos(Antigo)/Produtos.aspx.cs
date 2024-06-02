@@ -118,7 +118,8 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 					}
 				}
 
-				if(e.CommandName == "Editar") {
+				if (e.CommandName == "Editar")
+				{
 					IdUltimoProdutoSelecionadoParaEdicao = idProdutoSelecionado;
 					TituloPanelLabel.Text = VALOR_PADRAO_TITULO_PANEL_EDICAO;
 					CadastrarEditarProdutoButton.Text = VALOR_PADRAO_TEXTO_BOTAO_EDITAR;
@@ -282,25 +283,29 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 
 			//Continua para mim copilot
 			//Validação se campo obrigatório
-			if(vlrUnitario == "") {
+			if (vlrUnitario == "")
+			{
 				VlrUnitarioTextFormField.ErrorMessage = "Campo obrigatório!";
 				args.IsValid = false;
 				return;
 			}
 
 			//Validação de valor numérico
-			if (!decimal.TryParse(vlrUnitario, out decimal vlrUnitarioDecimal)) {
+			if (!decimal.TryParse(vlrUnitario, out decimal vlrUnitarioDecimal))
+			{
 				VlrUnitarioTextFormField.ErrorMessage = "Valor inválido!";
 				args.IsValid = false;
 			}
 
 			//Validação de valor máximo de dígitos
 			string digitosString = vlrUnitarioDecimal.ToString();
-			if(!digitosString.Contains(',')) {
+			if (!digitosString.Contains(','))
+			{
 				digitosString += ",0";
 			}
 			string[] digitos = (digitosString).Split(',');
-			if (digitos[0].Length > 6 || digitos[1].Length > 2) {
+			if (digitos[0].Length > 6 || digitos[1].Length > 2)
+			{
 				VlrUnitarioTextFormField.ErrorMessage = "Valor deve ter no máximo 2 casas decimais e 6 dígitos!";
 				args.IsValid = false;
 			}
@@ -308,15 +313,16 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 
 		protected void CadastrarEditarProdutoButton_Click(object sender, EventArgs e)
 		{
-			if (!Page.IsValid) {
+			if (!Page.IsValid)
+			{
 				return;
 			}
 
 			string descricao = DescricaoTextFormField.Text;
-			if(!decimal.TryParse(VlrUnitarioTextFormField.Text, out decimal vlrUnitario))
+			if (!decimal.TryParse(VlrUnitarioTextFormField.Text, out decimal vlrUnitario))
 				PageUtils.MostrarMensagem("Valor unitário inválido, por favor insira apenas valores númericos!", "E", this);
 
-			if(CadastrarEditarProdutoButton.Text == VALOR_PADRAO_TEXTO_BOTAO_CADASTRAR)
+			if (CadastrarEditarProdutoButton.Text == VALOR_PADRAO_TEXTO_BOTAO_CADASTRAR)
 			{
 				Produto produto = new Produto(null, descricao, vlrUnitario);
 				try
@@ -335,20 +341,15 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 					ImpedirResubimissaoDeFormulario(Response, Request, Context);
 				}
 			}
-			else if(CadastrarEditarProdutoButton.Text == VALOR_PADRAO_TEXTO_BOTAO_EDITAR)
+			else if (CadastrarEditarProdutoButton.Text == VALOR_PADRAO_TEXTO_BOTAO_EDITAR)
 			{
 				Produto produto = new Produto(null, descricao, vlrUnitario);
 				try
 				{
-					bool houveSucesso = ProdutoDAO.editar(produto, IdUltimoProdutoSelecionadoParaEdicao);
-					if (houveSucesso)
-					{
-						PageUtils.MostrarMensagem("Produto editado com sucesso!", "S", this);
-						RetornarPaginaParaConfigsPadrao();
-						TratarCarregamentoDeDados();
-					} else {
-						PageUtils.MostrarMensagem("Erro ao editar produto, tente novamente!", "E", this);
-					}
+					ProdutoDAO.editar(produto, IdUltimoProdutoSelecionadoParaEdicao);
+					PageUtils.MostrarMensagem("Produto editado com sucesso!", "S", this);
+					RetornarPaginaParaConfigsPadrao();
+					TratarCarregamentoDeDados();
 				}
 				catch (Exception ex)
 				{
@@ -363,7 +364,8 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 
 		}
 
-		private void LimparCamposProduto() {
+		private void LimparCamposProduto()
+		{
 			DescricaoTextFormField.Text = "";
 			VlrUnitarioTextFormField.Text = "";
 		}
@@ -386,10 +388,8 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 		public static string ExcluirProduto(int id)
 		{
-			var houveSucesso = new ProdutoDAO().excluir(id);
-			if(!houveSucesso) 
-				throw new Exception("Erro ao deletar o produto");
-		
+			new ProdutoDAO().excluir(id);
+
 			var response = new
 			{
 				Message = $"Registro {id} excluído com sucesso",

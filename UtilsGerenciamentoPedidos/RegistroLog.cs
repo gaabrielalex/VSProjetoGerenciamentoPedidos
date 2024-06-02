@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace UtilsGerenciamentoPedidos
 {
-	public class RegistroLogcs
+	public class RegistroLog
 	{
 		private static string caminhoExe = string.Empty;
 		public static bool Log(string strMensagem, string strNomeArquivo = "ArquivoLog")
 		{
 			try
 			{
-				caminhoExe = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+				string caminhoExe = "C:\\Users\\GabrielSilva\\Desktop\\Projeto-Glayson\\VSProjetoGerenciamentoPedidos";
 				string caminhoArquivo = Path.Combine(caminhoExe, strNomeArquivo);
 				if (!File.Exists(caminhoArquivo))
 				{
