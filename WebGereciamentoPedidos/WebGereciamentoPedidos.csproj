@@ -189,6 +189,7 @@
     <Content Include="Site.Master" />
     <Content Include="src\components\Filtro\Filtro.ascx" />
     <Content Include="src\components\TextFormField\TextFormField.ascx" />
+    <Content Include="src\components\Titulo\Titulo.ascx" />
     <Content Include="src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx" />
     <Content Include="src\pages\ProdutoPages\Produtos%28Antigo%29\Produtos.aspx" />
     <Content Include="src\pages\ProdutoPages\Produtos%28Antigo%29\ProdutosStyles.css" />
@@ -239,6 +240,13 @@
     </Compile>
     <Compile Include="src\components\TextFormField\TextFormField.ascx.designer.cs">
       <DependentUpon>TextFormField.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="src\components\Titulo\Titulo.ascx.cs">
+      <DependentUpon>Titulo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\components\Titulo\Titulo.ascx.designer.cs">
+      <DependentUpon>Titulo.ascx</DependentUpon>
     </Compile>
     <Compile Include="src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx.cs">
       <DependentUpon>FormAddEditProduto.ascx</DependentUpon>
