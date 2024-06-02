@@ -9,24 +9,20 @@
         display: inline-flex;
         flex-direction: column;
         margin-top: 6px;
-        max-width: 280px;
     }
 
     .gp-text-form-field {
         display: inline-flex;
         flex-direction: column;
-        font-size: 18px;
+        font-size: 20px;
     }
 
-    .gp-text-form-field input {
-        width: 280px;
-    }
 </style>
 
 <div class="gp-text-form-field <%=CssClass%>" style="<%=Style%>">
     <asp:Label ID="Label" runat="server"></asp:Label>
     <div class="gp-text-box">
-	    <asp:TextBox ID="TextBox" runat="server"></asp:TextBox>
+	    <asp:TextBox ID="TextBox" runat="server" CssClass="form-control"></asp:TextBox>
         <asp:CustomValidator ID="CustomValidator" runat="server" ControlToValidate="TextBox" ErrorMessage=""
         CssClass="erro" OnServerValidate="CustomValidator_ServerValidate" ValidateEmptyText="true"></asp:CustomValidator>
         <%--ValidateEmptyText="true" serve para que o validation seja chamado mesmo que o campo seja nulo, desta pode ser feito 
