@@ -2,13 +2,10 @@
 
 <%@ Register TagPrefix="gp" TagName="Filtro" Src="~/src/components/Filtro/Filtro.ascx" %>
 <%@ Register TagPrefix="gp" TagName="FormAddEditProduto" Src="~/src/pages/ProdutoPages/FormAddEditProduto/FormAddEditProduto.ascx" %>
+<%@ Register TagPrefix="gp" TagName="Titulo" Src="~/src/components/Titulo/Titulo.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 	<style>
-		.title-container {
-			margin: 40px 0;
-		}
-
 		.filtro-container {
 			display: flex;
 			justify-content: space-between;
@@ -38,11 +35,7 @@
 	<asp:UpdatePanel runat="server">
 		<ContentTemplate>
 			<asp:Panel runat="server" ID="ListsagemProdutoPanel">
-				<div class="title-container">
-					<h1 runat="server">
-						<asp:Label ID="TituloLabel" runat="server" Text="Produtos"></asp:Label>
-					</h1>
-				</div>
+				<gp:Titulo runat="server" Text="Produtos" ID="ProdutosTitulo"></gp:Titulo>
 				<div class="filtro-container">
 					<gp:Filtro ID="ProdutoFiltro" runat="server" Placeholder="Filtra pela descrição..." OnFiltrarClick="ProdutoFiltro_FiltrarClick" />
 					<asp:Button runat="server" ID="NovoProdutoButton" Text="Novo Produto" OnClick="NovoProdutoButton_Click" />

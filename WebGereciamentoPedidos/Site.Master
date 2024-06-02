@@ -16,10 +16,11 @@
 	<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<link href="~/resources/css/masterStyles.css" rel="stylesheet" />
 	<link href="resources/css/stilosGerais.css" rel="stylesheet" />
-	<style type="text/css">
-		input[type="submit"] {
-			height: 42px;
-			padding: 0 20px;
+	<style>
+		input,
+		select,
+		textarea {
+			max-width: 2000px;
 		}
 	</style>
 	<asp:ContentPlaceHolder ID="Head" runat="server">

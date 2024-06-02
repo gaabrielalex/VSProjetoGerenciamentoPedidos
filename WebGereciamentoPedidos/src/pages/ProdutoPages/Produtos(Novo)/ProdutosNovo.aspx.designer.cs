@@ -33,13 +33,13 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 		protected global::System.Web.UI.WebControls.Panel ListsagemProdutoPanel;
 
 		/// <summary>
-		/// TituloLabel control.
+		/// ProdutosTitulo control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label TituloLabel;
+		protected global::WebGereciamentoPedidos.src.components.Titulo.Titulo ProdutosTitulo;
 
 		/// <summary>
 		/// ProdutoFiltro control.
