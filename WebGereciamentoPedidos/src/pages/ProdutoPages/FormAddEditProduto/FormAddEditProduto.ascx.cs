@@ -7,7 +7,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UtilsGerenciamentoPedidos;
-using WebGereciamentoPedidos.src.components.TituloMedio;
 using WebGereciamentoPedidos.src.util;
 using static WebGereciamentoPedidos.src.util.MensagemInfo;
 
@@ -162,22 +161,62 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 			if (!Page.IsValid)
 				return;
 
+			Produto produto = ObterDadosDoFormulario();
+			if (produto == null)
+				return;
+
+			if (ModoAtual == ModosFomularios.Cadastrar)
+			{
+				CadastarProduto(produto);
+			}
+			else if (ModoAtual == ModosFomularios.Editar)
+			{
+				EditarProduto(produto);
+			}
+		}
+
+		private Produto ObterDadosDoFormulario()
+		{
 			string descricaoProduto = DescricaoTextFormField.Text;
 			if (!decimal.TryParse(VlrUnitarioTextFormField.Text, out decimal vlrUnitarioProduto))
 			{
 				PageUtils.MostrarMensagemViaToast("Favor informar valores numéricos no campo \"Valor Unitário\"", TiposMensagem.Erro, Page);
-				return;
+				return null;
 			}
+			return new Produto(null, descricaoProduto, vlrUnitarioProduto);
+		}
 
-			Produto produto = new Produto(null, descricaoProduto, vlrUnitarioProduto);
-
-			if (ModoAtual == ModosFomularios.Cadastrar)
+		private void CadastarProduto(Produto produto)
+		{
+			try
 			{
 				ProdutoDAO.Inserir(produto);
 				//Antes de recarrregar a página, guarda a mensagem de sucesso numa session
 				//para que a página principal possa exibi-la depois que for carregada
 				Session["MensagemInfo"] = new MensagemInfo { Mensagem = "Produto cadastrado com sucesso", Tipo = TiposMensagem.Sucesso };
 				Response.Redirect(Request.RawUrl, false);
+			}
+			catch (Exception ex)
+			{
+				PageUtils.MostrarMensagemViaToast("Houve um erro ao cadastrar o produto", TiposMensagem.Erro, Page);
+				RegistroLog.Log($"Erro ao cadatsrar produto: {ex.ToString()}");
+			}
+		}
+
+		private void EditarProduto(Produto produto)
+		{
+			try
+			{
+				ProdutoDAO.Editar(produto, ProdutoASerEditado.IdProduto.Value);
+				//Antes de recarrregar a página, guarda a mensagem de sucesso numa session
+				//para que a página principal possa exibi-la depois que for carregada
+				Session["MensagemInfo"] = new MensagemInfo { Mensagem = "Produto editado com sucesso", Tipo = TiposMensagem.Sucesso };
+				Response.Redirect(Request.RawUrl, false);
+			}
+			catch (Exception ex)
+			{
+				PageUtils.MostrarMensagemViaToast("Houve um erro ao editar o produto", TiposMensagem.Erro, Page);
+				RegistroLog.Log($"Erro ao editar produto: {ex.ToString()}");
 			}
 		}
 	}

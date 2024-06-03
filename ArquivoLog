@@ -129,3 +129,19 @@ Nome do parâmetro: index
    em DAOGerenciamentoPedidos.Src.ProdutoDAO.ObterPorId(Int32 idProduto) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 171
    em WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto.FormAddEditProduto.AbrirForm(ModosFomularios modo, Nullable`1 idProdutoParaEdicao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx.cs:linha 62
 ------------------------------------
+
+Log Entrada : 11:41:27 segunda-feira, 3 de junho de 2024
+  :
+  :Erro ao cadatsrar produto: System.Exception: Erro ao inserir produto: Nome de coluna 'descrinitario' inválido.
+Existem menos colunas na instrução INSERT do que valores especificados na cláusula VALUES. O número de valores na cláusula VALUES deve corresponder ao número de colunas especificado na instrução INSERT.
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 38
+   em WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto.FormAddEditProduto.CadastarProduto(Produto produto) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx.cs:linha 188
+------------------------------------
+
+Log Entrada : 11:44:38 segunda-feira, 3 de junho de 2024
+  :
+  :Erro ao editar produto: System.InvalidOperationException: O objeto nulo deve ter um valor.
+   em System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   em System.Nullable`1.get_Value()
+   em WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto.FormAddEditProduto.EditarProduto(Produto produto) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx.cs:linha 205
+------------------------------------
