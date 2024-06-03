@@ -145,3 +145,9 @@ Log Entrada : 11:44:38 segunda-feira, 3 de junho de 2024
    em System.Nullable`1.get_Value()
    em WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto.FormAddEditProduto.EditarProduto(Produto produto) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx.cs:linha 205
 ------------------------------------
+
+Log Entrada : 13:01:11 segunda-feira, 3 de junho de 2024
+  :
+  :Erro ao validar campo descrição: System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto.FormAddEditProduto.DescricaoTextFormField_ServerValidate(Object source, ServerValidateEventArgs args) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx.cs:linha 107
+------------------------------------

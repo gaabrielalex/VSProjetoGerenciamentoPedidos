@@ -104,12 +104,15 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 			bool produtoJaExiste = false;
 			try
 			{
-				produtoJaExiste = ProdutoDAO.DescricaoJaExiste(descricao);
-				if (produtoJaExiste)
-				{
-					DescricaoTextFormField.ErrorMessage = "Produto já existente!";
-					args.IsValid = false;
-				}
+				if((ProdutoASerEditado != null && !ProdutoASerEditado.Descricao.Equals(descricao) && ModoAtual == ModosFomularios.Editar) || ModoAtual == ModosFomularios.Cadastrar) {
+					
+					produtoJaExiste = ProdutoDAO.DescricaoJaExiste(descricao);
+					if (produtoJaExiste)
+					{
+						DescricaoTextFormField.ErrorMessage = "Produto já existente!";
+						args.IsValid = false;
+					}
+				} 
 			}
 			catch (Exception ex)
 			{
