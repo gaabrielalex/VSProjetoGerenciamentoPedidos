@@ -134,7 +134,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 		protected void NovoProdutoButton_Click(object sender, EventArgs e)
 		{
 			ListsagemProdutoPanel.Visible = false;
-			FormAddEditProduto.abrirForm(ModosFomularios.Cadastrar);
+			FormAddEditProduto.AbrirForm(ModosFomularios.Cadastrar);
 		}
 
 		/* Formas antigas que eu estava tentando usar para excluir um projeto colocando um 

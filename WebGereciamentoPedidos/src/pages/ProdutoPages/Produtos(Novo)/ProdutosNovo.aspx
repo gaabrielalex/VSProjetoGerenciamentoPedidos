@@ -53,7 +53,7 @@
 							<HeaderStyle BackColor="#212529" ForeColor="White" Font-Bold="True" />
 							<Columns>
 								<asp:BoundField DataField="Descricao" HeaderText="Descrição" />
-								<asp:BoundField DataField="VlrUnitario" HeaderText="Valor Unitário" />
+								<asp:BoundField DataField="VlrUnitario" HeaderText="Valor Unitário" DataFormatString="{0:C}" />
 								<asp:TemplateField>
 									<ItemTemplate>
 										<asp:LinkButton ID="EditarLK" runat="server" CommandName="Editar"

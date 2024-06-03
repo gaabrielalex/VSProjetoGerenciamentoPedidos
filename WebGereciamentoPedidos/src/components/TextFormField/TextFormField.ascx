@@ -14,7 +14,6 @@
     .gp-text-form-field {
         display: inline-flex;
         flex-direction: column;
-        font-size: 20px;
     }
 
 </style>
