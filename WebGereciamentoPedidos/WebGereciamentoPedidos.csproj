@@ -188,9 +188,12 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="src\components\Filtro\Filtro.ascx" />
+    <Content Include="src\components\LoadingModal\LoadingModal.ascx" />
+    <Content Include="src\components\ModalConfirmacaoExclusao\ModalConfirmacaoExclusao.ascx" />
     <Content Include="src\components\TextFormField\TextFormField.ascx" />
     <Content Include="src\components\TituloMedio\TituloMedio.ascx" />
     <Content Include="src\components\Titulo\Titulo.ascx" />
+    <Content Include="src\components\Toast\Toast.ascx" />
     <Content Include="src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx" />
     <Content Include="src\pages\ProdutoPages\Produtos%28Antigo%29\Produtos.aspx" />
     <Content Include="src\pages\ProdutoPages\Produtos%28Antigo%29\ProdutosStyles.css" />
@@ -235,6 +238,20 @@
     <Compile Include="src\components\Filtro\Filtro.ascx.designer.cs">
       <DependentUpon>Filtro.ascx</DependentUpon>
     </Compile>
+    <Compile Include="src\components\LoadingModal\LoadingModal.ascx.cs">
+      <DependentUpon>LoadingModal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\components\LoadingModal\LoadingModal.ascx.designer.cs">
+      <DependentUpon>LoadingModal.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="src\components\ModalConfirmacaoExclusao\ModalConfirmacaoExclusao.ascx.cs">
+      <DependentUpon>ModalConfirmacaoExclusao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\components\ModalConfirmacaoExclusao\ModalConfirmacaoExclusao.ascx.designer.cs">
+      <DependentUpon>ModalConfirmacaoExclusao.ascx</DependentUpon>
+    </Compile>
     <Compile Include="src\components\TextFormField\TextFormField.ascx.cs">
       <DependentUpon>TextFormField.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -255,6 +272,13 @@
     </Compile>
     <Compile Include="src\components\Titulo\Titulo.ascx.designer.cs">
       <DependentUpon>Titulo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="src\components\Toast\Toast.ascx.cs">
+      <DependentUpon>Toast.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\components\Toast\Toast.ascx.designer.cs">
+      <DependentUpon>Toast.ascx</DependentUpon>
     </Compile>
     <Compile Include="src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx.cs">
       <DependentUpon>FormAddEditProduto.ascx</DependentUpon>
