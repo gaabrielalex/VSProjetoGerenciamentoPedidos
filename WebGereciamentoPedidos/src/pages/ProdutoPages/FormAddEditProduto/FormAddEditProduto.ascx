@@ -4,7 +4,7 @@
 
 <style>
 	.conteudo-FormAddEditProdutoPanel .row {
-		margin-bottom: 20px;
+		margin-bottom: 5px;
 	}
 
 		.conteudo-FormAddEditProdutoPanel .row:last-child {
