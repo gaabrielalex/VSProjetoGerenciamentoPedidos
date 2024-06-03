@@ -20,7 +20,6 @@ namespace DAOGerenciamentoPedidos.Src
 							SELECT SCOPE_IDENTITY();";
 			try
 			{
-
 				//Obtendo conexão co banco
 				using (SqlConnection connection = DB_Connection.getConnection())
 				{
@@ -33,13 +32,11 @@ namespace DAOGerenciamentoPedidos.Src
 					return idProduto;
 
 				}
-
 			}
 			catch (Exception e)
 			{
 				throw new Exception("Erro ao inserir produto: " + e.Message);
 			}
-
 		}
 
 		public void Editar(Produto produto, int idProduto)
@@ -146,6 +143,32 @@ namespace DAOGerenciamentoPedidos.Src
 			catch (Exception e)
 			{
 				throw new Exception("Erro ao listar produtos: " + e.Message);
+			}
+		}
+
+		public Produto ObterPorId(int idProduto)
+		{
+			String query = "SELECT * FROM produto where id_produto = @id_produto";
+			List<Produto> produtos = new List<Produto>();
+			try
+			{
+				using(SqlConnection connection = DB_Connection.getConnection())
+				{
+					connection.Open();
+					SqlCommand command = new SqlCommand(query, connection);
+					command.Parameters.AddWithValue("@id_produto", idProduto);
+					SqlDataReader reader = command.ExecuteReader();
+					while (reader.Read())
+					{
+						Produto produto = new Produto(reader.GetInt32(0), reader.GetString(1), reader.GetDecimal(2));
+						produtos.Add(produto);
+					}
+					connection.Close();
+					return produtos[0];
+				}
+			} catch (Exception e) 
+			{
+				throw new Exception("Erro ao obter produto: " + e.Message);
 			}
 		}
 
