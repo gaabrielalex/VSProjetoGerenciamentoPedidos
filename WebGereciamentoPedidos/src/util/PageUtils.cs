@@ -5,22 +5,25 @@ using System.Web;
 using System.Web.Services.Description;
 using System.Web.UI;
 using System.Windows.Forms;
+using static WebGereciamentoPedidos.src.util.MensagemInfo;
 
 namespace WebGereciamentoPedidos.src.util
 {
 	public class PageUtils
 	{
-		//Tipos válidos: S (sucesso) e E (erro)
-		public static void MostrarMensagemViaToast(string mensagem, string tipo, System.Web.UI.Page page)
+		public static void MostrarMensagemViaToast(string mensagem, TiposMensagem tipo, System.Web.UI.Page page)
 		{	
-			tipo = tipo.ToLower();
-			if (tipo != "s" && tipo != "e")
-			{
-				throw new ArgumentException("Tipo inválido. Deve ser 'S' ou 'E'.");
-			}
-
-			string script = $"showToast('{mensagem}', '{tipo}');";
+			string script = $"showToast('{mensagem}', '{(char)tipo}');";
 			ScriptManager.RegisterStartupScript(page, page.GetType(), "showToast", script, true);
+		}
+		public static void MostrarMensagemViaToastComDelay(string mensagem, TiposMensagem tipo, System.Web.UI.Page page)
+		{
+			string script = @"
+				setTimeout(() => {
+					showToast('" + mensagem + @"', '" + (char)tipo + @"');
+				}, 500);
+			";
+			ScriptManager.RegisterClientScriptBlock(page, page.GetType(), "showToast", script, true);
 		}
 
 		public static void MostrarMensagemViaAPISistemaOperacionalLocal(string mensagem, string tipo, System.Web.UI.Page page)

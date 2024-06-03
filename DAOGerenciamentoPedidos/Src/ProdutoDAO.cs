@@ -13,7 +13,7 @@ namespace DAOGerenciamentoPedidos.Src
 	{ 
 		public ProdutoDAO() { }
 
-		public int inserir(Produto produto)
+		public int Inserir(Produto produto)
 		{
 			//Query da inserção
 			String query = @"INSERT INTO produto (descricao, vlr_unitario) VALUES (@descricao, @vlr_unitario);
@@ -42,7 +42,7 @@ namespace DAOGerenciamentoPedidos.Src
 
 		}
 
-		public void editar(Produto produto, int idProduto)
+		public void Editar(Produto produto, int idProduto)
 		{
 			//Query de edição
 			String query = "UPDATE produto SET descricao = @descricao, vlr_unitario = @vlr_unitario WHERE id_produto = @id_produto";
@@ -68,7 +68,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 		}
 
-		public void excluir(int idProduto)
+		public void Excluir(int idProduto)
 		{
 			//Query de exclusão
 			String query = "DELETE FROM produto WHERE id_produto = @id_produto";
@@ -92,7 +92,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 		}
 
-		public List<Produto> listar()
+		public List<Produto> Listar()
 		{
 			//Query de listagem
 			String query = "SELECT id_produto, descricao, vlr_unitario FROM produto";
@@ -120,7 +120,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 		}
 
-		public List<Produto> listarPorDescricao(String descricao)
+		public List<Produto> ListarPorDescricao(String descricao)
 		{
 			//Query de listagem
 			String query = "SELECT id_produto, descricao, vlr_unitario FROM produto WHERE descricao LIKE @descricao";

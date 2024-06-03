@@ -24,13 +24,13 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 		protected global::System.Web.UI.WebControls.Panel FormAddEditProdutoPanel;
 
 		/// <summary>
-		/// FormAddEditProdutoTitulo control.
+		/// FormAddEditProdutoTituloMedio control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::WebGereciamentoPedidos.src.components.Titulo.Titulo FormAddEditProdutoTitulo;
+		protected global::WebGereciamentoPedidos.src.components.TituloMedio.TituloMedio FormAddEditProdutoTituloMedio;
 
 		/// <summary>
 		/// DescricaoTextFormField control.

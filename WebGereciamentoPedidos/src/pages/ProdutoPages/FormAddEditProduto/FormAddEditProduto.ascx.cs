@@ -1,4 +1,5 @@
 ﻿using DAOGerenciamentoPedidos.Src;
+using ModelsGerenciamentoPedidos.Src;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UtilsGerenciamentoPedidos;
 using WebGereciamentoPedidos.src.util;
+using static WebGereciamentoPedidos.src.util.MensagemInfo;
 
 namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 {
@@ -16,13 +18,14 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 		public ModosFomularios ModoAtual
 		{
 			get
-			{ 
-				if(ViewState["ModoAtual"] != null) {
+			{
+				if (ViewState["ModoAtual"] != null)
+				{
 					return (ModosFomularios)ViewState["ModoAtual"];
 				}
 				return ModosFomularios.Cadastrar;
 			}
-			set 
+			set
 			{
 				ViewState["ModoAtual"] = value;
 			}
@@ -32,7 +35,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 			ProdutoDAO = new ProdutoDAO();
 		}
 
-		public void abrirForm(ModosFomularios modo) 
+		public void AbrirForm(ModosFomularios modo)
 		{
 			FormAddEditProdutoPanel.Visible = true;
 			ModoAtual = modo;
@@ -69,7 +72,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 			}
 			catch (Exception ex)
 			{
-				PageUtils.MostrarMensagemViaToast("Houve um erro ao validar campo descrição", "e", Page);
+				PageUtils.MostrarMensagemViaToast("Houve um erro ao validar campo descrição", TiposMensagem.Erro, Page);
 				RegistroLog.Log($"Erro ao validar campo descrição: {ex.ToString()}");
 			}
 		}
@@ -109,7 +112,31 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 
 		protected void CancelarButton_Click(object sender, EventArgs e)
 		{
-			Response.Redirect(Request.RawUrl, false);
+			Response.Redirect(Request.RawUrl, true);
+		}
+
+		protected void SalvarButton_Click(object sender, EventArgs e)
+		{
+			if (!Page.IsValid)
+				return;
+
+			string descricaoProduto = DescricaoTextFormField.Text;
+			if (!decimal.TryParse(VlrUnitarioTextFormField.Text, out decimal vlrUnitarioProduto))
+			{
+				PageUtils.MostrarMensagemViaToast("Favor informar valores numéricos no campo \"Valor Unitário\"", TiposMensagem.Erro, Page);
+				return;
+			}
+
+			Produto produto = new Produto(null, descricaoProduto, vlrUnitarioProduto);
+
+			if (ModoAtual == ModosFomularios.Cadastrar)
+			{
+				ProdutoDAO.Inserir(produto);
+				//Antes de recarrregar a página, guarda a mensagem de sucesso numa session
+				//para que a página principal possa exibi-la depois que for carregada
+				Session["MensagemInfo"] = new MensagemInfo { Mensagem = "Produto cadastrado com sucesso", Tipo = TiposMensagem.Sucesso };
+				Response.Redirect(Request.RawUrl, false);
+			}
 		}
 	}
 }

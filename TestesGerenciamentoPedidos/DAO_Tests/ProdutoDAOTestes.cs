@@ -21,7 +21,7 @@ namespace TestesGerenciamentoPedidos
 			// Act
 			try
 			{
-				idProduto = produtoDAO.inserir(produto);
+				idProduto = produtoDAO.Inserir(produto);
 
 				Console.WriteLine("Produto inserido com sucesso. Id: " + idProduto);
 			}
@@ -51,10 +51,10 @@ namespace TestesGerenciamentoPedidos
 			try
 			{
 				// Inserindo produto para editar, obtendo o id
-				idProduto = produtoDAO.inserir(produto);
+				idProduto = produtoDAO.Inserir(produto);
 				produto.Descricao = "Produto Teste Editado AoRealizarEdicaoDeveRetonarTrue";
 				produto.VlrUnitario = 20.0M;
-				produtoDAO.editar(produto, idProduto);
+				produtoDAO.Editar(produto, idProduto);
 				Console.WriteLine("Produto editado com sucesso. Id: " + idProduto);
 			}
 			catch (Exception e)
@@ -78,8 +78,8 @@ namespace TestesGerenciamentoPedidos
 			try
 			{
 				// Inserindo produto para excluir, obtendo o id
-				idProduto = produtoDAO.inserir(produto);
-				produtoDAO.excluir(idProduto);
+				idProduto = produtoDAO.Inserir(produto);
+				produtoDAO.Excluir(idProduto);
 
 				Console.WriteLine("Produto excluído com sucesso. Id: " + idProduto);
 			}
@@ -104,9 +104,9 @@ namespace TestesGerenciamentoPedidos
 			try
 			{
 				// Inserindo 2 produtos para listar
-				idProduto1 = produtoDAO.inserir(new Produto(null, "Produto Teste AoRealizarListagemDeveRetonarUmaListaDeProdutos", 10.0M));
-				idProduto2 = produtoDAO.inserir(new Produto(null, "Produto Teste 2 AoRealizarListagemDeveRetonarUmaListaDeProdutos", 20.0M));
-				produtos = produtoDAO.listar();
+				idProduto1 = produtoDAO.Inserir(new Produto(null, "Produto Teste AoRealizarListagemDeveRetonarUmaListaDeProdutos", 10.0M));
+				idProduto2 = produtoDAO.Inserir(new Produto(null, "Produto Teste 2 AoRealizarListagemDeveRetonarUmaListaDeProdutos", 20.0M));
+				produtos = produtoDAO.Listar();
 				resultado = produtos.Count > 0;
 
 				if (resultado)
@@ -153,11 +153,11 @@ namespace TestesGerenciamentoPedidos
 			try
 			{
 				// Inserindo 4 produtos para listar
-				idProduto1 = produtoDAO.inserir(new Produto(null, "testeFiltragem1", 10.0M));
-				idProduto2 = produtoDAO.inserir(new Produto(null, "testeFiltragem2", 20.0M));
-				idProduto3 = produtoDAO.inserir(new Produto(null, "testeFiltragem3", 30.0M));
-				idProduto4 = produtoDAO.inserir(new Produto(null, "testeFiltragem4", 40.0M));
-				produtos = produtoDAO.listarPorDescricao("testeFiltragem");
+				idProduto1 = produtoDAO.Inserir(new Produto(null, "testeFiltragem1", 10.0M));
+				idProduto2 = produtoDAO.Inserir(new Produto(null, "testeFiltragem2", 20.0M));
+				idProduto3 = produtoDAO.Inserir(new Produto(null, "testeFiltragem3", 30.0M));
+				idProduto4 = produtoDAO.Inserir(new Produto(null, "testeFiltragem4", 40.0M));
+				produtos = produtoDAO.ListarPorDescricao("testeFiltragem");
 				resultado = produtos.Count >= 4;
 
 				if (resultado)

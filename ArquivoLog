@@ -108,3 +108,8 @@ Log Entrada : 22:42:04 sábado, 1 de junho de 2024
   :
   :Erro ao excluir produto '2199' - 'Produto Teste AoRealizarListagemDeveRetonarUmaListaDeProdutos' : 'Erro ao excluir produto: Sintaxe incorreta próxima a '@id_produto'.
 ------------------------------------
+
+Log Entrada : 00:21:58 segunda-feira, 3 de junho de 2024
+  :
+  :Erro ao excluir produto '2155' - 'Produto 17' : 'Erro ao excluir produto: Sintaxe incorreta próxima a '@id_produto'.
+------------------------------------

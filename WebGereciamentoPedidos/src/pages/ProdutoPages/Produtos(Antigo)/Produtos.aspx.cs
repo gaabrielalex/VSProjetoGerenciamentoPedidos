@@ -83,11 +83,11 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			{
 				string filtro = Request.QueryString["Filtro"];
 
-				DadosProdutosAtual = ProdutoDAO.listarPorDescricao(filtro);
+				DadosProdutosAtual = ProdutoDAO.ListarPorDescricao(filtro);
 			}
 			else
 			{
-				DadosProdutosAtual = ProdutoDAO.listar();
+				DadosProdutosAtual = ProdutoDAO.Listar();
 			}
 			BindData();
 		}
@@ -327,7 +327,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 				Produto produto = new Produto(null, descricao, vlrUnitario);
 				try
 				{
-					ProdutoDAO.inserir(produto);
+					ProdutoDAO.Inserir(produto);
 					PageUtils.MostrarMensagemViaAPISistemaOperacionalLocal("Produto cadastrado com sucesso!", "S", this);
 					LimparCamposProduto();
 					TratarCarregamentoDeDados();
@@ -346,7 +346,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 				Produto produto = new Produto(null, descricao, vlrUnitario);
 				try
 				{
-					ProdutoDAO.editar(produto, IdUltimoProdutoSelecionadoParaEdicao);
+					ProdutoDAO.Editar(produto, IdUltimoProdutoSelecionadoParaEdicao);
 					PageUtils.MostrarMensagemViaAPISistemaOperacionalLocal("Produto editado com sucesso!", "S", this);
 					RetornarPaginaParaConfigsPadrao();
 					TratarCarregamentoDeDados();
@@ -388,7 +388,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 		public static string ExcluirProduto(int id)
 		{
-			new ProdutoDAO().excluir(id);
+			new ProdutoDAO().Excluir(id);
 
 			var response = new
 			{

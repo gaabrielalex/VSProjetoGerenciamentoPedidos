@@ -11,6 +11,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UtilsGerenciamentoPedidos;
 using WebGereciamentoPedidos.src.util;
+using static WebGereciamentoPedidos.src.util.MensagemInfo;
 
 namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 {
@@ -38,7 +39,16 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 			ProdutoDAO = new ProdutoDAO();
 
 			if (!IsPostBack)
-			{
+			{	
+				if(Session["MensagemInfo"] != null) 
+				{
+					//Verifica se alguma outra tela registrou alguma mensagem para ser exibida
+					MensagemInfo mensagemInfo = (MensagemInfo)Session["MensagemInfo"];
+					PageUtils.MostrarMensagemViaToastComDelay(mensagemInfo.Mensagem, mensagemInfo.Tipo, this);
+					//Depois de exibir remove para não haver repetição
+					Session.Remove("MensagemInfo");
+				}
+				
 				TratarCarregamentoDeDados();
 			}
 		}
@@ -49,11 +59,11 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 			{
 				string filtro = Request.QueryString["Filtro"];
 
-				DadosProdutosAtual = ProdutoDAO.listarPorDescricao(filtro);
+				DadosProdutosAtual = ProdutoDAO.ListarPorDescricao(filtro);
 			}
 			else
 			{
-				DadosProdutosAtual = ProdutoDAO.listar();
+				DadosProdutosAtual = ProdutoDAO.Listar();
 			}
 			BindData();
 		}
@@ -88,7 +98,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 			if (idProdutoSelecionado < 0)
 			{
 				string menssagem = "Houve um erro ao selecionar o produto para ação selecionada, entre em contato com suporte caso o erro persista!";
-				PageUtils.MostrarMensagemViaToast(menssagem, "E", this);
+				PageUtils.MostrarMensagemViaToast(menssagem, TiposMensagem.Erro, this);
 				return;
 			}
 			else
@@ -110,16 +120,16 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 						return;
 					try
 					{
-						ProdutoDAO.excluir(idProdutoSelecionado);
-						string mensagem = $"Registro excluído com sucesso";
+						ProdutoDAO.Excluir(idProdutoSelecionado);
+						string mensagem = "Registro excluído com sucesso";
 						TratarCarregamentoDeDados();
-						PageUtils.MostrarMensagemViaToast(mensagem, "S", this);
+						PageUtils.MostrarMensagemViaToast(mensagem, TiposMensagem.Sucesso, this);
 					}
 					catch (Exception ex)
 					{
 						RegistroLog.Log($"Erro ao excluir produto '{ idProdutoSelecionado }' - '{ produtoSelecionado.Descricao }' : '{ex.Message}");
 						string mensagem = "Erro ao deletar o produto";
-						PageUtils.MostrarMensagemViaToast(mensagem, "E", this);
+						PageUtils.MostrarMensagemViaToast(mensagem, TiposMensagem.Erro, this);
 					}
 
 				}

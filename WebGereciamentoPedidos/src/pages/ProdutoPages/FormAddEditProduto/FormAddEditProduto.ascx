@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FormAddEditProduto.ascx.cs" Inherits="WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto.FormAddEditProduto" %>
 <%@ Register TagPrefix="gp" TagName="TextFormField" Src="~/src/components/TextFormField/TextFormField.ascx" %>
-<%@ Register TagPrefix="gp" TagName="Titulo" Src="~/src/components/Titulo/Titulo.ascx" %>
+<%@ Register TagPrefix="gp" TagName="TituloMedio" Src="~/src/components/TituloMedio/TituloMedio.ascx" %>
 
 <style>
 	.conteudo-FormAddEditProdutoPanel .row {
@@ -10,6 +10,7 @@
 		.conteudo-FormAddEditProdutoPanel .row:last-child {
 			margin-top: 30px;
 		}
+
 	.buttons-FormAddEditProdutoPanel {
 		display: flex;
 		justify-content: end;
@@ -19,13 +20,12 @@
 	.conteudo-FormAddEditProdutoPanel {
 		width: 400px;
 	}
-
 </style>
 
 <asp:UpdatePanel runat="server">
 	<ContentTemplate>
-		<asp:Panel runat="server" ID="FormAddEditProdutoPanel" Visible="false">
-			<gp:Titulo runat="server" Text="Cadastrar Produto" ID="FormAddEditProdutoTitulo"></gp:Titulo>
+		<asp:Panel runat="server" ID="FormAddEditProdutoPanel" Visible="false" DefaultButton="SalvarButton">
+			<gp:TituloMedio runat="server" Text="Cadastrar Produto" ID="FormAddEditProdutoTituloMedio"></gp:TituloMedio>
 			<div class="conteudo-FormAddEditProdutoPanel">
 				<div class="row">
 					<gp:TextFormField runat="server" ID="DescricaoTextFormField" LabelText="Descrição" Style="margin-right: 20px"
@@ -38,9 +38,9 @@
 				<div class="row">
 					<div class="buttons-FormAddEditProdutoPanel">
 						<asp:Button runat="server" ID="CancelarButton" ValidationGroup="CamposProduto" Text="Cancelar" Onclick="CancelarButton_Click"
-							CssClass="btn btn-lg btn-secondary SubmitButtonModalFormAddEditProduto" CausesValidation="false" />
-						<asp:Button runat="server" ID="SalvarButton" ValidationGroup="CamposProduto" Text="Salvar"
-							CssClass="btn btn-lg btn-primary SubmitButtonModalFormAddEditProduto" />
+							CssClass="btn btn-secondary SubmitButtonModalFormAddEditProduto" CausesValidation="false" />
+						<asp:Button runat="server" ID="SalvarButton" ValidationGroup="CamposProduto" Text="Salvar" OnClick="SalvarButton_Click"
+							CssClass="btn btn-primary SubmitButtonModalFormAddEditProduto" />
 					</div>
 				</div>
 			</div>
