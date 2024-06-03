@@ -113,3 +113,19 @@ Log Entrada : 00:21:58 segunda-feira, 3 de junho de 2024
   :
   :Erro ao excluir produto '2155' - 'Produto 17' : 'Erro ao excluir produto: Sintaxe incorreta próxima a '@id_produto'.
 ------------------------------------
+
+Log Entrada : 11:05:06 segunda-feira, 3 de junho de 2024
+  :
+  :Erro ao obter produto para edição: System.Exception: Erro ao obter produto: O índice estava fora do intervalo. Ele deve ser não-negativo e menor que o tamanho da coleção.
+Nome do parâmetro: index
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.ObterPorId(Int32 idProduto) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 171
+   em WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto.FormAddEditProduto.AbrirForm(ModosFomularios modo, Nullable`1 idProdutoParaEdicao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx.cs:linha 62
+------------------------------------
+
+Log Entrada : 11:05:28 segunda-feira, 3 de junho de 2024
+  :
+  :Erro ao obter produto para edição: System.Exception: Erro ao obter produto: O índice estava fora do intervalo. Ele deve ser não-negativo e menor que o tamanho da coleção.
+Nome do parâmetro: index
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.ObterPorId(Int32 idProduto) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 171
+   em WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto.FormAddEditProduto.AbrirForm(ModosFomularios modo, Nullable`1 idProdutoParaEdicao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx.cs:linha 62
+------------------------------------

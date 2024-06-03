@@ -25,7 +25,7 @@
 <asp:UpdatePanel runat="server">
 	<ContentTemplate>
 		<asp:Panel runat="server" ID="FormAddEditProdutoPanel" Visible="false" DefaultButton="SalvarButton">
-			<gp:TituloMedio runat="server" Text="Cadastrar Produto" ID="FormAddEditProdutoTituloMedio"></gp:TituloMedio>
+			<gp:TituloMedio runat="server" ID="FormAddEditProdutoTituloMedio"></gp:TituloMedio>
 			<div class="conteudo-FormAddEditProdutoPanel">
 				<div class="row">
 					<gp:TextFormField runat="server" ID="DescricaoTextFormField" LabelText="Descrição" Style="margin-right: 20px"

@@ -135,7 +135,8 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 				}
 				else if (e.CommandName == "Editar")
 				{
-
+					ListsagemProdutoPanel.Visible = false;
+					FormAddEditProduto.AbrirForm(ModosFomularios.Editar, idProdutoSelecionado);
 				}
 			}
 
@@ -144,7 +145,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 		protected void NovoProdutoButton_Click(object sender, EventArgs e)
 		{
 			ListsagemProdutoPanel.Visible = false;
-			FormAddEditProduto.AbrirForm(ModosFomularios.Cadastrar);
+			FormAddEditProduto.AbrirForm(ModosFomularios.Cadastrar, null);
 		}
 
 		/* Formas antigas que eu estava tentando usar para excluir um projeto colocando um 

@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UtilsGerenciamentoPedidos;
+using WebGereciamentoPedidos.src.components.TituloMedio;
 using WebGereciamentoPedidos.src.util;
 using static WebGereciamentoPedidos.src.util.MensagemInfo;
 
@@ -30,15 +31,56 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 				ViewState["ModoAtual"] = value;
 			}
 		}
+		public Produto ProdutoASerEditado
+		{
+			get
+			{
+				if (ViewState["ProdutoASerEditado"] != null)
+				{
+					return (Produto)ViewState["ProdutoASerEditado"];
+				}
+				return null;
+			}
+			set
+			{
+				ViewState["ProdutoASerEditado"] = value;
+			}
+		}
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			ProdutoDAO = new ProdutoDAO();
 		}
 
-		public void AbrirForm(ModosFomularios modo)
+		public void AbrirForm(ModosFomularios modo, int? idProdutoParaEdicao)
 		{
 			FormAddEditProdutoPanel.Visible = true;
 			ModoAtual = modo;
+			if (modo == ModosFomularios.Cadastrar)
+				ConfigurarFormParaCadastro();
+			else if (idProdutoParaEdicao.HasValue && modo == ModosFomularios.Editar)
+				ConfigurarFormParaEdicao(idProdutoParaEdicao.Value);
+			
+		}
+
+		private void ConfigurarFormParaCadastro()
+		{
+			FormAddEditProdutoTituloMedio.Text = "Cadastrar Produto";
+		}
+		private void ConfigurarFormParaEdicao(int idProdutoParaEdicao)
+		{
+			try
+			{
+				ProdutoASerEditado = ProdutoDAO.ObterPorId(idProdutoParaEdicao);
+				DescricaoTextFormField.Text = ProdutoASerEditado.Descricao;
+				VlrUnitarioTextFormField.Text = ProdutoASerEditado.VlrUnitario.ToString();
+				FormAddEditProdutoTituloMedio.Text = "Editar Produto";
+			}
+			catch (Exception ex)
+			{
+				PageUtils.MostrarMensagemViaToast("Houve um erro ao obter produto para edição", TiposMensagem.Erro, Page);
+				RegistroLog.Log($"Erro ao obter produto para edição: {ex.ToString()}");
+			}
 		}
 
 		protected void DescricaoTextFormField_ServerValidate(object source, ServerValidateEventArgs args)
