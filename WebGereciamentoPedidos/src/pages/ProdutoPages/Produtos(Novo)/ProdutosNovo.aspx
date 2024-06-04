@@ -90,7 +90,7 @@
 				const urlMetodo = "ProdutosNovo.aspx/ExcluirProduto";
 				const callbackSucesso = () => {
 					showToast("Produto excluído com sucesso", "s" );
-					delay(2500).then(function () {
+					delay(1000).then(function () {
 						window.location.reload();
 
 					});

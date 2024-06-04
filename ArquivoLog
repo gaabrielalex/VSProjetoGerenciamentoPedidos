@@ -151,3 +151,10 @@ Log Entrada : 13:01:11 segunda-feira, 3 de junho de 2024
   :Erro ao validar campo descrição: System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
    em WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto.FormAddEditProduto.DescricaoTextFormField_ServerValidate(Object source, ServerValidateEventArgs args) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx.cs:linha 107
 ------------------------------------
+
+Log Entrada : 22:59:48 segunda-feira, 3 de junho de 2024
+  :
+  :Erro ao cadatsrar produto: System.Exception: Erro ao inserir produto: Sintaxe incorreta próxima a 'VALcricao'.
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 38
+   em WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto.FormAddEditProduto.CadastarProduto(Produto produto) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx.cs:linha 198
+------------------------------------
