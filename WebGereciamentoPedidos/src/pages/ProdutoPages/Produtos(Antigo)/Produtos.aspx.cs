@@ -63,11 +63,6 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			//Quando eu coloco esse ação aqui para chmar minha função que mostra o toast ele aparece no console do browser que a função não foi encontrada(not defined)
-			//Page.ClientScript.RegisterStartupScript(typeof(Page), "showToast", "showToast('Erro ao deletar produto.', 'error');", true);
-			//Não funciona tb, nem isso
-			//Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "showModalMessage", "alert('teste');", true);
-
 			//Inicializando atributos
 			ProdutoDAO = new ProdutoDAO();
 
@@ -99,8 +94,6 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 
 		protected void ProdutosGW_RowCommand(object sender, GridViewCommandEventArgs e)
 		{
-			//Teste: da erro
-			//Page.ClientScript.RegisterStartupScript(typeof(Page), "showToast", "showToast('Erro ao deletar produto.', 'error');", true);
 			int idProdutoSelecionado = Convert.ToInt32(e.CommandArgument);
 			if (idProdutoSelecionado < 0)
 			{

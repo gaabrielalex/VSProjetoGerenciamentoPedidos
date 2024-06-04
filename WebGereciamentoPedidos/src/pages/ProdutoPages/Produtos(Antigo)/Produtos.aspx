@@ -120,14 +120,14 @@
                 const descricaoRegistro = $(this).data('descricao');
 				const urlMetodo = "Produtos.aspx/ExcluirProduto";
                 const callbackSucesso = () => {
-                    showToast({ message: "Produto excluído com sucesso", type: "s" });
+					myApp.showToast({ message: "Produto excluído com sucesso", type: "s" });
 					delay(2500).then(function () {
 						__doPostBack('DepoisDeExcluirProduto', '');
 					});
                 }
                 const callbackErro = (xhr, status, error) => {
                     var errorPayload = JSON.parse(xhr.responseText);
-                    showToast({
+					myApp.showToast({
                         message: `Houve um erro ao excluir o produto: ${errorPayload.ExceptionType} - ${errorPayload.Message}`,
                         type: "e"
                     })

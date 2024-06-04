@@ -19,14 +19,14 @@ namespace WebGereciamentoPedidos.src.util
 
 		public static void MostrarMensagemViaToast(string mensagem, TiposMensagem tipo, Page page)
 		{	
-			string script = $"showToast('{mensagem}', '{(char)tipo}');";
+			string script = $"myApp.showToast('{mensagem}', '{(char)tipo}');";
 			ScriptManager.RegisterStartupScript(page, page.GetType(), "showToast", script, true);
 		}
 		public static void MostrarMensagemViaToastComDelay(string mensagem, TiposMensagem tipo, Page page)
 		{
 			string script = @"
 				setTimeout(() => {
-					showToast('" + mensagem + @"', '" + (char)tipo + @"');
+					myApp.showToast('" + mensagem + @"', '" + (char)tipo + @"');
 				}, 500);
 			";
 			ScriptManager.RegisterClientScriptBlock(page, page.GetType(), "showToast", script, true);

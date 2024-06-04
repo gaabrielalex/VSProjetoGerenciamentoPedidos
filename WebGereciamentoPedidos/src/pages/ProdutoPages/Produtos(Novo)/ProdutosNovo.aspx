@@ -89,7 +89,7 @@
 				const descricaoRegistro = $(this).data('descricao');
 				const urlMetodo = "ProdutosNovo.aspx/ExcluirProduto";
 				const callbackSucesso = () => {
-					showToast("Produto excluído com sucesso", "s" );
+					myApp.showToast("Produto excluído com sucesso", "s" );
 					delay(1000).then(function () {
 						window.location.reload();
 
@@ -97,7 +97,7 @@
 				}
 				const callbackErro = (xhr, status, error) => {
 					var errorPayload = JSON.parse(xhr.responseText);
-					showToast(
+					myApp.showToast(
 						`Houve um erro ao excluir o produto: ${errorPayload.ExceptionType} - ${errorPayload.Message}`,
 						"e"
 					)
