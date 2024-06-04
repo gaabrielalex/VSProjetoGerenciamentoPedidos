@@ -103,7 +103,7 @@
 					)
 				}
 
-				abriModalConfirmacaoExclusaoComAjax(
+				myApp.abriModalConfirmacaoExclusaoComAjax(
 					{ idRegistro, descricaoRegistro, urlMetodo, callbackSucesso, callbackErro }
 				);
 

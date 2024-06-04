@@ -18,36 +18,4 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-	function fecharModal() {
-		$('#modalConfirmacaoExclusao').modal('hide');
-	}
-
-	function abriModalConfirmacaoExclusaoComAjax({ idRegistro, descricaoRegistro, urlMetodo, callbackSucesso, callbackErro, complete }) {
-		const dados = {
-			id: idRegistro,
-		}
-		const beforeSend = fecharModal;
-
-		$('#modalConfirmacaoExclusao .modal-body').text(`Tem certeza que deseja excluir o registro "${descricaoRegistro}"?`);
-		$('#modalConfirmacaoExclusao .btn-sim').off('click').on('click', () => confirmarExclusaoComAjax(
-			{ urlMetodo, dados, beforeSend, callbackSucesso, callbackErro, complete }
-		));
-		$('#modalConfirmacaoExclusao').modal('show');
-		return false; // Retorne false para evitar postback
-	}
-
-	function confirmarExclusaoComAjax({ urlMetodo, dados, beforeSend, callbackSucesso, callbackErro, complete }) {
-		$.ajax({
-			type: "POST",
-			url: urlMetodo,
-			contentType: "application/json; charset=utf-8",
-			dataType: "json",
-			data: JSON.stringify(dados),
-			beforeSend: beforeSend,
-			success: callbackSucesso,
-			error: callbackErro,
-			complete: complete
-		});
-	}
-</script>
+<script type="text/javascript" src="../../../../Scripts/ScritpsProjeto/ModalConfirmacaoExclusao/modal-confirmacao-exclusao.js"></script>
