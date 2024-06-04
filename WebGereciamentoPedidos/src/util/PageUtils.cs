@@ -11,12 +11,18 @@ namespace WebGereciamentoPedidos.src.util
 {
 	public class PageUtils
 	{
-		public static void MostrarMensagemViaToast(string mensagem, TiposMensagem tipo, System.Web.UI.Page page)
+		public static void FecharLoadingModal(Page page)
+		{
+			string script = "fecharLoadingModal()";
+			ScriptManager.RegisterStartupScript(page, page.GetType(), "fecharLoadingModal", script, true);
+		}
+
+		public static void MostrarMensagemViaToast(string mensagem, TiposMensagem tipo, Page page)
 		{	
 			string script = $"showToast('{mensagem}', '{(char)tipo}');";
 			ScriptManager.RegisterStartupScript(page, page.GetType(), "showToast", script, true);
 		}
-		public static void MostrarMensagemViaToastComDelay(string mensagem, TiposMensagem tipo, System.Web.UI.Page page)
+		public static void MostrarMensagemViaToastComDelay(string mensagem, TiposMensagem tipo, Page page)
 		{
 			string script = @"
 				setTimeout(() => {
@@ -26,7 +32,7 @@ namespace WebGereciamentoPedidos.src.util
 			ScriptManager.RegisterClientScriptBlock(page, page.GetType(), "showToast", script, true);
 		}
 
-		public static void MostrarMensagemViaAPISistemaOperacionalLocal(string mensagem, string tipo, System.Web.UI.Page page)
+		public static void MostrarMensagemViaAPISistemaOperacionalLocal(string mensagem, string tipo, Page page)
 		{
 			string titulo;
 

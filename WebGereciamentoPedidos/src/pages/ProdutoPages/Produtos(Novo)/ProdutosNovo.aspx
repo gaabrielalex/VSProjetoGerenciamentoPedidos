@@ -82,47 +82,37 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="PageScripts" runat="server">
 	<script type="text/javascript">
 
-		//Deixei tudo isso de lado por enquanto
-		//$(document).ready(function () {
-		//	$(".excluirLK").click(function (event) {
-		//		event.preventDefault(); // Evita o comportamento padrão do link que seria realizar o postBack
-		//		__doPostBack("ExcluirProduto", "");
-		//		const nomeMetodoParaRealizarExclusao = "ExcluirProduto";
-		//		const idRegistro = $(this).data("idproduto");
-		//		const descricaoRegistro = $(this).data("descricao");
-		//		abriModalConfirmacaoExclusaoComPostBack({ nomeMetodoParaRealizarExclusao, idRegistro, descricaoRegistro });
-		//	});
-		//});
-		//$(document).ready(function () {
-		//	$(".excluirLK").click(function (event) {
-		//		event.preventDefault(); // Evita o comportamento padrão do link que seria realizar o postBack
-		//		const idRegistro = $(this).data('id-produto');
-		//		const descricaoRegistro = $(this).data('descricao');
-		//		const urlMetodo = "ProdutosNovo.aspx/ExcluirProduto";
-		//		const callbackSucesso = () => {
-		//			showToast({ message: "Produto excluído com sucesso", type: "s" });
-		//			delay(2500).then(function () {
-		//				__doPostBack('DepoisDeExcluirProduto', '');
-		//			});
-		//		}
-		//		const callbackErro = (xhr, status, error) => {
-		//			var errorPayload = JSON.parse(xhr.responseText);
-		//			showToast({
-		//				message: `Houve um erro ao excluir o produto: ${errorPayload.ExceptionType} - ${errorPayload.Message}`,
-		//				type: "e"
-		//			})
-		//		}
+		$(document).ready(function () {
+			$(".excluirLK").click(function (event) {
+				event.preventDefault(); // Evita o comportamento padrão do link que seria realizar o postBack
+				const idRegistro = $(this).data('id-produto');
+				const descricaoRegistro = $(this).data('descricao');
+				const urlMetodo = "ProdutosNovo.aspx/ExcluirProduto";
+				const callbackSucesso = () => {
+					showToast("Produto excluído com sucesso", "s" );
+					delay(2500).then(function () {
+						window.location.reload();
 
-		//		abriModalConfirmacaoExclusaoComAjax(
-		//			{ idRegistro, descricaoRegistro, urlMetodo, callbackSucesso, callbackErro }
-		//		);
+					});
+				}
+				const callbackErro = (xhr, status, error) => {
+					var errorPayload = JSON.parse(xhr.responseText);
+					showToast(
+						`Houve um erro ao excluir o produto: ${errorPayload.ExceptionType} - ${errorPayload.Message}`,
+						"e"
+					)
+				}
 
-		//	});
+				abriModalConfirmacaoExclusaoComAjax(
+					{ idRegistro, descricaoRegistro, urlMetodo, callbackSucesso, callbackErro }
+				);
 
-		//	function delay(ms) {
-		//		return new Promise(resolve => setTimeout(resolve, ms));
-		//	}
+			});
 
-		//});
+			function delay(ms) {
+				return new Promise(resolve => setTimeout(resolve, ms));
+			}
+
+		});
 	</script>
 </asp:Content>

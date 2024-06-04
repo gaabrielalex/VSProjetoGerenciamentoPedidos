@@ -23,22 +23,6 @@
 		$('#modalConfirmacaoExclusao').modal('hide');
 	}
 
-	//Trechos de códigos incompletos, não terminei de implementar
-	//function abriModalConfirmacaoExclusaoComPostBack({ nomeMetodoParaRealizarExclusao, idRegistro, descricaoRegistro }) {
-	//	const beforeSend = fecharModal;
-
-	//	$('#modalConfirmacaoExclusao .modal-body').text(`Tem certeza que deseja excluir o registro "${descricaoRegistro}"?`);
-	//	$('#modalConfirmacaoExclusao .btn-sim').off('click').on('click', () => confirmarExclusaoComPostBack(
-	//		{ nomeMetodoParaRealizarExclusao, idRegistro, beforeSend }
-	//	));
-	//	$('#modalConfirmacaoExclusao').modal('show');
-	//}
-
-	//function confirmarExclusaoComPostBack({ nomeMetodoParaRealizarExclusao, idRegistro, beforeSend }) {
-	//	beforeSend();
-	//	__doPostBack("ExcluirProduto", "");
-	//}
-
 	function abriModalConfirmacaoExclusaoComAjax({ idRegistro, descricaoRegistro, urlMetodo, callbackSucesso, callbackErro, complete }) {
 		const dados = {
 			id: idRegistro,

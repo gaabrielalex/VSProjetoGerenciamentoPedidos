@@ -32,7 +32,7 @@
 
 </head>
 <body>
-	<form runat="server">
+	<form runat="server" id="MasterPageForm">
 		<asp:ScriptManager runat="server">
 			<Scripts>
 				<%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -57,7 +57,7 @@
 				<a class="navbar-brand" runat="server" href="~/">Gerenciamento Pedidos</a>
 				<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
 					aria-expanded="false" aria-label="Toggle navigation">
-					B
+
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">

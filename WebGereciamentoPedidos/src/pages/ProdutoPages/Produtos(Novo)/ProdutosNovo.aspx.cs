@@ -148,47 +148,27 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 			FormAddEditProduto.AbrirForm(ModosFomularios.Cadastrar, null);
 		}
 
-		/* Formas antigas que eu estava tentando usar para excluir um projeto colocando um 
-		 * painel de confirmação antes de excluir o produto */
+		[WebMethod]
+		[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+		public static string ExcluirProduto(int id)
+		{
+			new ProdutoDAO().Excluir(id);
 
-		//Teste que eu estava fazendo sem usar ajax
-		//protected void ExcluirProduto(object sender, EventArgs e)
-		//{
-		//	string idProduto = Request.Form["__EVENTARGUMENT"];
-		//	int id = int.Parse(idProduto);
-		//	ClientScript.RegisterClientScriptBlock(typeof(Page), "Alerta", "<script>alert('Produto excluído com sucesso!');</script>");
-		//	ProdutoFiltro.Text = "dvfgwsfrgwer";
-		//	DadosProdutosAtual = new List<Produto>();
-		//	BindData();
-		//	TituloPanelLabel.Text = "Text";
-		//	ProdutoDAO.excluir(id);
-		//	TratarCarregamentoDeDados();
-		//}
+			var response = new
+			{
+				Message = $"Registro {id} excluído com sucesso",
+				Success = true
+			};
 
-		//Excluindo produto com ajax
-		//[WebMethod]
-		//[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-		//public static string ExcluirProduto(int id)
-		//{
-		//	var houveSucesso = new ProdutoDAO().excluir(id);
-		//	if (!houveSucesso)
-		//		throw new Exception("Erro ao deletar o produto");
+			// Serializa o objeto para JSON
+			JavaScriptSerializer js = new JavaScriptSerializer();
+			return js.Serialize(response);
+		}
 
-		//	var response = new
-		//	{
-		//		Message = $"Registro {id} excluído com sucesso",
-		//		Success = true
-		//	};
-
-		//	// Serializa o objeto para JSON
-		//	JavaScriptSerializer js = new JavaScriptSerializer();
-		//	return js.Serialize(response);
-		//}
-
-		//protected void DepoisDeExcluirProduto(object sender, EventArgs e)
-		//{
-		//	TratarCarregamentoDeDados();
-		//}
+		protected void DepoisDeExcluirProduto(object sender, EventArgs e)
+		{
+			TratarCarregamentoDeDados();
+		}
 
 	}
 }

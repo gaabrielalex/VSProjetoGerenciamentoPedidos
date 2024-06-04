@@ -161,8 +161,10 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 
 		protected void SalvarButton_Click(object sender, EventArgs e)
 		{
-			if (!Page.IsValid)
+			if (!Page.IsValid) {
+				PageUtils.FecharLoadingModal(Page);
 				return;
+			}
 
 			Produto produto = ObterDadosDoFormulario();
 			if (produto == null)
