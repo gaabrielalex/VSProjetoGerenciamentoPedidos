@@ -20,13 +20,6 @@
 	<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<link href="~/resources/css/masterStyles.css" rel="stylesheet" />
 	<link href="resources/css/stilosGerais.css" rel="stylesheet" />
-	<style>
-		input,
-		select,
-		textarea {
-			max-width: 2000px;
-		}
-	</style>
 	<asp:ContentPlaceHolder ID="Head" runat="server">
 	</asp:ContentPlaceHolder>
 
