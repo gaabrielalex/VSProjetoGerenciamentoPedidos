@@ -29,7 +29,6 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 			// Assert
 			idPedidoInserido.Should().BeGreaterThan(0, because: "O id do pedido inserido deve ser maior que 0, pois só assim será um id válido");
 
-
 		}
 
 		[TestMethod]
