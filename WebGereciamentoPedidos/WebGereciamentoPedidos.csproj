@@ -154,7 +154,6 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="others\aleatorio.txt" />
     <Content Include="others\ScriptsSQL.txt" />
     <Content Include="others\tablesDB.txt" />
     <Content Include="resources\css\masterStyles.css" />
