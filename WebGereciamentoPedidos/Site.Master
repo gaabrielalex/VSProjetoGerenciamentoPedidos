@@ -84,7 +84,6 @@
 		$('.dinheiro').mask('#.##0,00', { reverse: true });
 	</script>
 
-
 	<!-------- Componentes de uso compartilhado -------->
 
 	<gp:Toast runat="server" ID="MasterPageToast"></gp:Toast>

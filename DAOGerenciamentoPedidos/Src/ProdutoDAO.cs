@@ -9,7 +9,7 @@ using DAOGerenciamentoPedidos.Src.Data_Base;
 
 namespace DAOGerenciamentoPedidos.Src
 {
-	public class ProdutoDAO
+	public class ProdutoDAO : IDAO<Produto>
 	{ 
 		public ProdutoDAO() { }
 

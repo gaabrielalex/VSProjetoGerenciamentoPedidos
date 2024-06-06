@@ -9,8 +9,6 @@ namespace ModelsGerenciamentoPedidos.Src
 {
 	public class Pedido
 	{
-		//Com o nome "eEum" para evitar conflito com o atributo "StatusPedido"
-		//que representa o respectivo campo na tabela "Pedido"
 		public enum EnumStatusPedido
 		{
 			AguardandoPagamento= 'A',
