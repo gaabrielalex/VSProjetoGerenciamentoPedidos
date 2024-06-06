@@ -29,7 +29,7 @@ namespace TestesGerenciamentoPedidos
 			decimal valorTotal = -1;
 			Pedido pedido = new Pedido();
 			// Act
-			Action act = () => pedido.VlrTotal = valorTotal;
+			Action act = () => pedido.VlrSubtotal = valorTotal;
 			// Assert
 			act.Should().Throw<ArgumentOutOfRangeException>(because: "O valor total do pedido deve ser maior ou igual a zero. O valor informado foi: " + valorTotal);
 		}
@@ -41,7 +41,7 @@ namespace TestesGerenciamentoPedidos
 			decimal valorTotal = 10000000;
 			Pedido pedido = new Pedido();
 			// Act
-			Action act = () => pedido.VlrTotal = valorTotal;
+			Action act = () => pedido.VlrSubtotal = valorTotal;
 			// Assert
 			act.Should().Throw<ArgumentOutOfRangeException>(because: "O valor total do pedido deve ter no máximo 7 dígitos na parte inteira. O valor informado foi: " + valorTotal.ToString().Length + " dígitos na parte inteira.");
 		}

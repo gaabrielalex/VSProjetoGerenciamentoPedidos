@@ -10,23 +10,44 @@ namespace TestesGerenciamentoPedidos
 	[TestClass]
 	public class UtilTeste
 	{
-		private readonly string[] TABELAS_BD = { "item_pedido", "pedido", "produto", "metodo_pagto" };
 
 		[TestMethod]
 		public void ApagarTodosOsRegristosTesteDoBanco()
 		{
 			try
 			{
-				foreach(string tabela in TABELAS_BD)
+				
+				using (SqlConnection con = DB_Connection.getConnection())
 				{
-					using (SqlConnection con = DB_Connection.getConnection())
-					{
-						string sql = "DELETE FROM produto WHERE descricao LIKE '%Teste%'";
-						con.Open();
-						SqlCommand cmd = new SqlCommand(sql, con);
-						cmd.ExecuteNonQuery();
-						con.Close();
-					}
+					string sql = "DELETE FROM pedido WHERE nome_cliente LIKE '%Teste%'";
+					con.Open();
+					SqlCommand cmd = new SqlCommand(sql, con);
+					cmd.ExecuteNonQuery();
+					con.Close();
+				}
+				using (SqlConnection con = DB_Connection.getConnection())
+				{
+					string sql = "DELETE FROM item_pedido WHERE id_pedido IN (SELECT id_pedido FROM pedido WHERE nome_cliente LIKE '%Teste%')";
+					con.Open();
+					SqlCommand cmd = new SqlCommand(sql, con);
+					cmd.ExecuteNonQuery();
+					con.Close();
+				}
+				using (SqlConnection con = DB_Connection.getConnection())
+				{
+					string sql = "DELETE FROM metodo_pagto WHERE descricao LIKE '%Teste%'";
+					con.Open();
+					SqlCommand cmd = new SqlCommand(sql, con);
+					cmd.ExecuteNonQuery();
+					con.Close();
+				}
+				using (SqlConnection con = DB_Connection.getConnection())
+				{
+					string sql = "DELETE FROM produto WHERE descricao LIKE '%Teste%'";
+					con.Open();
+					SqlCommand cmd = new SqlCommand(sql, con);
+					cmd.ExecuteNonQuery();
+					con.Close();
 				}
 			}
 			catch (Exception e)

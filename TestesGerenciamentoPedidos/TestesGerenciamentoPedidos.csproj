@@ -63,6 +63,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO_Tests\PedidoDAOTestes.cs" />
     <Compile Include="Models_Tests\ModelUtilsTestecs.cs" />
     <Compile Include="DAO_Tests\ProdutoDAOTestes.cs" />
     <Compile Include="Models_Tests\PedidoModelTestes.cs" />

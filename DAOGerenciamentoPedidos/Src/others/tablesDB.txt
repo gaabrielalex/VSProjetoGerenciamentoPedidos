@@ -1,6 +1,6 @@
 ﻿CREATE TABLE metodo_pagto (
     id_metodo_pagto INT IDENTITY(1, 1) PRIMARY KEY,
-    descricao varchar(50) NOT NULL,
+    descricao varchar(50) UNIQUE NOT NULL,
 );
 
 CREATE TABLE produto (
@@ -12,7 +12,7 @@ CREATE TABLE produto (
 CREATE TABLE pedido (
     id_pedido INT IDENTITY(1, 1) PRIMARY KEY,
     nome_cliente varchar(100),
-    vlr_total_pedido numeric(9,2),
+    vlr_subtotal numeric(9,2),
     desconto numeric(8,2),
     dt_hr_pedido datetime,
     status_pedido char(1) CHECK (status_pedido IN ('A', 'S', 'E', 'C')),

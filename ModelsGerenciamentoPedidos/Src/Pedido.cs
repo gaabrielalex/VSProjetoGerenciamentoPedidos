@@ -24,7 +24,7 @@ namespace ModelsGerenciamentoPedidos.Src
 		private const int MaxDigitosParteInteiraDesconto = 6;
 		private const int MaxLengthObservacoes = 200;
 		private string _nomeCliente;
-		private decimal _vlrTotal;
+		private decimal _vlrSubtotal;
 		private decimal _desconto;
 		private string _observacoes;
 
@@ -41,16 +41,16 @@ namespace ModelsGerenciamentoPedidos.Src
 				_nomeCliente = value;
 			}
 		}
-		public decimal VlrTotal 
+		public decimal VlrSubtotal 
 		{
-			get { return _vlrTotal; }
+			get { return _vlrSubtotal; }
 			set 
 			{
 				if(value < MinVlrTotal || MaxDigitosParteInteiraVlrTotal < ModelUtils.ObterQuantidadeDeDigitosAntesDoSeparadorDecimal(value))
 				{
 					throw new ArgumentOutOfRangeException(nameof(value), $"O valor deve ser maior ou igual a {MinVlrTotal} e ter no máximo {MaxDigitosParteInteiraVlrTotal} dígitos na sua parte inteira.");
 				}
-				_vlrTotal = value;
+				_vlrSubtotal = value;
 			}	
 		}
 		public decimal Desconto
@@ -65,6 +65,8 @@ namespace ModelsGerenciamentoPedidos.Src
 				_desconto = value;
 			}
 		}
+
+		public decimal VlrTotal => VlrSubtotal - Desconto;
 		public DateTime DtHrPedido { get; set; }
 		public EnumStatusPedido StatusPedido { get; set; }
 		public string Observacoes
@@ -83,11 +85,11 @@ namespace ModelsGerenciamentoPedidos.Src
 
 		public Pedido(){ }
 
-		public Pedido(int? idPedido, string nomeCliente, decimal vlrTotal, decimal desconto, DateTime dtHrPedido, EnumStatusPedido statusPedido, string observacoes, MetodoPagamento metodoPagemento)
+		public Pedido(int? idPedido, string nomeCliente, decimal vlrSubtotal, decimal desconto, DateTime dtHrPedido, EnumStatusPedido statusPedido, string observacoes, MetodoPagamento metodoPagemento)
 		{
 			IdPedido = idPedido;
 			NomeCliente = nomeCliente;
-			VlrTotal = vlrTotal;
+			VlrSubtotal = vlrSubtotal;
 			Desconto = desconto;
 			DtHrPedido = dtHrPedido;
 			StatusPedido = statusPedido;
@@ -100,7 +102,7 @@ namespace ModelsGerenciamentoPedidos.Src
 			return obj is Pedido pedido &&
 				   IdPedido == pedido.IdPedido &&
 				   NomeCliente == pedido.NomeCliente &&
-				   VlrTotal == pedido.VlrTotal &&
+				   VlrSubtotal == pedido.VlrSubtotal &&
 				   Desconto == pedido.Desconto &&
 				   DtHrPedido == pedido.DtHrPedido &&
 				   StatusPedido == pedido.StatusPedido &&
@@ -113,7 +115,7 @@ namespace ModelsGerenciamentoPedidos.Src
 			int hashCode = -1499515728;
 			hashCode = hashCode * -1521134295 + IdPedido.GetHashCode();
 			hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(NomeCliente);
-			hashCode = hashCode * -1521134295 + VlrTotal.GetHashCode();
+			hashCode = hashCode * -1521134295 + VlrSubtotal.GetHashCode();
 			hashCode = hashCode * -1521134295 + Desconto.GetHashCode();
 			hashCode = hashCode * -1521134295 + DtHrPedido.GetHashCode();
 			hashCode = hashCode * -1521134295 + StatusPedido.GetHashCode();

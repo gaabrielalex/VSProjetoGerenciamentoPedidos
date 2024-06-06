@@ -56,5 +56,9 @@
   <ItemGroup>
     <Folder Include="Src\Utils\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Src\others\ScriptsSQL.txt" />
+    <Content Include="Src\others\tablesDB.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
