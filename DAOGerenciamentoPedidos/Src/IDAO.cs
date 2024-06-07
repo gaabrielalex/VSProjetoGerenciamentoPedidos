@@ -20,6 +20,6 @@ namespace DAOGerenciamentoPedidos.Src
 
 		T ObterPorId(int id);
 
-		List<T> ReaderParaListaDeObjetos(SqlDataReader reader);
+		List<T> ConverterReaderParaListaDeObjetos(SqlDataReader reader);
 	}
 }

@@ -119,7 +119,7 @@ namespace DAOGerenciamentoPedidos
 			}
 		}
 
-		public List<Pedido> ReaderParaListaDeObjetos(SqlDataReader reader)
+		public List<Pedido> ConverterReaderParaListaDeObjetos(SqlDataReader reader)
 		{
 			throw new NotImplementedException();
 		}

@@ -100,8 +100,8 @@ namespace DAOGerenciamentoPedidos.Src
 		public List<Produto> Listar()
 		{
 			//Query de listagem
-			String query = "SELECT id_produto, descricao, vlr_unitario FROM produto";
-			List<Produto> produtos = new List<Produto>();
+			String query = "SELECT * FROM produto";
+			List<Produto> listaProdutos = new List<Produto>();
 			try
 			{
 				//Obtendo conexão co banco
@@ -110,13 +110,9 @@ namespace DAOGerenciamentoPedidos.Src
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
 					SqlDataReader reader = command.ExecuteReader();
-					while (reader.Read())
-					{
-						Produto produto = new Produto(reader.GetInt32(0), reader.GetString(1), reader.GetDecimal(2));
-						produtos.Add(produto);
-					}
+					listaProdutos = ConverterReaderParaListaDeObjetos(reader);
 					connection.Close();
-					return produtos;
+					return listaProdutos;
 				}
 			}
 			catch (Exception e)
@@ -129,24 +125,20 @@ namespace DAOGerenciamentoPedidos.Src
 		public List<Produto> ListarPorDescricao(String descricao)
 		{
 			//Query de listagem
-			String query = "SELECT id_produto, descricao, vlr_unitario FROM produto WHERE descricao LIKE @descricao";
-			List<Produto> produtos = new List<Produto>();
+			String query = "SELECT * FROM produto WHERE descricao LIKE @descricao";
+			List<Produto> listaProdutos = new List<Produto>();
 			try
 			{
-				//Obtendo conexão co banco
+				//Obtendo conexão com banco
 				using (SqlConnection connection = DB_Connection.getConnection())
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
 					command.Parameters.AddWithValue("@descricao", "%" + descricao + "%");
 					SqlDataReader reader = command.ExecuteReader();
-					while (reader.Read())
-					{
-						Produto produto = new Produto(reader.GetInt32(0), reader.GetString(1), reader.GetDecimal(2));
-						produtos.Add(produto);
-					}
+					listaProdutos = ConverterReaderParaListaDeObjetos(reader);
 					connection.Close();
-					return produtos;
+					return listaProdutos;
 				}
 			}
 			catch (Exception e)
@@ -168,7 +160,7 @@ namespace DAOGerenciamentoPedidos.Src
 					SqlCommand command = new SqlCommand(query, connection);
 					command.Parameters.AddWithValue("@id_produto", idProduto);
 					SqlDataReader reader = command.ExecuteReader();
-					listaProdutos = ReaderParaListaDeObjetos(reader);
+					listaProdutos = ConverterReaderParaListaDeObjetos(reader);
 					connection.Close();
 					return listaProdutos[0];
 				}
@@ -208,7 +200,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 		}
 
-		public List<Produto> ReaderParaListaDeObjetos(SqlDataReader reader)
+		public List<Produto> ConverterReaderParaListaDeObjetos(SqlDataReader reader)
 		{
 			List<Produto> listaProdutos = new List<Produto>();	
 

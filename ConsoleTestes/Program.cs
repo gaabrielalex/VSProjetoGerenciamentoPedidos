@@ -11,21 +11,21 @@ namespace ConsoleTestes
 		static void Main(string[] args)
 		{
 
-			ItemDAO itemDAO = new ItemDAO();
+			//ItemDAO itemDAO = new ItemDAO();
 
-			itemDAO.obterPorDescricao();
-			//Não tem acesso
-			itemDAO.ObterPorId();
+			//itemDAO.obterPorDescricao();
+			////Não tem acesso
+			//itemDAO.ObterPorId();
 
-			IDAO<Item> itemDAO2 = new ItemDAO();
-			itemDAO2.ObterPorId();
-			itemDAO2.ObterPorDescricao();
+			//IDAO<Item> itemDAO2 = new ItemDAO();
+			//itemDAO2.ObterPorId();
+			//itemDAO2.ObterPorDescricao();
 
-			ItemDAO itemDAO3 = new IDAO<Item>();
-			itemDAO3.obterPorDescricao();
+			//ItemDAO itemDAO3 = new IDAO<Item>();
+			//itemDAO3.obterPorDescricao();
 
-			PessoaDAO pessoaDAO = new PessoaDAO();
-			pessoaDAO.ObterPorId();
+			//PessoaDAO pessoaDAO = new PessoaDAO();
+			//pessoaDAO.ObterPorId();
 
 
 

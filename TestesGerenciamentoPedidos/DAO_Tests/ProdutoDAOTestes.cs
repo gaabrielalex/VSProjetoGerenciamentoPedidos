@@ -99,7 +99,7 @@ namespace TestesGerenciamentoPedidos
 			int idProduto1 = 0;
 			int idProduto2 = 0;
 			List<Produto> produtos = new List<Produto>();
-			bool resultado = false;
+			int numeroRegistrosListados = 0;
 
 			// Act
 			try
@@ -108,9 +108,9 @@ namespace TestesGerenciamentoPedidos
 				idProduto1 = produtoDAO.Inserir(new Produto(null, "Produto Teste AoRealizarListagemDeveRetonarUmaListaDeProdutos", 10.0M));
 				idProduto2 = produtoDAO.Inserir(new Produto(null, "Produto Teste 2 AoRealizarListagemDeveRetonarUmaListaDeProdutos", 20.0M));
 				produtos = produtoDAO.Listar();
-				resultado = produtos.Count > 0;
+				numeroRegistrosListados = produtos.Count;
 
-				if (resultado)
+				if (numeroRegistrosListados >= 2)
 				{
 					Console.WriteLine("Produtos listados com sucesso.");
 					foreach (Produto produto in produtos)
@@ -128,10 +128,10 @@ namespace TestesGerenciamentoPedidos
 			}
 
 			// Assert
-			if (!resultado)
-			{
-				Assert.Fail("Erro ao listar produtos");
-			}
+			numeroRegistrosListados.Should().BeGreaterThanOrEqualTo(
+				2,
+				because: "Ao inserir 2 produtos de teste e realizar posteriorment5 a listagem dos produtos, deve retonar uma resultado maior ou igual a 2 registros"
+			);
 		}
 
 		[TestMethod]
