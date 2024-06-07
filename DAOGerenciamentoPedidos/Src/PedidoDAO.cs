@@ -118,5 +118,10 @@ namespace DAOGerenciamentoPedidos
 				throw new Exception("Erro ao listar produtos: " + e.Message);
 			}
 		}
+
+		public List<Pedido> ReaderParaListaDeObjetos(SqlDataReader reader)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using ModelsGerenciamentoPedidos.Src;
 using DAOGerenciamentoPedidos.Src.Data_Base;
 using UtilsGerenciamentoPedidos;
+using System.Runtime.Remoting.Messaging;
 
 namespace DAOGerenciamentoPedidos.Src
 {
@@ -158,7 +159,7 @@ namespace DAOGerenciamentoPedidos.Src
 		public Produto ObterPorId(int idProduto)
 		{
 			String query = "SELECT * FROM produto where id_produto = @id_produto";
-			List<Produto> produtos = new List<Produto>();
+			List<Produto> listaProdutos = new List<Produto>();
 			try
 			{
 				using(SqlConnection connection = DB_Connection.getConnection())
@@ -167,13 +168,9 @@ namespace DAOGerenciamentoPedidos.Src
 					SqlCommand command = new SqlCommand(query, connection);
 					command.Parameters.AddWithValue("@id_produto", idProduto);
 					SqlDataReader reader = command.ExecuteReader();
-					while (reader.Read())
-					{
-						Produto produto = new Produto(reader.GetInt32(0), reader.GetString(1), reader.GetDecimal(2));
-						produtos.Add(produto);
-					}
+					listaProdutos = ReaderParaListaDeObjetos(reader);
 					connection.Close();
-					return produtos[0];
+					return listaProdutos[0];
 				}
 			} catch (Exception e) 
 			{
@@ -209,6 +206,28 @@ namespace DAOGerenciamentoPedidos.Src
 				RegistroLog.Log($"Erro ao realizar verificação da já existência do produto: {e.ToString()}");
 				throw new Exception("Erro ao realizar verificação da já existência do produto: " + e.Message);
 			}
+		}
+
+		public List<Produto> ReaderParaListaDeObjetos(SqlDataReader reader)
+		{
+			List<Produto> listaProdutos = new List<Produto>();	
+
+			// Obtendo os índices das colunas uma vez antes do loop
+			int idIndex = reader.GetOrdinal("id_produto");
+			int descricaoIndex = reader.GetOrdinal("descricao");
+			int vlrUnitarioIndex = reader.GetOrdinal("vlr_unitario");
+
+			while (reader.Read())
+			{
+				Produto produto = new Produto(
+					idProduto: reader.GetInt32(idIndex),
+					descricao: reader.GetString(descricaoIndex),
+					vlrUnitario: reader.GetDecimal(vlrUnitarioIndex)
+				);
+				listaProdutos.Add(produto);
+			}
+
+			return listaProdutos;
 		}
 	}
 }

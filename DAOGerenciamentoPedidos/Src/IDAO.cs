@@ -1,6 +1,7 @@
 ﻿using ModelsGerenciamentoPedidos.Src;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,5 +19,7 @@ namespace DAOGerenciamentoPedidos.Src
 		List<T> Listar();
 
 		T ObterPorId(int id);
+
+		List<T> ReaderParaListaDeObjetos(SqlDataReader reader);
 	}
 }
