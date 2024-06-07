@@ -215,3 +215,12 @@ A instrução foi finalizada.
 ClientConnectionId:62804447-416d-473e-b0b3-f734a8bed14d
 Error Number:2627,State:1,Class:14
 ------------------------------------
+
+Log Entrada : 11:06:28 sexta-feira, 7 de junho de 2024
+  :
+  :Erro ao listar produtos: System.IndexOutOfRangeException: mp.descricao
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 121
+   at DAOGerenciamentoPedidos.PedidoDAO.ObterPorId(Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 96
+------------------------------------

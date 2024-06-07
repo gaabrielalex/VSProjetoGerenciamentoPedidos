@@ -78,8 +78,7 @@ namespace DAOGerenciamentoPedidos
 		public Pedido ObterPorId(int id)
 		{
 			//Query de listagem
-			String query = @"SELECT nome_cliente, vlr_subtotal, desconto, dt_hr_pedido, status_pedido, 
-								observacoes, p.id_metodo_pagto, mp.descricao
+			String query = @"SELECT p.*, mp.descricao AS descricao_metodo_pagto
 							FROM pedido p, metodo_pagto mp
 							WHERE p.id_metodo_pagto = mp.id_metodo_pagto 
 							AND id_pedido = @id_pedido";
@@ -94,20 +93,7 @@ namespace DAOGerenciamentoPedidos
 					SqlCommand command = new SqlCommand(query, connection);
 					command.Parameters.AddWithValue("@id_pedido", id);
 					SqlDataReader reader = command.ExecuteReader();
-					while (reader.Read())
-					{
-						Pedido pedido = new Pedido(
-						idPedido: id,
-						nomeCliente: reader.GetString(0),
-						vlrSubtotal: reader.GetDecimal(1),
-						desconto: reader.GetDecimal(2),
-						dtHrPedido: reader.GetDateTime(3),
-						statusPedido: (EnumStatusPedido)reader.GetString(4)[0],
-						observacoes: reader.GetString(5),
-						metodoPagemento: new MetodoPagamento(reader.GetInt32(6), reader.GetString(7))
-						);
-						listaPedidos.Add(pedido);
-					}
+					listaPedidos = ConverterReaderParaListaDeObjetos(reader);
 					connection.Close();
 					return listaPedidos[0];
 				}
@@ -121,7 +107,35 @@ namespace DAOGerenciamentoPedidos
 
 		public List<Pedido> ConverterReaderParaListaDeObjetos(SqlDataReader reader)
 		{
-			throw new NotImplementedException();
+			List<Pedido> listaPedidos = new List<Pedido>();
+
+			// Obtendo os índices das colunas uma vez antes do loop
+			int idIndex = reader.GetOrdinal("id_pedido");
+			int nomeClienteIndex = reader.GetOrdinal("nome_cliente");
+			int vlrSubtotalIndex = reader.GetOrdinal("vlr_subtotal");
+			int descontoIndex = reader.GetOrdinal("desconto");
+			int dtHrPedidoIndex = reader.GetOrdinal("dt_hr_pedido");
+			int statusPedidoIndex = reader.GetOrdinal("status_pedido");
+			int observacoesIndex = reader.GetOrdinal("observacoes");
+			int idMetodoPagtoIndex = reader.GetOrdinal("id_metodo_pagto");
+			int descricaoMetodoPagtoIndex = reader.GetOrdinal("descricao_metodo_pagto");
+
+			while (reader.Read())
+			{
+				Pedido pedido = new Pedido(
+					idPedido: reader.GetInt32(idIndex),
+					nomeCliente: reader.GetString(nomeClienteIndex),
+					vlrSubtotal: reader.GetDecimal(vlrSubtotalIndex),
+					desconto: reader.GetDecimal(descontoIndex),
+					dtHrPedido: reader.GetDateTime(dtHrPedidoIndex),
+					statusPedido: (EnumStatusPedido)reader.GetString(statusPedidoIndex)[0],
+					observacoes: reader.GetString(observacoesIndex),
+					metodoPagemento: new MetodoPagamento(reader.GetInt32(idMetodoPagtoIndex), reader.GetString(descricaoMetodoPagtoIndex))
+				);
+				listaPedidos.Add(pedido);
+			}
+
+			return listaPedidos;
 		}
 	}
 }
