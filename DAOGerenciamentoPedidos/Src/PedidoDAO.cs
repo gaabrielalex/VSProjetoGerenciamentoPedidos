@@ -58,6 +58,27 @@ namespace DAOGerenciamentoPedidos
 
 			try
 			{
+				using (SqlConnection connection = DB_Connection.getConnection())
+				{
+					connection.Open();
+					SqlCommand command = new SqlCommand(query, connection);
+					command.Parameters.AddWithValue("@nome_cliente", pedido.NomeCliente);
+					command.Parameters.AddWithValue("@vlr_subtotal", pedido.VlrSubtotal);
+					command.Parameters.AddWithValue("@desconto", pedido.Desconto);
+					command.Parameters.AddWithValue("@dt_hr_pedido", pedido.DtHrPedido);
+					command.Parameters.AddWithValue("@status_pedido", (char)pedido.StatusPedido);
+					command.Parameters.AddWithValue("@observacoes", pedido.Observacoes);
+					command.Parameters.AddWithValue("@id_metodo_pagto", pedido.MetodoPagemento.IdMetodoPagto);
+					command.Parameters.AddWithValue("@id_pedido", idPedido);
+					var linhasAfetadas = command.ExecuteNonQuery();
+					connection.Close();
+					if (linhasAfetadas < 0)
+					{
+						RegistroLog.Log("Erro ao editar pedido: Nenhuma linha foi afetada - Id: " + idPedido);
+						throw new Exception("Erro ao editar pedido: Nenhuma linha foi afetada");
+					}
+
+				}	
 				
 			} catch (Exception e) {
 				RegistroLog.Log($"Erro ao inserir pedido: {e.ToString()}");
