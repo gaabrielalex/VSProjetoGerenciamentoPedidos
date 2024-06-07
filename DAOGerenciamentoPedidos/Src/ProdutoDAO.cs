@@ -210,5 +210,7 @@ namespace DAOGerenciamentoPedidos.Src
 				throw new Exception("Erro ao realizar verificação da já existência do produto: " + e.Message);
 			}
 		}
+
+
 	}
 }

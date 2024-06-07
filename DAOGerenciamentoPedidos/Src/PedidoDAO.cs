@@ -119,6 +119,4 @@ namespace DAOGerenciamentoPedidos
 			}
 		}
 	}
-
-	
 }
