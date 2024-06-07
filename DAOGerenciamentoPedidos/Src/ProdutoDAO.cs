@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using ModelsGerenciamentoPedidos.Src;
 using DAOGerenciamentoPedidos.Src.Data_Base;
+using UtilsGerenciamentoPedidos;
 
 namespace DAOGerenciamentoPedidos.Src
 {
@@ -30,11 +31,11 @@ namespace DAOGerenciamentoPedidos.Src
 					int idProduto = Convert.ToInt32(command.ExecuteScalar());
 					connection.Close();
 					return idProduto;
-
 				}
 			}
 			catch (Exception e)
 			{
+				RegistroLog.Log($"Erro ao inserir produto: {e.ToString()}");
 				throw new Exception("Erro ao inserir produto: " + e.Message);
 			}
 		}
@@ -55,12 +56,15 @@ namespace DAOGerenciamentoPedidos.Src
 					command.Parameters.AddWithValue("@id_produto", idProduto);
 					var linhasAfetadas = command.ExecuteNonQuery();
 					connection.Close();
-					if(linhasAfetadas < 0)
+					if(linhasAfetadas < 0) {
+						RegistroLog.Log("Erro ao editar produto: Nenhuma linha foi afetada - Id: " + idProduto );
 						throw new Exception("Erro ao editar produto: Nenhuma linha foi afetada");
+					}
 				}
 			}
 			catch (Exception e)
 			{
+				RegistroLog.Log($"Erro ao editar produto: {e.ToString()}");
 				throw new Exception("Erro ao editar produto: " + e.Message);
 			}
 		}
@@ -79,12 +83,15 @@ namespace DAOGerenciamentoPedidos.Src
 					command.Parameters.AddWithValue("@id_produto", idProduto);
 					var linhasAfetadas = command.ExecuteNonQuery();
 					connection.Close();
-					if(linhasAfetadas < 0)
+					if(linhasAfetadas < 0) {
+						RegistroLog.Log("Erro ao excluir produto: Nenhuma linha foi afetada - Id: " + idProduto );
 						throw new Exception("Erro ao excluir produto: Nenhuma linha foi afetada");
+					}
 				}
 			}
 			catch (Exception e)
 			{
+				RegistroLog.Log($"Erro ao excluir produto: {e.ToString()}");
 				throw new Exception("Erro ao excluir produto: " + e.Message);
 			}
 		}
@@ -113,6 +120,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 			catch (Exception e)
 			{
+				RegistroLog.Log($"Erro ao listar produto: {e.ToString()}");
 				throw new Exception("Erro ao listar produtos: " + e.Message);
 			}
 		}
@@ -142,6 +150,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 			catch (Exception e)
 			{
+				RegistroLog.Log($"Erro ao listar produto: {e.ToString()}");
 				throw new Exception("Erro ao listar produtos: " + e.Message);
 			}
 		}
@@ -168,6 +177,7 @@ namespace DAOGerenciamentoPedidos.Src
 				}
 			} catch (Exception e) 
 			{
+				RegistroLog.Log($"Erro ao obter produto: {e.ToString()}");
 				throw new Exception("Erro ao obter produto: " + e.Message);
 			}
 		}
@@ -196,6 +206,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 			catch (Exception e)
 			{
+				RegistroLog.Log($"Erro ao realizar verificação da já existência do produto: {e.ToString()}");
 				throw new Exception("Erro ao realizar verificação da já existência do produto: " + e.Message);
 			}
 		}

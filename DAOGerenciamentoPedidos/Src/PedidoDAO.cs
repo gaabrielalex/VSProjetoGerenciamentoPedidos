@@ -9,6 +9,7 @@ using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
+using UtilsGerenciamentoPedidos;
 using static ModelsGerenciamentoPedidos.Src.Pedido;
 
 namespace DAOGerenciamentoPedidos
@@ -45,13 +46,23 @@ namespace DAOGerenciamentoPedidos
 			}
 			catch (Exception e)
 			{
+				RegistroLog.Log($"Erro ao inserir pedido: {e.ToString()}");
 				throw new Exception("Erro ao inserir pedido: " + e.Message);
 			}
 		}
 
-		public void Editar(Pedido pedido, int idObjASerEditado)
+		public void Editar(Pedido pedido, int idPedido)
 		{
-			throw new NotImplementedException();
+			String query = @"UPDATE pedido SET nome_cliente = @nome_cliente, vlr_subtotal = @vlr_subtotal, desconto = @desconto, dt_hr_pedido = @dt_hr_pedido, 
+										status_pedido = @status_pedido, observacoes = @observacoes, id_metodo_pagto = @id_metodo_pagto WHERE id_pedido = @id_pedido";
+
+			try
+			{
+				
+			} catch (Exception e) {
+				RegistroLog.Log($"Erro ao inserir pedido: {e.ToString()}");
+				throw new Exception("Erro ao inserir pedido: " + e.Message);
+			}
 		}
 
 		public void Excluir(int id)
@@ -103,6 +114,7 @@ namespace DAOGerenciamentoPedidos
 			}
 			catch (Exception e)
 			{
+				RegistroLog.Log($"Erro ao listar produtos: {e.ToString()}");
 				throw new Exception("Erro ao listar produtos: " + e.Message);
 			}
 		}

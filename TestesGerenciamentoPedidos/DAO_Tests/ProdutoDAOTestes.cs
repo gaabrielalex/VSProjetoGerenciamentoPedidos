@@ -123,7 +123,6 @@ namespace TestesGerenciamentoPedidos
 			}
 			catch (Exception e)
 			{
-
 				// Assert
 				Assert.Fail("Erro ao listar produtos: " + e.Message);
 			}
@@ -138,7 +137,6 @@ namespace TestesGerenciamentoPedidos
 		[TestMethod]
 		public void AoRealizarListagemPorDescricaoDeveRetonarUmaListaDeProdutosFiltrados()
 		{
-
 			//faz o seguinte, insere 4 produtos com a descrição testeFiltragem1, testeFiltragem2, testeFiltragem3 e testeFiltragem4. VC vai obter os ids desss registros inseridos
 			//depois vc vai chamar o método de listagem por descrição passando a descrição testeFiltragem e vai verificar se a lista retornada contém os 4 registros inseridos
 			// Arrange
@@ -178,7 +176,6 @@ namespace TestesGerenciamentoPedidos
 			}
 			catch (Exception e)
 			{
-
 				// Assert
 				e.Should().BeNull();
 			}
