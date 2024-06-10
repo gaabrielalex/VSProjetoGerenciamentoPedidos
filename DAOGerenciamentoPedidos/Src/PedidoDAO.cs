@@ -110,7 +110,27 @@ namespace DAOGerenciamentoPedidos
 
 		public List<Pedido> Listar()
 		{
-			throw new NotImplementedException();
+			String query = @"SELECT p.*, mp.descricao AS descricao_metodo_pagto
+							FROM pedido p, metodo_pagto mp
+							WHERE p.id_metodo_pagto = mp.id_metodo_pagto";
+
+			List<Pedido> listaPedido = new List<Pedido>();
+			try
+			{
+				using (SqlConnection connection = DB_Connection.getConnection())
+				{
+					connection.Open();
+					SqlCommand command = new SqlCommand(query, connection);
+					SqlDataReader reader = command.ExecuteReader();
+					listaPedido = ConverterReaderParaListaDeObjetos(reader);
+					connection.Close();
+					return listaPedido;
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Erro($"Erro ao listar pedidos: {e.ToString()}");
+			}
 		}
 
 		public Pedido ObterPorId(int id)

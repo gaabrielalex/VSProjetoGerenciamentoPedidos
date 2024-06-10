@@ -55,5 +55,10 @@ namespace TestesGerenciamentoPedidos
 				e.Should().BeNull(because: "Não deve ocorrer erro ao apagar registros de teste do banco");
 			}
 		}
+
+		public static int GerarNumeroAleatorio()
+		{
+			return new Random().Next(1, 1000000);
+		}
 	}
 }

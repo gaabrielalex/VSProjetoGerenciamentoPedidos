@@ -3,6 +3,7 @@ using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ModelsGerenciamentoPedidos.Src;
 using System;
+using System.Collections.Generic;
 using static ModelsGerenciamentoPedidos.Src.Pedido;
 
 namespace TestesGerenciamentoPedidos.DAO_Tests
@@ -158,6 +159,50 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 			//Assert
 			idPedidoInserido.Should().BeGreaterThan(0, because: "O id do pedido inserido deve ser maior que 0, pois só assim será um id válido, demonstrando que o pedido foi inserido");
 			pedidoExcluido.Should().BeNull(because: "O pedido excluído não deve ser retornado ao buscar pelo id do pedido excluído");
+		}
+
+		[TestMethod]
+		public void AoInserir100PedidosDeveRetornarUmaListaDePedidosContendoOs10PedidosInseridos()
+		{
+			// Arrange
+			var quantidadePedidosEsperada = 100;
+			PedidoDAO pedidoDAO = new PedidoDAO();
+			List<Pedido> pedidosASeremInseridos = new List<Pedido>();
+			for (int i = 0; i < quantidadePedidosEsperada; i++)
+			{
+				Pedido pedido = new Pedido()
+				{
+					NomeCliente = $"Cliente Teste {i} - {UtilTeste.GerarNumeroAleatorio()}",
+					VlrSubtotal = 100 + i,
+					Desconto = 10 + i,
+					DtHrPedido = new DateTime(2020, 07, 02, 22, 59, 59),
+					StatusPedido = EnumStatusPedido.AguardandoPagamento,
+					Observacoes = $"Observações Teste {i} - {UtilTeste.GerarNumeroAleatorio()}",
+					MetodoPagemento = new MetodoPagamento() { IdMetodoPagto = 1 }
+				};
+				pedidosASeremInseridos.Add(pedido);
+			}
+
+			// Act
+			int[] idPedidosInseridos = new int[quantidadePedidosEsperada];
+
+			for (int i = 0; i < quantidadePedidosEsperada; i++)
+			{
+				idPedidosInseridos[i] = pedidoDAO.Inserir(pedidosASeremInseridos[i]);
+			}
+
+			Pedido[] pedidosInseridos = new Pedido[quantidadePedidosEsperada];
+			for (int i = 0; i < quantidadePedidosEsperada; i++)
+			{
+				pedidosInseridos[i] = pedidoDAO.ObterPorId(idPedidosInseridos[i]);
+			}
+
+			List<Pedido> listagemPedidos = pedidoDAO.Listar();
+
+			// Assert
+			listagemPedidos.Should().HaveCountGreaterThanOrEqualTo(quantidadePedidosEsperada, because: $"Deve haver pelo menos {quantidadePedidosEsperada} pedidos cadastrados no banco");
+			listagemPedidos.Should().Contain(pedidosInseridos, because: "A listagem de pedidos deve conter todos os pedidos inseridos");
+
 		}
 
 		static DateTime TruncateToMinute(DateTime dateTime)
