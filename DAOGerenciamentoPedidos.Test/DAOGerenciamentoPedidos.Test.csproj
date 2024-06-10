@@ -63,6 +63,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Src\DAOFactory.cs" />
     <Compile Include="Src\PedidoDAOTest.cs" />
     <Compile Include="Src\ProdutoDAOTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

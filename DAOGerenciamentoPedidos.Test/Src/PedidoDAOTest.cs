@@ -1,4 +1,5 @@
 ﻿using DAOGerenciamentoPedidos;
+using DAOGerenciamentoPedidos.Test.Src;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ModelsGerenciamentoPedidos.Src;
@@ -16,15 +17,8 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 		public void AoPersistirUmObjetoPedidoDeveRetornarOIdDoPedidoInserido()
 		{
 			// Arrange
-			Pedido pedido = new Pedido();
-			pedido.NomeCliente = "Cliente Teste";
-			pedido.VlrSubtotal = 100;
-			pedido.Desconto = 10;
-			pedido.DtHrPedido = DateTime.Now;
-			pedido.StatusPedido = EnumStatusPedido.AguardandoPagamento;
-			pedido.Observacoes = "Observações Teste";
-			pedido.MetodoPagemento = new MetodoPagamento();
-			pedido.MetodoPagemento.IdMetodoPagto = 1;
+			Pedido pedido = DAOFactory.RetornaPedido();
+			
 			PedidoDAO pedidoDAO = new PedidoDAO();
 			// Act
 			int idPedidoInserido = pedidoDAO.Inserir(pedido);
@@ -37,16 +31,9 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 		public void AoPersistirUmObjetoPedidoDeveRetornUmRegistroComTodosOsCamposPreenchidosConformeOInserido()
 		{
 			// Arrange
-			Pedido pedido = new Pedido();
-			pedido.NomeCliente = "Cliente Teste AoPersistirUmObjetoPedidoDeveRetornarCadastrarUmRegistroComTodosOsCamposPreenchidos";
-			pedido.VlrSubtotal = 100;
-			pedido.Desconto = 10;
-			pedido.DtHrPedido = DateTime.Now;
-			pedido.StatusPedido = EnumStatusPedido.AguardandoPagamento;
-			pedido.Observacoes = "Observações Teste AoPersistirUmObjetoPedidoDeveRetornarCadastrarUmRegistroComTodosOsCamposPreenchidos";
-			pedido.MetodoPagemento = new MetodoPagamento();
-			pedido.MetodoPagemento.IdMetodoPagto = 1;
+			Pedido pedido = DAOFactory.RetornaPedido();
 			PedidoDAO pedidoDAO = new PedidoDAO();
+
 			// Act
 			int idPedidoInserido = pedidoDAO.Inserir(pedido);
 			Pedido pedidoInserido = pedidoDAO.ObterPorId(idPedidoInserido);
@@ -71,15 +58,7 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 		{
 			// Arrange
 			PedidoDAO pedidoDAO = new PedidoDAO();
-			Pedido pedido = new Pedido();
-			pedido.NomeCliente = "Cliente Teste OProdutoComTodasAsMudancasRealizadasAoConsultalo";
-			pedido.VlrSubtotal = 100;
-			pedido.Desconto = 10;
-			pedido.DtHrPedido = new DateTime(2020, 07, 02, 22, 59, 59);
-			pedido.StatusPedido = EnumStatusPedido.AguardandoPagamento;
-			pedido.Observacoes = "Observações Teste OProdutoComTodasAsMudancasRealizadasAoConsultalo";
-			pedido.MetodoPagemento = new MetodoPagamento();
-			pedido.MetodoPagemento.IdMetodoPagto = 1;
+			Pedido pedido = DAOFactory.RetornaPedido();
 
 			// Act
 			int idPedidoInserido = pedidoDAO.Inserir(pedido);
@@ -141,16 +120,7 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 		{
 			//Arrange
 			PedidoDAO pedidoDAO = new PedidoDAO();
-			Pedido pedido = new Pedido()
-			{
-				NomeCliente = "Cliente Teste ExclusaoDeveRetornarVazioAoTentarObteloPeloSeuAntigoID",
-				VlrSubtotal = 100,
-				Desconto = 10,
-				DtHrPedido = new DateTime(2020, 07, 02, 22, 59, 59),
-				StatusPedido = EnumStatusPedido.AguardandoPagamento,
-				Observacoes = "Observações Teste ExclusaoDeveRetornarVazioAoTentarObteloPeloSeuAntigoID",
-				MetodoPagemento = new MetodoPagamento() { IdMetodoPagto = 1 }
-			};
+			Pedido pedido = DAOFactory.RetornaPedido();
 
 			//Act
 			int idPedidoInserido = pedidoDAO.Inserir(pedido);
@@ -171,16 +141,7 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 			List<Pedido> pedidosASeremInseridos = new List<Pedido>();
 			for (int i = 0; i < quantidadePedidosEsperada; i++)
 			{
-				Pedido pedido = new Pedido()
-				{
-					NomeCliente = $"Cliente Teste {i} - {UtilTest.GerarNumeroAleatorio()}",
-					VlrSubtotal = 100 + i,
-					Desconto = 10 + i,
-					DtHrPedido = new DateTime(2020, 07, 02, 22, 59, 59),
-					StatusPedido = EnumStatusPedido.AguardandoPagamento,
-					Observacoes = $"Observações Teste {i} - {UtilTest.GerarNumeroAleatorio()}",
-					MetodoPagemento = new MetodoPagamento() { IdMetodoPagto = 1 }
-				};
+				Pedido pedido = DAOFactory.RetornaPedido();
 				pedidosASeremInseridos.Add(pedido);
 			}
 
