@@ -46,8 +46,7 @@ namespace DAOGerenciamentoPedidos
 			}
 			catch (Exception e)
 			{
-				RegistroLog.Log($"Erro ao inserir pedido: {e.ToString()}");
-				throw new Exception("Erro ao inserir pedido: " + e.Message);
+				throw new Erro($"Erro ao inserir pedido: {e.ToString()}");
 			}
 		}
 
@@ -81,8 +80,7 @@ namespace DAOGerenciamentoPedidos
 				}	
 				
 			} catch (Exception e) {
-				RegistroLog.Log($"Erro ao inserir pedido: {e.ToString()}");
-				throw new Exception("Erro ao inserir pedido: " + e.Message);
+				throw new Erro($"Erro ao editar pedido: {e.ToString()}");
 			}
 		}
 
@@ -121,8 +119,7 @@ namespace DAOGerenciamentoPedidos
 			}
 			catch (Exception e)
 			{
-				RegistroLog.Log($"Erro ao listar produtos: {e.ToString()}");
-				throw new Exception("Erro ao listar produtos: " + e.Message);
+				throw new Erro($"Erro ao obter pedido: {e.ToString()}");
 			}
 		}
 
