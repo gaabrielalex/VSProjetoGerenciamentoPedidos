@@ -6,10 +6,11 @@ using System;
 using System.Collections.Generic;
 using static ModelsGerenciamentoPedidos.Src.Pedido;
 
+
 namespace TestesGerenciamentoPedidos.DAO_Tests
 {
 	[TestClass]
-	public class PedidoDAOTestes
+	public class PedidoDAOTest
 	{
 		[TestMethod]
 		public void AoPersistirUmObjetoPedidoDeveRetornarOIdDoPedidoInserido()
@@ -33,7 +34,7 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 		}
 
 		[TestMethod]
-		public void AoPersistirUmObjetoPedidoDeveRetornarCadastrarUmRegistroComTodosOsCamposPreenchidos()
+		public void AoPersistirUmObjetoPedidoDeveRetornUmRegistroComTodosOsCamposPreenchidosConformeOInserido()
 		{
 			// Arrange
 			Pedido pedido = new Pedido();
@@ -172,12 +173,12 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 			{
 				Pedido pedido = new Pedido()
 				{
-					NomeCliente = $"Cliente Teste {i} - {UtilTeste.GerarNumeroAleatorio()}",
+					NomeCliente = $"Cliente Teste {i} - {UtilTest.GerarNumeroAleatorio()}",
 					VlrSubtotal = 100 + i,
 					Desconto = 10 + i,
 					DtHrPedido = new DateTime(2020, 07, 02, 22, 59, 59),
 					StatusPedido = EnumStatusPedido.AguardandoPagamento,
-					Observacoes = $"Observações Teste {i} - {UtilTeste.GerarNumeroAleatorio()}",
+					Observacoes = $"Observações Teste {i} - {UtilTest.GerarNumeroAleatorio()}",
 					MetodoPagemento = new MetodoPagamento() { IdMetodoPagto = 1 }
 				};
 				pedidosASeremInseridos.Add(pedido);

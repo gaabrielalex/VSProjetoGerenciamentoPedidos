@@ -6,7 +6,7 @@ using System;
 namespace TestesGerenciamentoPedidos
 {
 	[TestClass]
-	public class ModelUtilsTestecs
+	public class ModelUtilsTest
 	{
 		[TestMethod]
 		public void AoObterQuantidadeDeDigitosAntesDoSeparadorDecimalDeUmValor3DigitosE2CasasDecimaisDeveRetornarTres()

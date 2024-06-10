@@ -9,7 +9,7 @@ using System.Security.Cryptography.X509Certificates;
 namespace TestesGerenciamentoPedidos
 {
 	[TestClass]
-	public class ProdutoDAOTestes
+	public class ProdutoDAOTest
 	{
 		[TestMethod]
 		public void AoRealizarInsercaoDeveRetonarUmNumeroInteiro()

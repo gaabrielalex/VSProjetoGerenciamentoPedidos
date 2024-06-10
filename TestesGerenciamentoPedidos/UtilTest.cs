@@ -8,7 +8,7 @@ using WebGereciamentoPedidos.src.util;
 namespace TestesGerenciamentoPedidos
 {
 	[TestClass]
-	public class UtilTeste
+	public class UtilTest
 	{
 
 		[TestMethod]

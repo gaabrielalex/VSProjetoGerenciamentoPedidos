@@ -7,7 +7,7 @@ using System;
 namespace TestesGerenciamentoPedidos
 {
 	[TestClass]
-	public class PedidoModelTestes
+	public class PedidoTest
 	{
 		[TestMethod]
 		public void AoCriarPedidoComNomeDoClienteMaiorQue100CaracteresDeveRetornarExcecao()
