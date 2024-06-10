@@ -18,9 +18,13 @@ var myApp = myApp || {};
 			const callbackErro = (xhr, status, error) => {
 				var errorPayload = JSON.parse(xhr.responseText);
 				myApp.showToast(
-					`Houve um erro ao excluir o produto: ${errorPayload.ExceptionType} - ${errorPayload.Message}`,
+					`Houve um erro ao excluir o produto`,
 					"e"
 				)
+				//myApp.showToast(
+				//	`Houve um erro ao excluir o produto: ${errorPayload.ExceptionType} - ${errorPayload.Message}`,
+				//	"e"
+				//)
 			}
 
 			myApp.abriModalConfirmacaoExclusaoComAjax(

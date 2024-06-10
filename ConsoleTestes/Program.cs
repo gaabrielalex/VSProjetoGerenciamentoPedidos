@@ -10,25 +10,35 @@ namespace ConsoleTestes
 	{
 		static void Main(string[] args)
 		{
+			Cliente cliente = new Cliente(1);
 
-			//ItemDAO itemDAO = new ItemDAO();
+			Console.Write(cliente.ToString());
+		}
 
-			//itemDAO.obterPorDescricao();
-			////Não tem acesso
-			//itemDAO.ObterPorId();
-
-			//IDAO<Item> itemDAO2 = new ItemDAO();
-			//itemDAO2.ObterPorId();
-			//itemDAO2.ObterPorDescricao();
-
-			//ItemDAO itemDAO3 = new IDAO<Item>();
-			//itemDAO3.obterPorDescricao();
-
-			//PessoaDAO pessoaDAO = new PessoaDAO();
-			//pessoaDAO.ObterPorId();
+		public class Cliente
+		{
+			public int Id { get; set; }
+			public string Name { get; set; }
+			public int Idade { get; set; }
 
 
+			public Cliente(int id)  : this(id, "djoqwjho", 19999) 
+			{
+					
+			}
 
+			public Cliente(int id, string nome, int idade)
+			{
+				Id = id;
+				Name = nome;
+				Idade = idade;
+			}
+
+			public override string ToString()
+			{
+				var str = $"Id: {Id}, Nome: {Name}, Idade: {Idade}";
+				return str;
+			}
 		}
 
 		public interface IDAO<T> where T : class

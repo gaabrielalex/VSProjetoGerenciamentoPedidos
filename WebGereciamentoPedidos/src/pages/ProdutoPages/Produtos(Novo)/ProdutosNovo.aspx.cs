@@ -55,17 +55,27 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 
 		private void TratarCarregamentoDeDados()
 		{
-			if (Request.QueryString["Filtro"] != null)
+			try
 			{
-				string filtro = Request.QueryString["Filtro"];
 
-				DadosProdutosAtual = ProdutoDAO.ListarPorDescricao(filtro);
-			}
-			else
+				if (Request.QueryString["Filtro"] != null)
+				{
+					string filtro = Request.QueryString["Filtro"];
+
+					DadosProdutosAtual = ProdutoDAO.ListarPorDescricao(filtro);
+				}
+				else
+				{
+					DadosProdutosAtual = ProdutoDAO.Listar();
+				}
+
+				BindData();
+			} 
+			catch (Exception ex)
 			{
-				DadosProdutosAtual = ProdutoDAO.Listar();
+				RegistroLog.Log($"Erro ao listar produtos: {ex.ToString()}");
+				PageUtils.MostrarMensagemViaToastComDelay("Erro ao listar produtos", TiposMensagem.Erro, this);
 			}
-			BindData();
 		}
 		private void BindData()
 		{
