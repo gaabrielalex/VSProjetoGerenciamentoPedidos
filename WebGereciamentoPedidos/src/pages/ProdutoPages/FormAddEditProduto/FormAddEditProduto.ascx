@@ -2,25 +2,7 @@
 <%@ Register TagPrefix="gp" TagName="TextFormField" Src="~/src/components/TextFormField/TextFormField.ascx" %>
 <%@ Register TagPrefix="gp" TagName="TituloMedio" Src="~/src/components/TituloMedio/TituloMedio.ascx" %>
 
-<style>
-	.conteudo-FormAddEditProdutoPanel .row {
-		margin-bottom: 5px;
-	}
-
-		.conteudo-FormAddEditProdutoPanel .row:last-child {
-			margin-top: 30px;
-		}
-
-	.buttons-FormAddEditProdutoPanel {
-		display: flex;
-		justify-content: end;
-		gap: 15px;
-	}
-
-	.conteudo-FormAddEditProdutoPanel {
-		width: 400px;
-	}
-</style>
+<link rel="stylesheet" href="/src/pages/ProdutoPages/FormAddEditProduto/FormAddEditProduto.css" />
 
 <asp:UpdatePanel runat="server">
 	<ContentTemplate>

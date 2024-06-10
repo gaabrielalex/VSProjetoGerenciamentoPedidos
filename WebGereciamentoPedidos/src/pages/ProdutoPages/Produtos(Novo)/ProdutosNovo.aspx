@@ -5,28 +5,7 @@
 <%@ Register TagPrefix="gp" TagName="Titulo" Src="~/src/components/Titulo/Titulo.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
-	<style>
-		.filtro-container {
-			display: flex;
-			justify-content: space-between;
-		}
-
-		.table-container {
-			width: 100%;
-			height: 70vh;
-			overflow-x: auto;
-			margin-top: 25px;
-		}
-
-			.table-container .table th, .table td {
-				padding: 10px;
-				border: 1px solid #ddd;
-			}
-
-			.table-container td {
-				border-bottom: 1px solid #ccc;
-			}
-	</style>
+	<link rel="stylesheet" href="ProdutosNovo.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 

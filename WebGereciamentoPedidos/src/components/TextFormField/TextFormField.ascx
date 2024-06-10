@@ -1,26 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TextFormField.ascx.cs" Inherits="WebGereciamentoPedidos.src.components.TextFormField" %>
 
-<style>
-    .erro {
-	    color: #dc3545;
-    }
-
-    .gp-text-box {
-        display: inline-flex;
-        flex-direction: column;
-        margin-top: 6px;
-    }
-
-    .gp-text-form-field {
-        display: inline-flex;
-        flex-direction: column;
-    }
-
-    .container-custom-validator {
-        height: 24.5px;
-    }
-
-</style>
+<link rel="stylesheet" href="\src\components\TextFormField\TextFormField.css" />
 
 <div class="gp-text-form-field <%=CssClass%>" style="<%=Style%>">
     <asp:Label ID="Label" runat="server"></asp:Label>

@@ -1,0 +1,10 @@
+﻿
+.FiltroTextBox, .FiltroButton {
+	min-height: 42px;
+	margin-right: 0;
+}
+
+.FiltroTextBox {
+	width: 400px;
+	max-width: 400px;
+}

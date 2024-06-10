@@ -1,9 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Titulo.ascx.cs" Inherits="WebGereciamentoPedidos.src.components.Titulo.Titulo" %>
-<style>
-	.title-container {
-		margin: 40px 0;
-	}
-</style>
+
+<link rel="stylesheet" href="\src\components\Titulo\Titulo.css" />
 
 <div class="title-container">
 	<h1 runat="server">
