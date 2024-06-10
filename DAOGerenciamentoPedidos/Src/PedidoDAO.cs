@@ -86,7 +86,26 @@ namespace DAOGerenciamentoPedidos
 
 		public void Excluir(int id)
 		{
-			throw new NotImplementedException();
+			String query = "DELETE FROM pedido WHERE id_pedido = @id_pedido";
+			try
+			{
+				using (SqlConnection connection = DB_Connection.getConnection())
+				{
+					connection.Open();
+					SqlCommand command = new SqlCommand(query, connection);
+					command.Parameters.AddWithValue("@id_pedido", id);
+					var linhasAfetadas = command.ExecuteNonQuery();
+					connection.Close();
+					if (linhasAfetadas < 0)
+					{
+						throw new Erro($"Erro ao excluir pedido: Nenhuma linha foi afetada - Id: " + id);
+					}
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Erro($"Erro ao excluir pedido: {e.ToString()}");
+			}
 		}
 
 		public List<Pedido> Listar()
@@ -96,7 +115,6 @@ namespace DAOGerenciamentoPedidos
 
 		public Pedido ObterPorId(int id)
 		{
-			//Query de listagem
 			String query = @"SELECT p.*, mp.descricao AS descricao_metodo_pagto
 							FROM pedido p, metodo_pagto mp
 							WHERE p.id_metodo_pagto = mp.id_metodo_pagto 
@@ -105,7 +123,6 @@ namespace DAOGerenciamentoPedidos
 			List<Pedido> listaPedidos = new List<Pedido>();
 			try
 			{
-				//Obtendo conexão co banco
 				using (SqlConnection connection = DB_Connection.getConnection())
 				{
 					connection.Open();
@@ -114,6 +131,10 @@ namespace DAOGerenciamentoPedidos
 					SqlDataReader reader = command.ExecuteReader();
 					listaPedidos = ConverterReaderParaListaDeObjetos(reader);
 					connection.Close();
+					if (listaPedidos.Count == 0)
+					{
+						return null;
+					}
 					return listaPedidos[0];
 				}
 			}

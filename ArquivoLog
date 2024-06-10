@@ -851,3 +851,27 @@ Log Entrada : 14:09:58 segunda-feira, 10 de junho de 2024
 ClientConnectionId:959c9a8a-1389-41e4-ac11-6a4d88645ce8
 Error Number:156,State:1,Class:15
 ------------------------------------
+
+Log Entrada : 14:32:57 segunda-feira, 10 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 40
+------------------------------------
+
+Log Entrada : 14:35:10 segunda-feira, 10 de junho de 2024
+  :
+  :Erro ao obter pedido: System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at DAOGerenciamentoPedidos.PedidoDAO.ObterPorId(Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 134
+------------------------------------
+
+Log Entrada : 14:35:40 segunda-feira, 10 de junho de 2024
+  :
+  :Erro ao obter pedido: System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at DAOGerenciamentoPedidos.PedidoDAO.ObterPorId(Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 134
+------------------------------------

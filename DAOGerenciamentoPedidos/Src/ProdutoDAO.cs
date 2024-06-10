@@ -17,12 +17,10 @@ namespace DAOGerenciamentoPedidos.Src
 
 		public int Inserir(Produto produto)
 		{
-			//Query da inserção
 			String query = @"INSERT INTO produto (descricao, vlr_unitario) VALUES (@descricao, @vlr_unitario);
 							SELECT SCOPE_IDENTITY();";
 			try
 			{
-				//Obtendo conexão co banco
 				using (SqlConnection connection = DB_Connection.getConnection())
 				{
 					connection.Open();
@@ -40,25 +38,22 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 		}
 
-		public void Editar(Produto produto, int idProduto)
+		public void Editar(Produto produto, int id)
 		{
-			//Query de edição
 			String query = "UPDATE produto SET descricao = @descricao, vlr_unitario = @vlr_unitario WHERE id_produto = @id_produto";
 			try
 			{
-				//Obtendo conexão co banco
 				using (SqlConnection connection = DB_Connection.getConnection())
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
 					command.Parameters.AddWithValue("@descricao", produto.Descricao);
 					command.Parameters.AddWithValue("@vlr_unitario", produto.VlrUnitario);
-					command.Parameters.AddWithValue("@id_produto", idProduto);
+					command.Parameters.AddWithValue("@id_produto", id);
 					var linhasAfetadas = command.ExecuteNonQuery();
 					connection.Close();
 					if(linhasAfetadas < 0) {
-						RegistroLog.Log("Erro ao editar produto: Nenhuma linha foi afetada - Id: " + idProduto );
-						throw new Exception("Erro ao editar produto: Nenhuma linha foi afetada");
+						throw new Erro($"Erro ao editar produto: Nenhuma linha foi afetada - Id: " + id);
 					}
 				}
 			}
@@ -68,23 +63,20 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 		}
 
-		public void Excluir(int idProduto)
+		public void Excluir(int id)
 		{
-			//Query de exclusão
 			String query = "DELETE FROM produto WHERE id_produto = @id_produto";
 			try
 			{
-				//Obtendo conexão co banco
 				using (SqlConnection connection = DB_Connection.getConnection())
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
-					command.Parameters.AddWithValue("@id_produto", idProduto);
+					command.Parameters.AddWithValue("@id_produto", id);
 					var linhasAfetadas = command.ExecuteNonQuery();
 					connection.Close();
 					if(linhasAfetadas < 0) {
-						RegistroLog.Log("Erro ao excluir produto: Nenhuma linha foi afetada - Id: " + idProduto );
-						throw new Exception("Erro ao excluir produto: Nenhuma linha foi afetada");
+						throw new Erro($"Erro ao excluir produto: Nenhuma linha foi afetada - Id: " + id);
 					}
 				}
 			}
@@ -96,12 +88,10 @@ namespace DAOGerenciamentoPedidos.Src
 
 		public List<Produto> Listar()
 		{
-			//Query de listagem
 			String query = "SELECT * FROM produto";
 			List<Produto> listaProdutos = new List<Produto>();
 			try
 			{
-				//Obtendo conexão co banco
 				using (SqlConnection connection = DB_Connection.getConnection())
 				{
 					connection.Open();
@@ -120,12 +110,10 @@ namespace DAOGerenciamentoPedidos.Src
 
 		public List<Produto> ListarPorDescricao(String descricao)
 		{
-			//Query de listagem
 			String query = "SELECT * FROM produto WHERE descricao LIKE @descricao";
 			List<Produto> listaProdutos = new List<Produto>();
 			try
 			{
-				//Obtendo conexão com banco
 				using (SqlConnection connection = DB_Connection.getConnection())
 				{
 					connection.Open();
@@ -143,7 +131,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 		}
 
-		public Produto ObterPorId(int idProduto)
+		public Produto ObterPorId(int id)
 		{
 			String query = "SELECT * FROM produto where id_produto = @id_produto";
 			List<Produto> listaProdutos = new List<Produto>();
@@ -153,10 +141,14 @@ namespace DAOGerenciamentoPedidos.Src
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
-					command.Parameters.AddWithValue("@id_produto", idProduto);
+					command.Parameters.AddWithValue("@id_produto", id);
 					SqlDataReader reader = command.ExecuteReader();
 					listaProdutos = ConverterReaderParaListaDeObjetos(reader);
 					connection.Close();
+					if(listaProdutos.Count == 0)
+					{
+						return null;
+					}
 					return listaProdutos[0];
 				}
 			} catch (Exception e) 
@@ -171,7 +163,6 @@ namespace DAOGerenciamentoPedidos.Src
 			List<Produto> produtos = new List<Produto>();
 			try
 			{
-				//Obtendo conexão co banco
 				using (SqlConnection connection = DB_Connection.getConnection())
 				{
 					connection.Open();

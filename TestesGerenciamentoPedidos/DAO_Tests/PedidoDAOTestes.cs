@@ -134,6 +134,32 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 			);
 		}
 
+		[TestMethod]
+		public void AoPersistirObjetoPedidoRealizandoASuaExclusaoDeveRetornarNuloAoTentarObteloPeloSeuAntigoID()
+		{
+			//Arrange
+			PedidoDAO pedidoDAO = new PedidoDAO();
+			Pedido pedido = new Pedido()
+			{
+				NomeCliente = "Cliente Teste ExclusaoDeveRetornarVazioAoTentarObteloPeloSeuAntigoID",
+				VlrSubtotal = 100,
+				Desconto = 10,
+				DtHrPedido = new DateTime(2020, 07, 02, 22, 59, 59),
+				StatusPedido = EnumStatusPedido.AguardandoPagamento,
+				Observacoes = "Observações Teste ExclusaoDeveRetornarVazioAoTentarObteloPeloSeuAntigoID",
+				MetodoPagemento = new MetodoPagamento() { IdMetodoPagto = 1 }
+			};
+
+			//Act
+			int idPedidoInserido = pedidoDAO.Inserir(pedido);
+			pedidoDAO.Excluir(idPedidoInserido);
+			Pedido pedidoExcluido = pedidoDAO.ObterPorId(idPedidoInserido);
+
+			//Assert
+			idPedidoInserido.Should().BeGreaterThan(0, because: "O id do pedido inserido deve ser maior que 0, pois só assim será um id válido, demonstrando que o pedido foi inserido");
+			pedidoExcluido.Should().BeNull(because: "O pedido excluído não deve ser retornado ao buscar pelo id do pedido excluído");
+		}
+
 		static DateTime TruncateToMinute(DateTime dateTime)
 		{
 			// Zera os segundos e milissegundos
