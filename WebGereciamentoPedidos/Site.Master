@@ -57,7 +57,7 @@
 					<ul class="navbar-nav flex-grow-1">
 						<li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
 						<li class="nav-item"><a class="nav-link" runat="server" href="~/src/pages/ProdutoPages/Produtos(Novo)/ProdutosNovo.aspx">Produtos</a></li>
-						<li class="nav-item"><a class="nav-link" runat="server" href="#">Pedidos</a></li>
+						<li class="nav-item"><a class="nav-link" runat="server" href="~/src/pages/PedidoPages/Pedidos/Pedidos.aspx">Pedidos</a></li>
 						<li class="nav-item"><a class="nav-link" runat="server" href="~/src/pages/ProdutoPages/Produtos(Antigo)/Produtos">Produtos(Antigo)</a></li>
 					</ul>
 				</div>
