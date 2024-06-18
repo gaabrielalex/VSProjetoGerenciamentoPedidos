@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Pedidos.aspx.cs" Inherits="WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos" %>
+
 <%@ Register TagPrefix="gp" TagName="Filtro" Src="~/src/components/Filtro/Filtro.ascx" %>
 <%@ Register TagPrefix="gp" TagName="FormAddEditProduto" Src="~/src/pages/ProdutoPages/FormAddEditProduto/FormAddEditProduto.ascx" %>
 <%@ Register TagPrefix="gp" TagName="Titulo" Src="~/src/components/Titulo/Titulo.ascx" %>
@@ -32,9 +33,16 @@
 							<asp:BoundField DataField="Desconto" HeaderText="Desconto" DataFormatString="{0:C}" />
 							<asp:BoundField DataField="VlrTotal" HeaderText="Vlr Total" DataFormatString="{0:C}" />
 							<asp:BoundField DataField="DtHrPedido" HeaderText="Data/hora" DataFormatString="{0:dd/MM/yyyy HH:mm}" />
-							<asp:BoundField DataField="DescricaoStatusPedido" HeaderText="Status" />
-							<asp:BoundField DataField="Observacoes" HeaderText="Observações" />
+							<asp:BoundField DataField="DescricaoStatusPedido" HeaderText="Status" /
 
+							<asp:TemplateField>
+								<ItemTemplate>
+									<asp:LinkButton ID="EditarLK" runat="server" CommandName="Detalhar"
+										CommandArgument='<%# Eval("IdPedido") %>' Text="Detalhar" CausesValidation="False">
+									</asp:LinkButton>
+								</ItemTemplate>
+								<ItemStyle Width="100px" />
+							</asp:TemplateField>
 							<asp:TemplateField>
 								<ItemTemplate>
 									<asp:LinkButton ID="EditarLK" runat="server" CommandName="Editar"
@@ -47,6 +55,14 @@
 								<ItemTemplate>
 									<asp:LinkButton ID="ExcluirLK" runat="server" CommandName="Excluir" CommandArgument='<%# Eval("IdPedido") %>'
 										Text="Excluir" CssClass="excluirLK" data-id-pedido='<%# Eval("IdPedido") %>' data-cliente='<%# Eval("NomeCliente") %>'>
+									</asp:LinkButton>
+								</ItemTemplate>
+								<ItemStyle Width="100px" />
+							</asp:TemplateField>
+							<asp:TemplateField>
+								<ItemTemplate>
+									<asp:LinkButton ID="EditarLK" runat="server" CommandName="Selecionar"
+										CommandArgument='<%# Eval("IdPedido") %>' Text="Selecionar" CausesValidation="False">
 									</asp:LinkButton>
 								</ItemTemplate>
 								<ItemStyle Width="100px" />
