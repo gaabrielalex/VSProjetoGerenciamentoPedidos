@@ -113,7 +113,7 @@ namespace DAOGerenciamentoPedidos
 			String query = @"SELECT p.*, mp.descricao AS descricao_metodo_pagto
 							FROM pedido p, metodo_pagto mp
 							WHERE p.id_metodo_pagto = mp.id_metodo_pagto
-							ORDER BY p.nome_cliente";
+							ORDER BY p.dt_hr_pedido DESC";
 
 			List<Pedido> listaPedido = new List<Pedido>();
 			try
@@ -171,7 +171,7 @@ namespace DAOGerenciamentoPedidos
 							FROM pedido p, metodo_pagto mp
 							WHERE p.id_metodo_pagto = mp.id_metodo_pagto
 								and nome_cliente COLLATE Latin1_General_CI_AI LIKE @nome_cliente
-							ORDER BY p.nome_cliente";
+							ORDER BY p.dt_hr_pedido DESC";
 
 			List<Pedido> listaPedidos = new List<Pedido>();
 			try

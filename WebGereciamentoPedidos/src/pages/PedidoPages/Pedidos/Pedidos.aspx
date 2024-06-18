@@ -29,6 +29,12 @@
 						<Columns>
 							<asp:BoundField DataField="NomeCliente" HeaderText="Cliente" />
 							<asp:BoundField DataField="VlrSubtotal" HeaderText="Vlr Subtotal" DataFormatString="{0:C}" />
+							<asp:BoundField DataField="Desconto" HeaderText="Desconto" DataFormatString="{0:C}" />
+							<asp:BoundField DataField="VlrTotal" HeaderText="Vlr Total" DataFormatString="{0:C}" />
+							<asp:BoundField DataField="DtHrPedido" HeaderText="Data/hora" DataFormatString="{0:dd/MM/yyyy HH:mm}" />
+							<asp:BoundField DataField="DescricaoStatusPedido" HeaderText="Status" />
+							<asp:BoundField DataField="Observacoes" HeaderText="Observações" />
+
 							<asp:TemplateField>
 								<ItemTemplate>
 									<asp:LinkButton ID="EditarLK" runat="server" CommandName="Editar"

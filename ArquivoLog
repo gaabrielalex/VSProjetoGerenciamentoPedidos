@@ -1661,3 +1661,66 @@ Error Number:102,State:1,Class:15
    em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 192
    em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 68
 ------------------------------------
+
+Log Entrada : 22:01:52 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.FormatException: A cadeia de caracteres de entrada não estava em um formato correto.
+   em System.DateTimeFormat.GetRealFormat(String format, DateTimeFormatInfo dtfi)
+   em System.DateTimeFormat.ExpandPredefinedFormat(String format, DateTime& dateTime, DateTimeFormatInfo& dtfi, TimeSpan& offset)
+   em System.DateTimeFormat.Format(DateTime dateTime, String format, DateTimeFormatInfo dtfi, TimeSpan offset)
+   em System.DateTimeFormat.Format(DateTime dateTime, String format, DateTimeFormatInfo dtfi)
+   em System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   em System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   em System.String.Format(IFormatProvider provider, String format, Object[] args)
+   em System.Web.UI.WebControls.BoundField.FormatDataValue(Object dataValue, Boolean encode)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 86
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 75
+------------------------------------
+
+Log Entrada : 22:03:33 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Web.HttpException (0x80004005): Não foi encontrado campo ou propriedade com o nome 'Status' na fonte de dados selecionada.
+   em System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 86
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 75
+------------------------------------
+
+Log Entrada : 22:04:15 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Web.HttpException (0x80004005): Não foi encontrado campo ou propriedade com o nome 'Status' na fonte de dados selecionada.
+   em System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 86
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 75
+------------------------------------
