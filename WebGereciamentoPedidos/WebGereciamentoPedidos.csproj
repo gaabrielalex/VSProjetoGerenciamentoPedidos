@@ -225,6 +225,8 @@
     <Content Include="src\components\Titulo\Titulo.ascx" />
     <Content Include="src\components\Titulo\Titulo.css" />
     <Content Include="src\components\Toast\Toast.ascx" />
+    <Content Include="src\pages\PedidoPages\Pedidos\Pedido.css" />
+    <Content Include="src\pages\PedidoPages\Pedidos\Pedido.js" />
     <Content Include="src\pages\PedidoPages\Pedidos\Pedidos.aspx" />
     <Content Include="src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx" />
     <Content Include="src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.css" />

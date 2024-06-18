@@ -1116,3 +1116,548 @@ A instrução foi finalizada.
 ClientConnectionId:c1df6815-b46c-41cb-8006-066f5c259e09
 Error Number:2627,State:1,Class:14
 ------------------------------------
+
+Log Entrada : 20:38:40 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Data.SqlTypes.SqlNullValueException: Dados são Null. Não é possível chamar este método ou esta propriedade em valores Null.
+   em System.Data.SqlClient.SqlBuffer.get_String()
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 125
+------------------------------------
+
+Log Entrada : 20:38:40 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos: System.Data.SqlTypes.SqlNullValueException: Dados são Null. Não é possível chamar este método ou esta propriedade em valores Null.
+   em System.Data.SqlClient.SqlBuffer.get_String()
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 125
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 132
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 72
+------------------------------------
+
+Log Entrada : 20:38:50 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Data.SqlTypes.SqlNullValueException: Dados são Null. Não é possível chamar este método ou esta propriedade em valores Null.
+   em System.Data.SqlClient.SqlBuffer.get_String()
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 125
+------------------------------------
+
+Log Entrada : 20:38:50 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos: System.Data.SqlTypes.SqlNullValueException: Dados são Null. Não é possível chamar este método ou esta propriedade em valores Null.
+   em System.Data.SqlClient.SqlBuffer.get_String()
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 125
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 132
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 72
+------------------------------------
+
+Log Entrada : 20:40:03 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Data.SqlTypes.SqlNullValueException: Dados são Null. Não é possível chamar este método ou esta propriedade em valores Null.
+   em System.Data.SqlClient.SqlBuffer.get_String()
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 125
+------------------------------------
+
+Log Entrada : 20:40:03 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos: System.Data.SqlTypes.SqlNullValueException: Dados são Null. Não é possível chamar este método ou esta propriedade em valores Null.
+   em System.Data.SqlClient.SqlBuffer.get_String()
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 125
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 132
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 72
+------------------------------------
+
+Log Entrada : 20:40:53 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Data.SqlTypes.SqlNullValueException: Dados são Null. Não é possível chamar este método ou esta propriedade em valores Null.
+   em System.Data.SqlClient.SqlBuffer.get_String()
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 125
+------------------------------------
+
+Log Entrada : 20:40:53 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos: System.Data.SqlTypes.SqlNullValueException: Dados são Null. Não é possível chamar este método ou esta propriedade em valores Null.
+   em System.Data.SqlClient.SqlBuffer.get_String()
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 125
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 132
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 72
+------------------------------------
+
+Log Entrada : 20:42:07 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Data.SqlTypes.SqlNullValueException: Dados são Null. Não é possível chamar este método ou esta propriedade em valores Null.
+   em System.Data.SqlClient.SqlBuffer.get_String()
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 125
+------------------------------------
+
+Log Entrada : 20:42:07 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos: System.Data.SqlTypes.SqlNullValueException: Dados são Null. Não é possível chamar este método ou esta propriedade em valores Null.
+   em System.Data.SqlClient.SqlBuffer.get_String()
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 125
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 132
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 72
+------------------------------------
+
+Log Entrada : 20:43:45 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Data.SqlTypes.SqlNullValueException: Dados são Null. Não é possível chamar este método ou esta propriedade em valores Null.
+   em System.Data.SqlClient.SqlBuffer.get_String()
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 125
+------------------------------------
+
+Log Entrada : 20:43:47 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos: System.Data.SqlTypes.SqlNullValueException: Dados são Null. Não é possível chamar este método ou esta propriedade em valores Null.
+   em System.Data.SqlClient.SqlBuffer.get_String()
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 125
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 132
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 72
+------------------------------------
+
+Log Entrada : 20:55:25 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Data.SqlTypes.SqlNullValueException: Dados são Null. Não é possível chamar este método ou esta propriedade em valores Null.
+   em System.Data.SqlClient.SqlBuffer.get_String()
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 125
+------------------------------------
+
+Log Entrada : 20:55:25 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos: System.Data.SqlTypes.SqlNullValueException: Dados são Null. Não é possível chamar este método ou esta propriedade em valores Null.
+   em System.Data.SqlClient.SqlBuffer.get_String()
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 125
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 132
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 72
+------------------------------------
+
+Log Entrada : 20:58:55 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Web.HttpException (0x80004005): Não foi encontrado campo ou propriedade com o nome 'Cliente' na fonte de dados selecionada.
+   em System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 86
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 75
+------------------------------------
+
+Log Entrada : 20:59:23 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Web.HttpException (0x80004005): Não foi encontrado campo ou propriedade com o nome 'Cliente' na fonte de dados selecionada.
+   em System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 86
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 75
+------------------------------------
+
+Log Entrada : 21:05:45 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em ModelsGerenciamentoPedidos.Src.Pedido.set_Observacoes(String value) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\ModelsGerenciamentoPedidos\Src\Pedido.cs:linha 78
+   em ModelsGerenciamentoPedidos.Src.Pedido..ctor(Nullable`1 idPedido, String nomeCliente, Decimal vlrSubtotal, Decimal desconto, DateTime dtHrPedido, EnumStatusPedido statusPedido, String observacoes, MetodoPagamento metodoPagemento) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\ModelsGerenciamentoPedidos\Src\Pedido.cs:linha 97
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 125
+------------------------------------
+
+Log Entrada : 21:05:45 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos: System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em ModelsGerenciamentoPedidos.Src.Pedido.set_Observacoes(String value) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\ModelsGerenciamentoPedidos\Src\Pedido.cs:linha 78
+   em ModelsGerenciamentoPedidos.Src.Pedido..ctor(Nullable`1 idPedido, String nomeCliente, Decimal vlrSubtotal, Decimal desconto, DateTime dtHrPedido, EnumStatusPedido statusPedido, String observacoes, MetodoPagamento metodoPagemento) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\ModelsGerenciamentoPedidos\Src\Pedido.cs:linha 97
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 125
+   em DAOGerenciamentoPedidos.PedidoDAO.Listar() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 132
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 72
+------------------------------------
+
+Log Entrada : 21:07:53 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Web.HttpException (0x80004005): Não foi encontrado campo ou propriedade com o nome 'Cliente' na fonte de dados selecionada.
+   em System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 86
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 75
+------------------------------------
+
+Log Entrada : 21:07:56 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Web.HttpException (0x80004005): Não foi encontrado campo ou propriedade com o nome 'Cliente' na fonte de dados selecionada.
+   em System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 86
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 75
+------------------------------------
+
+Log Entrada : 21:09:53 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Web.HttpException (0x80004005): DataBinding: 'ModelsGerenciamentoPedidos.Src.Pedido' não contém uma propriedade com o nome 'Cliente'.
+   em System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   em System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   em ASP.src_pages_pedidopages_pedidos_pedidos_aspx.__DataBinding__control25(Object sender, EventArgs e) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx:linha 42
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 86
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 75
+------------------------------------
+
+Log Entrada : 21:09:54 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Web.HttpException (0x80004005): DataBinding: 'ModelsGerenciamentoPedidos.Src.Pedido' não contém uma propriedade com o nome 'Cliente'.
+   em System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   em System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   em ASP.src_pages_pedidopages_pedidos_pedidos_aspx.__DataBinding__control25(Object sender, EventArgs e) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx:linha 42
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 86
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 75
+------------------------------------
+
+Log Entrada : 21:10:19 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Web.HttpException (0x80004005): DataBinding: 'ModelsGerenciamentoPedidos.Src.Pedido' não contém uma propriedade com o nome 'Cliente'.
+   em System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   em System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   em ASP.src_pages_pedidopages_pedidos_pedidos_aspx.__DataBinding__control25(Object sender, EventArgs e) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx:linha 42
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 86
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 75
+------------------------------------
+
+Log Entrada : 21:29:00 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos por descrição: System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'cliente' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader()
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String cliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 211
+ClientConnectionId:b624e630-4f33-45b2-81d8-ba2ab47116b1
+Error Number:207,State:1,Class:16
+------------------------------------
+
+Log Entrada : 21:29:00 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos por descrição: System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'cliente' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader()
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String cliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 211
+ClientConnectionId:b624e630-4f33-45b2-81d8-ba2ab47116b1
+Error Number:207,State:1,Class:16
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String cliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 219
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 68
+------------------------------------
+
+Log Entrada : 21:30:53 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos por descrição: System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'cliente' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader()
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String cliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 211
+ClientConnectionId:b624e630-4f33-45b2-81d8-ba2ab47116b1
+Error Number:207,State:1,Class:16
+------------------------------------
+
+Log Entrada : 21:30:53 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos por descrição: System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'cliente' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader()
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String cliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 211
+ClientConnectionId:b624e630-4f33-45b2-81d8-ba2ab47116b1
+Error Number:207,State:1,Class:16
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String cliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 219
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 68
+------------------------------------
+
+Log Entrada : 21:31:52 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos por descrição: System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'cliente' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader()
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String cliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 211
+ClientConnectionId:7a3a37ba-2bad-4908-8cc3-b34181c4bbf8
+Error Number:207,State:1,Class:16
+------------------------------------
+
+Log Entrada : 21:31:52 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos por descrição: System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'cliente' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader()
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String cliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 211
+ClientConnectionId:7a3a37ba-2bad-4908-8cc3-b34181c4bbf8
+Error Number:207,State:1,Class:16
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String cliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 219
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 68
+------------------------------------
+
+Log Entrada : 21:34:09 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos por descrição: System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'cliente' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader()
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 211
+ClientConnectionId:9e87549a-9778-4540-a605-dd3f811c826e
+Error Number:207,State:1,Class:16
+------------------------------------
+
+Log Entrada : 21:34:09 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos por descrição: System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'cliente' inválido.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader()
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 211
+ClientConnectionId:9e87549a-9778-4540-a605-dd3f811c826e
+Error Number:207,State:1,Class:16
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 219
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 68
+------------------------------------
+
+Log Entrada : 21:35:17 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos por cliente: System.IndexOutOfRangeException: descricao_metodo_pagto
+   em System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   em System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 180
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 212
+------------------------------------
+
+Log Entrada : 21:35:17 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos por cliente: System.IndexOutOfRangeException: descricao_metodo_pagto
+   em System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   em System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 180
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 212
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 219
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 68
+------------------------------------
+
+Log Entrada : 21:35:24 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos por cliente: System.IndexOutOfRangeException: descricao_metodo_pagto
+   em System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   em System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 180
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 212
+------------------------------------
+
+Log Entrada : 21:35:24 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos por cliente: System.IndexOutOfRangeException: descricao_metodo_pagto
+   em System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   em System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 180
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 212
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 219
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 68
+------------------------------------
+
+Log Entrada : 21:40:04 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos por cliente: System.IndexOutOfRangeException: descricao_metodo_pagto
+   em System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   em System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 180
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 212
+------------------------------------
+
+Log Entrada : 21:40:04 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos por cliente: System.IndexOutOfRangeException: descricao_metodo_pagto
+   em System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   em System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   em DAOGerenciamentoPedidos.PedidoDAO.ConverterReaderParaListaDeObjetos(SqlDataReader reader) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 180
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 212
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 219
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 68
+------------------------------------
+
+Log Entrada : 21:44:23 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos por cliente: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '@nome_cliente'.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader()
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+ClientConnectionId:834f64da-0a98-4f91-a015-ef87c609309c
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 21:44:23 segunda-feira, 17 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos por cliente: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '@nome_cliente'.
+   em System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   em System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   em System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   em System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   em System.Data.SqlClient.SqlDataReader.get_MetaData()
+   em System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   em System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   em System.Data.SqlClient.SqlCommand.ExecuteReader()
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 184
+ClientConnectionId:834f64da-0a98-4f91-a015-ef87c609309c
+Error Number:102,State:1,Class:15
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 192
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 68
+------------------------------------

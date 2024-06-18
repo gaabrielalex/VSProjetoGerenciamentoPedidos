@@ -16,7 +16,7 @@
 			<asp:Panel runat="server" ID="ListsagemProdutoPanel">
 				<gp:Titulo runat="server" Text="Produtos" ID="ProdutosTitulo"></gp:Titulo>
 				<div class="filtro-container">
-					<gp:Filtro ID="ProdutoFiltro" runat="server" Placeholder="Filtra pela descrição..." OnFiltrarClick="ProdutoFiltro_FiltrarClick" />
+					<gp:Filtro ID="ProdutoFiltro" runat="server" Placeholder="Filtrar pela descrição..." OnFiltrarClick="ProdutoFiltro_FiltrarClick" />
 					<asp:Button runat="server" ID="NovoProdutoButton" Text="Novo Produto" OnClick="NovoProdutoButton_Click" />
 				</div>
 				<div class="table-container">

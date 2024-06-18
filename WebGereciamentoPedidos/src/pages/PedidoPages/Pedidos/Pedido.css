@@ -1,0 +1,10 @@
+﻿
+
+.filtro-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.table-container {
+	height: 70vh;
+}

@@ -175,10 +175,5 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 			return js.Serialize(response);
 		}
 
-		protected void DepoisDeExcluirProduto(object sender, EventArgs e)
-		{
-			TratarCarregamentoDeDados();
-		}
-
 	}
 }
