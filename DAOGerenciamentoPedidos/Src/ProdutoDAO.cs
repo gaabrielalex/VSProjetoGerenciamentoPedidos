@@ -88,7 +88,7 @@ namespace DAOGerenciamentoPedidos.Src
 
 		public List<Produto> Listar()
 		{
-			String query = "SELECT * FROM produto";
+			String query = "SELECT * FROM produto ORDER BY descricao";
 			List<Produto> listaProdutos = new List<Produto>();
 			try
 			{
@@ -110,7 +110,10 @@ namespace DAOGerenciamentoPedidos.Src
 
 		public List<Produto> ListarPorDescricao(String descricao)
 		{
-			String query = "SELECT * FROM produto WHERE descricao LIKE @descricao";
+			String query = @"SELECT * 
+							FROM produto 
+							WHERE descricao COLLATE Latin1_General_CI_AI LIKE @descricao 
+							ORDER BY descricao";
 			List<Produto> listaProdutos = new List<Produto>();
 			try
 			{

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ModelsGerenciamentoPedidos.Src
 {
+	[Serializable]
 	public class Pedido
 	{
 		public enum EnumStatusPedido
