@@ -20,38 +20,34 @@
 					<asp:Button runat="server" ID="NovoProdutoButton" Text="Novo Produto" OnClick="NovoProdutoButton_Click" />
 				</div>
 				<div class="table-container">
-					<table class="table">
-
-						<asp:GridView
-							ID="ProdutosGW"
-							runat="server"
-							AutoGenerateColumns="False"
-							Width="100%"
-							AllowPaging="false"
-							OnRowCommand="ProdutosGW_RowCommand">
-							<HeaderStyle BackColor="#212529" ForeColor="White" Font-Bold="True" />
-							<Columns>
-								<asp:BoundField DataField="Descricao" HeaderText="Descrição" />
-								<asp:BoundField DataField="VlrUnitario" HeaderText="Valor Unitário" DataFormatString="{0:C}" />
-								<asp:TemplateField>
-									<ItemTemplate>
-										<asp:LinkButton ID="EditarLK" runat="server" CommandName="Editar"
-											CommandArgument='<%# Eval("IdProduto") %>' Text="Editar" CausesValidation="False">
-										</asp:LinkButton>
-									</ItemTemplate>
-									<ItemStyle Width="100px" />
-								</asp:TemplateField>
-								<asp:TemplateField>
-									<ItemTemplate>
-										<asp:LinkButton ID="ExcluirLK" runat="server" CommandName="Excluir" CommandArgument='<%# Eval("IdProduto") %>'
-											Text="Excluir" CssClass="excluirLK" data-id-produto='<%# Eval("IdProduto") %>' data-descricao='<%# Eval("Descricao") %>'>
-										</asp:LinkButton>
-									</ItemTemplate>
-									<ItemStyle Width="100px" />
-								</asp:TemplateField>
-							</Columns>
-						</asp:GridView>
-					</table>
+					<asp:GridView
+						ID="ProdutosGW"
+						runat="server"
+						AutoGenerateColumns="False"
+						Width="100%"
+						OnRowCommand="ProdutosGW_RowCommand">
+						<HeaderStyle BackColor="#212529" ForeColor="White" Font-Bold="True" />
+						<Columns>
+							<asp:BoundField DataField="Descricao" HeaderText="Descrição" />
+							<asp:BoundField DataField="VlrUnitario" HeaderText="Valor Unitário" DataFormatString="{0:C}" />
+							<asp:TemplateField>
+								<ItemTemplate>
+									<asp:LinkButton ID="EditarLK" runat="server" CommandName="Editar"
+										CommandArgument='<%# Eval("IdProduto") %>' Text="Editar" CausesValidation="False">
+									</asp:LinkButton>
+								</ItemTemplate>
+								<ItemStyle Width="100px" />
+							</asp:TemplateField>
+							<asp:TemplateField>
+								<ItemTemplate>
+									<asp:LinkButton ID="ExcluirLK" runat="server" CommandName="Excluir" CommandArgument='<%# Eval("IdProduto") %>'
+										Text="Excluir" CssClass="excluirLK" data-id-produto='<%# Eval("IdProduto") %>' data-descricao='<%# Eval("Descricao") %>'>
+									</asp:LinkButton>
+								</ItemTemplate>
+								<ItemStyle Width="100px" />
+							</asp:TemplateField>
+						</Columns>
+					</asp:GridView>
 				</div>
 			</asp:Panel>
 		</ContentTemplate>
