@@ -6,13 +6,13 @@ var myApp = myApp || {};
 		$('#modalConfirmacaoExclusao').modal('hide');
 	}
 
-	myApp.abriModalConfirmacaoExclusaoComAjax = function({ idRegistro, descricaoRegistro, urlMetodo, callbackSucesso, callbackErro, complete }) {
+	myApp.abriModalConfirmacaoExclusaoComAjax = function({ idRegistro, mensagemConfirmacaoExclusao, urlMetodo, callbackSucesso, callbackErro, complete }) {
 		const dados = {
 			id: idRegistro,
 		}
 		const beforeSend = myApp.fecharModal;
 
-		$('#modalConfirmacaoExclusao .modal-body').text(`Tem certeza que deseja excluir o registro "${descricaoRegistro}"?`);
+		$('#modalConfirmacaoExclusao .modal-body').text(mensagemConfirmacaoExclusao);
 		$('#modalConfirmacaoExclusao .btn-sim').off('click').on('click', () => myApp.confirmarExclusaoComAjax(
 			{ urlMetodo, dados, beforeSend, callbackSucesso, callbackErro, complete }
 		));

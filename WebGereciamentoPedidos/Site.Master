@@ -14,6 +14,7 @@
 
 	<asp:PlaceHolder runat="server">
 		<%: Scripts.Render("~/bundles/modernizr") %>
+		<%: Scripts.Render("~/Scripts/ScritpsProjeto/Util/Utils.js") %>
 	</asp:PlaceHolder>
 
 	<webopt:BundleReference runat="server" Path="~/Content/css" />
@@ -93,9 +94,9 @@
 	<asp:ContentPlaceHolder ID="PageScripts" runat="server">
 	</asp:ContentPlaceHolder>
 
+	<!-------- Scripts compartilhados -------->
 	<asp:PlaceHolder runat="server">
 		<%: Scripts.Render("~/Scripts/bootstrap.js") %>
 	</asp:PlaceHolder>
-
 </body>
 </html>

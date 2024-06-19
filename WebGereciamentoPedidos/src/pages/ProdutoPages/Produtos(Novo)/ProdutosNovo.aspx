@@ -41,8 +41,8 @@
 							<asp:TemplateField>
 								<ItemTemplate>
 									<asp:LinkButton ID="ExcluirLK" runat="server" CommandName="Excluir" CommandArgument='<%# Eval("IdProduto") %>'
-										Text="Excluir" CssClass="excluirLK" data-id-produto='<%# Eval("IdProduto") %>' data-descricao='<%# Eval("Descricao") %>'>
-									</asp:LinkButton>
+										Text="Excluir" CssClass="produto-excluirLK" data-id-produto='<%# Eval("IdProduto") %>' 
+										data-mensagem-confirmacao-exclusao='<%# "Tem certeza que deseja excluir o produto \"" + Eval("Descricao") + "\"?" %>'>									</asp:LinkButton>
 								</ItemTemplate>
 								<ItemStyle Width="100px" />
 							</asp:TemplateField>
@@ -53,8 +53,8 @@
 		</ContentTemplate>
 	</asp:UpdatePanel>
 
-	<script type="text/javascript" src="produto-novo.js"> </script>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="PageScripts" runat="server">
+	<script type="text/javascript" src="ProdutoNovo.js"> </script>
 </asp:Content>
