@@ -3,6 +3,7 @@
 <%@ Register TagPrefix="gp" TagName="Filtro" Src="~/src/components/Filtro/Filtro.ascx" %>
 <%@ Register TagPrefix="gp" TagName="FormAddEditProduto" Src="~/src/pages/ProdutoPages/FormAddEditProduto/FormAddEditProduto.ascx" %>
 <%@ Register TagPrefix="gp" TagName="Titulo" Src="~/src/components/Titulo/Titulo.ascx" %>
+<%@ Register TagPrefix="gp" TagName="ColunasPadraoTable" Src="~/src/components/ColunasPadraoTable/ColunasPadraoTable.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 	<link rel="stylesheet" href="Pedido.css" />
@@ -38,35 +39,16 @@
 
 							<asp:TemplateField>
 								<ItemTemplate>
-									<asp:LinkButton ID="EditarLK" runat="server" CommandName="Detalhar"
-										CommandArgument='<%# Eval("IdPedido") %>' Text="Detalhar" CausesValidation="False">
-									</asp:LinkButton>
+									<div style="display: flex; justify-content: space-evenly">
+										<asp:LinkButton ID="EditarLK" runat="server" CommandName="Detalhar"
+											CommandArgument='<%# Eval("IdPedido") %>' Text="Detalhar" CausesValidation="False">
+										</asp:LinkButton>
+										<gp:ColunasPadraoTable runat="server" ID="PedidoColunasPadraoTable" IdRegistro='<%# Eval("IdPedido") %>'
+											MensagemConfirmacaoExclusao='<%# "Tem certeza que deseja excluir o pedido do(a) cliente \"" + Eval("NomeCliente") + "\"?" %>'
+											UrlMetodoExclusao="Pedidos.aspx/ExcluirPedido" />
+									</div>
 								</ItemTemplate>
-								<ItemStyle Width="100px" />
-							</asp:TemplateField>
-							<asp:TemplateField>
-								<ItemTemplate>
-									<asp:LinkButton ID="EditarLK" runat="server" CommandName="Editar"
-										CommandArgument='<%# Eval("IdPedido") %>' Text="Editar" CausesValidation="False">
-									</asp:LinkButton>
-								</ItemTemplate>
-								<ItemStyle Width="100px" />
-							</asp:TemplateField>
-							<asp:TemplateField>
-								<ItemTemplate>
-									<asp:LinkButton ID="ExcluirLK" runat="server" CommandName="Excluir" CommandArgument='<%# Eval("IdPedido") %>'
-										Text="Excluir" CssClass="excluirLK" data-id-pedido='<%# Eval("IdPedido") %>' data-cliente='<%# Eval("NomeCliente") %>'>
-									</asp:LinkButton>
-								</ItemTemplate>
-								<ItemStyle Width="100px" />
-							</asp:TemplateField>
-							<asp:TemplateField>
-								<ItemTemplate>
-									<asp:LinkButton ID="EditarLK" runat="server" CommandName="Selecionar"
-										CommandArgument='<%# Eval("IdPedido") %>' Text="Selecionar" CausesValidation="False">
-									</asp:LinkButton>
-								</ItemTemplate>
-								<ItemStyle Width="100px" />
+								<ItemStyle Width="300px" />
 							</asp:TemplateField>
 						</Columns>
 					</asp:GridView>
@@ -79,4 +61,5 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="PageScripts" runat="server">
+	<script type="text/javascript" src="Pedido.js"> </script>
 </asp:Content>

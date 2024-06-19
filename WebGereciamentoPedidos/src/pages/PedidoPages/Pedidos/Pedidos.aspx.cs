@@ -163,23 +163,23 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 		//	FormAddEditProduto.AbrirForm(ModosFomularios.Cadastrar, null);
 		//}
 
-		//TODO: Implementar a lógica de exclusão de pedidos
-		//[WebMethod]
-		//[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-		//public static string ExcluirProduto(int id)
-		//{
-		//	new ProdutoDAO().Excluir(id);
 
-		//	var response = new
-		//	{
-		//		Message = $"Registro {id} excluído com sucesso",
-		//		Success = true
-		//	};
+		[WebMethod]
+		[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+		public static string ExcluirPedido(int id)
+		{
+			new PedidoDAO().Excluir(id);
 
-		//	// Serializa o objeto para JSON
-		//	JavaScriptSerializer js = new JavaScriptSerializer();
-		//	return js.Serialize(response);
-		//}
+			var response = new
+			{
+				Message = $"Registro {id} excluído com sucesso",
+				Success = true
+			};
+
+			// Serializa o objeto para JSON
+			JavaScriptSerializer js = new JavaScriptSerializer();
+			return js.Serialize(response);
+		}
 
 	}
 }

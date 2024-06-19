@@ -1,1 +1,7 @@
 ﻿
+
+var myApp = myApp || {};
+
+(function () {
+	
+})();

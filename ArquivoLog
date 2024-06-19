@@ -1724,3 +1724,24 @@ Log Entrada : 22:04:15 segunda-feira, 17 de junho de 2024
    em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 86
    em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 75
 ------------------------------------
+
+Log Entrada : 18:52:32 quarta-feira, 19 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Web.HttpException (0x80004005): DataBinding: 'ModelsGerenciamentoPedidos.Src.Pedido' não contém uma propriedade com o nome 'IdProduto'.
+   em System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   em System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   em ASP.src_pages_pedidopages_pedidos_pedidos_aspx.__DataBinding__control30(Object sender, EventArgs e) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx:linha 50
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 86
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 75
+------------------------------------

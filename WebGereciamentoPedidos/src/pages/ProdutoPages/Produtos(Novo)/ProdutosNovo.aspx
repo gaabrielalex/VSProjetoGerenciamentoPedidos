@@ -34,10 +34,11 @@
 							<asp:BoundField DataField="VlrUnitario" HeaderText="Valor Unitário" DataFormatString="{0:C}" />
 							<asp:TemplateField>
 								<ItemTemplate>
-									<gp:ColunasPadraoTable runat="server" Id="ProdutoColunasPadraoTable" IdRegistro='<%# Eval("IdProduto") %>'
-									MensagemConfirmacaoExclusao='<%# "Tem certeza que deseja excluir o produto \"" + Eval("Descricao") + "\"?" %>'
-									UrlMetodoExclusao="ProdutosNovo.aspx/ExcluirProduto"
-									/>
+									<div style="display: flex; justify-content: space-evenly">
+										<gp:ColunasPadraoTable runat="server" ID="ProdutoColunasPadraoTable" IdRegistro='<%# Eval("IdProduto") %>'
+											MensagemConfirmacaoExclusao='<%# "Tem certeza que deseja excluir o produto \"" + Eval("Descricao") + "\"?" %>'
+											UrlMetodoExclusao="ProdutosNovo.aspx/ExcluirProduto" />
+									</div>
 								</ItemTemplate>
 								<ItemStyle Width="200px" />
 							</asp:TemplateField>
