@@ -3,6 +3,8 @@
 <%@ Register TagPrefix="gp" TagName="Filtro" Src="~/src/components/Filtro/Filtro.ascx" %>
 <%@ Register TagPrefix="gp" TagName="FormAddEditProduto" Src="~/src/pages/ProdutoPages/FormAddEditProduto/FormAddEditProduto.ascx" %>
 <%@ Register TagPrefix="gp" TagName="Titulo" Src="~/src/components/Titulo/Titulo.ascx" %>
+<%@ Register TagPrefix="gp" TagName="ColunasPadraoTable" Src="~/src/components/ColunasPadraoTable/ColunasPadraoTable.ascx" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 	<link rel="stylesheet" href="ProdutosNovo.css" />
@@ -32,19 +34,12 @@
 							<asp:BoundField DataField="VlrUnitario" HeaderText="Valor Unitário" DataFormatString="{0:C}" />
 							<asp:TemplateField>
 								<ItemTemplate>
-									<asp:LinkButton ID="EditarLK" runat="server" CommandName="Editar"
-										CommandArgument='<%# Eval("IdProduto") %>' Text="Editar" CausesValidation="False">
-									</asp:LinkButton>
+									<gp:ColunasPadraoTable runat="server" Id="ProdutoColunasPadraoTable" IdRegistro='<%# Eval("IdProduto") %>'
+									MensagemConfirmacaoExclusao='<%# "Tem certeza que deseja excluir o produto \"" + Eval("Descricao") + "\"?" %>'
+									UrlMetodoExclusao="ProdutosNovo.aspx/ExcluirProduto"
+									/>
 								</ItemTemplate>
-								<ItemStyle Width="100px" />
-							</asp:TemplateField>
-							<asp:TemplateField>
-								<ItemTemplate>
-									<asp:LinkButton ID="ExcluirLK" runat="server" CommandName="Excluir" CommandArgument='<%# Eval("IdProduto") %>'
-										Text="Excluir" CssClass="produto-excluirLK" data-id-produto='<%# Eval("IdProduto") %>' 
-										data-mensagem-confirmacao-exclusao='<%# "Tem certeza que deseja excluir o produto \"" + Eval("Descricao") + "\"?" %>'>									</asp:LinkButton>
-								</ItemTemplate>
-								<ItemStyle Width="100px" />
+								<ItemStyle Width="200px" />
 							</asp:TemplateField>
 						</Columns>
 					</asp:GridView>
