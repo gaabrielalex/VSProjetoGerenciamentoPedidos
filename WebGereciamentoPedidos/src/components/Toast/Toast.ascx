@@ -14,4 +14,4 @@
 	</div>
 </div>
 
-<script src="../../../../Scripts/ScritpsProjeto/Toast/toast.js" type="text/javascript"> </script>
+<script type="text/javascript" src="\src\components\Toast\Toast.js"> </script>
