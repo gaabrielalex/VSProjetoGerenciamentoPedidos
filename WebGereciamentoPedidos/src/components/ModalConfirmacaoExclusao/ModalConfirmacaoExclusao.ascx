@@ -18,4 +18,4 @@
 	</div>
 </div>
 
-<script type="text/javascript" src="../../../../Scripts/ScritpsProjeto/ModalConfirmacaoExclusao/modal-confirmacao-exclusao.js"></script>
+<script type="text/javascript" src="\src\components\ModalConfirmacaoExclusao\ModalConfirmacaoExclusao.js"> </script>

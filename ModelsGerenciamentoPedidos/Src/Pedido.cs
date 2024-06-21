@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ModelsGerenciamentoPedidos.Src
 {
+	[Serializable]
 	public class Pedido
 	{
 		public enum EnumStatusPedido
@@ -69,6 +70,25 @@ namespace ModelsGerenciamentoPedidos.Src
 		public decimal VlrTotal => VlrSubtotal - Desconto;
 		public DateTime DtHrPedido { get; set; }
 		public EnumStatusPedido StatusPedido { get; set; }
+		public string DescricaoStatusPedido
+		{
+			get 
+			{
+				switch (StatusPedido)
+				{
+					case EnumStatusPedido.AguardandoPagamento:
+						return "Aguardando Pagamento";
+					case EnumStatusPedido.EmSeparacao:
+						return "Em Separação";
+					case EnumStatusPedido.Entregue:
+						return "Entregue";
+					case EnumStatusPedido.Cancelado:
+						return "Cancelado";
+					default:
+						return "Status Desconhecido";
+				}
+			}
+		}
 		public string Observacoes
 		{
 			get { return _observacoes; }

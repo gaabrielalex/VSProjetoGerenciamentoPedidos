@@ -112,7 +112,8 @@ namespace DAOGerenciamentoPedidos
 		{
 			String query = @"SELECT p.*, mp.descricao AS descricao_metodo_pagto
 							FROM pedido p, metodo_pagto mp
-							WHERE p.id_metodo_pagto = mp.id_metodo_pagto";
+							WHERE p.id_metodo_pagto = mp.id_metodo_pagto
+							ORDER BY p.dt_hr_pedido DESC";
 
 			List<Pedido> listaPedido = new List<Pedido>();
 			try
@@ -164,6 +165,34 @@ namespace DAOGerenciamentoPedidos
 			}
 		}
 
+		public List<Pedido> ListarPorCliente(string nomeCliente)
+		{
+			String query = @"SELECT p.*, mp.descricao AS descricao_metodo_pagto
+							FROM pedido p, metodo_pagto mp
+							WHERE p.id_metodo_pagto = mp.id_metodo_pagto
+								and nome_cliente COLLATE Latin1_General_CI_AI LIKE @nome_cliente
+							ORDER BY p.dt_hr_pedido DESC";
+
+			List<Pedido> listaPedidos = new List<Pedido>();
+			try
+			{
+				using (SqlConnection connection = DB_Connection.getConnection())
+				{
+					connection.Open();
+					SqlCommand command = new SqlCommand(query, connection);
+					command.Parameters.AddWithValue("@nome_cliente", "%" + nomeCliente + "%");
+					SqlDataReader reader = command.ExecuteReader();
+					listaPedidos = ConverterReaderParaListaDeObjetos(reader);
+					connection.Close();
+					return listaPedidos;
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Erro($"Erro ao listar pedidos por cliente: {e.ToString()}");
+			}
+		}
+
 		public List<Pedido> ConverterReaderParaListaDeObjetos(SqlDataReader reader)
 		{
 			List<Pedido> listaPedidos = new List<Pedido>();
@@ -188,7 +217,7 @@ namespace DAOGerenciamentoPedidos
 					desconto: reader.GetDecimal(descontoIndex),
 					dtHrPedido: reader.GetDateTime(dtHrPedidoIndex),
 					statusPedido: (EnumStatusPedido)reader.GetString(statusPedidoIndex)[0],
-					observacoes: reader.GetString(observacoesIndex),
+					observacoes: reader.IsDBNull(observacoesIndex) ? "" : reader.GetString(observacoesIndex),
 					metodoPagemento: new MetodoPagamento(reader.GetInt32(idMetodoPagtoIndex), reader.GetString(descricaoMetodoPagtoIndex))
 				);
 				listaPedidos.Add(pedido);

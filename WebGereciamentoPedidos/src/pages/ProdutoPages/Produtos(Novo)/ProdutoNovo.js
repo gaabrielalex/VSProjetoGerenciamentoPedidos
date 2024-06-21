@@ -1,0 +1,6 @@
+﻿
+var myApp = myApp || {};
+
+(function () {
+	
+})();

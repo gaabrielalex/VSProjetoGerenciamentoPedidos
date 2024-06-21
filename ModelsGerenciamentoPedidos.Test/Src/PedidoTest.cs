@@ -83,6 +83,5 @@ namespace TestesGerenciamentoPedidos
 			act.Should().Throw<ArgumentOutOfRangeException>(because: "O tamanho das observações do pedido deve ser menor ou igual a 200 caracteres. O valor informado foi: " + tamanhoString + " caracteres.");
 		}
 
-
 	}
 }
