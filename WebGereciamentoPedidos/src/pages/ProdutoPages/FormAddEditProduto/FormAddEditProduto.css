@@ -3,9 +3,9 @@
 	margin-bottom: 5px;
 }
 
-	.conteudo-FormAddEditProdutoPanel .row:last-child {
-		margin-top: 30px;
-	}
+.conteudo-FormAddEditProdutoPanel .row:last-child {
+	margin-top: 30px;
+}
 
 .buttons-FormAddEditProdutoPanel {
 	display: flex;

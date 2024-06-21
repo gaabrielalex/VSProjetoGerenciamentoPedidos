@@ -42,15 +42,15 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 
 			if (!IsPostBack)
 			{
-				//TODO: Implementar a lógica de exibição de mensagens
-				//if (Session["MensagemInfo"] != null)
-				//{
-				//	//Verifica se alguma outra tela registrou alguma mensagem para ser exibida
-				//	MensagemInfo mensagemInfo = (MensagemInfo)Session["MensagemInfo"];
-				//	PageUtils.MostrarMensagemViaToastComDelay(mensagemInfo.Mensagem, mensagemInfo.Tipo, this);
-				//	//Depois de exibir remove para não haver repetição
-				//	Session.Remove("MensagemInfo");
-				//}
+
+				if (Session["MensagemInfo"] != null)
+				{
+					//Verifica se alguma outra tela registrou alguma mensagem para ser exibida
+					MensagemInfo mensagemInfo = (MensagemInfo)Session["MensagemInfo"];
+					PageUtils.MostrarMensagemViaToastComDelay(mensagemInfo.Mensagem, mensagemInfo.Tipo, this);
+					//Depois de exibir remove para não haver repetição
+					Session.Remove("MensagemInfo");
+				}
 
 				TratarCarregamentoDeDados();
 			}
@@ -129,7 +129,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 				if (e.CommandName == "Editar")
 				{
 					ListsagemPedidoPanel.Visible = false;
-					//FormAddEditProduto.AbrirForm(ModosFomularios.Editar, idPedidoSelecionado);
+					FormAddEditPedido.AbrirForm(ModosFomularios.Editar, idPedidoSelecionado);
 				}
 			}
 
@@ -138,7 +138,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 		protected void NovoPedidoButton_Click(object sender, EventArgs e)
 		{
 			ListsagemPedidoPanel.Visible = false;
-			//FormAddEditProduto.AbrirForm(ModosFomularios.Cadastrar, null);
+			FormAddEditPedido.AbrirForm(ModosFomularios.Cadastrar, null);
 		}
 
 		[WebMethod]

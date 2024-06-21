@@ -15,6 +15,15 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 	{
 
 		/// <summary>
+		/// FormAddEditPedido control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido FormAddEditPedido;
+
+		/// <summary>
 		/// ListsagemPedidoPanel control.
 		/// </summary>
 		/// <remarks>
