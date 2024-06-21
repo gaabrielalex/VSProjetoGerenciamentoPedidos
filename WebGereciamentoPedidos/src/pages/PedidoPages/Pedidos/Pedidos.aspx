@@ -33,7 +33,7 @@
 				<gp:Titulo runat="server" Text="Pedidos" ID="PedidosTitulo"></gp:Titulo>
 				<div class="filtro-container">
 					<gp:Filtro ID="PedidoFiltro" runat="server" Placeholder="Filtrar pelo cliente..." OnFiltrarClick="ProdutoFiltro_FiltrarClick" />
-					<%--<asp:Button runat="server" ID="NovoPedidoButton" Text="Novo Pedido" OnClick="NovoPedidoButton_Click" />--%>
+					<asp:Button runat="server" ID="NovoPedidoButton" Text="Novo Pedido" OnClick="NovoPedidoButton_Click" />
 				</div>
 				<div class="table-container">
 					<asp:GridView

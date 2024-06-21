@@ -123,27 +123,28 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 					}
 				}
 
-				if (e.CommandName == "Excluir")
-				{
-					var ehParaExcluir = PageUtils.SolicitarConfirmacaoViaAPISistemaOperacionalLocal("Deseja realmente excluir o produto?");
-					if (!ehParaExcluir)
-						return;
-					try
-					{
-						ProdutoDAO.Excluir(idProdutoSelecionado);
-						string mensagem = "Registro excluído com sucesso";
-						TratarCarregamentoDeDados();
-						PageUtils.MostrarMensagemViaToast(mensagem, TiposMensagem.Sucesso, this);
-					}
-					catch (Exception ex)
-					{
-						RegistroLog.Log($"Erro ao excluir produto '{ idProdutoSelecionado }' - '{ produtoSelecionado.Descricao }' : '{ex.Message}");
-						string mensagem = "Erro ao deletar o produto";
-						PageUtils.MostrarMensagemViaToast(mensagem, TiposMensagem.Erro, this);
-					}
+				//Comando antigo
+				//if (e.CommandName == "Excluir")
+				//{
+				//	var ehParaExcluir = PageUtils.SolicitarConfirmacaoViaAPISistemaOperacionalLocal("Deseja realmente excluir o produto?");
+				//	if (!ehParaExcluir)
+				//		return;
+				//	try
+				//	{
+				//		ProdutoDAO.Excluir(idProdutoSelecionado);
+				//		string mensagem = "Registro excluído com sucesso";
+				//		TratarCarregamentoDeDados();
+				//		PageUtils.MostrarMensagemViaToast(mensagem, TiposMensagem.Sucesso, this);
+				//	}
+				//	catch (Exception ex)
+				//	{
+				//		RegistroLog.Log($"Erro ao excluir produto '{ idProdutoSelecionado }' - '{ produtoSelecionado.Descricao }' : '{ex.Message}");
+				//		string mensagem = "Erro ao deletar o produto";
+				//		PageUtils.MostrarMensagemViaToast(mensagem, TiposMensagem.Erro, this);
+				//	}
 
-				}
-				else if (e.CommandName == "Editar")
+				//}
+				if (e.CommandName == "Editar")
 				{
 					ListsagemProdutoPanel.Visible = false;
 					FormAddEditProduto.AbrirForm(ModosFomularios.Editar, idProdutoSelecionado);

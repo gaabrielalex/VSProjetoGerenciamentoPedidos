@@ -105,64 +105,41 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 			Response.Redirect(novaUrl, false);
 		}
 
-		//TODO: Implementar a lógica de exclusão e edição de pedidos
 		protected void PedidosGW_RowCommand(object sender, GridViewCommandEventArgs e)
 		{
-		//	int idPedidoSelecionado = Convert.ToInt32(e.CommandArgument);
-		//	if (idPedidoSelecionado < 0)
-		//	{
-		//		string menssagem = "Houve um erro ao selecionar o pedido para ação selecionada, entre em contato com suporte caso o erro persista!";
-		//		PageUtils.MostrarMensagemViaToast(menssagem, TiposMensagem.Erro, this);
-		//		return;
-		//	}
-		//	else
-		//	{
-		//		Produto produtoSelecionado = new Produto();
-		//		foreach (Produto produto in DadosPedidosAtual)
-		//		{
-		//			if (produto.IdProduto == idPedidoSelecionado)
-		//			{
-		//				produtoSelecionado = produto;
-		//				break;
-		//			}
-		//		}
+			int idPedidoSelecionado = Convert.ToInt32(e.CommandArgument);
+			if (idPedidoSelecionado < 0)
+			{
+				string menssagem = "Houve um erro ao selecionar o pedido para ação selecionada, entre em contato com suporte caso o erro persista!";
+				PageUtils.MostrarMensagemViaToast(menssagem, TiposMensagem.Erro, this);
+				return;
+			}
+			else
+			{
+				Pedido pedidoSelecionado = new Pedido();
+				foreach (Pedido pedido in DadosPedidosAtual)
+				{
+					if (pedido.IdPedido == idPedidoSelecionado)
+					{
+						pedidoSelecionado = pedido;
+						break;
+					}
+				}
 
-		//		if (e.CommandName == "Excluir")
-		//		{
-		//			var ehParaExcluir = PageUtils.SolicitarConfirmacaoViaAPISistemaOperacionalLocal("Deseja realmente excluir o produto?");
-		//			if (!ehParaExcluir)
-		//				return;
-		//			try
-		//			{
-		//				PedidoDAO.Excluir(idPedidoSelecionado);
-		//				string mensagem = "Registro excluído com sucesso";
-		//				TratarCarregamentoDeDados();
-		//				PageUtils.MostrarMensagemViaToast(mensagem, TiposMensagem.Sucesso, this);
-		//			}
-		//			catch (Exception ex)
-		//			{
-		//				RegistroLog.Log($"Erro ao excluir produto '{idPedidoSelecionado}' - '{produtoSelecionado.Descricao}' : '{ex.Message}");
-		//				string mensagem = "Erro ao deletar o produto";
-		//				PageUtils.MostrarMensagemViaToast(mensagem, TiposMensagem.Erro, this);
-		//			}
-
-		//		}
-		//		else if (e.CommandName == "Editar")
-		//		{
-		//			ListsagemProdutoPanel.Visible = false;
-		//			FormAddEditProduto.AbrirForm(ModosFomularios.Editar, idPedidoSelecionado);
-		//		}
-		//	}
+				if (e.CommandName == "Editar")
+				{
+					ListsagemPedidoPanel.Visible = false;
+					//FormAddEditProduto.AbrirForm(ModosFomularios.Editar, idPedidoSelecionado);
+				}
+			}
 
 		}
 
-		//TODO: Implementar a lógica de criação de novos pedidos
-		//protected void NovoPedidoButton_Click(object sender, EventArgs e)
-		//{
-		//	ListsagemPedidoPanel.Visible = false;
-		//	FormAddEditProduto.AbrirForm(ModosFomularios.Cadastrar, null);
-		//}
-
+		protected void NovoPedidoButton_Click(object sender, EventArgs e)
+		{
+			ListsagemPedidoPanel.Visible = false;
+			//FormAddEditProduto.AbrirForm(ModosFomularios.Cadastrar, null);
+		}
 
 		[WebMethod]
 		[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
