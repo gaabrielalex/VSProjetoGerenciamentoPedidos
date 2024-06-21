@@ -10,10 +10,10 @@
 			<gp:TituloMedio runat="server" ID="FormAddEditProdutoTituloMedio"></gp:TituloMedio>
 			<div class="conteudo-FormAddEditProdutoPanel">
 				<div class="row">
-					<gp:TextFormField runat="server" ID="DescricaoTextFormField" LabelText="Descrição" Style="margin-right: 20px"
+					<gp:TextFormField runat="server" ID="DescricaoTextFormField" LabelText="Descrição" 
 						ValidationGroup="CamposProduto" OnServerValidate="DescricaoTextFormField_ServerValidate" />
 				</div>
-				<div class="row d-flex justify-content-end"">
+				<div class="row">
 					<gp:TextFormField runat="server" ID="VlrUnitarioTextFormField" LabelText="Valor Unitário" Format="dinheiro"
 						ValidationGroup="CamposProduto" OnServerValidate="VlrUnitarioTextFormField_ServerValidate" />
 				</div>
