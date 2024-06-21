@@ -8,3 +8,13 @@
 .table-container {
 	height: 65vh;
 }
+
+.hidden-link {
+	color: red;
+	text-decoration: underline;
+}
+
+.hidden-link:hover {
+	color: red;
+	text-decoration: underline;
+}

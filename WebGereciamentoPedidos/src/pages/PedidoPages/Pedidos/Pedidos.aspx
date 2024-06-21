@@ -9,6 +9,21 @@
 	<link rel="stylesheet" href="Pedido.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+	<div class="modal fade" id="modalObservacaoPedido" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5">Observações</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<%--<gp:FormAddEditProduto runat="server" ID="FormAddEditProduto" />--%>
 
@@ -40,8 +55,11 @@
 							<asp:TemplateField>
 								<ItemTemplate>
 									<div style="display: flex; justify-content: space-evenly">
-										<asp:LinkButton ID="EditarLK" runat="server" CommandName="Detalhar"
-											CommandArgument='<%# Eval("IdPedido") %>' Text="Detalhar" CausesValidation="False">
+										<asp:LinkButton ID="ObservacoesLK" runat="server"
+											Text="Observações" CausesValidation="False"
+											OnClientClick='<%# "return myApp.abrilModalObservacoesPedido(\"" + Eval("Observacoes").ToString().Replace("\"", "\\\"") + "\"); return false;" %>'
+											CssClass='<%# String.IsNullOrEmpty(Eval("Observacoes").ToString()) ? "hidden-link" : "" %>'
+											>
 										</asp:LinkButton>
 										<gp:ColunasPadraoTable runat="server" ID="PedidoColunasPadraoTable" IdRegistro='<%# Eval("IdPedido") %>'
 											MensagemConfirmacaoExclusao='<%# "Tem certeza que deseja excluir o pedido do(a) cliente \"" + Eval("NomeCliente") + "\"?" %>'
@@ -56,8 +74,6 @@
 			</asp:Panel>
 		</ContentTemplate>
 	</asp:UpdatePanel>
-
-	<script type="text/javascript" src="pedido.js"> </script>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="PageScripts" runat="server">

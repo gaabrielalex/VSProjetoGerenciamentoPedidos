@@ -13,7 +13,6 @@
 	>
 </asp:LinkButton>
 
-
 <script type="text/javascript">
 	var myApp = {
 		idExcluirLK: "<%=ExcluirLK.ClientID %>"
