@@ -70,10 +70,10 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 		{
 			try
 			{
+				FormAddEditProdutoTituloMedio.Text = "Editar Produto";
 				ProdutoASerEditado = ProdutoDAO.ObterPorId(idProdutoParaEdicao);
 				DescricaoTextFormField.Text = ProdutoASerEditado.Descricao;
 				VlrUnitarioTextFormField.Text = ProdutoASerEditado.VlrUnitario.ToString();
-				FormAddEditProdutoTituloMedio.Text = "Editar Produto";
 			}
 			catch (Exception ex)
 			{
