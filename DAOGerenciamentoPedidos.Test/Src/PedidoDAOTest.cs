@@ -6,6 +6,7 @@ using ModelsGerenciamentoPedidos.Src;
 using System;
 using System.Collections.Generic;
 using static ModelsGerenciamentoPedidos.Src.Pedido;
+using static ModelsGerenciamentoPedidos.Src.StatusPedido;
 
 
 namespace TestesGerenciamentoPedidos.DAO_Tests

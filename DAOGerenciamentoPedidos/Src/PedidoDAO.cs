@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using UtilsGerenciamentoPedidos;
 using static ModelsGerenciamentoPedidos.Src.Pedido;
+using static ModelsGerenciamentoPedidos.Src.StatusPedido;
 
 namespace DAOGerenciamentoPedidos
 {

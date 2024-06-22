@@ -4,19 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static ModelsGerenciamentoPedidos.Src.StatusPedido;
 
 namespace ModelsGerenciamentoPedidos.Src
 {
 	[Serializable]
 	public class Pedido
 	{
-		public enum EnumStatusPedido
-		{
-			AguardandoPagamento= 'A',
-			EmSeparacao = 'S',
-			Entregue = 'E',
-			Cancelado = 'C',
-		}
+		
 
 		private const int MaxLengthNomeCliente = 100;
 		private const decimal MinVlrTotal = 0;
@@ -74,19 +69,7 @@ namespace ModelsGerenciamentoPedidos.Src
 		{
 			get 
 			{
-				switch (StatusPedido)
-				{
-					case EnumStatusPedido.AguardandoPagamento:
-						return "Aguardando Pagamento";
-					case EnumStatusPedido.EmSeparacao:
-						return "Em Separação";
-					case EnumStatusPedido.Entregue:
-						return "Entregue";
-					case EnumStatusPedido.Cancelado:
-						return "Cancelado";
-					default:
-						return "Status Desconhecido";
-				}
+				return ModelsGerenciamentoPedidos.Src.StatusPedido.ObterDescricaoStatusPedido(StatusPedido);
 			}
 		}
 		public string Observacoes

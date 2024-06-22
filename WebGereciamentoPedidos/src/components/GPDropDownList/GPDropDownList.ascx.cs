@@ -136,7 +136,7 @@ namespace WebGereciamentoPedidos.src.components.GPDropDownList
 			}
 		}
 
-		public void DataBind()
+		public override void DataBind()
 		{
 			this.DropDownList.DataBind();
 		}

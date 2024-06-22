@@ -87,6 +87,15 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 		protected global::WebGereciamentoPedidos.src.components.DataPicker.DataPicker DataHoraPedidoDataPicker;
 
 		/// <summary>
+		/// StatusDropDownList control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::WebGereciamentoPedidos.src.components.GPDropDownList.GPDropDownList StatusDropDownList;
+
+		/// <summary>
 		/// CancelarButton control.
 		/// </summary>
 		/// <remarks>

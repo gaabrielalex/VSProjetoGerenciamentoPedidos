@@ -33,8 +33,12 @@
 						ValidationGroup="CamposPedido" Enabled="false" />
 				</div>
 				<div class="row">
-					<gp:DataPicker runat="server" ID="DataHoraPedidoDataPicker" LabelText="Data/hora do Pedido"
+					<gp:DataPicker runat="server" ID="DataHoraPedidoDataPicker" LabelText="Data/hora"
 						ValidationGroup="CamposPedido" OnServerValidate="DataHoraPedidoDataPicker_ServerValidate" />
+				</div>
+				<div class="row">
+					<gp:DropDownList runat="server" ID="StatusDropDownList" LabelText="Status"
+						ValidationGroup="CamposPedido" />
 				</div>
 				<div class="row">
 					<div class="buttons-FormAddEditPedidoPanel">
@@ -54,7 +58,7 @@
 	// Carregar o script dinamicamente e inicializar a aplicação
 	document.addEventListener('DOMContentLoaded', function () {
 		initializeScripts();
-		
+
 	});
 
 	// Garantir que a função seja executada após atualizações do UpdatePanel

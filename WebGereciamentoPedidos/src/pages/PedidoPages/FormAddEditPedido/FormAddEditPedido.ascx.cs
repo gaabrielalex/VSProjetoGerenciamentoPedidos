@@ -56,17 +56,18 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 
 			if (!IsPostBack)
 			{
-				CarregarMetodosPagamento();
+				CarregarTodosOsMetodosPagamento();
+				CarregarTodosOsStatusDoPedido();
 			}
 			
 		}
 
-		private void CarregarMetodosPagamento()
+		private void CarregarTodosOsMetodosPagamento()
 		{
 			try
 			{
-				List<MetodoPagamento> metodosPagamento = MetodoPagamentoDAO.ListarTodos();
-				MetodoPagtoDropDownList.DataSource = metodosPagamento;
+				List<MetodoPagamento> listaMetodoPagamento = MetodoPagamentoDAO.ListarTodos();
+				MetodoPagtoDropDownList.DataSource = listaMetodoPagamento;
 				MetodoPagtoDropDownList.DataTextField = "Descricao";
 				MetodoPagtoDropDownList.DataValueField = "IdMetodoPagto";
 				MetodoPagtoDropDownList.DataBind();
@@ -75,6 +76,23 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			{
 				PageUtils.MostrarMensagemViaToast("Houve um erro ao carregar os métodos de pagamento", TiposMensagem.Erro, Page);
 				RegistroLog.Log($"Erro ao carregar métodos de pagamento: {ex.ToString()}");
+			}
+		}
+
+		private void CarregarTodosOsStatusDoPedido()
+		{
+			try
+			{
+				List<StatusPedido> listaStatusPedido = StatusPedido.ObterTodosStatusPedido();
+				StatusDropDownList.DataSource = listaStatusPedido;
+				StatusDropDownList.DataTextField = "Descricao";
+				StatusDropDownList.DataValueField = "Status";
+				StatusDropDownList.DataBind();
+			}
+			catch (Exception ex)
+			{
+				PageUtils.MostrarMensagemViaToast("Houve um erro ao carregar os status do pedido", TiposMensagem.Erro, Page);
+				RegistroLog.Log($"Erro ao carregar os status do pedido: {ex.ToString()}");
 			}
 		}
 

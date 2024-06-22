@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Src\MetodoPagamento.cs" />
     <Compile Include="Src\Pedido.cs" />
+    <Compile Include="Src\StatusPedido.cs" />
     <Compile Include="Src\Utils\ModelUtils.cs" />
     <Compile Include="Src\Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
