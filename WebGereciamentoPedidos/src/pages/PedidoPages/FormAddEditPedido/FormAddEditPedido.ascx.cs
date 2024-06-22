@@ -109,6 +109,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 				VlrSubtotalTextFormField.Text = PedidoASerEditado.VlrSubtotal.ToString();
 				DescontoTextFormField.Text = PedidoASerEditado.Desconto.ToString();
 				VlrTotalTextFormField.Text = PedidoASerEditado.VlrTotal.ToString();
+				DataHoraPedidoDataPicker.Date = PedidoASerEditado.DtHrPedido;
 
 			}
 			catch (Exception ex)
@@ -200,7 +201,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 
 			if (string.IsNullOrWhiteSpace(cliente))
 			{
-				ClienteTextFormField.ErrorMessage = "Campo obrigatório";
+				ClienteTextFormField.ErrorMessage = "Campo obrigatório!";
 				args.IsValid = false;
 				return;
 			}
@@ -230,6 +231,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			{
 				DescontoTextFormField.ErrorMessage = "Valor inválido!";
 				args.IsValid = false;
+				return;
 			}
 
 			//Validação de valor máximo de dígitos
@@ -243,6 +245,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			{
 				DescontoTextFormField.ErrorMessage = "Valor deve ter no máximo 8 dígitos, sendo 6 inteiros e 2 decimais!";
 				args.IsValid = false;
+				return;
 			}
 
 			//Validação se o desconto é maior que o valor subtotal
@@ -252,7 +255,35 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 				{
 					DescontoTextFormField.ErrorMessage = "Desconto não pode ser maior que o valor subtotal!";
 					args.IsValid = false;
+					return;
 				}
+			}
+		}
+
+		protected void DataHoraPedidoDataPicker_ServerValidate(object source, ServerValidateEventArgs args)
+		{
+			DateTime dataHoraPedido = DataHoraPedidoDataPicker.Date;
+
+			if (dataHoraPedido == DateTime.MinValue)
+			{
+				DataHoraPedidoDataPicker.ErrorMessage = "Campo obrigatório!";
+				args.IsValid = false;
+				return;
+			}
+
+			if (dataHoraPedido > DateTime.Now)
+			{
+				DataHoraPedidoDataPicker.ErrorMessage = "Data e hora do pedido não pode ser maior que a data e hora atual!";
+				args.IsValid = false;
+				return;
+			}
+
+			//DAta e hora não pode ser anterior ao ano atual
+			if(dataHoraPedido.Year < DateTime.Now.Year)
+			{
+				DataHoraPedidoDataPicker.ErrorMessage = "Data e hora do pedido não pode ser anterior ao ano atual!";
+				args.IsValid = false;
+				return;
 			}
 		}
 	}

@@ -3,6 +3,7 @@
 <%@ Register TagPrefix="gp" TagName="TextFormField" Src="~/src/components/TextFormField/TextFormField.ascx" %>
 <%@ Register TagPrefix="gp" TagName="TituloMedio" Src="~/src/components/TituloMedio/TituloMedio.ascx" %>
 <%@ Register TagPrefix="gp" TagName="DropDownList" Src="~/src/components/GPDropDownList/GPDropDownList.ascx" %>
+<%@ Register TagPrefix="gp" TagName="DataPicker" Src="~/src/components/DataPicker/DataPicker.ascx" %>
 
 <link rel="stylesheet" href="/src/pages/PedidoPages/FormAddEditPedido/FormAddEditPedido.css" />
 
@@ -30,6 +31,10 @@
 				<div class="row">
 					<gp:TextFormField runat="server" ID="VlrTotalTextFormField" LabelText="Valor Total"
 						ValidationGroup="CamposPedido" Enabled="false" />
+				</div>
+				<div class="row">
+					<gp:DataPicker runat="server" ID="DataHoraPedidoDataPicker" LabelText="Data/hora do Pedido"
+						ValidationGroup="CamposPedido" OnServerValidate="DataHoraPedidoDataPicker_ServerValidate" />
 				</div>
 				<div class="row">
 					<div class="buttons-FormAddEditPedidoPanel">

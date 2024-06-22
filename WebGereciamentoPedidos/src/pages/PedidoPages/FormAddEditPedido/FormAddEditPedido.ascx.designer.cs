@@ -78,6 +78,15 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 		protected global::WebGereciamentoPedidos.src.components.TextFormField VlrTotalTextFormField;
 
 		/// <summary>
+		/// DataHoraPedidoDataPicker control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::WebGereciamentoPedidos.src.components.DataPicker.DataPicker DataHoraPedidoDataPicker;
+
+		/// <summary>
 		/// CancelarButton control.
 		/// </summary>
 		/// <remarks>

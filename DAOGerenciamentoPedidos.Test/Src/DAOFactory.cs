@@ -10,7 +10,6 @@ namespace DAOGerenciamentoPedidos.Test.Src
 {
 	public static class DAOFactory
 	{
-
 		public static Pedido RetornaPedido()
 		{
 			return new Pedido(
