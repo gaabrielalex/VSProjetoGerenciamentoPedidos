@@ -16,7 +16,7 @@ namespace DAOGerenciamentoPedidos.Src
 
 		void Excluir(int id);
 
-		List<T> Listar();
+		List<T> ListarTodos();
 
 		T ObterPorId(int id);
 

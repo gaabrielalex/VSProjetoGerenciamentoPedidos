@@ -82,7 +82,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 			}
 			else
 			{
-				DadosProdutosAtual = ProdutoDAO.Listar();
+				DadosProdutosAtual = ProdutoDAO.ListarTodos();
 			}
 			BindData();
 		}

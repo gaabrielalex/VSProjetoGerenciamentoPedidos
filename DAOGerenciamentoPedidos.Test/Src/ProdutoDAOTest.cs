@@ -107,7 +107,7 @@ namespace TestesGerenciamentoPedidos
 				// Inserindo 2 produtos para listar
 				idProduto1 = produtoDAO.Inserir(new Produto(null, "Produto Teste AoRealizarListagemDeveRetonarUmaListaDeProdutos", 10.0M));
 				idProduto2 = produtoDAO.Inserir(new Produto(null, "Produto Teste 2 AoRealizarListagemDeveRetonarUmaListaDeProdutos", 20.0M));
-				produtos = produtoDAO.Listar();
+				produtos = produtoDAO.ListarTodos();
 				numeroRegistrosListados = produtos.Count;
 
 				if (numeroRegistrosListados >= 2)

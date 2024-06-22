@@ -190,6 +190,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="src\components\GPDropDownList\GPDropDownList.ascx" />
     <Content Include="src\components\ModalConfirmacaoExclusao\ModalConfirmacaoExclusao.js" />
     <Content Include="src\components\Toast\Toast.js" />
     <Content Include="Scripts\ScritpsProjeto\Util\Utils.js" />
@@ -286,6 +287,13 @@
     </Compile>
     <Compile Include="src\components\Filtro\Filtro.ascx.designer.cs">
       <DependentUpon>Filtro.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="src\components\GPDropDownList\GPDropDownList.ascx.cs">
+      <DependentUpon>GPDropDownList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\components\GPDropDownList\GPDropDownList.ascx.designer.cs">
+      <DependentUpon>GPDropDownList.ascx</DependentUpon>
     </Compile>
     <Compile Include="src\components\LoadingModal\LoadingModal.ascx.cs">
       <DependentUpon>LoadingModal.ascx</DependentUpon>

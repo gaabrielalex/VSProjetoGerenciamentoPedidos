@@ -69,7 +69,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 				}
 				else
 				{
-					DadosPedidosAtual = PedidoDAO.Listar();
+					DadosPedidosAtual = PedidoDAO.ListarTodos();
 				}
 
 				BindData();

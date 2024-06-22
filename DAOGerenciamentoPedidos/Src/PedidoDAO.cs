@@ -109,7 +109,7 @@ namespace DAOGerenciamentoPedidos
 			}
 		}
 
-		public List<Pedido> Listar()
+		public List<Pedido> ListarTodos()
 		{
 			String query = @"SELECT p.*, 
 								mp.descricao AS descricao_metodo_pagto,

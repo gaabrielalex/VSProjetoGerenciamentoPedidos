@@ -159,7 +159,7 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 				pedidosInseridos[i] = pedidoDAO.ObterPorId(idPedidosInseridos[i]);
 			}
 
-			List<Pedido> listagemPedidos = pedidoDAO.Listar();
+			List<Pedido> listagemPedidos = pedidoDAO.ListarTodos();
 
 			// Assert
 			listagemPedidos.Should().HaveCountGreaterThanOrEqualTo(quantidadePedidosEsperada, because: $"Deve haver pelo menos {quantidadePedidosEsperada} pedidos cadastrados no banco");

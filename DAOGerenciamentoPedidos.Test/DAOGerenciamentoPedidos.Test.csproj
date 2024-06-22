@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Src\DAOFactory.cs" />
+    <Compile Include="Src\MetodoPagamentoDAOTest.cs" />
     <Compile Include="Src\PedidoDAOTest.cs" />
     <Compile Include="Src\ProdutoDAOTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

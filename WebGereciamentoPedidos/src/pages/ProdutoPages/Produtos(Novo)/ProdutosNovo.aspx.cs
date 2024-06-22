@@ -66,7 +66,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 				}
 				else
 				{
-					DadosProdutosAtual = ProdutoDAO.Listar();
+					DadosProdutosAtual = ProdutoDAO.ListarTodos();
 				}
 
 				BindData();
