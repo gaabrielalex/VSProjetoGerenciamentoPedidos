@@ -17,10 +17,6 @@
 						ValidationGroup="CamposPedido" OnServerValidate="ClienteTextFormField_ServerValidate" />
 				</div>
 				<div class="row">
-					<gp:DropDownList runat="server" ID="MetodoPagtoDropDownList" LabelText="Método de Pagamento"
-						ValidationGroup="CamposPedido" />
-				</div>
-				<div class="row">
 					<gp:TextFormField runat="server" ID="VlrSubtotalTextFormField" LabelText="Valor Subtotal" Format="dinheiro"
 						ValidationGroup="CamposPedido" Enabled="false" />
 				</div>
@@ -31,6 +27,10 @@
 				<div class="row">
 					<gp:TextFormField runat="server" ID="VlrTotalTextFormField" LabelText="Valor Total"
 						ValidationGroup="CamposPedido" Enabled="false" />
+				</div>
+				<div class="row">
+					<gp:DropDownList runat="server" ID="MetodoPagtoDropDownList" LabelText="Método de Pagamento"
+						ValidationGroup="CamposPedido" />
 				</div>
 				<div class="row">
 					<gp:DataPicker runat="server" ID="DataHoraPedidoDataPicker" LabelText="Data/hora"

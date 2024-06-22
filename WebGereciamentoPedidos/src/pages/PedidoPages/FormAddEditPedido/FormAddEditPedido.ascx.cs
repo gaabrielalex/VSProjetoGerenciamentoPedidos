@@ -115,7 +115,6 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			VlrTotalTextFormField.Text = "00,00";
 		}
 
-		//Termiar de implementar e testar
 		private void ConfigurarFormParaEdicao(int idPedidoParaEdicao)
 		{
 			try
