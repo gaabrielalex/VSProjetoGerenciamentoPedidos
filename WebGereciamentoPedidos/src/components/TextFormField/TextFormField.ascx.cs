@@ -113,6 +113,18 @@ namespace WebGereciamentoPedidos.src.components
 			}
 		}
 
+		public bool Enabled
+		{
+			get
+			{
+				return this.TextBox.Enabled;
+			}
+			set
+			{
+				this.TextBox.Enabled = value;
+			}
+		}
+
 		public event ServerValidateEventHandler ServerValidate;
 		protected void CustomValidator_ServerValidate(object source, ServerValidateEventArgs args)
 		{

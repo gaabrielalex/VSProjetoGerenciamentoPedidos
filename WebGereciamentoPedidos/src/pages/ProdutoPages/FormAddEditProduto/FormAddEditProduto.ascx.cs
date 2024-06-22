@@ -120,11 +120,11 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 				RegistroLog.Log($"Erro ao validar campo descrição: {ex.ToString()}");
 			}
 		}
+
 		protected void VlrUnitarioTextFormField_ServerValidate(object source, ServerValidateEventArgs args)
 		{
 			string vlrUnitario = args.Value;
 
-			//Continua para mim copilot
 			//Validação se campo obrigatório
 			if (vlrUnitario == "")
 			{
@@ -149,7 +149,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 			string[] digitos = (digitosString).Split(',');
 			if (digitos[0].Length > 6 || digitos[1].Length > 2)
 			{
-				VlrUnitarioTextFormField.ErrorMessage = "Valor deve ter no máximo 2 casas decimais e 6 dígitos!";
+				VlrUnitarioTextFormField.ErrorMessage = "Valor deve ter no máximo 8 dígitos, sendo 6 inteiros e 2 decimais!";
 				args.IsValid = false;
 			}
 		}
