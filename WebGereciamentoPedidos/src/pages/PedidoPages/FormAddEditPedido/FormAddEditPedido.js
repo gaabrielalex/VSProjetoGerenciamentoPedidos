@@ -21,11 +21,17 @@ var myApp = myApp || {};
 
 	//Desconto não pode ser maior que o valor do subtotal
 	inputDesconto.addEventListener('change', function () {
-		if (myApp.utils.converterParaFloatUmaStringEmFormatoBr(inputDesconto.value) > myApp.utils.converterParaFloatUmaStringEmFormatoBr(inputValorSubTotal.value)) {
+		let valorSubTotal = myApp.utils.converterParaFloatUmaStringEmFormatoBr(inputValorSubTotal.value);
+		let desconto = myApp.utils.converterParaFloatUmaStringEmFormatoBr(inputDesconto.value);
+
+		if (desconto > valorSubTotal) {
 			spanValidacaoDesconto.textContent = 'Desconto não pode ser maior que o valor subtotal!';
 			spanValidacaoDesconto.style.visibility = 'visible';
 		} else {
 			spanValidacaoDesconto.style.visibility = 'hidden';
+
+			inputValorTotal.value = myApp.utils.converterParaStringEmFormatoBrUmFLoat(valorSubTotal - desconto);
 		}
 	});
+	
 })();

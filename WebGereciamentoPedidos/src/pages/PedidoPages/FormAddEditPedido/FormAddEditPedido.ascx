@@ -28,7 +28,7 @@
 						ValidationGroup="CamposPedido" OnServerValidate="DescontoTextFormField_ServerValidate" />
 				</div>
 				<div class="row">
-					<gp:TextFormField runat="server" ID="VlrTotalTextFormField" LabelText="Valor Total" Format="dinheiro"
+					<gp:TextFormField runat="server" ID="VlrTotalTextFormField" LabelText="Valor Total"
 						ValidationGroup="CamposPedido" Enabled="false" />
 				</div>
 				<div class="row">
