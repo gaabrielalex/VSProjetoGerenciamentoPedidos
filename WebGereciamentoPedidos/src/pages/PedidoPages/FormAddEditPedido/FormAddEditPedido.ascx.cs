@@ -311,9 +311,9 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 		{
 			string observacoes = args.Value;
 
-			if (observacoes.Length > 400)
+			if (observacoes.Length > 500)
 			{
-				ObservacoesTextFormField.ErrorMessage = "Tamanho máximo de 400 caracteres excedido!";
+				ObservacoesTextFormField.ErrorMessage = "Tamanho máximo de 500 caracteres excedido!";
 				args.IsValid = false;
 				return;
 			}
