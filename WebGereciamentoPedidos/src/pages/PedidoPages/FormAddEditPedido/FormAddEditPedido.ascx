@@ -41,6 +41,10 @@
 						ValidationGroup="CamposPedido" />
 				</div>
 				<div class="row">
+					<gp:TextFormField runat="server" ID="ObservacoesTextFormField" LabelText="Observações"
+						ValidationGroup="CamposPedido" EhMultiLinha="true" OnServerValidate="ObservacoesTextFormField_ServerValidate" />
+				</div>
+				<div class="row">
 					<div class="buttons-FormAddEditPedidoPanel">
 						<asp:Button runat="server" ID="CancelarButton" ValidationGroup="CamposPedido" Text="Cancelar" OnClick="CancelarButton_Click"
 							CssClass="btn btn-secondary SubmitButtonModalFormAddEditPedido" CausesValidation="false" />

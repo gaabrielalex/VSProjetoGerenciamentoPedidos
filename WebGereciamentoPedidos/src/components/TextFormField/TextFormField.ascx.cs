@@ -125,6 +125,21 @@ namespace WebGereciamentoPedidos.src.components
 			}
 		}
 
+		public bool EhMultiLinha
+		{
+			get
+			{
+				return this.TextBox.TextMode == TextBoxMode.MultiLine;
+			}
+			set
+			{
+				if (value)
+				{
+					this.TextBox.TextMode = TextBoxMode.MultiLine;
+				}
+			}
+		}
+
 		public event ServerValidateEventHandler ServerValidate;
 		protected void CustomValidator_ServerValidate(object source, ServerValidateEventArgs args)
 		{

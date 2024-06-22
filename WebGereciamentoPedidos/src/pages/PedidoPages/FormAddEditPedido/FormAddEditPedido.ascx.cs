@@ -128,6 +128,8 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 				DescontoTextFormField.Text = PedidoASerEditado.Desconto.ToString();
 				VlrTotalTextFormField.Text = PedidoASerEditado.VlrTotal.ToString();
 				DataHoraPedidoDataPicker.Date = PedidoASerEditado.DtHrPedido;
+				StatusDropDownList.SelectedValue = PedidoASerEditado.StatusPedido.ToString();
+				ObservacoesTextFormField.Text = PedidoASerEditado.Observacoes;
 
 			}
 			catch (Exception ex)
@@ -303,6 +305,19 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 				args.IsValid = false;
 				return;
 			}
+		}
+
+		protected void ObservacoesTextFormField_ServerValidate(object source, ServerValidateEventArgs args)
+		{
+			string observacoes = args.Value;
+
+			if (observacoes.Length > 400)
+			{
+				ObservacoesTextFormField.ErrorMessage = "Tamanho máximo de 400 caracteres excedido!";
+				args.IsValid = false;
+				return;
+			}
+
 		}
 	}
 }
