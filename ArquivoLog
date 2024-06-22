@@ -2676,3 +2676,43 @@ A instrução foi finalizada.
 ClientConnectionId:5cf8c58f-c796-49ec-bb02-8ef2b4336047
 Error Number:2627,State:1,Class:14
 ------------------------------------
+
+Log Entrada : 18:06:32 sábado, 22 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Web.HttpException (0x80004005): DataBinding: 'ModelsGerenciamentoPedidos.Src.Pedido' não contém uma propriedade com o nome 'MetodoPagemento'.
+   em System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   em System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 86
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 75
+------------------------------------
+
+Log Entrada : 18:08:02 sábado, 22 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Web.HttpException (0x80004005): DataBinding: 'ModelsGerenciamentoPedidos.Src.Pedido' não contém uma propriedade com o nome 'MetodoPagemento'.
+   em System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   em System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 86
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 75
+------------------------------------

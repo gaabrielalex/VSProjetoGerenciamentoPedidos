@@ -38,7 +38,7 @@ namespace DAOGerenciamentoPedidos
 					command.Parameters.AddWithValue("@dt_hr_pedido", pedido.DtHrPedido);
 					command.Parameters.AddWithValue("@status_pedido", (char)pedido.StatusPedido);
 					command.Parameters.AddWithValue("@observacoes", pedido.Observacoes);
-					command.Parameters.AddWithValue("@id_metodo_pagto", pedido.MetodoPagemento.IdMetodoPagto);
+					command.Parameters.AddWithValue("@id_metodo_pagto", pedido.MetodoPagamento.IdMetodoPagto);
 					int idPedido = Convert.ToInt32(command.ExecuteScalar());
 					connection.Close();
 					return idPedido;
@@ -67,7 +67,7 @@ namespace DAOGerenciamentoPedidos
 					command.Parameters.AddWithValue("@dt_hr_pedido", pedido.DtHrPedido);
 					command.Parameters.AddWithValue("@status_pedido", (char)pedido.StatusPedido);
 					command.Parameters.AddWithValue("@observacoes", pedido.Observacoes);
-					command.Parameters.AddWithValue("@id_metodo_pagto", pedido.MetodoPagemento.IdMetodoPagto);
+					command.Parameters.AddWithValue("@id_metodo_pagto", pedido.MetodoPagamento.IdMetodoPagto);
 					command.Parameters.AddWithValue("@id_pedido", idPedido);
 					var linhasAfetadas = command.ExecuteNonQuery();
 					connection.Close();

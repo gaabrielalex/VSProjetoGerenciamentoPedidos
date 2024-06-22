@@ -84,7 +84,7 @@ namespace ModelsGerenciamentoPedidos.Src
 				_observacoes = value;
 			}
 		}
-		public MetodoPagamento MetodoPagemento { get; set; }
+		public MetodoPagamento MetodoPagamento { get; set; }
 
 		public Pedido(){ }
 
@@ -97,7 +97,7 @@ namespace ModelsGerenciamentoPedidos.Src
 			DtHrPedido = dtHrPedido;
 			StatusPedido = statusPedido;
 			Observacoes = observacoes;
-			MetodoPagemento = metodoPagemento;
+			MetodoPagamento = metodoPagemento;
 		}
 
 		public override bool Equals(object obj)
@@ -110,7 +110,7 @@ namespace ModelsGerenciamentoPedidos.Src
 				   DtHrPedido == pedido.DtHrPedido &&
 				   StatusPedido == pedido.StatusPedido &&
 				   Observacoes == pedido.Observacoes &&
-				   EqualityComparer<MetodoPagamento>.Default.Equals(MetodoPagemento, pedido.MetodoPagemento);
+				   EqualityComparer<MetodoPagamento>.Default.Equals(MetodoPagamento, pedido.MetodoPagamento);
 		}
 
 		public override int GetHashCode()
@@ -123,7 +123,7 @@ namespace ModelsGerenciamentoPedidos.Src
 			hashCode = hashCode * -1521134295 + DtHrPedido.GetHashCode();
 			hashCode = hashCode * -1521134295 + StatusPedido.GetHashCode();
 			hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Observacoes);
-			hashCode = hashCode * -1521134295 + EqualityComparer<MetodoPagamento>.Default.GetHashCode(MetodoPagemento);
+			hashCode = hashCode * -1521134295 + EqualityComparer<MetodoPagamento>.Default.GetHashCode(MetodoPagamento);
 			return hashCode;
 		}
 	}

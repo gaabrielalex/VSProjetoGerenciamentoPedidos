@@ -10,6 +10,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using UtilsGerenciamentoPedidos;
 using WebGereciamentoPedidos.src.util;
+using static ModelsGerenciamentoPedidos.Src.StatusPedido;
 using static WebGereciamentoPedidos.src.util.MensagemInfo;
 
 namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
@@ -122,7 +123,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 				FormAddEditPedidoTituloMedio.Text = "Editar Pedido";
 				PedidoASerEditado = PedidoDAO.ObterPorId(idPedidoParaEdicao);
 				ClienteTextFormField.Text = PedidoASerEditado.NomeCliente;
-				MetodoPagtoDropDownList.SelectedValue = PedidoASerEditado.MetodoPagemento.IdMetodoPagto.ToString();
+				MetodoPagtoDropDownList.SelectedValue = PedidoASerEditado.MetodoPagamento.IdMetodoPagto.ToString();
 				VlrSubtotalTextFormField.Text = PedidoASerEditado.VlrSubtotal.ToString();
 				DescontoTextFormField.Text = PedidoASerEditado.Desconto.ToString();
 				VlrTotalTextFormField.Text = PedidoASerEditado.VlrTotal.ToString();
@@ -165,20 +166,59 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			}
 		}
 
-		//TODO: Terminar de implementar e testar
 		private Pedido ObterDadosDoFormulario()
 		{
-			return null;
-			//string descricaoPedido = DescricaoTextFormField.Text;
-			//if (!decimal.TryParse(VlrUnitarioTextFormField.Text, out decimal vlrUnitarioPedido))
-			//{
-			//	PageUtils.MostrarMensagemViaToast("Favor informar valores numéricos no campo \"Valor Unitário\"", TiposMensagem.Erro, Page);
-			//	return null;
-			//}
-			//return new Pedido(null, descricaoPedido, vlrUnitarioPedido);
+			string nomeCliente = ClienteTextFormField.Text;
+
+			if (!decimal.TryParse(DescontoTextFormField.Text, out decimal desconto))
+			{
+				PageUtils.MostrarMensagemViaToast("Favor informar valores numéricos no campo \"Desconto\"", TiposMensagem.Erro, Page);
+				return null;
+			}
+
+			string valueMetodoPAgto = MetodoPagtoDropDownList.SelectedValue;
+			MetodoPagamento metodoPagamento;
+			try {
+				metodoPagamento = new MetodoPagamento(int.Parse(valueMetodoPAgto), null);
+			} catch (Exception ex)
+			{
+				PageUtils.MostrarMensagemViaToast("Houve um erro ao obter o método de pagamento", TiposMensagem.Erro, Page);
+				RegistroLog.Log($"Erro ao obter o método de pagamento: {ex.ToString()}");
+				return null;
+			}
+
+			DateTime dataHoraPedido;
+			try {
+				dataHoraPedido = DataHoraPedidoDataPicker.Date;
+			}
+			catch (Exception ex)
+			{
+				PageUtils.MostrarMensagemViaToast("Houve um erro ao obter a data e hora do pedido", TiposMensagem.Erro, Page);
+				RegistroLog.Log($"Erro ao obter a data e hora do pedido: {ex.ToString()}");
+				return null;
+			}
+
+			string valueStatusPedido = StatusDropDownList.SelectedValue;
+			if (!Enum.TryParse(valueStatusPedido, out EnumStatusPedido statusPedido))
+			{
+				PageUtils.MostrarMensagemViaToast("Houve um erro ao obter o status do pedido", TiposMensagem.Erro, Page);
+				RegistroLog.Log($"Erro ao obter o método de pagamento, erro de conversão");
+				return null;
+			}
+			
+			string observacoes = ObservacoesTextFormField.Text;
+			
+			return new Pedido()
+			{
+				NomeCliente = nomeCliente,
+				Desconto = desconto,
+				MetodoPagamento = metodoPagamento,
+				DtHrPedido = dataHoraPedido,
+				StatusPedido = statusPedido,
+				Observacoes = observacoes
+			};
 		}
 
-		//TODO: Testar
 		private void CadastarPedido(Pedido Pedido)
 		{
 			try
@@ -196,7 +236,6 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			}
 		}
 
-		//TODO: Testar
 		private void EditarPedido(Pedido Pedido)
 		{
 			try
@@ -297,7 +336,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 				return;
 			}
 
-			//DAta e hora não pode ser anterior ao ano atual
+			//Data e hora não pode ser anterior ao ano atual
 			if(dataHoraPedido.Year < DateTime.Now.Year)
 			{
 				DataHoraPedidoDataPicker.ErrorMessage = "Data e hora do pedido não pode ser anterior ao ano atual!";
