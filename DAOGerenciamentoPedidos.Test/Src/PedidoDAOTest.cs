@@ -6,6 +6,7 @@ using ModelsGerenciamentoPedidos.Src;
 using System;
 using System.Collections.Generic;
 using static ModelsGerenciamentoPedidos.Src.Pedido;
+using static ModelsGerenciamentoPedidos.Src.StatusPedido;
 
 
 namespace TestesGerenciamentoPedidos.DAO_Tests
@@ -39,22 +40,24 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 			Pedido pedidoInserido = pedidoDAO.ObterPorId(idPedidoInserido);
 
 			//Truncando as datas para evitar problemas de... n sei dizer, to com pressa
-			pedido.DtHrPedido = TruncateToMinute(pedido.DtHrPedido);
-			pedidoInserido.DtHrPedido = TruncateToMinute(pedidoInserido.DtHrPedido);
+			if (pedidoInserido != null && pedido.DtHrPedido != null && pedidoInserido.DtHrPedido != null)
+			{
+				pedido.DtHrPedido = TruncateToMinute(pedido.DtHrPedido);
+				pedidoInserido.DtHrPedido = TruncateToMinute(pedidoInserido.DtHrPedido);
+			}
 
 			// Assert
 			pedidoInserido.Should().NotBeNull(because: "O pedido inserido deve ser retornado ao buscar pelo id do pedido inserido");
 			pedidoInserido.NomeCliente.Should().Be(pedido.NomeCliente, because: "O nome do cliente do pedido inserido deve ser igual ao nome do cliente do pedido informado");
-			pedidoInserido.VlrSubtotal.Should().Be(pedido.VlrSubtotal, because: "O valor subtotal do pedido inserido deve ser igual ao valor subtotal do pedido informado");
 			pedidoInserido.Desconto.Should().Be(pedido.Desconto, because: "O desconto do pedido inserido deve ser igual ao desconto do pedido informado");
 			pedidoInserido.DtHrPedido.Should().Be(pedido.DtHrPedido, because: "A data e hora do pedido inserido deve ser igual a data e hora do pedido informado");
 			pedidoInserido.StatusPedido.Should().Be(pedido.StatusPedido, because: "O status do pedido inserido deve ser igual ao status do pedido informado");
 			pedidoInserido.Observacoes.Should().Be(pedido.Observacoes, because: "As observações do pedido inserido deve ser igual as observações do pedido informado");
-			pedidoInserido.MetodoPagemento.IdMetodoPagto.Should().Be(pedido.MetodoPagemento.IdMetodoPagto, because: "O id do método de pagamento do pedido inserido deve ser igual");
+			pedidoInserido.MetodoPagamento.IdMetodoPagto.Should().Be(pedido.MetodoPagamento.IdMetodoPagto, because: "O id do método de pagamento do pedido inserido deve ser igual");
 		}
 
 		[TestMethod]
-		public void AoCadastrarProdutoEEditaloDeveRetornarOProdutoComTodasAsMudancasRealizadasAoConsultalo()
+		public void AoCadastrarPedidoEEditaloDeveRetornarOProdutoComTodasAsMudancasRealizadasAoConsultalo()
 		{
 			// Arrange
 			PedidoDAO pedidoDAO = new PedidoDAO();
@@ -66,12 +69,11 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 
 			// Editando o pedido inserido
 			pedidoInseridoASerEditado.NomeCliente = "Cliente Teste Editado OProdutoComTodasAsMudancasRealizadasAoConsultalo";
-			pedidoInseridoASerEditado.VlrSubtotal = 200;
 			pedidoInseridoASerEditado.Desconto = 20;
 			pedidoInseridoASerEditado.DtHrPedido = DateTime.Now;
 			pedidoInseridoASerEditado.StatusPedido = EnumStatusPedido.EmSeparacao;
 			pedidoInseridoASerEditado.Observacoes = "Observações Teste Editadas OProdutoComTodasAsMudancasRealizadasAoConsultalo";
-			pedidoInseridoASerEditado.MetodoPagemento.IdMetodoPagto = 2;
+			pedidoInseridoASerEditado.MetodoPagamento.IdMetodoPagto = 2;
 
 			// Editando o pedido no banco
 			pedidoDAO.Editar(pedidoInseridoASerEditado, idPedidoInserido);
@@ -79,19 +81,18 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 			// Buscando o pedido editado
 			Pedido pedidoEditado = pedidoDAO.ObterPorId(idPedidoInserido);
 
-			//Truncando as datas para evitar problemas de... n sei dizer, to com pressa
-			pedidoInseridoASerEditado.DtHrPedido = TruncateToMinute(pedidoInseridoASerEditado.DtHrPedido);
-			pedidoEditado.DtHrPedido = TruncateToMinute(pedidoEditado.DtHrPedido);
+			if(pedidoEditado != null && pedidoInseridoASerEditado.DtHrPedido != null && pedidoEditado.DtHrPedido != null)
+			{
+				//Truncando as datas para evitar problemas de... n sei dizer, to com pressa
+				pedidoInseridoASerEditado.DtHrPedido = TruncateToMinute(pedidoInseridoASerEditado.DtHrPedido);
+				pedidoEditado.DtHrPedido = TruncateToMinute(pedidoEditado.DtHrPedido);
+			}
 
 			// Assert
 			pedidoEditado.Should().NotBeNull(because: "O pedido editado deve ser retornado ao buscar pelo id do pedido editado");
 			pedidoEditado.NomeCliente.Should().Be(
 				pedidoInseridoASerEditado.NomeCliente,
 				because: "O nome do cliente do pedido editado salvo no banco deve ser igual ao nome do cliente do pedido editado informado(antes de ser salvo no banco)"
-			);
-			pedidoEditado.VlrSubtotal.Should().Be(
-				pedidoInseridoASerEditado.VlrSubtotal,
-				because: "O valor subtotal do pedido editado salvo no banco deve ser igual ao valor subtotal do pedido editado informado(antes de ser salvo no banco)"
 			);
 			pedidoEditado.Desconto.Should().Be(
 				pedidoInseridoASerEditado.Desconto,
@@ -109,8 +110,8 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 				pedidoInseridoASerEditado.Observacoes,
 				because: "As observações do pedido editado salvo no banco deve ser igual as observações do pedido editado informado(antes de ser salvo no banco)"
 			);
-			pedidoEditado.MetodoPagemento.IdMetodoPagto.Should().Be(
-				pedidoInseridoASerEditado.MetodoPagemento.IdMetodoPagto,
+			pedidoEditado.MetodoPagamento.IdMetodoPagto.Should().Be(
+				pedidoInseridoASerEditado.MetodoPagamento.IdMetodoPagto,
 				because: "O id do método de pagamento do pedido editado salvo no banco deve ser igual ao id do método de pagamento do pedido editado informado(antes de ser salvo no banco)"
 			);
 		}
@@ -159,7 +160,7 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 				pedidosInseridos[i] = pedidoDAO.ObterPorId(idPedidosInseridos[i]);
 			}
 
-			List<Pedido> listagemPedidos = pedidoDAO.Listar();
+			List<Pedido> listagemPedidos = pedidoDAO.ListarTodos();
 
 			// Assert
 			listagemPedidos.Should().HaveCountGreaterThanOrEqualTo(quantidadePedidosEsperada, because: $"Deve haver pelo menos {quantidadePedidosEsperada} pedidos cadastrados no banco");

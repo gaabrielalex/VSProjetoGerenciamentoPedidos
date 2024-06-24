@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebGereciamentoPedidos.src.components
+namespace WebGereciamentoPedidos.src.components.GPDropDownList
 {
-	public partial class TextFormField : System.Web.UI.UserControl
+	public partial class GPDropDownList : System.Web.UI.UserControl
 	{
 		public string Style { get; set; }
 		private string _cssClass;
@@ -22,21 +22,6 @@ namespace WebGereciamentoPedidos.src.components
 				_cssClass += value.Insert(0, " ");
 			}
 		}
-		private string _format;
-		public string Format
-		{
-			get
-			{
-				return _format;
-			}
-			set 
-			{
-				if (value == "dinheiro") {
-					TextBoxControl.CssClass += "dinheiro".Insert(0, " ");
-					_format = value;
-				}
-			}
-		}
 
 		public Label LabelControl
 		{
@@ -45,15 +30,15 @@ namespace WebGereciamentoPedidos.src.components
 				return this.Label;
 			}
 		}
-		public TextBox TextBoxControl
+		public DropDownList DropDownListControl
 		{
-			get 
+			get
 			{
-				return this.TextBox;
+				return this.DropDownList;
 			}
 			set
 			{
-				this.TextBox = value;
+				this.DropDownList = value;
 			}
 		}
 		public CustomValidator CustomValidatorControl
@@ -67,17 +52,7 @@ namespace WebGereciamentoPedidos.src.components
 				this.CustomValidator = value;
 			}
 		}
-		public string Text
-		{
-			get
-			{
-				return this.TextBox.Text;
-			}
-			set
-			{
-				this.TextBox.Text = value;
-			}
-		}
+
 		public string LabelText
 		{
 			get
@@ -97,7 +72,7 @@ namespace WebGereciamentoPedidos.src.components
 			}
 			set
 			{
-				this.CustomValidator.ValidationGroup = value;	
+				this.CustomValidator.ValidationGroup = value;
 			}
 		}
 
@@ -113,31 +88,57 @@ namespace WebGereciamentoPedidos.src.components
 			}
 		}
 
-		public bool Enabled
+		public object DataSource
 		{
 			get
 			{
-				return this.TextBox.Enabled;
+				return this.DropDownList.DataSource;
 			}
 			set
 			{
-				this.TextBox.Enabled = value;
+				this.DropDownList.DataSource = value;
 			}
 		}
 
-		public bool EhMultiLinha
+		public string DataTextField
 		{
 			get
 			{
-				return this.TextBox.TextMode == TextBoxMode.MultiLine;
+				return this.DropDownList.DataTextField;
 			}
 			set
 			{
-				if (value)
-				{
-					this.TextBox.TextMode = TextBoxMode.MultiLine;
-				}
+				this.DropDownList.DataTextField = value;
 			}
+		}
+
+		public string DataValueField
+		{
+			get
+			{
+				return this.DropDownList.DataValueField;
+			}
+			set
+			{
+				this.DropDownList.DataValueField = value;
+			}
+		}
+
+		public string SelectedValue
+		{
+			get
+			{
+				return this.DropDownList.SelectedValue;
+			}
+			set
+			{
+				this.DropDownList.SelectedValue = value;
+			}
+		}
+
+		public override void DataBind()
+		{
+			this.DropDownList.DataBind();
 		}
 
 		public event ServerValidateEventHandler ServerValidate;
@@ -148,6 +149,7 @@ namespace WebGereciamentoPedidos.src.components
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
+
 		}
 	}
 }

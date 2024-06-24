@@ -86,7 +86,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 		}
 
-		public List<Produto> Listar()
+		public List<Produto> ListarTodos()
 		{
 			String query = "SELECT * FROM produto ORDER BY descricao";
 			List<Produto> listaProdutos = new List<Produto>();

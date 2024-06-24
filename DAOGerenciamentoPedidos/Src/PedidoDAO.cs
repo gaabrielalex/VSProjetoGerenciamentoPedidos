@@ -8,9 +8,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using UtilsGerenciamentoPedidos;
 using static ModelsGerenciamentoPedidos.Src.Pedido;
+using static ModelsGerenciamentoPedidos.Src.StatusPedido;
 
 namespace DAOGerenciamentoPedidos
 {
@@ -21,8 +23,8 @@ namespace DAOGerenciamentoPedidos
 		public int Inserir(Pedido pedido)
 		{
 			// Query da inserção
-			String query = @"INSERT INTO pedido (nome_cliente, vlr_subtotal, desconto, dt_hr_pedido, status_pedido, observacoes, id_metodo_pagto) 
-							VALUES (@nome_cliente, @vlr_subtotal, @desconto, @dt_hr_pedido, @status_pedido, @observacoes, @id_metodo_pagto) 
+			String query = @"INSERT INTO pedido (nome_cliente, desconto, dt_hr_pedido, status_pedido, observacoes, id_metodo_pagto) 
+							VALUES (@nome_cliente, @desconto, @dt_hr_pedido, @status_pedido, @observacoes, @id_metodo_pagto) 
 							SELECT SCOPE_IDENTITY();";
 			try
 			{
@@ -32,15 +34,14 @@ namespace DAOGerenciamentoPedidos
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
 					command.Parameters.AddWithValue("@nome_cliente", pedido.NomeCliente);
-					command.Parameters.AddWithValue("@vlr_subtotal", pedido.VlrSubtotal);
 					command.Parameters.AddWithValue("@desconto", pedido.Desconto);
 					command.Parameters.AddWithValue("@dt_hr_pedido", pedido.DtHrPedido);
 					command.Parameters.AddWithValue("@status_pedido", (char)pedido.StatusPedido);
 					command.Parameters.AddWithValue("@observacoes", pedido.Observacoes);
-					command.Parameters.AddWithValue("@id_metodo_pagto", pedido.MetodoPagemento.IdMetodoPagto);
-					int idProduto = Convert.ToInt32(command.ExecuteScalar());
+					command.Parameters.AddWithValue("@id_metodo_pagto", pedido.MetodoPagamento.IdMetodoPagto);
+					int idPedido = Convert.ToInt32(command.ExecuteScalar());
 					connection.Close();
-					return idProduto;
+					return idPedido;
 
 				}
 			}
@@ -52,7 +53,7 @@ namespace DAOGerenciamentoPedidos
 
 		public void Editar(Pedido pedido, int idPedido)
 		{
-			String query = @"UPDATE pedido SET nome_cliente = @nome_cliente, vlr_subtotal = @vlr_subtotal, desconto = @desconto, dt_hr_pedido = @dt_hr_pedido, 
+			String query = @"UPDATE pedido SET nome_cliente = @nome_cliente, desconto = @desconto, dt_hr_pedido = @dt_hr_pedido, 
 										status_pedido = @status_pedido, observacoes = @observacoes, id_metodo_pagto = @id_metodo_pagto WHERE id_pedido = @id_pedido";
 
 			try
@@ -62,12 +63,11 @@ namespace DAOGerenciamentoPedidos
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
 					command.Parameters.AddWithValue("@nome_cliente", pedido.NomeCliente);
-					command.Parameters.AddWithValue("@vlr_subtotal", pedido.VlrSubtotal);
 					command.Parameters.AddWithValue("@desconto", pedido.Desconto);
 					command.Parameters.AddWithValue("@dt_hr_pedido", pedido.DtHrPedido);
 					command.Parameters.AddWithValue("@status_pedido", (char)pedido.StatusPedido);
 					command.Parameters.AddWithValue("@observacoes", pedido.Observacoes);
-					command.Parameters.AddWithValue("@id_metodo_pagto", pedido.MetodoPagemento.IdMetodoPagto);
+					command.Parameters.AddWithValue("@id_metodo_pagto", pedido.MetodoPagamento.IdMetodoPagto);
 					command.Parameters.AddWithValue("@id_pedido", idPedido);
 					var linhasAfetadas = command.ExecuteNonQuery();
 					connection.Close();
@@ -77,9 +77,11 @@ namespace DAOGerenciamentoPedidos
 						throw new Exception("Erro ao editar pedido: Nenhuma linha foi afetada");
 					}
 
-				}	
-				
-			} catch (Exception e) {
+				}
+
+			}
+			catch (Exception e)
+			{
 				throw new Erro($"Erro ao editar pedido: {e.ToString()}");
 			}
 		}
@@ -108,12 +110,18 @@ namespace DAOGerenciamentoPedidos
 			}
 		}
 
-		public List<Pedido> Listar()
+		public List<Pedido> ListarTodos()
 		{
-			String query = @"SELECT p.*, mp.descricao AS descricao_metodo_pagto
-							FROM pedido p, metodo_pagto mp
-							WHERE p.id_metodo_pagto = mp.id_metodo_pagto
-							ORDER BY p.dt_hr_pedido DESC";
+			String query = @"SELECT p.*, 
+								mp.descricao AS descricao_metodo_pagto,
+								COALESCE(SUM(ip.vlr_total_item), 0) AS vlr_subtotal
+							FROM pedido p
+							LEFT JOIN metodo_pagto mp ON p.id_metodo_pagto = mp.id_metodo_pagto
+							LEFT JOIN item_pedido ip ON p.id_pedido = ip.id_pedido
+							GROUP BY p.id_pedido, p.dt_hr_pedido, p.nome_cliente, 
+								p.desconto, p.status_pedido, p.observacoes, 
+								p.id_metodo_pagto, mp.descricao
+							ORDER BY p.dt_hr_pedido DESC;";
 
 			List<Pedido> listaPedido = new List<Pedido>();
 			try
@@ -136,11 +144,17 @@ namespace DAOGerenciamentoPedidos
 
 		public Pedido ObterPorId(int id)
 		{
-			String query = @"SELECT p.*, mp.descricao AS descricao_metodo_pagto
-							FROM pedido p, metodo_pagto mp
-							WHERE p.id_metodo_pagto = mp.id_metodo_pagto 
-							AND id_pedido = @id_pedido";
-
+			String query =  @"SELECT p.*, 
+								mp.descricao AS descricao_metodo_pagto,
+								COALESCE(SUM(ip.vlr_total_item), 0) AS vlr_subtotal
+							FROM pedido p
+							LEFT JOIN metodo_pagto mp ON p.id_metodo_pagto = mp.id_metodo_pagto
+							LEFT JOIN item_pedido ip ON p.id_pedido = ip.id_pedido
+							WHERE p.id_pedido = @id_pedido
+							GROUP BY p.id_pedido, p.dt_hr_pedido, p.nome_cliente, 
+								p.desconto, p.status_pedido, p.observacoes, 
+								p.id_metodo_pagto, mp.descricao;";
+							
 			List<Pedido> listaPedidos = new List<Pedido>();
 			try
 			{
@@ -167,11 +181,17 @@ namespace DAOGerenciamentoPedidos
 
 		public List<Pedido> ListarPorCliente(string nomeCliente)
 		{
-			String query = @"SELECT p.*, mp.descricao AS descricao_metodo_pagto
-							FROM pedido p, metodo_pagto mp
-							WHERE p.id_metodo_pagto = mp.id_metodo_pagto
-								and nome_cliente COLLATE Latin1_General_CI_AI LIKE @nome_cliente
-							ORDER BY p.dt_hr_pedido DESC";
+			String query = @"SELECT p.*, 
+								mp.descricao AS descricao_metodo_pagto,
+								COALESCE(SUM(ip.vlr_total_item), 0) AS vlr_subtotal
+							FROM pedido p
+							LEFT JOIN metodo_pagto mp ON p.id_metodo_pagto = mp.id_metodo_pagto
+							LEFT JOIN item_pedido ip ON p.id_pedido = ip.id_pedido
+								WHERE nome_cliente COLLATE Latin1_General_CI_AI LIKE @nome_cliente
+							GROUP BY p.id_pedido, p.dt_hr_pedido, p.nome_cliente, 
+								p.desconto, p.status_pedido, p.observacoes, 
+								p.id_metodo_pagto, mp.descricao
+							ORDER BY p.dt_hr_pedido DESC;";
 
 			List<Pedido> listaPedidos = new List<Pedido>();
 			try

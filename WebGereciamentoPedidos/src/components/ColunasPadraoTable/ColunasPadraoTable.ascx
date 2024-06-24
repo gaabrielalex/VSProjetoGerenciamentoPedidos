@@ -14,9 +14,9 @@
 </asp:LinkButton>
 
 <script type="text/javascript">
-	var myApp = {
-		idExcluirLK: "<%=ExcluirLK.ClientID %>"
-	}
+	var myApp = myApp || {};
+	
+	myApp.idExcluirLK = "<%=ExcluirLK.ClientID %>";
 </script>
 
 <script type="text/javascript" src="\src\components\ColunasPadraoTable\ColunasPadraoTable.js"> </script>

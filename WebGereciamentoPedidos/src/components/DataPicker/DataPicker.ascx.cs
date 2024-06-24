@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
-namespace WebGereciamentoPedidos.src.components
+namespace WebGereciamentoPedidos.src.components.DataPicker
 {
-	public partial class TextFormField : System.Web.UI.UserControl
+	public partial class DataPicker : System.Web.UI.UserControl
 	{
 		public string Style { get; set; }
 		private string _cssClass;
@@ -22,21 +24,8 @@ namespace WebGereciamentoPedidos.src.components
 				_cssClass += value.Insert(0, " ");
 			}
 		}
-		private string _format;
-		public string Format
-		{
-			get
-			{
-				return _format;
-			}
-			set 
-			{
-				if (value == "dinheiro") {
-					TextBoxControl.CssClass += "dinheiro".Insert(0, " ");
-					_format = value;
-				}
-			}
-		}
+		//private string _format;
+		//public string Format { get; set; }
 
 		public Label LabelControl
 		{
@@ -45,15 +34,15 @@ namespace WebGereciamentoPedidos.src.components
 				return this.Label;
 			}
 		}
-		public TextBox TextBoxControl
+		public HtmlInputGenericControl TextBoxControl
 		{
-			get 
+			get
 			{
-				return this.TextBox;
+				return this.Datetime;
 			}
 			set
 			{
-				this.TextBox = value;
+				this.Datetime = value;
 			}
 		}
 		public CustomValidator CustomValidatorControl
@@ -67,17 +56,21 @@ namespace WebGereciamentoPedidos.src.components
 				this.CustomValidator = value;
 			}
 		}
-		public string Text
+		public DateTime Date
 		{
 			get
 			{
-				return this.TextBox.Text;
+				return DateTime.TryParseExact
+					(this.Datetime.Value, "yyyy-MM-ddTHH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date) 
+						? date 
+						: DateTime.MinValue;
 			}
 			set
 			{
-				this.TextBox.Text = value;
+				this.Datetime.Value = value.ToString("yyyy-MM-ddTHH:mm"); // Formato específico para datetime-local
 			}
 		}
+
 		public string LabelText
 		{
 			get
@@ -97,7 +90,7 @@ namespace WebGereciamentoPedidos.src.components
 			}
 			set
 			{
-				this.CustomValidator.ValidationGroup = value;	
+				this.CustomValidator.ValidationGroup = value;
 			}
 		}
 
@@ -110,33 +103,6 @@ namespace WebGereciamentoPedidos.src.components
 			set
 			{
 				this.CustomValidator.ErrorMessage = value;
-			}
-		}
-
-		public bool Enabled
-		{
-			get
-			{
-				return this.TextBox.Enabled;
-			}
-			set
-			{
-				this.TextBox.Enabled = value;
-			}
-		}
-
-		public bool EhMultiLinha
-		{
-			get
-			{
-				return this.TextBox.TextMode == TextBoxMode.MultiLine;
-			}
-			set
-			{
-				if (value)
-				{
-					this.TextBox.TextMode = TextBoxMode.MultiLine;
-				}
 			}
 		}
 

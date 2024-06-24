@@ -17,3 +17,22 @@ input {
 .table-container td {
 	border-bottom: 1px solid #ccc;
 }
+
+.erro {
+	color: #dc3545;
+}
+
+.gp-input {
+	display: inline-flex;
+	flex-direction: column;
+	margin-top: 6px;
+}
+
+.gp-container-input {
+	display: inline-flex;
+	flex-direction: column;
+}
+
+.gp-input-container-custom-validator {
+	height: 24.5px;
+}

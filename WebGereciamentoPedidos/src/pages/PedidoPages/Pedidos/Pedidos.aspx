@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Pedidos.aspx.cs" Inherits="WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos" %>
 
 <%@ Register TagPrefix="gp" TagName="Filtro" Src="~/src/components/Filtro/Filtro.ascx" %>
-<%@ Register TagPrefix="gp" TagName="FormAddEditProduto" Src="~/src/pages/ProdutoPages/FormAddEditProduto/FormAddEditProduto.ascx" %>
+<%@ Register TagPrefix="gp" TagName="FormAddEditPedido" Src="~/src/pages/PedidoPages/FormAddEditPedido/FormAddEditPedido.ascx" %>
 <%@ Register TagPrefix="gp" TagName="Titulo" Src="~/src/components/Titulo/Titulo.ascx" %>
 <%@ Register TagPrefix="gp" TagName="ColunasPadraoTable" Src="~/src/components/ColunasPadraoTable/ColunasPadraoTable.ascx" %>
 
@@ -25,7 +25,7 @@
 		</div>
 	</div>
 
-	<%--<gp:FormAddEditProduto runat="server" ID="FormAddEditProduto" />--%>
+	<gp:FormAddEditPedido runat="server" id="FormAddEditPedido" />
 
 	<asp:UpdatePanel runat="server">
 		<ContentTemplate>
@@ -33,7 +33,7 @@
 				<gp:Titulo runat="server" Text="Pedidos" ID="PedidosTitulo"></gp:Titulo>
 				<div class="filtro-container">
 					<gp:Filtro ID="PedidoFiltro" runat="server" Placeholder="Filtrar pelo cliente..." OnFiltrarClick="ProdutoFiltro_FiltrarClick" />
-					<%--<asp:Button runat="server" ID="NovoPedidoButton" Text="Novo Pedido" OnClick="NovoPedidoButton_Click" />--%>
+					<asp:Button runat="server" ID="NovoPedidoButton" Text="Novo Pedido" OnClick="NovoPedidoButton_Click" />
 				</div>
 				<div class="table-container">
 					<asp:GridView
@@ -48,7 +48,7 @@
 							<asp:BoundField DataField="VlrSubtotal" HeaderText="Vlr Subtotal" DataFormatString="{0:C}" />
 							<asp:BoundField DataField="Desconto" HeaderText="Desconto" DataFormatString="{0:C}" />
 							<asp:BoundField DataField="VlrTotal" HeaderText="Vlr Total" DataFormatString="{0:C}" />
-							<asp:BoundField DataField="MetodoPagemento.Descricao" HeaderText="Mtd Pagto" />
+							<asp:BoundField DataField="MetodoPagamento.Descricao" HeaderText="Mtd Pagto" />
 							<asp:BoundField DataField="DtHrPedido" HeaderText="Data/hora" DataFormatString="{0:dd/MM/yyyy HH:mm}" />
 							<asp:BoundField DataField="DescricaoStatusPedido" HeaderText="Status" />
 

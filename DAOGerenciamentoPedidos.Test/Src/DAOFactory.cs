@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static ModelsGerenciamentoPedidos.Src.Pedido;
+using static ModelsGerenciamentoPedidos.Src.StatusPedido;
 
 namespace DAOGerenciamentoPedidos.Test.Src
 {
 	public static class DAOFactory
 	{
-
 		public static Pedido RetornaPedido()
 		{
 			return new Pedido(

@@ -4,19 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static ModelsGerenciamentoPedidos.Src.StatusPedido;
 
 namespace ModelsGerenciamentoPedidos.Src
 {
 	[Serializable]
 	public class Pedido
 	{
-		public enum EnumStatusPedido
-		{
-			AguardandoPagamento= 'A',
-			EmSeparacao = 'S',
-			Entregue = 'E',
-			Cancelado = 'C',
-		}
+		
 
 		private const int MaxLengthNomeCliente = 100;
 		private const decimal MinVlrTotal = 0;
@@ -74,19 +69,7 @@ namespace ModelsGerenciamentoPedidos.Src
 		{
 			get 
 			{
-				switch (StatusPedido)
-				{
-					case EnumStatusPedido.AguardandoPagamento:
-						return "Aguardando Pagamento";
-					case EnumStatusPedido.EmSeparacao:
-						return "Em Separação";
-					case EnumStatusPedido.Entregue:
-						return "Entregue";
-					case EnumStatusPedido.Cancelado:
-						return "Cancelado";
-					default:
-						return "Status Desconhecido";
-				}
+				return ModelsGerenciamentoPedidos.Src.StatusPedido.ObterDescricaoStatusPedido(StatusPedido);
 			}
 		}
 		public string Observacoes
@@ -101,7 +84,7 @@ namespace ModelsGerenciamentoPedidos.Src
 				_observacoes = value;
 			}
 		}
-		public MetodoPagamento MetodoPagemento { get; set; }
+		public MetodoPagamento MetodoPagamento { get; set; }
 
 		public Pedido(){ }
 
@@ -114,7 +97,7 @@ namespace ModelsGerenciamentoPedidos.Src
 			DtHrPedido = dtHrPedido;
 			StatusPedido = statusPedido;
 			Observacoes = observacoes;
-			MetodoPagemento = metodoPagemento;
+			MetodoPagamento = metodoPagemento;
 		}
 
 		public override bool Equals(object obj)
@@ -127,7 +110,7 @@ namespace ModelsGerenciamentoPedidos.Src
 				   DtHrPedido == pedido.DtHrPedido &&
 				   StatusPedido == pedido.StatusPedido &&
 				   Observacoes == pedido.Observacoes &&
-				   EqualityComparer<MetodoPagamento>.Default.Equals(MetodoPagemento, pedido.MetodoPagemento);
+				   EqualityComparer<MetodoPagamento>.Default.Equals(MetodoPagamento, pedido.MetodoPagamento);
 		}
 
 		public override int GetHashCode()
@@ -140,7 +123,7 @@ namespace ModelsGerenciamentoPedidos.Src
 			hashCode = hashCode * -1521134295 + DtHrPedido.GetHashCode();
 			hashCode = hashCode * -1521134295 + StatusPedido.GetHashCode();
 			hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Observacoes);
-			hashCode = hashCode * -1521134295 + EqualityComparer<MetodoPagamento>.Default.GetHashCode(MetodoPagemento);
+			hashCode = hashCode * -1521134295 + EqualityComparer<MetodoPagamento>.Default.GetHashCode(MetodoPagamento);
 			return hashCode;
 		}
 	}
