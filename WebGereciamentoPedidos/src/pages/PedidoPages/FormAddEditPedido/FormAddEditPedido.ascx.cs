@@ -264,6 +264,13 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 				return;
 			}
 
+			if (cliente.Length < 3)
+			{
+				ClienteTextFormField.ErrorMessage = "Tamanho mínimo de 3 caracteres não atingido!";
+				args.IsValid = false;
+				return;
+			}
+
 			if (cliente.Length > 100)
 			{
 				ClienteTextFormField.ErrorMessage = "Tamanho máximo de 100 caracteres excedido!";
@@ -348,6 +355,13 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 		protected void ObservacoesTextFormField_ServerValidate(object source, ServerValidateEventArgs args)
 		{
 			string observacoes = args.Value;
+
+			if (observacoes.Length > 0 && observacoes.Length < 10)
+			{
+				ObservacoesTextFormField.ErrorMessage = "Tamanho mínimo de 10 caracteres não atingido!";
+				args.IsValid = false;
+				return;
+			}
 
 			if (observacoes.Length > 500)
 			{
