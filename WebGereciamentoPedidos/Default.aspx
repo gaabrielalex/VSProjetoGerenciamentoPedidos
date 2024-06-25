@@ -35,7 +35,7 @@
 
     <div class="container-default">
         <div class="welcome-box">
-            <h1>Bem-vindo ao sistema de gerenciamento de pedidos!</h1>
+            <h1><%=TextoModoProducao%></h1>
         </div>
     </div>  
 
