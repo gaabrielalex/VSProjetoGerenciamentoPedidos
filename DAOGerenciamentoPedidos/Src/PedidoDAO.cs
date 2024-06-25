@@ -238,7 +238,7 @@ namespace DAOGerenciamentoPedidos
 					dtHrPedido: reader.GetDateTime(dtHrPedidoIndex),
 					statusPedido: (EnumStatusPedido)reader.GetString(statusPedidoIndex)[0],
 					observacoes: reader.IsDBNull(observacoesIndex) ? "" : reader.GetString(observacoesIndex),
-					metodoPagemento: new MetodoPagamento(reader.GetInt32(idMetodoPagtoIndex), reader.GetString(descricaoMetodoPagtoIndex))
+					metodoPagamento: new MetodoPagamento(reader.GetInt32(idMetodoPagtoIndex), reader.GetString(descricaoMetodoPagtoIndex))
 				);
 				listaPedidos.Add(pedido);
 			}

@@ -21,7 +21,7 @@ namespace DAOGerenciamentoPedidos.Test.Src
 				dtHrPedido: DateTime.Now,
 				statusPedido: EnumStatusPedido.AguardandoPagamento,
 				observacoes: $"Observações Teste - {DateTime.Now}",
-				metodoPagemento: new MetodoPagamento()
+				metodoPagamento: new MetodoPagamento()
 				{
 					IdMetodoPagto = 1
 				}
