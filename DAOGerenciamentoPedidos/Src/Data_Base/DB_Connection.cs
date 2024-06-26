@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,13 +12,16 @@ namespace DAOGerenciamentoPedidos.Src.Data_Base
 	{
 		public static SqlConnection getConnection()
 		{
-			//Assim tava dadno erro
-			//string connectionString = ConfigurationManager.ConnectionStrings["WebGerenciamenttoPedidos.Properties.Settings.db_connection"].ConnectionString;
+			//Da erro
+			//var connectionString = 
+			//	ConfigurationManager
+			//		.ConnectionStrings["ConexaoBD"]
+			//			.ConnectionString;
+
 			//return new SqlConnection(connectionString);
 
-			//Corrigido, peguei a string direto nas propriedades do projeto
+			//Pegando a string de conexao direto da certo
 			return new SqlConnection("Data Source=GABRIELSILVA\\SQLEXPRESS;Initial Catalog=DB_Gerenciamento_Pedidos;Integrated Security=True;Encrypt=False;TrustServerCertificate=True");
 		}
-
 	}
 }

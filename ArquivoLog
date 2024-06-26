@@ -2716,3 +2716,420 @@ Log Entrada : 18:08:02 sábado, 22 de junho de 2024
    em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 86
    em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 75
 ------------------------------------
+
+Log Entrada : 13:51:10 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao listar métodos de pagamento: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:line 38
+------------------------------------
+
+Log Entrada : 13:51:10 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:51:10 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:51:10 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:51:10 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:51:10 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:51:10 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:51:10 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:51:10 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:51:10 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:51:10 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:52:55 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao listar métodos de pagamento: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:line 38
+------------------------------------
+
+Log Entrada : 13:52:55 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:52:55 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:52:55 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:52:55 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:52:55 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:52:55 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:52:55 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:52:55 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:52:55 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:52:55 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:54:58 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao listar métodos de pagamento: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:line 38
+------------------------------------
+
+Log Entrada : 13:54:58 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:54:58 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:54:58 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:54:58 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:54:58 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:54:58 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:54:58 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:54:58 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:54:58 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:54:58 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:56:42 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:linha 15
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 129
+------------------------------------
+
+Log Entrada : 13:56:42 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos: System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:linha 15
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 129
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 141
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 72
+------------------------------------
+
+Log Entrada : 13:56:42 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao listar métodos de pagamento: System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:linha 15
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 38
+------------------------------------
+
+Log Entrada : 13:56:42 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao carregar métodos de pagamento: UtilsGerenciamentoPedidos.Erro: Erro ao listar métodos de pagamento: System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:linha 15
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 38
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 50
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.CarregarTodosOsMetodosPagamento() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 70
+------------------------------------
+
+Log Entrada : 13:56:51 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao listar métodos de pagamento: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:line 38
+------------------------------------
+
+Log Entrada : 13:56:51 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:56:51 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:56:51 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:56:51 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:56:51 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:56:51 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:56:51 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:56:51 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:56:51 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:56:51 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:57:05 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao listar métodos de pagamento: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:line 38
+------------------------------------
+
+Log Entrada : 13:57:05 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:57:05 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:57:05 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:57:05 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:57:05 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir produto: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 24
+------------------------------------
+
+Log Entrada : 13:57:05 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:57:05 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:57:05 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:57:05 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
+
+Log Entrada : 13:57:06 quarta-feira, 26 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.NullReferenceException: Object reference not set to an instance of an object.
+   at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
+------------------------------------
