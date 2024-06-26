@@ -34,6 +34,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 			catch (Exception e)
 			{
+				RegistroLog.Log("Erro ao inserir produto: " + e.ToString());
 				throw new Erro($"Erro ao inserir produto: {e.ToString()}");
 			}
 		}
@@ -59,6 +60,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 			catch (Exception e)
 			{
+				RegistroLog.Log("Erro ao editar produto: " + e.ToString());
 				throw new Erro($"Erro ao editar produto: {e.ToString()}");
 			}
 		}
@@ -82,6 +84,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 			catch (Exception e)
 			{
+				RegistroLog.Log("Erro ao excluir produto: " + e.ToString());
 				throw new Erro($"Erro ao excluir produto: {e.ToString()}");
 			}
 		}
@@ -104,6 +107,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 			catch (Exception e)
 			{
+				RegistroLog.Log("Erro ao listar produtos: " + e.ToString());
 				throw new Erro($"Erro ao listar produtos: {e.ToString()}");
 			}
 		}
@@ -130,6 +134,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 			catch (Exception e)
 			{
+				RegistroLog.Log("Erro ao listar produtos: " + e.ToString());
 				throw new Erro($"Erro ao listar produtos: {e.ToString()}");
 			}
 		}
@@ -156,6 +161,7 @@ namespace DAOGerenciamentoPedidos.Src
 				}
 			} catch (Exception e) 
 			{
+				RegistroLog.Log("Erro ao obter produto: " + e.ToString());
 				throw new Erro($"Erro ao obter produto: {e.ToString()}");
 			}
 		}
@@ -183,6 +189,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 			catch (Exception e)
 			{
+				RegistroLog.Log("Erro ao realizar verificação da já existência do produto: " + e.ToString());
 				throw new Erro($"Erro ao realizar verificação da já existência do produto: { e.ToString()}");
 			}
 		}
