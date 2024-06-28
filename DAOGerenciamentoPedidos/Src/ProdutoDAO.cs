@@ -12,8 +12,13 @@ using System.Runtime.Remoting.Messaging;
 namespace DAOGerenciamentoPedidos.Src
 {
 	public class ProdutoDAO : IDAO<Produto>
-	{ 
-		public ProdutoDAO() { }
+	{
+		private readonly BancoDeDados _bancoDeDados;
+
+		public ProdutoDAO(BancoDeDados bancoDeDados)
+		{
+			_bancoDeDados = bancoDeDados;
+		}
 
 		public int Inserir(Produto produto)
 		{

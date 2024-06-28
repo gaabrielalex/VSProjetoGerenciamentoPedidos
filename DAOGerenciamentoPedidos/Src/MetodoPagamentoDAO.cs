@@ -12,7 +12,12 @@ namespace DAOGerenciamentoPedidos.Src
 {
 	public class MetodoPagamentoDAO : IDAO<MetodoPagamento>
 	{
-		public MetodoPagamentoDAO() { }
+		private readonly BancoDeDados _bancoDeDados;
+		
+		public MetodoPagamentoDAO(BancoDeDados bancoDeDados)
+		{
+			_bancoDeDados = bancoDeDados;
+		}
 
 		public void Editar(MetodoPagamento obj, int idObjASerEditado)
 		{

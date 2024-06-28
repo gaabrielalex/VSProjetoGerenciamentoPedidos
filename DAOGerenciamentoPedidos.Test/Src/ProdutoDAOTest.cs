@@ -1,4 +1,5 @@
 ﻿using DAOGerenciamentoPedidos.Src;
+using DAOGerenciamentoPedidos.Src.Data_Base;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ModelsGerenciamentoPedidos.Src;
@@ -16,7 +17,7 @@ namespace TestesGerenciamentoPedidos
 		{
 			// Arrange
 			Produto produto = new Produto(null, "Produto Teste", 10.0M);
-			ProdutoDAO produtoDAO = new ProdutoDAO();
+			ProdutoDAO produtoDAO = new ProdutoDAO(new BancoDeDados());
 			int idProduto = 0;
 
 			// Act
@@ -45,7 +46,7 @@ namespace TestesGerenciamentoPedidos
 		{
 			// Arrange
 			Produto produto = new Produto(null, "Produto Teste AoRealizarEdicaoDeveRetonarTrue", 10.0M);
-			ProdutoDAO produtoDAO = new ProdutoDAO();
+			ProdutoDAO produtoDAO = new ProdutoDAO(new BancoDeDados());
 			int idProduto = 0;
 
 			// Act
@@ -72,7 +73,7 @@ namespace TestesGerenciamentoPedidos
 		{
 			// Arrange
 			Produto produto = new Produto(null, "Produto Teste", 10.0M);
-			ProdutoDAO produtoDAO = new ProdutoDAO();
+			ProdutoDAO produtoDAO = new ProdutoDAO(new BancoDeDados());
 			int idProduto = 0;
 
 			// Act
@@ -95,7 +96,7 @@ namespace TestesGerenciamentoPedidos
 		public void AoRealizarListagemDeveRetonarUmaListaDeProdutos()
 		{
 			// Arrange
-			ProdutoDAO produtoDAO = new ProdutoDAO();
+			ProdutoDAO produtoDAO = new ProdutoDAO(new BancoDeDados());
 			int idProduto1 = 0;
 			int idProduto2 = 0;
 			List<Produto> produtos = new List<Produto>();
@@ -140,7 +141,7 @@ namespace TestesGerenciamentoPedidos
 			//faz o seguinte, insere 4 produtos com a descrição testeFiltragem1, testeFiltragem2, testeFiltragem3 e testeFiltragem4. VC vai obter os ids desss registros inseridos
 			//depois vc vai chamar o método de listagem por descrição passando a descrição testeFiltragem e vai verificar se a lista retornada contém os 4 registros inseridos
 			// Arrange
-			ProdutoDAO produtoDAO = new ProdutoDAO();
+			ProdutoDAO produtoDAO = new ProdutoDAO(new BancoDeDados());
 			int idProduto1 = 0;
 			int idProduto2 = 0;
 			int idProduto3 = 0;

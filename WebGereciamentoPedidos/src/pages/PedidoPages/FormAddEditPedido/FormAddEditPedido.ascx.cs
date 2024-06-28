@@ -1,5 +1,6 @@
 ﻿using DAOGerenciamentoPedidos;
 using DAOGerenciamentoPedidos.Src;
+using DAOGerenciamentoPedidos.Src.Data_Base;
 using ModelsGerenciamentoPedidos.Src;
 using System;
 using System.Collections.Generic;
@@ -17,8 +18,8 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 {
 	public partial class FormAddEditPedido : System.Web.UI.UserControl
 	{
-		private readonly PedidoDAO _pedidoDAO = new PedidoDAO();
-		private readonly MetodoPagamentoDAO _metodoPagamentoDAO = new MetodoPagamentoDAO();
+		private readonly PedidoDAO _pedidoDAO = new PedidoDAO(new BancoDeDados());
+		private readonly MetodoPagamentoDAO _metodoPagamentoDAO = new MetodoPagamentoDAO(new BancoDeDados());
 		public ModosFomularios ModoAtual
 		{
 			get

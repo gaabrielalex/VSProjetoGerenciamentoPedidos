@@ -1,4 +1,5 @@
 ﻿using DAOGerenciamentoPedidos.Src;
+using DAOGerenciamentoPedidos.Src.Data_Base;
 using Microsoft.Ajax.Utilities;
 using ModelsGerenciamentoPedidos.Src;
 using System;
@@ -64,7 +65,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			//Inicializando atributos
-			ProdutoDAO = new ProdutoDAO();
+			ProdutoDAO = new ProdutoDAO(new BancoDeDados());
 
 			if (!IsPostBack)
 			{
@@ -381,7 +382,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 		public static string ExcluirProduto(int id)
 		{
-			new ProdutoDAO().Excluir(id);
+			new ProdutoDAO(new BancoDeDados()).Excluir(id);
 
 			var response = new
 			{

@@ -18,7 +18,12 @@ namespace DAOGerenciamentoPedidos
 {
 	public class PedidoDAO : IDAO<Pedido>
 	{
-		public PedidoDAO() { }
+		private readonly BancoDeDados _bancoDeDados;
+		
+		public PedidoDAO(BancoDeDados bancoDeDados)
+		{
+			_bancoDeDados = bancoDeDados;
+		}
 
 		public int Inserir(Pedido pedido)
 		{

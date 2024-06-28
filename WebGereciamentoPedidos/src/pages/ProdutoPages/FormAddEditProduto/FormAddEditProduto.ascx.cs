@@ -1,4 +1,5 @@
 ﻿using DAOGerenciamentoPedidos.Src;
+using DAOGerenciamentoPedidos.Src.Data_Base;
 using ModelsGerenciamentoPedidos.Src;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 {
 	public partial class FormAddEditProduto : System.Web.UI.UserControl
 	{
-		private readonly ProdutoDAO _produtoDAO = new ProdutoDAO();
+		private readonly ProdutoDAO _produtoDAO = new ProdutoDAO(new BancoDeDados());
 
 		public ModosFomularios ModoAtual
 		{

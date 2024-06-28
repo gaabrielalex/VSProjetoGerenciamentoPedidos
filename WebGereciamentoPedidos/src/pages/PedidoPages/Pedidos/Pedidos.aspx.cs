@@ -14,6 +14,7 @@ using UtilsGerenciamentoPedidos;
 using WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto;
 using WebGereciamentoPedidos.src.util;
 using DAOGerenciamentoPedidos;
+using DAOGerenciamentoPedidos.Src.Data_Base;
 
 namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 {
@@ -142,7 +143,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 		[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 		public static string ExcluirPedido(int id)
 		{
-			new PedidoDAO().Excluir(id);
+			new PedidoDAO(new BancoDeDados()).Excluir(id);
 
 			var response = new
 			{

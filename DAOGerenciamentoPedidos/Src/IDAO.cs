@@ -6,7 +6,6 @@ namespace DAOGerenciamentoPedidos.Src
 {
 	public interface IDAO<T> where T : class
 	{
-		//BancoDeDados BancoDeDados { get; set; }
 		int Inserir(T obj);
 
 		void Editar(T obj, int idObjASerEditado);

@@ -22,7 +22,6 @@ namespace WebGereciamentoPedidos
 				} else {
 					return "Bem-vindo ao sistema de gerenciamento de pedidos!";
 				}
-				return System.Configuration.ConfigurationManager.AppSettings["ModoProducao"];
 			}
 		}
 		protected void Page_Load(object sender, EventArgs e)

@@ -1,4 +1,5 @@
 ﻿using DAOGerenciamentoPedidos.Src;
+using DAOGerenciamentoPedidos.Src.Data_Base;
 using ModelsGerenciamentoPedidos.Src;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 {
 	public partial class ProdutosNovo : System.Web.UI.Page
 	{
-		private readonly ProdutoDAO _produtoDAO = new ProdutoDAO();
+		private readonly ProdutoDAO _produtoDAO = new ProdutoDAO(new BancoDeDados());
 		public List<Produto> DadosProdutosAtual
 		{
 			get
@@ -138,7 +139,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 		[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 		public static string ExcluirProduto(int id)
 		{
-			new ProdutoDAO().Excluir(id);
+			new ProdutoDAO(new BancoDeDados()).Excluir(id);
 
 			var response = new
 			{
