@@ -19,7 +19,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 {
 	public partial class Pedidos : System.Web.UI.Page
 	{
-		public PedidoDAO PedidoDAO;
+		private readonly PedidoDAO _pedidoDAO;
 		public List<Pedido> DadosPedidosAtual
 		{
 			get
@@ -37,8 +37,6 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 		}
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			//Inicializando atributos
-			PedidoDAO = new PedidoDAO();
 
 			if (!IsPostBack)
 			{
@@ -60,16 +58,15 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 		{
 			try
 			{
-
 				if (Request.QueryString["Filtro"] != null)
 				{
 					string filtro = Request.QueryString["Filtro"];
 
-					DadosPedidosAtual = PedidoDAO.ListarPorCliente(filtro);
+					DadosPedidosAtual = _pedidoDAO.ListarPorCliente(filtro);
 				}
 				else
 				{
-					DadosPedidosAtual = PedidoDAO.ListarTodos();
+					DadosPedidosAtual = _pedidoDAO.ListarTodos();
 				}
 
 				BindData();

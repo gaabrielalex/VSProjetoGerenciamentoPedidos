@@ -15,13 +15,13 @@ namespace DAOGerenciamentoPedidos.Src.Data_Base
 			_listaParametros = new List<ParametroBD>();
 		}
 
-		public ParametroBDFactory Add(string nomeParametro, object valorParametro)
+		public ParametroBDFactory Adicionar(string nomeParametro, object valorParametro)
 		{
 			_listaParametros.Add(new ParametroBD(nomeParametro, valorParametro));
 			return this;
 		}
 
-		public List<ParametroBD> GetParametros()
+		public List<ParametroBD> ObterParametros()
 		{
 			return new List<ParametroBD>(_listaParametros);
 		}

@@ -17,7 +17,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 {
 	public partial class ProdutosNovo : System.Web.UI.Page
 	{
-		public ProdutoDAO ProdutoDAO;
+		private readonly ProdutoDAO _produtoDAO = new ProdutoDAO();
 		public List<Produto> DadosProdutosAtual
 		{
 			get
@@ -35,9 +35,6 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 		}
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			//Inicializando atributos
-			ProdutoDAO = new ProdutoDAO();
-
 			if (!IsPostBack)
 			{	
 				if(Session["MensagemInfo"] != null) 
@@ -62,11 +59,11 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 				{
 					string filtro = Request.QueryString["Filtro"];
 
-					DadosProdutosAtual = ProdutoDAO.ListarPorDescricao(filtro);
+					DadosProdutosAtual = _produtoDAO.ListarPorDescricao(filtro);
 				}
 				else
 				{
-					DadosProdutosAtual = ProdutoDAO.ListarTodos();
+					DadosProdutosAtual = _produtoDAO.ListarTodos();
 				}
 
 				BindData();
