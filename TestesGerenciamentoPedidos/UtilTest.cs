@@ -16,8 +16,7 @@ namespace TestesGerenciamentoPedidos
 		{
 			try
 			{
-				
-				using (SqlConnection con = DB_Connection.getConnection())
+				using (SqlConnection con = BancoDeDados.CriarConexao())
 				{
 					string sql = "DELETE FROM pedido WHERE nome_cliente LIKE '%Teste%'";
 					con.Open();
@@ -25,7 +24,7 @@ namespace TestesGerenciamentoPedidos
 					cmd.ExecuteNonQuery();
 					con.Close();
 				}
-				using (SqlConnection con = DB_Connection.getConnection())
+				using (SqlConnection con = BancoDeDados.CriarConexao())
 				{
 					string sql = "DELETE FROM item_pedido WHERE id_pedido IN (SELECT id_pedido FROM pedido WHERE nome_cliente LIKE '%Teste%')";
 					con.Open();
@@ -33,7 +32,7 @@ namespace TestesGerenciamentoPedidos
 					cmd.ExecuteNonQuery();
 					con.Close();
 				}
-				using (SqlConnection con = DB_Connection.getConnection())
+				using (SqlConnection con = BancoDeDados.CriarConexao())
 				{
 					string sql = "DELETE FROM metodo_pagto WHERE descricao LIKE '%Teste%'";
 					con.Open();
@@ -41,7 +40,7 @@ namespace TestesGerenciamentoPedidos
 					cmd.ExecuteNonQuery();
 					con.Close();
 				}
-				using (SqlConnection con = DB_Connection.getConnection())
+				using (SqlConnection con = BancoDeDados.CriarConexao())
 				{
 					string sql = "DELETE FROM produto WHERE descricao LIKE '%Teste%'";
 					con.Open();

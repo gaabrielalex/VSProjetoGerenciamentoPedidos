@@ -29,7 +29,7 @@ namespace DAOGerenciamentoPedidos
 			try
 			{
 				//Obtendo conexão co banco
-				using (SqlConnection connection = DB_Connection.getConnection())
+				using (SqlConnection connection = BancoDeDados.CriarConexao())
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
@@ -59,7 +59,7 @@ namespace DAOGerenciamentoPedidos
 
 			try
 			{
-				using (SqlConnection connection = DB_Connection.getConnection())
+				using (SqlConnection connection = BancoDeDados.CriarConexao())
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
@@ -90,7 +90,7 @@ namespace DAOGerenciamentoPedidos
 			String query = "DELETE FROM pedido WHERE id_pedido = @id_pedido";
 			try
 			{
-				using (SqlConnection connection = DB_Connection.getConnection())
+				using (SqlConnection connection = BancoDeDados.CriarConexao())
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
@@ -126,7 +126,7 @@ namespace DAOGerenciamentoPedidos
 			List<Pedido> listaPedido = new List<Pedido>();
 			try
 			{
-				using (SqlConnection connection = DB_Connection.getConnection())
+				using (SqlConnection connection = BancoDeDados.CriarConexao())
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
@@ -159,7 +159,7 @@ namespace DAOGerenciamentoPedidos
 			List<Pedido> listaPedidos = new List<Pedido>();
 			try
 			{
-				using (SqlConnection connection = DB_Connection.getConnection())
+				using (SqlConnection connection = BancoDeDados.CriarConexao())
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
@@ -198,7 +198,7 @@ namespace DAOGerenciamentoPedidos
 			List<Pedido> listaPedidos = new List<Pedido>();
 			try
 			{
-				using (SqlConnection connection = DB_Connection.getConnection())
+				using (SqlConnection connection = BancoDeDados.CriarConexao())
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);

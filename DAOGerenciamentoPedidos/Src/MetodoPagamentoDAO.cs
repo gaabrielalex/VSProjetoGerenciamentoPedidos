@@ -35,7 +35,7 @@ namespace DAOGerenciamentoPedidos.Src
 			List<MetodoPagamento> listaMetodoPagto = new List<MetodoPagamento>();
 			try
 			{
-				using (SqlConnection connection = DB_Connection.getConnection())
+				using (SqlConnection connection = BancoDeDados.CriarConexao())
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);

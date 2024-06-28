@@ -21,7 +21,7 @@ namespace DAOGerenciamentoPedidos.Src
 							SELECT SCOPE_IDENTITY();";
 			try
 			{
-				using (SqlConnection connection = DB_Connection.getConnection())
+				using (SqlConnection connection = BancoDeDados.CriarConexao())
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
@@ -44,7 +44,7 @@ namespace DAOGerenciamentoPedidos.Src
 			String query = "UPDATE produto SET descricao = @descricao, vlr_unitario = @vlr_unitario WHERE id_produto = @id_produto";
 			try
 			{
-				using (SqlConnection connection = DB_Connection.getConnection())
+				using (SqlConnection connection = BancoDeDados.CriarConexao())
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
@@ -70,7 +70,7 @@ namespace DAOGerenciamentoPedidos.Src
 			String query = "DELETE FROM produto WHERE id_produto = @id_produto";
 			try
 			{
-				using (SqlConnection connection = DB_Connection.getConnection())
+				using (SqlConnection connection = BancoDeDados.CriarConexao())
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
@@ -95,7 +95,7 @@ namespace DAOGerenciamentoPedidos.Src
 			List<Produto> listaProdutos = new List<Produto>();
 			try
 			{
-				using (SqlConnection connection = DB_Connection.getConnection())
+				using (SqlConnection connection = BancoDeDados.CriarConexao())
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
@@ -121,7 +121,7 @@ namespace DAOGerenciamentoPedidos.Src
 			List<Produto> listaProdutos = new List<Produto>();
 			try
 			{
-				using (SqlConnection connection = DB_Connection.getConnection())
+				using (SqlConnection connection = BancoDeDados.CriarConexao())
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
@@ -145,7 +145,7 @@ namespace DAOGerenciamentoPedidos.Src
 			List<Produto> listaProdutos = new List<Produto>();
 			try
 			{
-				using(SqlConnection connection = DB_Connection.getConnection())
+				using(SqlConnection connection = BancoDeDados.CriarConexao())
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
@@ -172,7 +172,7 @@ namespace DAOGerenciamentoPedidos.Src
 			List<Produto> produtos = new List<Produto>();
 			try
 			{
-				using (SqlConnection connection = DB_Connection.getConnection())
+				using (SqlConnection connection = BancoDeDados.CriarConexao())
 				{
 					connection.Open();
 					SqlCommand command = new SqlCommand(query, connection);
