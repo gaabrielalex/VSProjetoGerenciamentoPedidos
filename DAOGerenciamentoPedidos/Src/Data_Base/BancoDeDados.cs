@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,6 @@ namespace DAOGerenciamentoPedidos.Src.Data_Base
 {
 	public class BancoDeDados
 	{
-		//Esse método não deve ser static
 		public static SqlConnection CriarConexao()
 		{
 			//Da erro
@@ -28,48 +28,30 @@ namespace DAOGerenciamentoPedidos.Src.Data_Base
 			return new SqlConnection("Data Source=GABRIELSILVA\\SQLEXPRESS;Initial Catalog=DB_Gerenciamento_Pedidos;Integrated Security=True;Encrypt=False;TrustServerCertificate=True");
 		}
 
-		protected DataTable Consultar(string sql)
+		public SqlDataReader ConsultarReader(string sql)
 		{
-			return Consultar(sql, null);
+			return ConsultarReader(sql, null);
 		}
 
-		protected DataTable Consultar(string sql, List<ParametroBD> parametros)
+		public SqlDataReader ConsultarReader(string sql, List<ParametroBD> parametros)
 		{
-			using (var conexao = CriarConexao())
-			using (var comando = conexao.CreateCommand())
+			var conexao = CriarConexao();
+			var comando = conexao.CreateCommand();
+			AdicionarParametrosAQuery(comando, parametros);
+			comando.CommandText = sql;
+			conexao.Open();
+			try
 			{
-				AdicionarParametrosAQuery(comando, parametros);
-
-				comando.CommandText = sql;
-
-				using (var adapter = new SqlDataAdapter(comando))
-				{
-					var tabela = new DataTable();
-					adapter.Fill(tabela);
-					return tabela;
-				}
+				return comando.ExecuteReader(behavior: CommandBehavior.CloseConnection);
+			}
+			catch (Exception e)
+			{
+				conexao.Close();
+				throw e;
 			}
 		}
 
-		public int ExecutarComRetorno(string query, List<ParametroBD> parametros)
-		{
-			using (SqlConnection connection = BancoDeDados.CriarConexao())
-			using (SqlCommand command = new SqlCommand(query, connection))
-			{
-				AdicionarParametrosAQuery(command, parametros);
-				connection.Open();
-				try
-				{
-					return Convert.ToInt32(command.ExecuteScalar());
-				}
-				finally
-				{
-					connection.Close();
-				}
-			}
-		}
-
-		protected int Executar(string sql, List<ParametroBD> parametros, bool EhProcedure = false)
+		public int Executar(string sql, List<ParametroBD> parametros, bool EhProcedure = false)
 		{
 			using (var conexao = CriarConexao())
 			using (var comando = conexao.CreateCommand())
@@ -86,15 +68,74 @@ namespace DAOGerenciamentoPedidos.Src.Data_Base
 				{
 					return comando.ExecuteNonQuery();
 				}
+				catch (Exception e)
+				{
+					throw e;
+				}
 				finally
 				{
 					conexao.Close();
 				}
 			}
-
 		}
 
-		private void AdicionarParametrosAQuery(SqlCommand sqlCommand, List<ParametroBD> parametros)
+		public int ExecutarComRetorno(string query, List<ParametroBD> parametros)
+		{
+			using (var conexao = BancoDeDados.CriarConexao())
+			using (var comando = conexao.CreateCommand())
+			{
+				AdicionarParametrosAQuery(comando, parametros);
+				comando.CommandText = query;
+				conexao.Open();
+				try
+				{
+					return Convert.ToInt32(comando.ExecuteScalar());
+				}
+				catch (Exception e)
+				{
+					throw e;
+				}
+				finally
+				{
+					conexao.Close();
+				}
+			}
+		}
+
+		public int ExecutarComTransacao(string sql, List<ParametroBD> parametros, bool EhProcedure = false)
+		{
+			using (var conexao = CriarConexao())
+			using (var comando = conexao.CreateCommand())
+			{
+				AdicionarParametrosAQuery(comando, parametros);
+
+				if (EhProcedure)
+					comando.CommandType = CommandType.StoredProcedure;
+
+				comando.CommandText = sql;
+
+				conexao.Open();
+				var transacao = conexao.BeginTransaction();
+				comando.Transaction = transacao;
+				try
+				{
+					int linhasAfetadas = comando.ExecuteNonQuery();
+					transacao.Commit();
+					return linhasAfetadas;
+				}
+				catch (Exception e)
+				{
+					transacao.Rollback();
+					throw e;
+				}
+				finally
+				{
+					conexao.Close();
+				}
+			}
+		}
+
+		public void AdicionarParametrosAQuery(SqlCommand sqlCommand, List<ParametroBD> parametros)
 		{
 			if (parametros == null)
 				return;

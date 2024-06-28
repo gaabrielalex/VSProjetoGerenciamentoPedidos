@@ -47,7 +47,6 @@ namespace DAOGerenciamentoPedidos
 			}
 			catch (Exception e)
 			{
-				RegistroLog.Log("Erro ao inserir pedido: " + e.ToString());
 				throw new Erro($"Erro ao inserir pedido: {e.ToString()}");
 			}
 		}
@@ -74,13 +73,12 @@ namespace DAOGerenciamentoPedidos
 					connection.Close();
 					if (linhasAfetadas < 0)
 					{
-						throw new Exception("Erro ao editar pedido: Nenhuma linha foi afetada");
+						throw new Erro("Erro ao editar pedido: Nenhuma linha foi afetada");
 					}
 				}
 			}
 			catch (Exception e)
 			{
-				RegistroLog.Log("Erro ao editar pedido: " + e.ToString());
 				throw new Erro($"Erro ao editar pedido: {e.ToString()}");
 			}
 		}
@@ -105,7 +103,6 @@ namespace DAOGerenciamentoPedidos
 			}
 			catch (Exception e)
 			{
-				RegistroLog.Log("Erro ao excluir pedido: " + e.ToString());
 				throw new Erro($"Erro ao excluir pedido: {e.ToString()}");
 			}
 		}
@@ -138,7 +135,6 @@ namespace DAOGerenciamentoPedidos
 			}
 			catch (Exception e)
 			{
-				RegistroLog.Log("Erro ao listar pedidos: " + e.ToString());
 				throw new Erro($"Erro ao listar pedidos: {e.ToString()}");
 			}
 		}
@@ -176,7 +172,6 @@ namespace DAOGerenciamentoPedidos
 			}
 			catch (Exception e)
 			{
-				RegistroLog.Log("Erro ao obter pedido: " + e.ToString());
 				throw new Erro($"Erro ao obter pedido: {e.ToString()}");
 			}
 		}
@@ -211,7 +206,6 @@ namespace DAOGerenciamentoPedidos
 			}
 			catch (Exception e)
 			{
-				RegistroLog.Log("Erro ao listar pedidos por cliente: " + e.ToString());
 				throw new Erro($"Erro ao listar pedidos por cliente: {e.ToString()}");
 			}
 		}
