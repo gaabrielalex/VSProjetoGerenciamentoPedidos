@@ -35,8 +35,8 @@
 							<asp:TemplateField>
 								<ItemTemplate>
 									<div style="display: flex; justify-content: space-evenly">
-										<gp:ColunasPadraoTable runat="server" ID="ProdutoColunasPadraoTable" IdRegistro='<%# Eval("IdProduto") %>'
-											MensagemConfirmacaoExclusao='<%# "Tem certeza que deseja excluir o produto \"" + Eval("Descricao") + "\"?" %>'
+										<gp:ColunasPadraoTable runat="server" ID="ProdutoColunasPadraoTable" IdRegistro='<%# ((ModelsGerenciamentoPedidos.Src.Produto)Container.DataItem).IdProduto %>'
+											MensagemConfirmacaoExclusao='<%# "Tem certeza que deseja excluir o produto \"" + ((ModelsGerenciamentoPedidos.Src.Produto)Container.DataItem).Descricao + "\"?" %>'
 											UrlMetodoExclusao="ProdutosNovo.aspx/ExcluirProduto" />
 									</div>
 								</ItemTemplate>

@@ -60,7 +60,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 		{
 			try
 			{
-				List<MetodoPagamento> listaMetodoPagamento = _metodoPagamentoDAO.ListarTodos();
+				var listaMetodoPagamento = _metodoPagamentoDAO.ListarTodos();
 				MetodoPagtoDropDownList.DataSource = listaMetodoPagamento;
 				MetodoPagtoDropDownList.DataTextField = "Descricao";
 				MetodoPagtoDropDownList.DataValueField = "IdMetodoPagto";

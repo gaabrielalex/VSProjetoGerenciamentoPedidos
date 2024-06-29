@@ -34,7 +34,7 @@ namespace DAOGerenciamentoPedidos.Src
 			throw new NotImplementedException();
 		}
 
-		public List<MetodoPagamento> ListarTodos()
+		public IList<MetodoPagamento> ListarTodos()
 		{
 			var query = "SELECT * FROM metodo_pagto ORDER BY id_metodo_pagto";
 			try
@@ -53,7 +53,7 @@ namespace DAOGerenciamentoPedidos.Src
 			throw new NotImplementedException();
 		}
 
-		public List<MetodoPagamento> ConverterReaderParaListaDeObjetos(SqlDataReader reader)
+		public IList<MetodoPagamento> ConverterReaderParaListaDeObjetos(SqlDataReader reader)
 		{
 			List<MetodoPagamento> listaMetodoPagto = new List<MetodoPagamento>();
 

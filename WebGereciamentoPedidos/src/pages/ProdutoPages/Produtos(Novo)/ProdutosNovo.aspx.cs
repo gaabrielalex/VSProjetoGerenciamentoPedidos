@@ -19,13 +19,13 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 	public partial class ProdutosNovo : System.Web.UI.Page
 	{
 		private readonly ProdutoDAO _produtoDAO = new ProdutoDAO(new BancoDeDados());
-		public List<Produto> DadosProdutosAtual
+		public IList<Produto> DadosProdutosAtual
 		{
 			get
 			{
 				if (ViewState["DadosProdutosAtual"] != null)
 				{
-					return (List<Produto>)ViewState["DadosProdutosAtual"];
+					return (IList<Produto>)ViewState["DadosProdutosAtual"];
 				}
 				return new List<Produto>();
 			}
@@ -111,16 +111,6 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 			}
 			else
 			{
-				Produto produtoSelecionado = new Produto();
-				foreach (Produto produto in DadosProdutosAtual)
-				{
-					if (produto.IdProduto == idProdutoSelecionado)
-					{
-						produtoSelecionado = produto;
-						break;
-					}
-				}
-
 				if (e.CommandName == "Editar")
 				{
 					ListsagemProdutoPanel.Visible = false;

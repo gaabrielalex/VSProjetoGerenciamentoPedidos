@@ -81,7 +81,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 		}
 
-		public List<Produto> ListarTodos()
+		public IList<Produto> ListarTodos()
 		{
 			var query = "SELECT * FROM produto ORDER BY descricao";
 			try
@@ -95,7 +95,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 		}
 
-		public List<Produto> ListarPorDescricao(String descricao)
+		public IList<Produto> ListarPorDescricao(String descricao)
 		{
 			var query = @"SELECT * 
 							FROM produto 
@@ -158,7 +158,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 		}
 
-		public List<Produto> ConverterReaderParaListaDeObjetos(SqlDataReader reader)
+		public IList<Produto> ConverterReaderParaListaDeObjetos(SqlDataReader reader)
 		{
 			var listaProdutos = new List<Produto>();
 

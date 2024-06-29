@@ -99,7 +99,7 @@ namespace TestesGerenciamentoPedidos
 			ProdutoDAO produtoDAO = new ProdutoDAO(new BancoDeDados());
 			int idProduto1 = 0;
 			int idProduto2 = 0;
-			List<Produto> produtos = new List<Produto>();
+			IList<Produto> produtos = new List<Produto>();
 			int numeroRegistrosListados = 0;
 
 			// Act
@@ -146,7 +146,7 @@ namespace TestesGerenciamentoPedidos
 			int idProduto2 = 0;
 			int idProduto3 = 0;
 			int idProduto4 = 0;
-			List<Produto> produtos = new List<Produto>();
+			IList<Produto> produtos = new List<Produto>();
 			bool resultado = false;
 
 			// Act

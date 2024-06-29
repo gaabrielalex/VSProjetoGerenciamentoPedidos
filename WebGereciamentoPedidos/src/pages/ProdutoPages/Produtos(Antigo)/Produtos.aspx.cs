@@ -31,13 +31,13 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		public readonly string VALOR_PADRAO_TEXTO_BOTAO_CANCELAR = "Cancelar";
 		public readonly bool VALOR_PADRAO_VISIBILIDADE_BOTAO_CANCELAR = false;
 		public ProdutoDAO ProdutoDAO;
-		public List<Produto> DadosProdutosAtual
+		public IList<Produto> DadosProdutosAtual
 		{
 			get
 			{
 				if (ViewState["DadosProdutosAtual"] != null)
 				{
-					return (List<Produto>)ViewState["DadosProdutosAtual"];
+					return (IList<Produto>)ViewState["DadosProdutosAtual"];
 				}
 				return new List<Produto>();
 			}

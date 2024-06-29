@@ -21,13 +21,13 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 	public partial class Pedidos : System.Web.UI.Page
 	{
 		private readonly PedidoDAO _pedidoDAO = new PedidoDAO(new BancoDeDados());
-		public List<Pedido> DadosPedidosAtual
+		public IList<Pedido> DadosPedidosAtual
 		{
 			get
 			{
 				if (ViewState["DadosPedidoAtual"] != null)
 				{
-					return (List<Pedido>)ViewState["DadosPedidoAtual"];
+					return (IList<Pedido>)ViewState["DadosPedidoAtual"];
 				}
 				return new List<Pedido>();
 			}
@@ -114,23 +114,12 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 			}
 			else
 			{
-				Pedido pedidoSelecionado = new Pedido();
-				foreach (Pedido pedido in DadosPedidosAtual)
-				{
-					if (pedido.IdPedido == idPedidoSelecionado)
-					{
-						pedidoSelecionado = pedido;
-						break;
-					}
-				}
-
 				if (e.CommandName == "Editar")
 				{
 					ListsagemPedidoPanel.Visible = false;
 					FormAddEditPedido.AbrirForm(ModosFomularios.Editar, idPedidoSelecionado);
 				}
 			}
-
 		}
 
 		protected void NovoPedidoButton_Click(object sender, EventArgs e)

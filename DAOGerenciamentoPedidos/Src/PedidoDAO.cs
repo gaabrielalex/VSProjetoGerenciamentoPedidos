@@ -96,7 +96,7 @@ namespace DAOGerenciamentoPedidos
 			}
 		}
 
-		public List<Pedido> ListarTodos()
+		public IList<Pedido> ListarTodos()
 		{
 			var query = @"SELECT p.*, 
 								mp.descricao AS descricao_metodo_pagto,
@@ -151,7 +151,7 @@ namespace DAOGerenciamentoPedidos
 			}
 		}
 
-		public List<Pedido> ListarPorCliente(string nomeCliente)
+		public IList<Pedido> ListarPorCliente(string nomeCliente)
 		{
 			var query = @"SELECT p.*, 
 								mp.descricao AS descricao_metodo_pagto,
@@ -178,7 +178,7 @@ namespace DAOGerenciamentoPedidos
 			}
 		}
 
-		public List<Pedido> ConverterReaderParaListaDeObjetos(SqlDataReader reader)
+		public IList<Pedido> ConverterReaderParaListaDeObjetos(SqlDataReader reader)
 		{
 			var listaPedidos = new List<Pedido>();
 

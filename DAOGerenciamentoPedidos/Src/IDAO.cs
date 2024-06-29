@@ -12,10 +12,10 @@ namespace DAOGerenciamentoPedidos.Src
 
 		void Excluir(int id);
 
-		List<T> ListarTodos();
+		IList<T> ListarTodos();
 
 		T ObterPorId(int id);
 
-		List<T> ConverterReaderParaListaDeObjetos(SqlDataReader reader);
+		IList<T> ConverterReaderParaListaDeObjetos(SqlDataReader reader);
 	}
 }
