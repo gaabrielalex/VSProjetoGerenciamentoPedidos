@@ -53,11 +53,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			if (!IsPostBack)
-			{
-				CarregarTodosOsMetodosPagamento();
-				CarregarTodosOsStatusDoPedido();
-			}
+
 		}
 
 		private void CarregarTodosOsMetodosPagamento()
@@ -96,13 +92,14 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 
 		public void AbrirForm(ModosFomularios modo, int? idPedidoParaEdicao)
 		{
+			CarregarTodosOsMetodosPagamento();
+			CarregarTodosOsStatusDoPedido();
 			FormAddEditPedidoPanel.Visible = true;
 			ModoAtual = modo;
 			if (modo == ModosFomularios.Cadastrar)
 				ConfigurarFormParaCadastro();
 			else if (idPedidoParaEdicao.HasValue && modo == ModosFomularios.Editar)
 				ConfigurarFormParaEdicao(idPedidoParaEdicao.Value);
-
 		}
 
 		private void ConfigurarFormParaCadastro()

@@ -22,20 +22,16 @@ namespace DAOGerenciamentoPedidos.Src
 
 		public int Inserir(Produto produto)
 		{
-			String query = @"INSERT INTO produto (descricao, vlr_unitario) VALUES (@descricao, @vlr_unitario);
+			var query = @"INSERT INTO produto (descricao, vlr_unitario) VALUES (@descricao, @vlr_unitario);
 							SELECT SCOPE_IDENTITY();";
+			var parametros = new ParametroBDFactory()
+								.Adicionar("@descricao", produto.Descricao)
+								.Adicionar("@vlr_unitario", produto.VlrUnitario)
+								.ObterParametros();
 			try
 			{
-				using (SqlConnection connection = BancoDeDados.CriarConexao())
-				{
-					connection.Open();
-					SqlCommand command = new SqlCommand(query, connection);
-					command.Parameters.AddWithValue("@descricao", produto.Descricao);
-					command.Parameters.AddWithValue("@vlr_unitario", produto.VlrUnitario);
-					int idProduto = Convert.ToInt32(command.ExecuteScalar());
-					connection.Close();
-					return idProduto;
-				}
+				int idProduto = Convert.ToInt32(_bancoDeDados.ExecutarComRetorno(query, parametros));
+				return idProduto;
 			}
 			catch (Exception e)
 			{
@@ -45,21 +41,18 @@ namespace DAOGerenciamentoPedidos.Src
 
 		public void Editar(Produto produto, int id)
 		{
-			String query = "UPDATE produto SET descricao = @descricao, vlr_unitario = @vlr_unitario WHERE id_produto = @id_produto";
+			var query = "UPDATE produto SET descricao = @descricao, vlr_unitario = @vlr_unitario WHERE id_produto = @id_produto";
+			var parametros = new ParametroBDFactory()
+								.Adicionar("@descricao", produto.Descricao)
+								.Adicionar("@vlr_unitario", produto.VlrUnitario)
+								.Adicionar("@id_produto", id)
+								.ObterParametros();
 			try
 			{
-				using (SqlConnection connection = BancoDeDados.CriarConexao())
+				var linhasAfetadas = _bancoDeDados.Executar(query, parametros);
+				if (linhasAfetadas < 0)
 				{
-					connection.Open();
-					SqlCommand command = new SqlCommand(query, connection);
-					command.Parameters.AddWithValue("@descricao", produto.Descricao);
-					command.Parameters.AddWithValue("@vlr_unitario", produto.VlrUnitario);
-					command.Parameters.AddWithValue("@id_produto", id);
-					var linhasAfetadas = command.ExecuteNonQuery();
-					connection.Close();
-					if(linhasAfetadas < 0) {
-						throw new Erro($"Erro ao editar produto: Nenhuma linha foi afetada - Id: " + id);
-					}
+					throw new Erro($"Erro ao editar produto: Nenhuma linha foi afetada - Id: " + id);
 				}
 			}
 			catch (Exception e)
@@ -70,19 +63,16 @@ namespace DAOGerenciamentoPedidos.Src
 
 		public void Excluir(int id)
 		{
-			String query = "DELETE FROM produto WHERE id_produto = @id_produto";
+			var query = "DELETE FROM produto WHERE id_produto = @id_produto";
+			var parametros = new ParametroBDFactory()
+								.Adicionar("@id_produto", id)
+								.ObterParametros();
 			try
 			{
-				using (SqlConnection connection = BancoDeDados.CriarConexao())
+				var linhasAfetadas = _bancoDeDados.Executar(query, parametros);
+				if (linhasAfetadas < 0)
 				{
-					connection.Open();
-					SqlCommand command = new SqlCommand(query, connection);
-					command.Parameters.AddWithValue("@id_produto", id);
-					var linhasAfetadas = command.ExecuteNonQuery();
-					connection.Close();
-					if(linhasAfetadas < 0) {
-						throw new Erro($"Erro ao excluir produto: Nenhuma linha foi afetada - Id: " + id);
-					}
+					throw new Erro($"Erro ao excluir produto: Nenhuma linha foi afetada - Id: " + id);
 				}
 			}
 			catch (Exception e)
@@ -93,19 +83,11 @@ namespace DAOGerenciamentoPedidos.Src
 
 		public List<Produto> ListarTodos()
 		{
-			String query = "SELECT * FROM produto ORDER BY descricao";
-			List<Produto> listaProdutos = new List<Produto>();
+			var query = "SELECT * FROM produto ORDER BY descricao";
 			try
 			{
-				using (SqlConnection connection = BancoDeDados.CriarConexao())
-				{
-					connection.Open();
-					SqlCommand command = new SqlCommand(query, connection);
-					SqlDataReader reader = command.ExecuteReader();
-					listaProdutos = ConverterReaderParaListaDeObjetos(reader);
-					connection.Close();
-					return listaProdutos;
-				}
+				var listaProdutos = ConverterReaderParaListaDeObjetos(_bancoDeDados.ConsultarReader(query));
+				return listaProdutos;
 			}
 			catch (Exception e)
 			{
@@ -115,23 +97,17 @@ namespace DAOGerenciamentoPedidos.Src
 
 		public List<Produto> ListarPorDescricao(String descricao)
 		{
-			String query = @"SELECT * 
+			var query = @"SELECT * 
 							FROM produto 
 							WHERE descricao COLLATE Latin1_General_CI_AI LIKE @descricao 
 							ORDER BY descricao";
-			List<Produto> listaProdutos = new List<Produto>();
+			var parametros = new ParametroBDFactory()
+					.Adicionar("@descricao", "%" + descricao + "%")
+					.ObterParametros();
 			try
 			{
-				using (SqlConnection connection = BancoDeDados.CriarConexao())
-				{
-					connection.Open();
-					SqlCommand command = new SqlCommand(query, connection);
-					command.Parameters.AddWithValue("@descricao", "%" + descricao + "%");
-					SqlDataReader reader = command.ExecuteReader();
-					listaProdutos = ConverterReaderParaListaDeObjetos(reader);
-					connection.Close();
-					return listaProdutos;
-				}
+				var listaProdutos = ConverterReaderParaListaDeObjetos(_bancoDeDados.ConsultarReader(query,parametros));
+				return listaProdutos;
 			}
 			catch (Exception e)
 			{
@@ -141,60 +117,50 @@ namespace DAOGerenciamentoPedidos.Src
 
 		public Produto ObterPorId(int id)
 		{
-			String query = "SELECT * FROM produto where id_produto = @id_produto";
-			List<Produto> listaProdutos = new List<Produto>();
+			var query = "SELECT * FROM produto where id_produto = @id_produto";
+			var parametros = new ParametroBDFactory()
+					.Adicionar("@id_produto", id)
+					.ObterParametros();
 			try
 			{
-				using(SqlConnection connection = BancoDeDados.CriarConexao())
+				var listaProdutos = ConverterReaderParaListaDeObjetos(_bancoDeDados.ConsultarReader(query, parametros));
+				if (listaProdutos.Count == 0)
 				{
-					connection.Open();
-					SqlCommand command = new SqlCommand(query, connection);
-					command.Parameters.AddWithValue("@id_produto", id);
-					SqlDataReader reader = command.ExecuteReader();
-					listaProdutos = ConverterReaderParaListaDeObjetos(reader);
-					connection.Close();
-					if(listaProdutos.Count == 0)
-					{
-						return null;
-					}
-					return listaProdutos[0];
+					return null;
 				}
-			} catch (Exception e) 
+				return listaProdutos[0];
+				
+			}
+			catch (Exception e)
 			{
 				throw new Erro($"Erro ao obter produto: {e.ToString()}");
 			}
 		}
 
-		public bool DescricaoJaExiste(String descricao) {
-			//Obs.: COLLATE Latin1_General_CI_A -- Determina que a comparação será incanse sentive e que será ignorado acentuações
-			String query = "SELECT * FROM produto WHERE descricao COLLATE Latin1_General_CI_AI = @descricao";
-			List<Produto> produtos = new List<Produto>();
+		public bool DescricaoJaExiste(String descricao)
+		{
+			var query = "SELECT * FROM produto WHERE descricao COLLATE Latin1_General_CI_AI = @descricao";
+			var parametros = new ParametroBDFactory()
+					.Adicionar("@descricao", descricao)
+					.ObterParametros();
 			try
 			{
-				using (SqlConnection connection = BancoDeDados.CriarConexao())
+				var reader = _bancoDeDados.ConsultarReader(query, parametros);
+				if(reader.HasRows)
 				{
-					connection.Open();
-					SqlCommand command = new SqlCommand(query, connection);
-					command.Parameters.AddWithValue("@descricao", descricao);
-					SqlDataReader reader = command.ExecuteReader();
-					int quantidadeRegistros = 0;
-					while (reader.Read())
-					{
-						quantidadeRegistros += 1;
-					}
-					connection.Close();
-					return quantidadeRegistros > 0;
+					return true;
 				}
+				return false;
 			}
 			catch (Exception e)
 			{
-				throw new Erro($"Erro ao realizar verificação da já existência do produto: { e.ToString()}");
+				throw new Erro($"Erro ao realizar verificação da já existência do produto: {e.ToString()}");
 			}
 		}
 
 		public List<Produto> ConverterReaderParaListaDeObjetos(SqlDataReader reader)
 		{
-			List<Produto> listaProdutos = new List<Produto>();	
+			var listaProdutos = new List<Produto>();
 
 			// Obtendo os índices das colunas uma vez antes do loop
 			int idIndex = reader.GetOrdinal("id_produto");

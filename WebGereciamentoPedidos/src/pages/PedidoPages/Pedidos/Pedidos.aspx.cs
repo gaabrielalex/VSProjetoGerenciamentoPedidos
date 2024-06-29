@@ -20,7 +20,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 {
 	public partial class Pedidos : System.Web.UI.Page
 	{
-		private readonly PedidoDAO _pedidoDAO;
+		private readonly PedidoDAO _pedidoDAO = new PedidoDAO(new BancoDeDados());
 		public List<Pedido> DadosPedidosAtual
 		{
 			get

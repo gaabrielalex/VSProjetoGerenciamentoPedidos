@@ -3133,3 +3133,755 @@ Log Entrada : 13:57:06 quarta-feira, 26 de junho de 2024
    at DAOGerenciamentoPedidos.Src.Data_Base.DB_Connection.getConnection() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\DB_Connection.cs:line 15
    at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 32
 ------------------------------------
+
+Log Entrada : 14:34:08 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'vlr_rio' inválido.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 96
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 33
+ClientConnectionId:8bb265a9-e21f-4011-aade-683e6e4046be
+Error Number:207,State:1,Class:16
+------------------------------------
+
+Log Entrada : 14:34:08 sábado, 29 de junho de 2024
+  :
+  :Erro ao cadatsrar produto: UtilsGerenciamentoPedidos.Erro: Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'vlr_rio' inválido.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 96
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 33
+ClientConnectionId:8bb265a9-e21f-4011-aade-683e6e4046be
+Error Number:207,State:1,Class:16
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 38
+   em WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto.FormAddEditProduto.CadastarProduto(Produto produto) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx.cs:linha 200
+------------------------------------
+
+Log Entrada : 14:34:45 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'vlr_rio' inválido.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 33
+ClientConnectionId:7f1a3d06-482a-493a-9e90-b8ea627fcb5f
+Error Number:207,State:1,Class:16
+------------------------------------
+
+Log Entrada : 14:34:45 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'vlr_rio' inválido.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 33
+ClientConnectionId:7f1a3d06-482a-493a-9e90-b8ea627fcb5f
+Error Number:207,State:1,Class:16
+------------------------------------
+
+Log Entrada : 14:34:45 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'vlr_rio' inválido.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 33
+ClientConnectionId:7f1a3d06-482a-493a-9e90-b8ea627fcb5f
+Error Number:207,State:1,Class:16
+------------------------------------
+
+Log Entrada : 14:34:45 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'vlr_rio' inválido.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 33
+ClientConnectionId:7f1a3d06-482a-493a-9e90-b8ea627fcb5f
+Error Number:207,State:1,Class:16
+------------------------------------
+
+Log Entrada : 14:34:45 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'vlr_rio' inválido.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 33
+ClientConnectionId:7f1a3d06-482a-493a-9e90-b8ea627fcb5f
+Error Number:207,State:1,Class:16
+------------------------------------
+
+Log Entrada : 14:40:27 sábado, 29 de junho de 2024
+  :
+  :Erro ao editar produto: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '='.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 73
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Editar(Produto produto, Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 52
+ClientConnectionId:a6b623da-4e27-4dd1-b16c-8f0c64ac94d2
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 14:42:30 sábado, 29 de junho de 2024
+  :
+  :Erro ao editar produto: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '='.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 73
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.Editar(Produto produto, Int32 id) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 52
+ClientConnectionId:a77db2f0-ac30-4334-af51-964cddb870d6
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 14:42:30 sábado, 29 de junho de 2024
+  :
+  :Erro ao editar produto: UtilsGerenciamentoPedidos.Erro: Erro ao editar produto: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '='.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 73
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.Editar(Produto produto, Int32 id) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 52
+ClientConnectionId:a77db2f0-ac30-4334-af51-964cddb870d6
+Error Number:102,State:1,Class:15
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.Editar(Produto produto, Int32 id) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 60
+   em WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto.FormAddEditProduto.EditarProduto(Produto produto) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx.cs:linha 217
+------------------------------------
+
+Log Entrada : 14:46:20 sábado, 29 de junho de 2024
+  :
+  :Erro ao excluir produto: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a 'id_produto'.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 73
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Excluir(Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 72
+ClientConnectionId:0d5d3d12-7aaa-4fed-8db0-f26660b3d7b4
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 14:46:21 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Violação da restrição UNIQUE KEY 'UQ__produto__91D38C28749B4F9E'. Não é possível inserir a chave duplicada no objeto 'dbo.produto'. O valor de chave duplicada é (Produto Teste).
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 33
+ClientConnectionId:0d5d3d12-7aaa-4fed-8db0-f26660b3d7b4
+Error Number:2627,State:1,Class:14
+------------------------------------
+
+Log Entrada : 14:49:41 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar produtos: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'ORDER'.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 50
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 33
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.ListarTodos() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 90
+ClientConnectionId:b7bd56bf-9c78-4baf-a340-c7fa8f7a4f88
+Error Number:156,State:1,Class:15
+------------------------------------
+
+Log Entrada : 14:50:00 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar produtos: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'ORDER'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 33
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 90
+ClientConnectionId:f74ca156-274c-4b0c-8fe0-cdeb3a3bbd01
+Error Number:156,State:1,Class:15
+------------------------------------
+
+Log Entrada : 14:50:00 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar produtos: UtilsGerenciamentoPedidos.Erro: Erro ao listar produtos: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'ORDER'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 33
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 90
+ClientConnectionId:f74ca156-274c-4b0c-8fe0-cdeb3a3bbd01
+Error Number:156,State:1,Class:15
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 95
+   em WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_.ProdutosNovo.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ProdutoPages\Produtos(Novo)\ProdutosNovo.aspx.cs:linha 67
+------------------------------------
+
+Log Entrada : 14:53:24 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar produtos: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'WHERE'.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 50
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.ListarPorDescricao(String descricao) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 109
+ClientConnectionId:fd7896ec-fc0c-4b30-98e4-2fd9dbdceb38
+Error Number:156,State:1,Class:15
+------------------------------------
+
+Log Entrada : 14:53:54 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar produtos: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'WHERE'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.ListarPorDescricao(String descricao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 109
+ClientConnectionId:65ec5ade-09c3-4634-950e-9024d352f0b8
+Error Number:156,State:1,Class:15
+------------------------------------
+
+Log Entrada : 14:53:54 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar produtos: UtilsGerenciamentoPedidos.Erro: Erro ao listar produtos: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'WHERE'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.ListarPorDescricao(String descricao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 109
+ClientConnectionId:65ec5ade-09c3-4634-950e-9024d352f0b8
+Error Number:156,State:1,Class:15
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.ListarPorDescricao(String descricao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 114
+   em WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_.ProdutosNovo.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ProdutoPages\Produtos(Novo)\ProdutosNovo.aspx.cs:linha 63
+------------------------------------
+
+Log Entrada : 14:57:47 sábado, 29 de junho de 2024
+  :
+  :Erro ao obter produto: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '='.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.ObterPorId(Int32 id) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 126
+ClientConnectionId:b2dad8a9-f011-41d2-be83-b300375db5cf
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 14:57:47 sábado, 29 de junho de 2024
+  :
+  :Erro ao obter produto para edição: UtilsGerenciamentoPedidos.Erro: Erro ao obter produto: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '='.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.ObterPorId(Int32 id) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 126
+ClientConnectionId:b2dad8a9-f011-41d2-be83-b300375db5cf
+Error Number:102,State:1,Class:15
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.ObterPorId(Int32 id) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 136
+   em WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto.FormAddEditProduto.ConfigurarFormParaEdicao(Int32 idProdutoParaEdicao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx.cs:linha 76
+------------------------------------
+
+Log Entrada : 15:05:17 sábado, 29 de junho de 2024
+  :
+  :Erro ao realizar verificação da já existência do produto: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'COLLATE'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.DescricaoJaExiste(String descricao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 148
+ClientConnectionId:b58947d8-64e3-4225-8a03-928b63426a45
+Error Number:156,State:1,Class:15
+------------------------------------
+
+Log Entrada : 15:05:17 sábado, 29 de junho de 2024
+  :
+  :Erro ao validar campo descrição: UtilsGerenciamentoPedidos.Erro: Erro ao realizar verificação da já existência do produto: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'COLLATE'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.DescricaoJaExiste(String descricao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 148
+ClientConnectionId:b58947d8-64e3-4225-8a03-928b63426a45
+Error Number:156,State:1,Class:15
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.DescricaoJaExiste(String descricao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 157
+   em WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto.FormAddEditProduto.DescricaoTextFormField_ServerValidate(Object source, ServerValidateEventArgs args) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ProdutoPages\FormAddEditProduto\FormAddEditProduto.ascx.cs:linha 111
+------------------------------------
+
+Log Entrada : 15:37:34 sábado, 29 de junho de 2024
+  :
+  :Erro ao obter pedido: System.Data.SqlClient.SqlException (0x80131904): É necessário declarar a variável escalar "@id_pedido".
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 50
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 33
+   at DAOGerenciamentoPedidos.PedidoDAO.ObterPorId(Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 140
+ClientConnectionId:5131158a-f680-48f7-8c34-544afe85ed74
+Error Number:137,State:2,Class:15
+------------------------------------
+
+Log Entrada : 15:37:35 sábado, 29 de junho de 2024
+  :
+  :Erro ao obter pedido: System.Data.SqlClient.SqlException (0x80131904): É necessário declarar a variável escalar "@id_pedido".
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 50
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 33
+   at DAOGerenciamentoPedidos.PedidoDAO.ObterPorId(Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 140
+ClientConnectionId:5131158a-f680-48f7-8c34-544afe85ed74
+Error Number:137,State:2,Class:15
+------------------------------------
+
+Log Entrada : 15:37:35 sábado, 29 de junho de 2024
+  :
+  :Erro ao obter pedido: System.Data.SqlClient.SqlException (0x80131904): É necessário declarar a variável escalar "@id_pedido".
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 50
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 33
+   at DAOGerenciamentoPedidos.PedidoDAO.ObterPorId(Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 140
+ClientConnectionId:5131158a-f680-48f7-8c34-544afe85ed74
+Error Number:137,State:2,Class:15
+------------------------------------
+
+Log Entrada : 15:37:35 sábado, 29 de junho de 2024
+  :
+  :Erro ao obter pedido: System.Data.SqlClient.SqlException (0x80131904): É necessário declarar a variável escalar "@id_pedido".
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 50
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 33
+   at DAOGerenciamentoPedidos.PedidoDAO.ObterPorId(Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 140
+ClientConnectionId:5131158a-f680-48f7-8c34-544afe85ed74
+Error Number:137,State:2,Class:15
+------------------------------------
+
+Log Entrada : 15:38:36 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 70
+------------------------------------
+
+Log Entrada : 15:39:13 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 70
+------------------------------------
+
+Log Entrada : 15:39:41 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 70
+------------------------------------
+
+Log Entrada : 15:48:53 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a ','.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 43
+ClientConnectionId:01171923-e07d-49a4-9b7b-25a24f432ce6
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 15:48:54 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a ','.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 43
+ClientConnectionId:01171923-e07d-49a4-9b7b-25a24f432ce6
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 15:48:54 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a ','.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 43
+ClientConnectionId:01171923-e07d-49a4-9b7b-25a24f432ce6
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 15:48:54 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a ','.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 43
+ClientConnectionId:01171923-e07d-49a4-9b7b-25a24f432ce6
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 15:48:54 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a ','.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 43
+ClientConnectionId:01171923-e07d-49a4-9b7b-25a24f432ce6
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 15:49:08 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a ','.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 96
+   em DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 43
+ClientConnectionId:c1bfcb2c-3765-4adb-a3f5-35f31d20f241
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 15:49:08 sábado, 29 de junho de 2024
+  :
+  :Erro ao cadatsrar pedido: UtilsGerenciamentoPedidos.Erro: Erro ao inserir pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a ','.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 96
+   em DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 43
+ClientConnectionId:c1bfcb2c-3765-4adb-a3f5-35f31d20f241
+Error Number:102,State:1,Class:15
+   em DAOGerenciamentoPedidos.PedidoDAO.Inserir(Pedido pedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 48
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.CadastarPedido(Pedido Pedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 223
+------------------------------------
+
+Log Entrada : 15:49:33 sábado, 29 de junho de 2024
+  :
+  :Erro ao editar produto: System.Data.SqlClient.SqlException (0x80131904): Violação da restrição UNIQUE KEY 'UQ__produto__91D38C28749B4F9E'. Não é possível inserir a chave duplicada no objeto 'dbo.produto'. O valor de chave duplicada é (Produto Teste Editado AoRealizarEdicaoDeveRetonarTrue).
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 73
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Editar(Produto produto, Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 52
+ClientConnectionId:065549e4-e69c-4f34-b9f9-5ea109dfd6d5
+Error Number:2627,State:1,Class:14
+------------------------------------
+
+Log Entrada : 15:49:33 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Violação da restrição UNIQUE KEY 'UQ__produto__91D38C28749B4F9E'. Não é possível inserir a chave duplicada no objeto 'dbo.produto'. O valor de chave duplicada é (Produto Teste).
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 33
+ClientConnectionId:065549e4-e69c-4f34-b9f9-5ea109dfd6d5
+Error Number:2627,State:1,Class:14
+------------------------------------
+
+Log Entrada : 15:49:33 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Violação da restrição UNIQUE KEY 'UQ__produto__91D38C28749B4F9E'. Não é possível inserir a chave duplicada no objeto 'dbo.produto'. O valor de chave duplicada é (Produto Teste).
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 33
+ClientConnectionId:065549e4-e69c-4f34-b9f9-5ea109dfd6d5
+Error Number:2627,State:1,Class:14
+------------------------------------
+
+Log Entrada : 15:49:33 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Violação da restrição UNIQUE KEY 'UQ__produto__91D38C28749B4F9E'. Não é possível inserir a chave duplicada no objeto 'dbo.produto'. O valor de chave duplicada é (Produto Teste AoRealizarListagemDeveRetonarUmaListaDeProdutos).
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 33
+ClientConnectionId:065549e4-e69c-4f34-b9f9-5ea109dfd6d5
+Error Number:2627,State:1,Class:14
+------------------------------------
+
+Log Entrada : 15:49:33 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Violação da restrição UNIQUE KEY 'UQ__produto__91D38C28749B4F9E'. Não é possível inserir a chave duplicada no objeto 'dbo.produto'. O valor de chave duplicada é (testeFiltragem1).
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 33
+ClientConnectionId:065549e4-e69c-4f34-b9f9-5ea109dfd6d5
+Error Number:2627,State:1,Class:14
+------------------------------------
+
+Log Entrada : 15:52:54 sábado, 29 de junho de 2024
+  :
+  :Erro ao editar pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '='.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 73
+   at DAOGerenciamentoPedidos.PedidoDAO.Editar(Pedido pedido, Int32 idPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 67
+ClientConnectionId:2cde9a98-7fce-4c70-a316-0eab09d54652
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 15:53:20 sábado, 29 de junho de 2024
+  :
+  :Erro ao editar pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '='.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 73
+   em DAOGerenciamentoPedidos.PedidoDAO.Editar(Pedido pedido, Int32 idPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 67
+ClientConnectionId:8f08a681-4871-4f6b-bbb9-4437f5c96437
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 15:53:20 sábado, 29 de junho de 2024
+  :
+  :Erro ao editar pedido: UtilsGerenciamentoPedidos.Erro: Erro ao editar pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '='.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 73
+   em DAOGerenciamentoPedidos.PedidoDAO.Editar(Pedido pedido, Int32 idPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 67
+ClientConnectionId:8f08a681-4871-4f6b-bbb9-4437f5c96437
+Error Number:102,State:1,Class:15
+   em DAOGerenciamentoPedidos.PedidoDAO.Editar(Pedido pedido, Int32 idPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 75
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.EditarPedido(Pedido Pedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 240
+------------------------------------
+
+Log Entrada : 16:06:10 sábado, 29 de junho de 2024
+  :
+  :Erro ao excluir pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '='.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 73
+   at DAOGerenciamentoPedidos.PedidoDAO.Excluir(Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 87
+ClientConnectionId:41cc0a29-261f-44e6-98e5-6fe04f11caad
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:06:26 sábado, 29 de junho de 2024
+  :
+  :Erro ao excluir pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '='.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 73
+   em DAOGerenciamentoPedidos.PedidoDAO.Excluir(Int32 id) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 87
+ClientConnectionId:e1c66b2a-7d37-48e0-b091-9c7a9a8be1e1
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:07:36 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a ','.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 33
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 114
+ClientConnectionId:2e2a5e6f-a54b-4013-9d13-1eb3073f9e35
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:07:36 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a ','.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 33
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 114
+ClientConnectionId:2e2a5e6f-a54b-4013-9d13-1eb3073f9e35
+Error Number:102,State:1,Class:15
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 119
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 70
+------------------------------------
+
+Log Entrada : 16:07:38 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar pedidos: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a ','.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 50
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 33
+   at DAOGerenciamentoPedidos.PedidoDAO.ListarTodos() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 114
+ClientConnectionId:6cb38ab6-8e1b-408f-9474-6b4e0f0fb58a
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:08:56 sábado, 29 de junho de 2024
+  :
+  :Erro ao obter pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '*'.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 50
+   at DAOGerenciamentoPedidos.PedidoDAO.ObterPorId(Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 140
+ClientConnectionId:c5445e47-e21b-467b-b03d-ecc1b9b4fe61
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:08:57 sábado, 29 de junho de 2024
+  :
+  :Erro ao obter pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '*'.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 50
+   at DAOGerenciamentoPedidos.PedidoDAO.ObterPorId(Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 140
+ClientConnectionId:c5445e47-e21b-467b-b03d-ecc1b9b4fe61
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:08:57 sábado, 29 de junho de 2024
+  :
+  :Erro ao obter pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '*'.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 50
+   at DAOGerenciamentoPedidos.PedidoDAO.ObterPorId(Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 140
+ClientConnectionId:c5445e47-e21b-467b-b03d-ecc1b9b4fe61
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:08:57 sábado, 29 de junho de 2024
+  :
+  :Erro ao obter pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '*'.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 50
+   at DAOGerenciamentoPedidos.PedidoDAO.ObterPorId(Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:line 140
+ClientConnectionId:c5445e47-e21b-467b-b03d-ecc1b9b4fe61
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:09:05 sábado, 29 de junho de 2024
+  :
+  :Erro ao obter pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '*'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.PedidoDAO.ObterPorId(Int32 id) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 140
+ClientConnectionId:d56bace5-8371-4081-b5ef-4e1e9f166062
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:09:05 sábado, 29 de junho de 2024
+  :
+  :Erro ao obter pedido para edição: UtilsGerenciamentoPedidos.Erro: Erro ao obter pedido: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '*'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.PedidoDAO.ObterPorId(Int32 id) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 140
+ClientConnectionId:d56bace5-8371-4081-b5ef-4e1e9f166062
+Error Number:102,State:1,Class:15
+   em DAOGerenciamentoPedidos.PedidoDAO.ObterPorId(Int32 id) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 150
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.ConfigurarFormParaEdicao(Int32 idPedidoParaEdicao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 121
+------------------------------------
+
+Log Entrada : 16:10:29 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar pedidos por cliente: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '*'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 172
+ClientConnectionId:c43367f1-9535-4619-a340-1e8d9d38ed3c
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:10:29 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos por cliente: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '*'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 172
+ClientConnectionId:c43367f1-9535-4619-a340-1e8d9d38ed3c
+Error Number:102,State:1,Class:15
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 177
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 66
+------------------------------------
+
+Log Entrada : 16:12:18 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar pedidos por cliente: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '*'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 172
+ClientConnectionId:c43367f1-9535-4619-a340-1e8d9d38ed3c
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:12:18 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos por cliente: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '*'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 172
+ClientConnectionId:c43367f1-9535-4619-a340-1e8d9d38ed3c
+Error Number:102,State:1,Class:15
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 177
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 66
+------------------------------------
+
+Log Entrada : 16:12:35 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar pedidos por cliente: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '*'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 172
+ClientConnectionId:c5835941-f754-40cb-baa9-7372cd8f4ab8
+Error Number:102,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:12:35 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar pedidos: UtilsGerenciamentoPedidos.Erro: Erro ao listar pedidos por cliente: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima a '*'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 172
+ClientConnectionId:c5835941-f754-40cb-baa9-7372cd8f4ab8
+Error Number:102,State:1,Class:15
+   em DAOGerenciamentoPedidos.PedidoDAO.ListarPorCliente(String nomeCliente) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 177
+   em WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\Pedidos\Pedidos.aspx.cs:linha 66
+------------------------------------
+
+Log Entrada : 16:15:54 sábado, 29 de junho de 2024
+  :
+  :Erro ao editar produto: System.Data.SqlClient.SqlException (0x80131904): Violação da restrição UNIQUE KEY 'UQ__produto__91D38C28749B4F9E'. Não é possível inserir a chave duplicada no objeto 'dbo.produto'. O valor de chave duplicada é (Produto Teste Editado AoRealizarEdicaoDeveRetonarTrue).
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 73
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Editar(Produto produto, Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 52
+ClientConnectionId:3b39b5ec-9ff8-4ef4-bcfb-3945dcc56e67
+Error Number:2627,State:1,Class:14
+------------------------------------
+
+Log Entrada : 16:15:54 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Violação da restrição UNIQUE KEY 'UQ__produto__91D38C28749B4F9E'. Não é possível inserir a chave duplicada no objeto 'dbo.produto'. O valor de chave duplicada é (Produto Teste).
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 33
+ClientConnectionId:3b39b5ec-9ff8-4ef4-bcfb-3945dcc56e67
+Error Number:2627,State:1,Class:14
+------------------------------------
+
+Log Entrada : 16:15:54 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Violação da restrição UNIQUE KEY 'UQ__produto__91D38C28749B4F9E'. Não é possível inserir a chave duplicada no objeto 'dbo.produto'. O valor de chave duplicada é (Produto Teste).
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 33
+ClientConnectionId:3b39b5ec-9ff8-4ef4-bcfb-3945dcc56e67
+Error Number:2627,State:1,Class:14
+------------------------------------
+
+Log Entrada : 16:15:54 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Violação da restrição UNIQUE KEY 'UQ__produto__91D38C28749B4F9E'. Não é possível inserir a chave duplicada no objeto 'dbo.produto'. O valor de chave duplicada é (Produto Teste AoRealizarListagemDeveRetonarUmaListaDeProdutos).
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 33
+ClientConnectionId:3b39b5ec-9ff8-4ef4-bcfb-3945dcc56e67
+Error Number:2627,State:1,Class:14
+------------------------------------
+
+Log Entrada : 16:15:54 sábado, 29 de junho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Violação da restrição UNIQUE KEY 'UQ__produto__91D38C28749B4F9E'. Não é possível inserir a chave duplicada no objeto 'dbo.produto'. O valor de chave duplicada é (testeFiltragem1).
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 96
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 33
+ClientConnectionId:3b39b5ec-9ff8-4ef4-bcfb-3945dcc56e67
+Error Number:2627,State:1,Class:14
+------------------------------------
+
+Log Entrada : 16:17:01 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar métodos de pagamento: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'ORDER'.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 50
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 33
+   at DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:line 42
+ClientConnectionId:1253e718-c28a-496d-b4de-96c93f3e31f1
+Error Number:156,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:17:17 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar métodos de pagamento: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'ORDER'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 33
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 42
+ClientConnectionId:8c7bc32c-a31c-4d6a-bf8f-22ec56f66245
+Error Number:156,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:17:17 sábado, 29 de junho de 2024
+  :
+  :Erro ao carregar métodos de pagamento: UtilsGerenciamentoPedidos.Erro: Erro ao listar métodos de pagamento: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'ORDER'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 33
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 42
+ClientConnectionId:8c7bc32c-a31c-4d6a-bf8f-22ec56f66245
+Error Number:156,State:1,Class:15
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 47
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.CarregarTodosOsMetodosPagamento() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 67
+------------------------------------
+
+Log Entrada : 16:19:24 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar métodos de pagamento: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'ORDER'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 33
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 42
+ClientConnectionId:8f59fe7c-ec5a-4aff-8557-ced9fbdd1d30
+Error Number:156,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:19:24 sábado, 29 de junho de 2024
+  :
+  :Erro ao carregar métodos de pagamento: UtilsGerenciamentoPedidos.Erro: Erro ao listar métodos de pagamento: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'ORDER'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 33
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 42
+ClientConnectionId:8f59fe7c-ec5a-4aff-8557-ced9fbdd1d30
+Error Number:156,State:1,Class:15
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 47
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.CarregarTodosOsMetodosPagamento() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 66
+------------------------------------
+
+Log Entrada : 16:19:35 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar métodos de pagamento: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'ORDER'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 33
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 42
+ClientConnectionId:401ebc8d-b721-4e27-87ac-e9e75bd2e9ca
+Error Number:156,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:19:35 sábado, 29 de junho de 2024
+  :
+  :Erro ao carregar métodos de pagamento: UtilsGerenciamentoPedidos.Erro: Erro ao listar métodos de pagamento: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'ORDER'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 33
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 42
+ClientConnectionId:401ebc8d-b721-4e27-87ac-e9e75bd2e9ca
+Error Number:156,State:1,Class:15
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 47
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.CarregarTodosOsMetodosPagamento() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 66
+------------------------------------
+
+Log Entrada : 16:20:40 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar métodos de pagamento: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'ORDER'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 33
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 42
+ClientConnectionId:ffdad198-e393-4191-82be-3358a857914e
+Error Number:156,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:20:40 sábado, 29 de junho de 2024
+  :
+  :Erro ao carregar métodos de pagamento: UtilsGerenciamentoPedidos.Erro: Erro ao listar métodos de pagamento: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'ORDER'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 33
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 42
+ClientConnectionId:ffdad198-e393-4191-82be-3358a857914e
+Error Number:156,State:1,Class:15
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 47
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.CarregarTodosOsMetodosPagamento() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 63
+------------------------------------
+
+Log Entrada : 16:20:43 sábado, 29 de junho de 2024
+  :
+  :Erro ao listar métodos de pagamento: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'ORDER'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 33
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 42
+ClientConnectionId:b44a5eea-a5eb-4ed2-b40c-92da78ad64c2
+Error Number:156,State:1,Class:15
+------------------------------------
+
+Log Entrada : 16:20:43 sábado, 29 de junho de 2024
+  :
+  :Erro ao carregar métodos de pagamento: UtilsGerenciamentoPedidos.Erro: Erro ao listar métodos de pagamento: System.Data.SqlClient.SqlException (0x80131904): Sintaxe incorreta próxima à palavra-chave 'ORDER'.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 50
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ConsultarReader(String sql) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 33
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 42
+ClientConnectionId:b44a5eea-a5eb-4ed2-b40c-92da78ad64c2
+Error Number:156,State:1,Class:15
+   em DAOGerenciamentoPedidos.Src.MetodoPagamentoDAO.ListarTodos() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\MetodoPagamentoDAO.cs:linha 47
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.CarregarTodosOsMetodosPagamento() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 63
+------------------------------------

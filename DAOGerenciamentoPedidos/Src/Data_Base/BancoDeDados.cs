@@ -79,7 +79,7 @@ namespace DAOGerenciamentoPedidos.Src.Data_Base
 			}
 		}
 
-		public int ExecutarComRetorno(string query, List<ParametroBD> parametros)
+		public object ExecutarComRetorno(string query, List<ParametroBD> parametros)
 		{
 			using (var conexao = BancoDeDados.CriarConexao())
 			using (var comando = conexao.CreateCommand())
@@ -89,7 +89,7 @@ namespace DAOGerenciamentoPedidos.Src.Data_Base
 				conexao.Open();
 				try
 				{
-					return Convert.ToInt32(comando.ExecuteScalar());
+					return comando.ExecuteScalar();
 				}
 				catch (Exception e)
 				{

@@ -36,19 +36,11 @@ namespace DAOGerenciamentoPedidos.Src
 
 		public List<MetodoPagamento> ListarTodos()
 		{
-			String query = "SELECT * FROM metodo_pagto ORDER BY id_metodo_pagto";
-			List<MetodoPagamento> listaMetodoPagto = new List<MetodoPagamento>();
+			var query = "SELECT * FROM metodo_pagto ORDER BY id_metodo_pagto";
 			try
 			{
-				using (SqlConnection connection = BancoDeDados.CriarConexao())
-				{
-					connection.Open();
-					SqlCommand command = new SqlCommand(query, connection);
-					SqlDataReader reader = command.ExecuteReader();
-					listaMetodoPagto = ConverterReaderParaListaDeObjetos(reader);
-					connection.Close();
-					return listaMetodoPagto;
-				}
+				var listaMetodoPagto = ConverterReaderParaListaDeObjetos(_bancoDeDados.ConsultarReader(query));
+				return listaMetodoPagto;
 			}
 			catch (Exception e)
 			{
