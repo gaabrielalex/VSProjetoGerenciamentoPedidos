@@ -45,6 +45,7 @@
     <Compile Include="Src\Data_Base\ParametroBD.cs" />
     <Compile Include="Src\Data_Base\ParametroBDFactory.cs" />
     <Compile Include="Src\IDAO.cs" />
+    <Compile Include="Src\ItemPedidoDAO.cs" />
     <Compile Include="Src\MetodoPagamentoDAO.cs" />
     <Compile Include="Src\PedidoDAO.cs" />
     <Compile Include="Src\Data_Base\BancoDeDados.cs" />

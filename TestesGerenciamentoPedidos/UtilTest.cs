@@ -18,7 +18,7 @@ namespace TestesGerenciamentoPedidos
 			{
 				using (SqlConnection con = BancoDeDados.CriarConexao())
 				{
-					string sql = "DELETE FROM pedido WHERE nome_cliente LIKE '%Teste%'";
+					string sql = "DELETE FROM item_pedido WHERE id_pedido IN (SELECT id_pedido FROM pedido WHERE nome_cliente LIKE '%Teste%')";
 					con.Open();
 					SqlCommand cmd = new SqlCommand(sql, con);
 					cmd.ExecuteNonQuery();
@@ -26,7 +26,7 @@ namespace TestesGerenciamentoPedidos
 				}
 				using (SqlConnection con = BancoDeDados.CriarConexao())
 				{
-					string sql = "DELETE FROM item_pedido WHERE id_pedido IN (SELECT id_pedido FROM pedido WHERE nome_cliente LIKE '%Teste%')";
+					string sql = "DELETE FROM pedido WHERE nome_cliente LIKE '%Teste%'";
 					con.Open();
 					SqlCommand cmd = new SqlCommand(sql, con);
 					cmd.ExecuteNonQuery();

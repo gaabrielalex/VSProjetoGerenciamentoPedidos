@@ -19,7 +19,7 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 		public void AoPersistirUmObjetoPedidoDeveRetornarOIdDoPedidoInserido()
 		{
 			// Arrange
-			Pedido pedido = DAOFactory.RetornaPedido();
+			Pedido pedido = DAOFactory.RetornarPedido();
 
 			PedidoDAO pedidoDAO = new PedidoDAO(new BancoDeDados());
 			// Act
@@ -33,7 +33,7 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 		public void AoPersistirUmObjetoPedidoDeveRetornUmRegistroComTodosOsCamposPreenchidosConformeOInserido()
 		{
 			// Arrange
-			Pedido pedido = DAOFactory.RetornaPedido();
+			Pedido pedido = DAOFactory.RetornarPedido();
 			PedidoDAO pedidoDAO = new PedidoDAO(new BancoDeDados());
 
 			// Act
@@ -62,7 +62,7 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 		{
 			// Arrange
 			PedidoDAO pedidoDAO = new PedidoDAO(new BancoDeDados());
-			Pedido pedido = DAOFactory.RetornaPedido();
+			Pedido pedido = DAOFactory.RetornarPedido();
 
 			// Act
 			int idPedidoInserido = pedidoDAO.Inserir(pedido);
@@ -122,7 +122,7 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 		{
 			//Arrange
 			PedidoDAO pedidoDAO = new PedidoDAO(new BancoDeDados());
-			Pedido pedido = DAOFactory.RetornaPedido();
+			Pedido pedido = DAOFactory.RetornarPedido();
 
 			//Act
 			int idPedidoInserido = pedidoDAO.Inserir(pedido);
@@ -143,7 +143,7 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 			List <Pedido> pedidosASeremInseridos = new List<Pedido>();
 			for (int i = 0; i < quantidadePedidosEsperada; i++)
 			{
-				Pedido pedido = DAOFactory.RetornaPedido();
+				Pedido pedido = DAOFactory.RetornarPedido();
 				pedidosASeremInseridos.Add(pedido);
 			}
 

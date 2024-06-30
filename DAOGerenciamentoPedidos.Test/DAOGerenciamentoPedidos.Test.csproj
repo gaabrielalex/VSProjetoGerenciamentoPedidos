@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Src\DAOFactory.cs" />
+    <Compile Include="Src\ItemPedidoDAOTest.cs" />
     <Compile Include="Src\MetodoPagamentoDAOTest.cs" />
     <Compile Include="Src\PedidoDAOTest.cs" />
     <Compile Include="Src\ProdutoDAOTest.cs" />
@@ -88,6 +89,10 @@
     <ProjectReference Include="..\TestesGerenciamentoPedidos\TestesGerenciamentoPedidos.csproj">
       <Project>{dc0031f4-db76-428b-9ca1-47eab0e0540b}</Project>
       <Name>TestesGerenciamentoPedidos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilsGerenciamentoPedidos\UtilsGerenciamentoPedidos.csproj">
+      <Project>{E8505AC8-6139-43E0-AD6F-2072ED6208CD}</Project>
+      <Name>UtilsGerenciamentoPedidos</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
