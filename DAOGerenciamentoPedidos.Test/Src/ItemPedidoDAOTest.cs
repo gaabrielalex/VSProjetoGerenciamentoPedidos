@@ -237,5 +237,148 @@ namespace DAOGerenciamentoPedidos.Test.Src
 
 			action.Should().Throw<Erro>(because: "Deve retornar erro ao tentar editar um item do pedido inexistente");
 		}
+
+		[TestMethod]
+		public void AoExcluirUmItemPedidoDeveRetornarNuloAoBuscarPeloIdDoItemPedidoExcluido()
+		{
+			var itemPedido = DAOFactory.RetornarItemPedido();
+			var itemPedidoDAO = DAOFactory.ObterItemPedidoDAO();
+			var idItemPedidoInserido = itemPedidoDAO.Inserir(itemPedido);
+
+			itemPedidoDAO.Excluir(idItemPedidoInserido);
+			var itemPedidoExcluido = itemPedidoDAO.ObterPorId(idItemPedidoInserido);
+
+			itemPedidoExcluido.Should().BeNull(because: "O item do pedido excluído não deve ser retornado ao buscar pelo id do item do pedido excluído");
+		}
+
+		[TestMethod]
+		public void AoExcluirUmItemPedidoInexistenteDeveRetornarErro()
+		{
+			var itemPedidoDAO = DAOFactory.ObterItemPedidoDAO();
+
+			Action action = () => itemPedidoDAO.Excluir(0);
+
+			action.Should().Throw<Erro>(because: "Deve retornar erro ao tentar excluir um item do pedido inexistente");
+		}
+
+		[TestMethod]
+		public void AoInserirCincoItensDeveSerRetornadoUmaListaDeItensContendoOsMesmosItensInseridosAoListarTodosOsItens()
+		{
+			var itemPedidoDAO = DAOFactory.ObterItemPedidoDAO();
+			var itemPedido1 = DAOFactory.RetornarItemPedido();
+			var itemPedido2 = DAOFactory.RetornarItemPedido();
+			var itemPedido3 = DAOFactory.RetornarItemPedido();
+			var itemPedido4 = DAOFactory.RetornarItemPedido();
+			var itemPedido5 = DAOFactory.RetornarItemPedido();
+			itemPedido1.IdItemPedido= itemPedidoDAO.Inserir(itemPedido1);
+			itemPedido2.IdItemPedido = itemPedidoDAO.Inserir(itemPedido2);
+			itemPedido3.IdItemPedido = itemPedidoDAO.Inserir(itemPedido3);
+			itemPedido4.IdItemPedido = itemPedidoDAO.Inserir(itemPedido4);
+			itemPedido5.IdItemPedido = itemPedidoDAO.Inserir(itemPedido5);
+
+			var itensPedido = itemPedidoDAO.ListarTodos();
+
+			itensPedido.Should().HaveCountGreaterThanOrEqualTo(5, because: "Deve retornar uma lista contendo pelo menos 5 itens do pedido, pois foram inseridos 5 itens do pedido");
+			itensPedido.Should().ContainEquivalentOf(itemPedido1, because: "A lista de itens do pedido deve conter o item do pedido 1 inserido");
+			itensPedido.Should().ContainEquivalentOf(itemPedido2, because: "A lista de itens do pedido deve conter o item do pedido 2 inserido");
+			itensPedido.Should().ContainEquivalentOf(itemPedido3, because: "A lista de itens do pedido deve conter o item do pedido 3 inserido");
+			itensPedido.Should().ContainEquivalentOf(itemPedido4, because: "A lista de itens do pedido deve conter o item do pedido 4 inserido");
+			itensPedido.Should().ContainEquivalentOf(itemPedido5, because: "A lista de itens do pedido deve conter o item do pedido 5 inserido");
+		}
+
+		[TestMethod]
+		public void AoInserirCincoItensEExcluirUmDelesDevemSerRetornarUmaListaDeItensContendoOsQuatroItensRestantesAoListarTodosOsItens()
+		{
+			var itemPedidoDAO = DAOFactory.ObterItemPedidoDAO();
+			var itemPedido1 = DAOFactory.RetornarItemPedido();
+			var itemPedido2 = DAOFactory.RetornarItemPedido();
+			var itemPedido3 = DAOFactory.RetornarItemPedido();
+			var itemPedido4 = DAOFactory.RetornarItemPedido();
+			var itemPedido5 = DAOFactory.RetornarItemPedido();
+			itemPedido1.IdItemPedido = itemPedidoDAO.Inserir(itemPedido1);
+			itemPedido2.IdItemPedido = itemPedidoDAO.Inserir(itemPedido2);
+			itemPedido3.IdItemPedido = itemPedidoDAO.Inserir(itemPedido3);
+			itemPedido4.IdItemPedido = itemPedidoDAO.Inserir(itemPedido4);
+			itemPedido5.IdItemPedido = itemPedidoDAO.Inserir(itemPedido5);
+
+			itemPedidoDAO.Excluir((int)itemPedido3.IdItemPedido);
+
+			var itensPedido = itemPedidoDAO.ListarTodos();
+
+			itensPedido.Should().HaveCountGreaterThanOrEqualTo(4, because: "Deve retornar uma lista contendo pelo menos 4 itens do pedido, pois foram inseridos 5 itens do pedido e excluído um deles");
+			itensPedido.Should().ContainEquivalentOf(itemPedido1, because: "A lista de itens do pedido deve conter o item do pedido 1 inserido");
+			itensPedido.Should().ContainEquivalentOf(itemPedido2, because: "A lista de itens do pedido deve conter o item do pedido 2 inserido");
+			itensPedido.Should().NotContainEquivalentOf(itemPedido3, because: "A lista de itens do pedido não deve conter o item do pedido 3 excluído");
+			itensPedido.Should().ContainEquivalentOf(itemPedido4, because: "A lista de itens do pedido deve conter o item do pedido 4 inserido");
+			itensPedido.Should().ContainEquivalentOf(itemPedido5, because: "A lista de itens do pedido deve conter o item do pedido 5 inserido");
+		}
+
+		[TestMethod]
+		public void AoInserirCincoItensDeUmMesmoPedidoDeveSerRetornadoUmaListaDeItensContendoOsMesmosItensInseridosAoListarTodosOsItensFiltrandoPeloPedido()
+		{
+			var itemPedidoDAO = DAOFactory.ObterItemPedidoDAO();
+			var pedido = DAOFactory.RetornarPedidoAleatorioExistenteNoBancoDeDados();
+			var itemPedido1 = DAOFactory.RetornarItemPedido();
+			var itemPedido2 = DAOFactory.RetornarItemPedido();
+			var itemPedido3 = DAOFactory.RetornarItemPedido();
+			var itemPedido4 = DAOFactory.RetornarItemPedido();
+			var itemPedido5 = DAOFactory.RetornarItemPedido();
+
+			itemPedido1.IdPedido = (int)pedido.IdPedido;
+			itemPedido2.IdPedido = (int)pedido.IdPedido;
+			itemPedido3.IdPedido = (int)pedido.IdPedido;
+			itemPedido4.IdPedido = (int)pedido.IdPedido;
+			itemPedido5.IdPedido = (int)pedido.IdPedido;
+
+			itemPedido1.IdItemPedido = itemPedidoDAO.Inserir(itemPedido1);
+			itemPedido2.IdItemPedido = itemPedidoDAO.Inserir(itemPedido2);
+			itemPedido3.IdItemPedido = itemPedidoDAO.Inserir(itemPedido3);
+			itemPedido4.IdItemPedido = itemPedidoDAO.Inserir(itemPedido4);
+			itemPedido5.IdItemPedido = itemPedidoDAO.Inserir(itemPedido5);
+
+			var itensPedido = itemPedidoDAO.ListarPorIdPedido((int)pedido.IdPedido);
+
+			itensPedido.Should().HaveCountGreaterThanOrEqualTo(5, because: "Deve retornar uma lista contendo pelo menos 5 itens do pedido, pois foram inseridos 5 itens do pedido");
+			itensPedido.Should().ContainEquivalentOf(itemPedido1, because: "A lista de itens do pedido deve conter o item do pedido 1 inserido");
+			itensPedido.Should().ContainEquivalentOf(itemPedido2, because: "A lista de itens do pedido deve conter o item do pedido 2 inserido");
+			itensPedido.Should().ContainEquivalentOf(itemPedido3, because: "A lista de itens do pedido deve conter o item do pedido 3 inserido");
+			itensPedido.Should().ContainEquivalentOf(itemPedido4, because: "A lista de itens do pedido deve conter o item do pedido 4 inserido");
+			itensPedido.Should().ContainEquivalentOf(itemPedido5, because: "A lista de itens do pedido deve conter o item do pedido 5 inserido");
+		}
+
+		[TestMethod]
+		public void AoInserirCincoItensDeUmMesmoPedidoEExcluirUmDelesDevemSerRetornarUmaListaDeItensContendoOsQuatroItensRestantesAoListarTodosOsItensFiltrandoPeloPedido()
+		{
+			var itemPedidoDAO = DAOFactory.ObterItemPedidoDAO();
+			var pedido = DAOFactory.RetornarPedidoAleatorioExistenteNoBancoDeDados();
+			var itemPedido1 = DAOFactory.RetornarItemPedido();
+			var itemPedido2 = DAOFactory.RetornarItemPedido();
+			var itemPedido3 = DAOFactory.RetornarItemPedido();
+			var itemPedido4 = DAOFactory.RetornarItemPedido();
+			var itemPedido5 = DAOFactory.RetornarItemPedido();
+
+			itemPedido1.IdPedido = (int)pedido.IdPedido;
+			itemPedido2.IdPedido = (int)pedido.IdPedido;
+			itemPedido3.IdPedido = (int)pedido.IdPedido;
+			itemPedido4.IdPedido = (int)pedido.IdPedido;
+			itemPedido5.IdPedido = (int)pedido.IdPedido;
+
+			itemPedido1.IdItemPedido = itemPedidoDAO.Inserir(itemPedido1);
+			itemPedido2.IdItemPedido = itemPedidoDAO.Inserir(itemPedido2);
+			itemPedido3.IdItemPedido = itemPedidoDAO.Inserir(itemPedido3);
+			itemPedido4.IdItemPedido = itemPedidoDAO.Inserir(itemPedido4);
+			itemPedido5.IdItemPedido = itemPedidoDAO.Inserir(itemPedido5);
+
+			itemPedidoDAO.Excluir((int)itemPedido3.IdItemPedido);
+
+			var itensPedido = itemPedidoDAO.ListarPorIdPedido((int)pedido.IdPedido);
+
+			itensPedido.Should().HaveCountGreaterThanOrEqualTo(4, because: "Deve retornar uma lista contendo pelo menos 4 itens do pedido, pois foram inseridos 5 itens do pedido e excluído um deles");
+			itensPedido.Should().ContainEquivalentOf(itemPedido1, because: "A lista de itens do pedido deve conter o item do pedido 1 inserido");
+			itensPedido.Should().ContainEquivalentOf(itemPedido2, because: "A lista de itens do pedido deve conter o item do pedido 2 inserido");
+			itensPedido.Should().NotContainEquivalentOf(itemPedido3, because: "A lista de itens do pedido não deve conter o item do pedido 3 excluído");
+			itensPedido.Should().ContainEquivalentOf(itemPedido4, because: "A lista de itens do pedido deve conter o item do pedido 4 inserido");
+			itensPedido.Should().ContainEquivalentOf(itemPedido5, because: "A lista de itens do pedido deve conter o item do pedido 5 inserido");
+		}
 	}
 }

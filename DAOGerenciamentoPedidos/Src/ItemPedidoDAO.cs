@@ -51,7 +51,22 @@ namespace DAOGerenciamentoPedidos.Src
 
 		public void Excluir(int id)
 		{
-			throw new NotImplementedException();
+			var query = "DELETE FROM item_pedido WHERE id_item_pedido = @id_item_pedido";
+			var parametros = new ParametroBDFactory()
+								.Adicionar("@id_item_pedido", id)
+								.ObterParametros();
+			try
+			{
+				var linhasAfetadas = _bancoDeDados.Executar(query, parametros);
+				if (linhasAfetadas <= 0)
+				{
+					throw new Erro($"Erro ao excluir item do pedido: Nenhuma linha foi afetada - Id: " + id);
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Erro($"Erro ao excluir item do pedido: {e.ToString()}");
+			}
 		}
 
 		public int Inserir(ItemPedido itemPedido)
@@ -78,7 +93,18 @@ namespace DAOGerenciamentoPedidos.Src
 
 		public IList<ItemPedido> ListarTodos()
 		{
-			throw new NotImplementedException();
+			var query = @"SELECT ip.*, p.*
+						FROM item_pedido ip
+						INNER JOIN produto p ON ip.id_produto = p.id_produto";
+			try
+			{
+				var listaItensPedido = ConverterReaderParaListaDeObjetos(_bancoDeDados.ConsultarReader(query));
+				return listaItensPedido;
+			}
+			catch (Exception e)
+			{
+				throw new Erro($"Erro ao listar itens dos pedidos: {e.ToString()}");
+			}
 		}
 
 		public ItemPedido ObterPorId(int itemPedido)
@@ -103,6 +129,27 @@ namespace DAOGerenciamentoPedidos.Src
 			catch (Exception e)
 			{
 				throw new Erro($"Erro ao obter item do pedido: {e.ToString()}");
+			}
+		}
+
+		public IList<ItemPedido> ListarPorIdPedido(int idPedido)
+		{
+			var query = @"SELECT ip.*, p.*
+						FROM item_pedido ip
+						INNER JOIN produto p ON ip.id_produto = p.id_produto
+						WHERE ip.id_pedido = @id_pedido";
+
+			var parametros = new ParametroBDFactory()
+					.Adicionar("@id_pedido", idPedido)
+					.ObterParametros();
+			try
+			{
+				var listaItensPedido = ConverterReaderParaListaDeObjetos(_bancoDeDados.ConsultarReader(query, parametros));
+				return listaItensPedido;
+			}
+			catch (Exception e)
+			{
+				throw new Erro($"Erro ao listar itens dos pedidos filtrando pelo id do pedido: {e.ToString()}");
 			}
 		}
 		public IList<ItemPedido> ConverterReaderParaListaDeObjetos(IEnumerable<IDataRecord> reader)
