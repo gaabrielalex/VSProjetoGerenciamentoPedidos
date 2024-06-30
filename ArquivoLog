@@ -7854,3 +7854,27 @@ Log Entrada : 14:08:21 domingo, 30 de junho de 2024
    em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 83
    em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 72
 ------------------------------------
+
+Log Entrada : 17:16:35 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.NotImplementedException: Método não implementado
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 57
+------------------------------------
+
+Log Entrada : 17:16:35 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.NotImplementedException: Método não implementado
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 57
+------------------------------------
+
+Log Entrada : 17:16:42 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.NotImplementedException: Método não implementado
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 57
+------------------------------------
+
+Log Entrada : 17:16:42 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.NotImplementedException: Método não implementado
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 57
+------------------------------------

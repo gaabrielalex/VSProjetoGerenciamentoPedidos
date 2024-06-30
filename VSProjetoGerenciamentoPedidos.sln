@@ -31,6 +31,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAOGerenciamentoPedidos.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelsGerenciamentoPedidos.Test", "ModelsGerenciamentoPedidos.Test\ModelsGerenciamentoPedidos.Test.csproj", "{80F67CA0-04C7-413C-9146-932203C3FA50}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{E9476558-6E4B-45D3-AE6F-C6C32909C65F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIGerenciamentoPedidos", "APIGerenciamentoPedidos\APIGerenciamentoPedidos.csproj", "{502D2ED0-1586-43A1-9896-42E9B6F0D864}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,10 @@ Global
 		{80F67CA0-04C7-413C-9146-932203C3FA50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80F67CA0-04C7-413C-9146-932203C3FA50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80F67CA0-04C7-413C-9146-932203C3FA50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{502D2ED0-1586-43A1-9896-42E9B6F0D864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{502D2ED0-1586-43A1-9896-42E9B6F0D864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{502D2ED0-1586-43A1-9896-42E9B6F0D864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{502D2ED0-1586-43A1-9896-42E9B6F0D864}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +90,7 @@ Global
 		{83248FCB-724C-498D-8A9D-8D3A61600581} = {B44A21F6-625E-4131-9054-B73C70B1DE98}
 		{BBB80013-D8CE-4F7F-9500-9F0EA0FA7578} = {0E5B5436-8FC1-4AB6-B057-A8C3856B3EBE}
 		{80F67CA0-04C7-413C-9146-932203C3FA50} = {A1BAF085-273C-457D-9DBE-908713AC9432}
+		{502D2ED0-1586-43A1-9896-42E9B6F0D864} = {E9476558-6E4B-45D3-AE6F-C6C32909C65F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8BD40E64-4090-4B78-B46E-5908BB1237D9}

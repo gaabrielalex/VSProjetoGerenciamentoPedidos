@@ -30,8 +30,21 @@ var myApp = myApp || {};
 		} else {
 			spanValidacaoDesconto.style.visibility = 'hidden';
 
-			inputValorTotal.value = myApp.utils.converterParaStringEmFormatoBrUmFLoat(valorSubTotal - desconto);
+			atualizarVlrTotal();
 		}
 	});
-	
+
+	function atualizarVlrTotal() {
+		let valorSubTotal = myApp.utils.converterParaFloatUmaStringEmFormatoBr(inputValorSubTotal.value);
+		let desconto = myApp.utils.converterParaFloatUmaStringEmFormatoBr(inputDesconto.value);
+
+		if (!isNumber(desconto)) {
+			desconto = 0;
+		}
+		inputValorTotal.value = myApp.utils.converterParaStringEmFormatoBrUmFLoat(valorSubTotal - desconto);
+	}
+
+	function isNumber(value) {
+		return typeof value === 'number' && !isNaN(value) && isFinite(value);
+	}
 })();

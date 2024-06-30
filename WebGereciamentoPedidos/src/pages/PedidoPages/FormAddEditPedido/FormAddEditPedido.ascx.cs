@@ -19,6 +19,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 	public partial class FormAddEditPedido : System.Web.UI.UserControl
 	{
 		private readonly PedidoDAO _pedidoDAO = new PedidoDAO(new BancoDeDados());
+		private readonly ItemPedidoDAO _itemPedidoDAO = new ItemPedidoDAO(new BancoDeDados());
 		private readonly MetodoPagamentoDAO _metodoPagamentoDAO = new MetodoPagamentoDAO(new BancoDeDados());
 		public ModosFomularios ModoAtual
 		{
@@ -53,7 +54,18 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+			if (!Page.IsPostBack)
+			{
+				if (Request.QueryString["id"] != null)
+				{
+					var idPedidoParaEdicao = int.Parse(Request.QueryString["id"]);
+					ConfigurarForm(ModosFomularios.Editar, idPedidoParaEdicao);
+				}
+				else 
+				{
+					ConfigurarForm(ModosFomularios.Cadastrar, null);
+				}
+			}
 		}
 
 		private void CarregarTodosOsMetodosPagamento()
@@ -90,11 +102,10 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			}
 		}
 
-		public void AbrirForm(ModosFomularios modo, int? idPedidoParaEdicao)
+		private void ConfigurarForm(ModosFomularios modo, int? idPedidoParaEdicao)
 		{
 			CarregarTodosOsMetodosPagamento();
 			CarregarTodosOsStatusDoPedido();
-			FormAddEditPedidoPanel.Visible = true;
 			ModoAtual = modo;
 			if (modo == ModosFomularios.Cadastrar)
 				ConfigurarFormParaCadastro();
@@ -108,6 +119,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			VlrSubtotalTextFormField.Text = "00,00";
 			DescontoTextFormField.Text = "00,00";
 			VlrTotalTextFormField.Text = "00,00";
+			ListagemItensDoPedido.CarregarItensPedido(new List<ItemPedido>());
 		}
 
 		private void ConfigurarFormParaEdicao(int idPedidoParaEdicao)
@@ -116,6 +128,8 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			{
 				FormAddEditPedidoTituloMedio.Text = "Editar Pedido";
 				PedidoASerEditado = _pedidoDAO.ObterPorId(idPedidoParaEdicao);
+				PedidoASerEditado.ItensPedido = (List<ItemPedido>)_itemPedidoDAO.ListarPorPedido(idPedidoParaEdicao);
+				ListagemItensDoPedido.CarregarItensPedido(PedidoASerEditado.ItensPedido);
 				ClienteTextFormField.Text = PedidoASerEditado.NomeCliente;
 				MetodoPagtoDropDownList.SelectedValue = PedidoASerEditado.MetodoPagamento.IdMetodoPagto.ToString();
 				VlrSubtotalTextFormField.Text = PedidoASerEditado.VlrSubtotal.ToString();
@@ -124,7 +138,6 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 				DataHoraPedidoDataPicker.Date = PedidoASerEditado.DtHrPedido;
 				StatusDropDownList.SelectedValue = PedidoASerEditado.StatusPedido.ToString();
 				ObservacoesTextFormField.Text = PedidoASerEditado.Observacoes;
-
 			}
 			catch (Exception ex)
 			{
@@ -133,12 +146,12 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			}
 		}
 
-		protected void CancelarButton_Click(object sender, EventArgs e)
+		protected void CancelarPedidoButton_Click(object sender, EventArgs e)
 		{
 			Response.Redirect(Request.RawUrl, true);
 		}
 
-		protected void SalvarButton_Click(object sender, EventArgs e)
+		protected void SalvarPedidoButton_Click(object sender, EventArgs e)
 		{
 			if (!Page.IsValid)
 			{

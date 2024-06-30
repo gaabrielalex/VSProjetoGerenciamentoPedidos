@@ -116,16 +116,24 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 			{
 				if (e.CommandName == "Editar")
 				{
-					ListsagemPedidoPanel.Visible = false;
-					FormAddEditPedido.AbrirForm(ModosFomularios.Editar, idPedidoSelecionado);
+					RedirecionarParaEditarPedido(idPedidoSelecionado);
 				}
 			}
 		}
 
 		protected void NovoPedidoButton_Click(object sender, EventArgs e)
 		{
-			ListsagemPedidoPanel.Visible = false;
-			FormAddEditPedido.AbrirForm(ModosFomularios.Cadastrar, null);
+			RedirecionarParaCadastrarPedido();
+		}
+
+		private void RedirecionarParaCadastrarPedido()
+		{
+			Response.Redirect("/src/pages/PedidoPages/PedidoPage/PedidoPage.aspx", false);
+		}
+
+		private void RedirecionarParaEditarPedido(int idPedido)
+		{
+			Response.Redirect($"/src/pages/PedidoPages/PedidoPage/PedidoPage.aspx?id={idPedido}", false);
 		}
 
 		[WebMethod]

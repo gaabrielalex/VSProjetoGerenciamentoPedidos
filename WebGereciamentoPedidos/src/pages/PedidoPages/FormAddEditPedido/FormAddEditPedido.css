@@ -1,6 +1,5 @@
 ﻿
 
-
 .conteudo-FormAddEditPedidoPanel .row {
 	margin-bottom: 5px;
 }
@@ -17,4 +16,14 @@
 
 .conteudo-FormAddEditPedidoPanel {
 	width: 400px;
+}
+
+.MestreDetalhePedidoPanel {
+	display: flex;
+	flex-direction: row;
+	gap: 200px;
+}
+
+.DetalhesItensDoPedidoPanel {
+	width: 100%;
 }

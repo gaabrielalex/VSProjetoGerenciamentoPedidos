@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Pedidos.aspx.cs" Inherits="WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos.Pedidos" %>
 
 <%@ Register TagPrefix="gp" TagName="Filtro" Src="~/src/components/Filtro/Filtro.ascx" %>
-<%@ Register TagPrefix="gp" TagName="FormAddEditPedido" Src="~/src/pages/PedidoPages/FormAddEditPedido/FormAddEditPedido.ascx" %>
 <%@ Register TagPrefix="gp" TagName="Titulo" Src="~/src/components/Titulo/Titulo.ascx" %>
 <%@ Register TagPrefix="gp" TagName="ColunasPadraoTable" Src="~/src/components/ColunasPadraoTable/ColunasPadraoTable.ascx" %>
 
@@ -24,8 +23,6 @@
 			</div>
 		</div>
 	</div>
-
-	<gp:FormAddEditPedido runat="server" ID="FormAddEditPedido" />
 
 	<asp:UpdatePanel runat="server">
 		<ContentTemplate>

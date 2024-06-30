@@ -15,6 +15,15 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 	{
 
 		/// <summary>
+		/// MestreDetalhePedidoPanel control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Panel MestreDetalhePedidoPanel;
+
+		/// <summary>
 		/// FormAddEditPedidoPanel control.
 		/// </summary>
 		/// <remarks>
@@ -105,21 +114,39 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 		protected global::WebGereciamentoPedidos.src.components.TextFormField ObservacoesTextFormField;
 
 		/// <summary>
-		/// CancelarButton control.
+		/// CancelarPedidoButton control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button CancelarButton;
+		protected global::System.Web.UI.WebControls.Button CancelarPedidoButton;
 
 		/// <summary>
-		/// SalvarButton control.
+		/// SalvarPedidoButton control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button SalvarButton;
+		protected global::System.Web.UI.WebControls.Button SalvarPedidoButton;
+
+		/// <summary>
+		/// DetalhesItensDoPedidoPanel control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Panel DetalhesItensDoPedidoPanel;
+
+		/// <summary>
+		/// ListagemItensDoPedido control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido ListagemItensDoPedido;
 	}
 }
