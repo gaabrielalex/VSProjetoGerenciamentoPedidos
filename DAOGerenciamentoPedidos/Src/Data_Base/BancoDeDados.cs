@@ -28,26 +28,24 @@ namespace DAOGerenciamentoPedidos.Src.Data_Base
 			return new SqlConnection("Data Source=GABRIELSILVA\\SQLEXPRESS;Initial Catalog=DB_Gerenciamento_Pedidos;Integrated Security=True;Encrypt=False;TrustServerCertificate=True");
 		}
 
-		public SqlDataReader ConsultarReader(string sql)
+		public IEnumerable<IDataRecord> ConsultarReader(string sql)
 		{
 			return ConsultarReader(sql, null);
 		}
 
-		public SqlDataReader ConsultarReader(string sql, List<ParametroBD> parametros)
+		public IEnumerable<IDataRecord> ConsultarReader(string sql, List<ParametroBD> parametros)
 		{
 			var conexao = CriarConexao();
 			var comando = conexao.CreateCommand();
 			AdicionarParametrosAQuery(comando, parametros);
 			comando.CommandText = sql;
 			conexao.Open();
-			try
+			using (var reader = comando.ExecuteReader(CommandBehavior.CloseConnection))
 			{
-				return comando.ExecuteReader(behavior: CommandBehavior.CloseConnection);
-			}
-			catch (Exception e)
-			{
-				conexao.Close();
-				throw e;
+				while (reader.Read())
+				{
+					yield return reader;
+				}
 			}
 		}
 

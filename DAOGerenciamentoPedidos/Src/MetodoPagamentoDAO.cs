@@ -2,6 +2,7 @@
 using ModelsGerenciamentoPedidos.Src;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -53,19 +54,15 @@ namespace DAOGerenciamentoPedidos.Src
 			throw new NotImplementedException();
 		}
 
-		public IList<MetodoPagamento> ConverterReaderParaListaDeObjetos(SqlDataReader reader)
+		public IList<MetodoPagamento> ConverterReaderParaListaDeObjetos(IEnumerable<IDataRecord> reader)
 		{
 			List<MetodoPagamento> listaMetodoPagto = new List<MetodoPagamento>();
 
-			// Obtendo os índices das colunas uma vez antes do loop
-			int idIndex = reader.GetOrdinal("id_metodo_pagto");
-			int descricaoIndex = reader.GetOrdinal("descricao");
-
-			while (reader.Read())
+			foreach (var record in reader)
 			{
 				MetodoPagamento metodoPagamento = new MetodoPagamento(
-					idMetodoPagto: reader.GetInt32(idIndex),
-					descricao: reader.GetString(descricaoIndex)
+					idMetodoPagto: record.GetInt32(record.GetOrdinal("id_metodo_pagto")),
+					descricao: record.GetString(record.GetOrdinal("descricao"))
 				);
 				listaMetodoPagto.Add(metodoPagamento);
 			}

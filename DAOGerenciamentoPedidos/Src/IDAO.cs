@@ -1,5 +1,6 @@
 ﻿using DAOGerenciamentoPedidos.Src.Data_Base;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace DAOGerenciamentoPedidos.Src
@@ -16,6 +17,6 @@ namespace DAOGerenciamentoPedidos.Src
 
 		T ObterPorId(int id);
 
-		IList<T> ConverterReaderParaListaDeObjetos(SqlDataReader reader);
+		IList<T> ConverterReaderParaListaDeObjetos(IEnumerable<IDataRecord> reader);
 	}
 }

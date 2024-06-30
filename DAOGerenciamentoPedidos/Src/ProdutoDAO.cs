@@ -8,6 +8,8 @@ using ModelsGerenciamentoPedidos.Src;
 using DAOGerenciamentoPedidos.Src.Data_Base;
 using UtilsGerenciamentoPedidos;
 using System.Runtime.Remoting.Messaging;
+using System.Collections;
+using System.Data;
 
 namespace DAOGerenciamentoPedidos.Src
 {
@@ -146,7 +148,7 @@ namespace DAOGerenciamentoPedidos.Src
 			try
 			{
 				var reader = _bancoDeDados.ConsultarReader(query, parametros);
-				if(reader.HasRows)
+				if(reader.Count() > 0)
 				{
 					return true;
 				}
@@ -158,21 +160,16 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 		}
 
-		public IList<Produto> ConverterReaderParaListaDeObjetos(SqlDataReader reader)
+		public IList<Produto> ConverterReaderParaListaDeObjetos(IEnumerable<IDataRecord> reader)
 		{
 			var listaProdutos = new List<Produto>();
 
-			// Obtendo os índices das colunas uma vez antes do loop
-			int idIndex = reader.GetOrdinal("id_produto");
-			int descricaoIndex = reader.GetOrdinal("descricao");
-			int vlrUnitarioIndex = reader.GetOrdinal("vlr_unitario");
-
-			while (reader.Read())
+			foreach (var record in reader)
 			{
-				Produto produto = new Produto(
-					idProduto: reader.GetInt32(idIndex),
-					descricao: reader.GetString(descricaoIndex),
-					vlrUnitario: reader.GetDecimal(vlrUnitarioIndex)
+				var produto = new Produto(
+					idProduto: record.GetInt32(record.GetOrdinal("id_produto")),
+					descricao: record.GetString(record.GetOrdinal("descricao")),
+					vlrUnitario: record.GetDecimal(record.GetOrdinal("vlr_unitario"))
 				);
 				listaProdutos.Add(produto);
 			}

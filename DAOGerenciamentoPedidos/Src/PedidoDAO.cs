@@ -4,6 +4,7 @@ using ModelsGerenciamentoPedidos.Src;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
@@ -178,36 +179,27 @@ namespace DAOGerenciamentoPedidos
 			}
 		}
 
-		public IList<Pedido> ConverterReaderParaListaDeObjetos(SqlDataReader reader)
+		public IList<Pedido> ConverterReaderParaListaDeObjetos(IEnumerable<IDataRecord> reader)
 		{
 			var listaPedidos = new List<Pedido>();
-
-			// Obtendo os índices das colunas uma vez antes do loop
-			int idIndex = reader.GetOrdinal("id_pedido");
-			int nomeClienteIndex = reader.GetOrdinal("nome_cliente");
-			int vlrSubtotalIndex = reader.GetOrdinal("vlr_subtotal");
-			int descontoIndex = reader.GetOrdinal("desconto");
-			int dtHrPedidoIndex = reader.GetOrdinal("dt_hr_pedido");
-			int statusPedidoIndex = reader.GetOrdinal("status_pedido");
-			int observacoesIndex = reader.GetOrdinal("observacoes");
-			int idMetodoPagtoIndex = reader.GetOrdinal("id_metodo_pagto");
-			int descricaoMetodoPagtoIndex = reader.GetOrdinal("descricao_metodo_pagto");
-
-			while (reader.Read())
+			foreach (var record in reader)
 			{
-				Pedido pedido = new Pedido(
-					idPedido: reader.GetInt32(idIndex),
-					nomeCliente: reader.GetString(nomeClienteIndex),
-					vlrSubtotal: reader.GetDecimal(vlrSubtotalIndex),
-					desconto: reader.GetDecimal(descontoIndex),
-					dtHrPedido: reader.GetDateTime(dtHrPedidoIndex),
-					statusPedido: (EnumStatusPedido)reader.GetString(statusPedidoIndex)[0],
-					observacoes: reader.IsDBNull(observacoesIndex) ? "" : reader.GetString(observacoesIndex),
-					metodoPagamento: new MetodoPagamento(reader.GetInt32(idMetodoPagtoIndex), reader.GetString(descricaoMetodoPagtoIndex))
+				 var pedido =  new Pedido(
+					idPedido: record.GetInt32(record.GetOrdinal("id_pedido")),
+					nomeCliente: record.GetString(record.GetOrdinal("nome_cliente")),
+					vlrSubtotal: record.GetDecimal(record.GetOrdinal("vlr_subtotal")),
+					desconto: record.GetDecimal(record.GetOrdinal("desconto")),
+					dtHrPedido: record.GetDateTime(record.GetOrdinal("dt_hr_pedido")),
+					statusPedido: (EnumStatusPedido)record.GetString(record.GetOrdinal("status_pedido"))[0],
+					observacoes: record.IsDBNull(record.GetOrdinal("observacoes")) ? "" : record.GetString(record.GetOrdinal("observacoes")),
+					metodoPagamento: new MetodoPagamento(
+						record.GetInt32(record.GetOrdinal("id_metodo_pagto")),
+						record.GetString(record.GetOrdinal("descricao_metodo_pagto"))
+					)
 				);
+
 				listaPedidos.Add(pedido);
 			}
-
 			return listaPedidos;
 		}
 	}
