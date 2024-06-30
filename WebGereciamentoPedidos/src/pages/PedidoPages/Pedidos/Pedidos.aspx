@@ -57,12 +57,12 @@
 									<div style="display: flex; justify-content: space-evenly">
 										<asp:LinkButton ID="ObservacoesLK" runat="server"
 											Text="Observações" CausesValidation="False"
-											OnClientClick='<%# "return myApp.abrilModalObservacoesPedido(\"" + Eval("Observacoes").ToString().Replace("\"", "\\\"") + "\"); return false;" %>'
-											CssClass='<%# String.IsNullOrEmpty(Eval("Observacoes").ToString()) ? "hidden-link" : "" %>'
+											OnClientClick='<%# "return myApp.abrilModalObservacoesPedido(\"" + ((ModelsGerenciamentoPedidos.Src.Pedido)Container.DataItem).Observacoes.ToString().Replace("\"", "\\\"") + "\"); return false;" %>'
+											CssClass='<%# String.IsNullOrEmpty(((ModelsGerenciamentoPedidos.Src.Pedido)Container.DataItem).Observacoes.ToString()) ? "hidden-link" : "" %>'
 											>
 										</asp:LinkButton>
-										<gp:ColunasPadraoTable runat="server" ID="PedidoColunasPadraoTable" IdRegistro='<%# Eval("IdPedido") %>'
-											MensagemConfirmacaoExclusao='<%# "Tem certeza que deseja excluir o pedido do(a) cliente \"" + Eval("NomeCliente") + "\"?" %>'
+										<gp:ColunasPadraoTable runat="server" ID="PedidoColunasPadraoTable" IdRegistro='<%# ((ModelsGerenciamentoPedidos.Src.Pedido)Container.DataItem).IdPedido %>'
+											MensagemConfirmacaoExclusao='<%# "Tem certeza que deseja excluir o pedido do(a) cliente \"" + ((ModelsGerenciamentoPedidos.Src.Pedido)Container.DataItem).NomeCliente + "\"?" %>'
 											UrlMetodoExclusao="Pedidos.aspx/ExcluirPedido" />
 									</div>
 								</ItemTemplate>

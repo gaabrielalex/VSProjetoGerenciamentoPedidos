@@ -1,5 +1,6 @@
 ﻿using DAOGerenciamentoPedidos;
 using DAOGerenciamentoPedidos.Src;
+using DAOGerenciamentoPedidos.Src.Data_Base;
 using ModelsGerenciamentoPedidos.Src;
 using System;
 using System.Collections.Generic;
@@ -17,8 +18,8 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 {
 	public partial class FormAddEditPedido : System.Web.UI.UserControl
 	{
-		public PedidoDAO PedidoDAO;
-		public MetodoPagamentoDAO MetodoPagamentoDAO;
+		private readonly PedidoDAO _pedidoDAO = new PedidoDAO(new BancoDeDados());
+		private readonly MetodoPagamentoDAO _metodoPagamentoDAO = new MetodoPagamentoDAO(new BancoDeDados());
 		public ModosFomularios ModoAtual
 		{
 			get
@@ -52,22 +53,14 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			PedidoDAO = new PedidoDAO();
-			MetodoPagamentoDAO = new MetodoPagamentoDAO();
 
-			if (!IsPostBack)
-			{
-				CarregarTodosOsMetodosPagamento();
-				CarregarTodosOsStatusDoPedido();
-			}
-			
 		}
 
 		private void CarregarTodosOsMetodosPagamento()
 		{
 			try
 			{
-				List<MetodoPagamento> listaMetodoPagamento = MetodoPagamentoDAO.ListarTodos();
+				var listaMetodoPagamento = _metodoPagamentoDAO.ListarTodos();
 				MetodoPagtoDropDownList.DataSource = listaMetodoPagamento;
 				MetodoPagtoDropDownList.DataTextField = "Descricao";
 				MetodoPagtoDropDownList.DataValueField = "IdMetodoPagto";
@@ -99,13 +92,14 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 
 		public void AbrirForm(ModosFomularios modo, int? idPedidoParaEdicao)
 		{
+			CarregarTodosOsMetodosPagamento();
+			CarregarTodosOsStatusDoPedido();
 			FormAddEditPedidoPanel.Visible = true;
 			ModoAtual = modo;
 			if (modo == ModosFomularios.Cadastrar)
 				ConfigurarFormParaCadastro();
 			else if (idPedidoParaEdicao.HasValue && modo == ModosFomularios.Editar)
 				ConfigurarFormParaEdicao(idPedidoParaEdicao.Value);
-
 		}
 
 		private void ConfigurarFormParaCadastro()
@@ -121,7 +115,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			try
 			{
 				FormAddEditPedidoTituloMedio.Text = "Editar Pedido";
-				PedidoASerEditado = PedidoDAO.ObterPorId(idPedidoParaEdicao);
+				PedidoASerEditado = _pedidoDAO.ObterPorId(idPedidoParaEdicao);
 				ClienteTextFormField.Text = PedidoASerEditado.NomeCliente;
 				MetodoPagtoDropDownList.SelectedValue = PedidoASerEditado.MetodoPagamento.IdMetodoPagto.ToString();
 				VlrSubtotalTextFormField.Text = PedidoASerEditado.VlrSubtotal.ToString();
@@ -223,7 +217,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 		{
 			try
 			{
-				PedidoDAO.Inserir(Pedido);
+				_pedidoDAO.Inserir(Pedido);
 				//Antes de recarrregar a página, guarda a mensagem de sucesso numa session
 				//para que a página principal possa exibi-la depois que for carregada
 				Session["MensagemInfo"] = new MensagemInfo { Mensagem = "Pedido cadastrado com sucesso", Tipo = TiposMensagem.Sucesso };
@@ -240,7 +234,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 		{
 			try
 			{
-				PedidoDAO.Editar(Pedido, PedidoASerEditado.IdPedido.Value);
+				_pedidoDAO.Editar(Pedido, PedidoASerEditado.IdPedido.Value);
 				//Antes de recarrregar a página, guarda a mensagem de sucesso numa session
 				//para que a página principal possa exibi-la depois que for carregada
 				Session["MensagemInfo"] = new MensagemInfo { Mensagem = "Pedido editado com sucesso", Tipo = TiposMensagem.Sucesso };

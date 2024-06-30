@@ -1,10 +1,7 @@
-﻿using ModelsGerenciamentoPedidos.Src;
-using System;
+﻿using DAOGerenciamentoPedidos.Src.Data_Base;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAOGerenciamentoPedidos.Src
 {
@@ -16,10 +13,10 @@ namespace DAOGerenciamentoPedidos.Src
 
 		void Excluir(int id);
 
-		List<T> ListarTodos();
+		IList<T> ListarTodos();
 
 		T ObterPorId(int id);
 
-		List<T> ConverterReaderParaListaDeObjetos(SqlDataReader reader);
+		IList<T> ConverterReaderParaListaDeObjetos(IEnumerable<IDataRecord> reader);
 	}
 }

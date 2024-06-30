@@ -4,6 +4,7 @@ using ModelsGerenciamentoPedidos.Src;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
@@ -18,32 +19,30 @@ namespace DAOGerenciamentoPedidos
 {
 	public class PedidoDAO : IDAO<Pedido>
 	{
-		public PedidoDAO() { }
+		private readonly BancoDeDados _bancoDeDados;
+		
+		public PedidoDAO(BancoDeDados bancoDeDados)
+		{
+			_bancoDeDados = bancoDeDados;
+		}
 
 		public int Inserir(Pedido pedido)
 		{
-			// Query da inserção
-			String query = @"INSERT INTO pedido (nome_cliente, desconto, dt_hr_pedido, status_pedido, observacoes, id_metodo_pagto) 
+			var query = @"INSERT INTO pedido (nome_cliente, desconto, dt_hr_pedido, status_pedido, observacoes, id_metodo_pagto) 
 							VALUES (@nome_cliente, @desconto, @dt_hr_pedido, @status_pedido, @observacoes, @id_metodo_pagto) 
 							SELECT SCOPE_IDENTITY();";
+			var parametros = new ParametroBDFactory()
+								.Adicionar("@nome_cliente", pedido.NomeCliente)
+								.Adicionar("@desconto", pedido.Desconto)
+								.Adicionar("@dt_hr_pedido", pedido.DtHrPedido)
+								.Adicionar("@status_pedido", (char)pedido.StatusPedido)
+								.Adicionar("@observacoes", pedido.Observacoes)
+								.Adicionar("@id_metodo_pagto", pedido.MetodoPagamento.IdMetodoPagto)
+								.ObterParametros();
 			try
 			{
-				//Obtendo conexão co banco
-				using (SqlConnection connection = DB_Connection.getConnection())
-				{
-					connection.Open();
-					SqlCommand command = new SqlCommand(query, connection);
-					command.Parameters.AddWithValue("@nome_cliente", pedido.NomeCliente);
-					command.Parameters.AddWithValue("@desconto", pedido.Desconto);
-					command.Parameters.AddWithValue("@dt_hr_pedido", pedido.DtHrPedido);
-					command.Parameters.AddWithValue("@status_pedido", (char)pedido.StatusPedido);
-					command.Parameters.AddWithValue("@observacoes", pedido.Observacoes);
-					command.Parameters.AddWithValue("@id_metodo_pagto", pedido.MetodoPagamento.IdMetodoPagto);
-					int idPedido = Convert.ToInt32(command.ExecuteScalar());
-					connection.Close();
-					return idPedido;
-
-				}
+				int idPedido = Convert.ToInt32(_bancoDeDados.ExecutarComRetorno(query, parametros));
+				return idPedido;
 			}
 			catch (Exception e)
 			{
@@ -53,32 +52,24 @@ namespace DAOGerenciamentoPedidos
 
 		public void Editar(Pedido pedido, int idPedido)
 		{
-			String query = @"UPDATE pedido SET nome_cliente = @nome_cliente, desconto = @desconto, dt_hr_pedido = @dt_hr_pedido, 
+			var query = @"UPDATE pedido SET nome_cliente = @nome_cliente, desconto = @desconto, dt_hr_pedido = @dt_hr_pedido, 
 										status_pedido = @status_pedido, observacoes = @observacoes, id_metodo_pagto = @id_metodo_pagto WHERE id_pedido = @id_pedido";
-
+			var parametros = new ParametroBDFactory()
+					.Adicionar("@nome_cliente", pedido.NomeCliente)
+					.Adicionar("@desconto", pedido.Desconto)
+					.Adicionar("@dt_hr_pedido", pedido.DtHrPedido)
+					.Adicionar("@status_pedido", (char)pedido.StatusPedido)
+					.Adicionar("@observacoes", pedido.Observacoes)
+					.Adicionar("@id_metodo_pagto", pedido.MetodoPagamento.IdMetodoPagto)
+					.Adicionar("@id_pedido", idPedido)
+					.ObterParametros();
 			try
 			{
-				using (SqlConnection connection = DB_Connection.getConnection())
+				var linhasAfetadas = _bancoDeDados.Executar(query, parametros);
+				if (linhasAfetadas <= 0)
 				{
-					connection.Open();
-					SqlCommand command = new SqlCommand(query, connection);
-					command.Parameters.AddWithValue("@nome_cliente", pedido.NomeCliente);
-					command.Parameters.AddWithValue("@desconto", pedido.Desconto);
-					command.Parameters.AddWithValue("@dt_hr_pedido", pedido.DtHrPedido);
-					command.Parameters.AddWithValue("@status_pedido", (char)pedido.StatusPedido);
-					command.Parameters.AddWithValue("@observacoes", pedido.Observacoes);
-					command.Parameters.AddWithValue("@id_metodo_pagto", pedido.MetodoPagamento.IdMetodoPagto);
-					command.Parameters.AddWithValue("@id_pedido", idPedido);
-					var linhasAfetadas = command.ExecuteNonQuery();
-					connection.Close();
-					if (linhasAfetadas < 0)
-					{
-						RegistroLog.Log("Erro ao editar pedido: Nenhuma linha foi afetada - Id: " + idPedido);
-						throw new Exception("Erro ao editar pedido: Nenhuma linha foi afetada");
-					}
-
+					throw new Erro("Erro ao editar pedido: Nenhuma linha foi afetada");
 				}
-
 			}
 			catch (Exception e)
 			{
@@ -88,20 +79,16 @@ namespace DAOGerenciamentoPedidos
 
 		public void Excluir(int id)
 		{
-			String query = "DELETE FROM pedido WHERE id_pedido = @id_pedido";
+			var query = "DELETE FROM pedido WHERE id_pedido = @id_pedido";
+			var parametros = new ParametroBDFactory()
+					.Adicionar("@id_pedido", id)
+					.ObterParametros();
 			try
 			{
-				using (SqlConnection connection = DB_Connection.getConnection())
+				var linhasAfetadas = _bancoDeDados.Executar(query, parametros);
+				if (linhasAfetadas <= 0)
 				{
-					connection.Open();
-					SqlCommand command = new SqlCommand(query, connection);
-					command.Parameters.AddWithValue("@id_pedido", id);
-					var linhasAfetadas = command.ExecuteNonQuery();
-					connection.Close();
-					if (linhasAfetadas < 0)
-					{
-						throw new Erro($"Erro ao excluir pedido: Nenhuma linha foi afetada - Id: " + id);
-					}
+					throw new Erro($"Erro ao excluir pedido: Nenhuma linha foi afetada - Id: " + id);
 				}
 			}
 			catch (Exception e)
@@ -110,9 +97,9 @@ namespace DAOGerenciamentoPedidos
 			}
 		}
 
-		public List<Pedido> ListarTodos()
+		public IList<Pedido> ListarTodos()
 		{
-			String query = @"SELECT p.*, 
+			var query = @"SELECT p.*, 
 								mp.descricao AS descricao_metodo_pagto,
 								COALESCE(SUM(ip.vlr_total_item), 0) AS vlr_subtotal
 							FROM pedido p
@@ -123,18 +110,10 @@ namespace DAOGerenciamentoPedidos
 								p.id_metodo_pagto, mp.descricao
 							ORDER BY p.dt_hr_pedido DESC;";
 
-			List<Pedido> listaPedido = new List<Pedido>();
 			try
 			{
-				using (SqlConnection connection = DB_Connection.getConnection())
-				{
-					connection.Open();
-					SqlCommand command = new SqlCommand(query, connection);
-					SqlDataReader reader = command.ExecuteReader();
-					listaPedido = ConverterReaderParaListaDeObjetos(reader);
-					connection.Close();
-					return listaPedido;
-				}
+				var listaPedido = ConverterReaderParaListaDeObjetos(_bancoDeDados.ConsultarReader(query));
+				return listaPedido;
 			}
 			catch (Exception e)
 			{
@@ -144,7 +123,7 @@ namespace DAOGerenciamentoPedidos
 
 		public Pedido ObterPorId(int id)
 		{
-			String query =  @"SELECT p.*, 
+			var query =  @"SELECT p.*, 
 								mp.descricao AS descricao_metodo_pagto,
 								COALESCE(SUM(ip.vlr_total_item), 0) AS vlr_subtotal
 							FROM pedido p
@@ -154,24 +133,18 @@ namespace DAOGerenciamentoPedidos
 							GROUP BY p.id_pedido, p.dt_hr_pedido, p.nome_cliente, 
 								p.desconto, p.status_pedido, p.observacoes, 
 								p.id_metodo_pagto, mp.descricao;";
-							
-			List<Pedido> listaPedidos = new List<Pedido>();
+			var parametros = new ParametroBDFactory()
+					.Adicionar("@id_pedido", id)
+					.ObterParametros();
 			try
 			{
-				using (SqlConnection connection = DB_Connection.getConnection())
+				var listaPedidos = ConverterReaderParaListaDeObjetos(_bancoDeDados.ConsultarReader(query, parametros));
+
+				if (listaPedidos.Count == 0)
 				{
-					connection.Open();
-					SqlCommand command = new SqlCommand(query, connection);
-					command.Parameters.AddWithValue("@id_pedido", id);
-					SqlDataReader reader = command.ExecuteReader();
-					listaPedidos = ConverterReaderParaListaDeObjetos(reader);
-					connection.Close();
-					if (listaPedidos.Count == 0)
-					{
-						return null;
-					}
-					return listaPedidos[0];
+					return null;
 				}
+				return listaPedidos[0];
 			}
 			catch (Exception e)
 			{
@@ -179,9 +152,9 @@ namespace DAOGerenciamentoPedidos
 			}
 		}
 
-		public List<Pedido> ListarPorCliente(string nomeCliente)
+		public IList<Pedido> ListarPorCliente(string nomeCliente)
 		{
-			String query = @"SELECT p.*, 
+			var query = @"SELECT p.*, 
 								mp.descricao AS descricao_metodo_pagto,
 								COALESCE(SUM(ip.vlr_total_item), 0) AS vlr_subtotal
 							FROM pedido p
@@ -192,20 +165,13 @@ namespace DAOGerenciamentoPedidos
 								p.desconto, p.status_pedido, p.observacoes, 
 								p.id_metodo_pagto, mp.descricao
 							ORDER BY p.dt_hr_pedido DESC;";
-
-			List<Pedido> listaPedidos = new List<Pedido>();
+			var parametros = new ParametroBDFactory()
+					.Adicionar("@nome_cliente", "%" + nomeCliente + "%")
+					.ObterParametros();
 			try
 			{
-				using (SqlConnection connection = DB_Connection.getConnection())
-				{
-					connection.Open();
-					SqlCommand command = new SqlCommand(query, connection);
-					command.Parameters.AddWithValue("@nome_cliente", "%" + nomeCliente + "%");
-					SqlDataReader reader = command.ExecuteReader();
-					listaPedidos = ConverterReaderParaListaDeObjetos(reader);
-					connection.Close();
-					return listaPedidos;
-				}
+				var listaPedidos = ConverterReaderParaListaDeObjetos(_bancoDeDados.ConsultarReader(query, parametros));
+				return listaPedidos;
 			}
 			catch (Exception e)
 			{
@@ -213,36 +179,27 @@ namespace DAOGerenciamentoPedidos
 			}
 		}
 
-		public List<Pedido> ConverterReaderParaListaDeObjetos(SqlDataReader reader)
+		public IList<Pedido> ConverterReaderParaListaDeObjetos(IEnumerable<IDataRecord> reader)
 		{
-			List<Pedido> listaPedidos = new List<Pedido>();
-
-			// Obtendo os índices das colunas uma vez antes do loop
-			int idIndex = reader.GetOrdinal("id_pedido");
-			int nomeClienteIndex = reader.GetOrdinal("nome_cliente");
-			int vlrSubtotalIndex = reader.GetOrdinal("vlr_subtotal");
-			int descontoIndex = reader.GetOrdinal("desconto");
-			int dtHrPedidoIndex = reader.GetOrdinal("dt_hr_pedido");
-			int statusPedidoIndex = reader.GetOrdinal("status_pedido");
-			int observacoesIndex = reader.GetOrdinal("observacoes");
-			int idMetodoPagtoIndex = reader.GetOrdinal("id_metodo_pagto");
-			int descricaoMetodoPagtoIndex = reader.GetOrdinal("descricao_metodo_pagto");
-
-			while (reader.Read())
+			var listaPedidos = new List<Pedido>();
+			foreach (var record in reader)
 			{
-				Pedido pedido = new Pedido(
-					idPedido: reader.GetInt32(idIndex),
-					nomeCliente: reader.GetString(nomeClienteIndex),
-					vlrSubtotal: reader.GetDecimal(vlrSubtotalIndex),
-					desconto: reader.GetDecimal(descontoIndex),
-					dtHrPedido: reader.GetDateTime(dtHrPedidoIndex),
-					statusPedido: (EnumStatusPedido)reader.GetString(statusPedidoIndex)[0],
-					observacoes: reader.IsDBNull(observacoesIndex) ? "" : reader.GetString(observacoesIndex),
-					metodoPagemento: new MetodoPagamento(reader.GetInt32(idMetodoPagtoIndex), reader.GetString(descricaoMetodoPagtoIndex))
+				 var pedido =  new Pedido(
+					idPedido: record.GetInt32(record.GetOrdinal("id_pedido")),
+					nomeCliente: record.GetString(record.GetOrdinal("nome_cliente")),
+					vlrSubtotal: record.GetDecimal(record.GetOrdinal("vlr_subtotal")),
+					desconto: record.GetDecimal(record.GetOrdinal("desconto")),
+					dtHrPedido: record.GetDateTime(record.GetOrdinal("dt_hr_pedido")),
+					statusPedido: (EnumStatusPedido)record.GetString(record.GetOrdinal("status_pedido"))[0],
+					observacoes: record.IsDBNull(record.GetOrdinal("observacoes")) ? "" : record.GetString(record.GetOrdinal("observacoes")),
+					metodoPagamento: new MetodoPagamento(
+						record.GetInt32(record.GetOrdinal("id_metodo_pagto")),
+						record.GetString(record.GetOrdinal("descricao_metodo_pagto"))
+					)
 				);
+
 				listaPedidos.Add(pedido);
 			}
-
 			return listaPedidos;
 		}
 	}

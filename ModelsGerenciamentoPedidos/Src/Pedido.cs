@@ -11,57 +11,11 @@ namespace ModelsGerenciamentoPedidos.Src
 	[Serializable]
 	public class Pedido
 	{
-		
-
-		private const int MaxLengthNomeCliente = 100;
-		private const decimal MinVlrTotal = 0;
-		private const int MaxDigitosParteInteiraVlrTotal = 7;
-		private const decimal MinDesconto = 0;
-		private const int MaxDigitosParteInteiraDesconto = 6;
-		private const int MaxLengthObservacoes = 200;
-		private string _nomeCliente;
-		private decimal _vlrSubtotal;
-		private decimal _desconto;
-		private string _observacoes;
-
 		public int? IdPedido{  get; set; }
-		public string NomeCliente 
-		{
-			get { return _nomeCliente; }
-			set 
-			{ 
-				if(value.Length > MaxLengthNomeCliente)
-				{
-					throw new ArgumentOutOfRangeException(nameof(value), $"O valor deve uma tamnho máximo de {MaxLengthNomeCliente} caracteres.");
-				}
-				_nomeCliente = value;
-			}
-		}
-		public decimal VlrSubtotal 
-		{
-			get { return _vlrSubtotal; }
-			set 
-			{
-				if(value < MinVlrTotal || MaxDigitosParteInteiraVlrTotal < ModelUtils.ObterQuantidadeDeDigitosAntesDoSeparadorDecimal(value))
-				{
-					throw new ArgumentOutOfRangeException(nameof(value), $"O valor deve ser maior ou igual a {MinVlrTotal} e ter no máximo {MaxDigitosParteInteiraVlrTotal} dígitos na sua parte inteira.");
-				}
-				_vlrSubtotal = value;
-			}	
-		}
-		public decimal Desconto
-		{
-			get { return _desconto; }
-			set
-			{
-				if (value < MinDesconto || MaxDigitosParteInteiraDesconto < ModelUtils.ObterQuantidadeDeDigitosAntesDoSeparadorDecimal(value))
-				{
-					throw new ArgumentOutOfRangeException(nameof(value), $"ser maior ou igual a  {MinDesconto}  e ter no máximo  {MaxDigitosParteInteiraVlrTotal}  dígitos na sua parte inteira.");
-				}
-				_desconto = value;
-			}
-		}
-
+		public List<ItemPedido> ItensPedido{ get; set; }
+		public string NomeCliente{ get; set; }
+		public decimal VlrSubtotal{ get; set; }
+		public decimal Desconto{ get; set; }
 		public decimal VlrTotal => VlrSubtotal - Desconto;
 		public DateTime DtHrPedido { get; set; }
 		public EnumStatusPedido StatusPedido { get; set; }
@@ -72,23 +26,18 @@ namespace ModelsGerenciamentoPedidos.Src
 				return ModelsGerenciamentoPedidos.Src.StatusPedido.ObterDescricaoStatusPedido(StatusPedido);
 			}
 		}
-		public string Observacoes
-		{
-			get { return _observacoes; }
-			set
-			{
-				if (value.Length > MaxLengthObservacoes)
-				{
-					throw new ArgumentOutOfRangeException(nameof(value), $"O valor deve uma tamnho máximo de {MaxLengthObservacoes} caracteres.");
-				}
-				_observacoes = value;
-			}
-		}
+		public string Observacoes{ get; set; }
 		public MetodoPagamento MetodoPagamento { get; set; }
-
 		public Pedido(){ }
 
-		public Pedido(int? idPedido, string nomeCliente, decimal vlrSubtotal, decimal desconto, DateTime dtHrPedido, EnumStatusPedido statusPedido, string observacoes, MetodoPagamento metodoPagemento)
+		//Itens do pedido não são obrigatórios, podendo ser inseridos posteriormente, para que, em casos
+		//da necessidade apenas das outras informações, seja possível instanciar um pedido sem os itens
+		//evitando o uso desnecessário de memória e processamento
+		public Pedido(
+			int? idPedido, string nomeCliente, 
+			decimal vlrSubtotal, decimal desconto, DateTime dtHrPedido, EnumStatusPedido statusPedido, 
+			string observacoes, MetodoPagamento metodoPagamento, List<ItemPedido> itensPedido = null
+		)
 		{
 			IdPedido = idPedido;
 			NomeCliente = nomeCliente;
@@ -97,31 +46,38 @@ namespace ModelsGerenciamentoPedidos.Src
 			DtHrPedido = dtHrPedido;
 			StatusPedido = statusPedido;
 			Observacoes = observacoes;
-			MetodoPagamento = metodoPagemento;
+			MetodoPagamento = metodoPagamento;
+			ItensPedido = itensPedido;
 		}
 
 		public override bool Equals(object obj)
 		{
 			return obj is Pedido pedido &&
 				   IdPedido == pedido.IdPedido &&
+				   EqualityComparer<List<ItemPedido>>.Default.Equals(ItensPedido, pedido.ItensPedido) &&
 				   NomeCliente == pedido.NomeCliente &&
 				   VlrSubtotal == pedido.VlrSubtotal &&
 				   Desconto == pedido.Desconto &&
+				   VlrTotal == pedido.VlrTotal &&
 				   DtHrPedido == pedido.DtHrPedido &&
 				   StatusPedido == pedido.StatusPedido &&
+				   DescricaoStatusPedido == pedido.DescricaoStatusPedido &&
 				   Observacoes == pedido.Observacoes &&
 				   EqualityComparer<MetodoPagamento>.Default.Equals(MetodoPagamento, pedido.MetodoPagamento);
 		}
 
 		public override int GetHashCode()
 		{
-			int hashCode = -1499515728;
+			int hashCode = -7071731;
 			hashCode = hashCode * -1521134295 + IdPedido.GetHashCode();
+			hashCode = hashCode * -1521134295 + EqualityComparer<List<ItemPedido>>.Default.GetHashCode(ItensPedido);
 			hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(NomeCliente);
 			hashCode = hashCode * -1521134295 + VlrSubtotal.GetHashCode();
 			hashCode = hashCode * -1521134295 + Desconto.GetHashCode();
+			hashCode = hashCode * -1521134295 + VlrTotal.GetHashCode();
 			hashCode = hashCode * -1521134295 + DtHrPedido.GetHashCode();
 			hashCode = hashCode * -1521134295 + StatusPedido.GetHashCode();
+			hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(DescricaoStatusPedido);
 			hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Observacoes);
 			hashCode = hashCode * -1521134295 + EqualityComparer<MetodoPagamento>.Default.GetHashCode(MetodoPagamento);
 			return hashCode;

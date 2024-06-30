@@ -1,4 +1,5 @@
 ﻿using DAOGerenciamentoPedidos.Src;
+using DAOGerenciamentoPedidos.Src.Data_Base;
 using Microsoft.Ajax.Utilities;
 using ModelsGerenciamentoPedidos.Src;
 using System;
@@ -30,13 +31,13 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		public readonly string VALOR_PADRAO_TEXTO_BOTAO_CANCELAR = "Cancelar";
 		public readonly bool VALOR_PADRAO_VISIBILIDADE_BOTAO_CANCELAR = false;
 		public ProdutoDAO ProdutoDAO;
-		public List<Produto> DadosProdutosAtual
+		public IList<Produto> DadosProdutosAtual
 		{
 			get
 			{
 				if (ViewState["DadosProdutosAtual"] != null)
 				{
-					return (List<Produto>)ViewState["DadosProdutosAtual"];
+					return (IList<Produto>)ViewState["DadosProdutosAtual"];
 				}
 				return new List<Produto>();
 			}
@@ -64,7 +65,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			//Inicializando atributos
-			ProdutoDAO = new ProdutoDAO();
+			ProdutoDAO = new ProdutoDAO(new BancoDeDados());
 
 			if (!IsPostBack)
 			{
@@ -381,7 +382,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages
 		[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 		public static string ExcluirProduto(int id)
 		{
-			new ProdutoDAO().Excluir(id);
+			new ProdutoDAO(new BancoDeDados()).Excluir(id);
 
 			var response = new
 			{

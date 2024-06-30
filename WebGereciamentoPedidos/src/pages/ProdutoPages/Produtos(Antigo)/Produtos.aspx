@@ -4,7 +4,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <style>
-
         .container-table {
 			width: 100%;
             height: 55vh;

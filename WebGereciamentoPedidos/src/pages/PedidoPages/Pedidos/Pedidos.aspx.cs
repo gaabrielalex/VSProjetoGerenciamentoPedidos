@@ -14,19 +14,20 @@ using UtilsGerenciamentoPedidos;
 using WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto;
 using WebGereciamentoPedidos.src.util;
 using DAOGerenciamentoPedidos;
+using DAOGerenciamentoPedidos.Src.Data_Base;
 
 namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 {
 	public partial class Pedidos : System.Web.UI.Page
 	{
-		public PedidoDAO PedidoDAO;
-		public List<Pedido> DadosPedidosAtual
+		private readonly PedidoDAO _pedidoDAO = new PedidoDAO(new BancoDeDados());
+		public IList<Pedido> DadosPedidosAtual
 		{
 			get
 			{
 				if (ViewState["DadosPedidoAtual"] != null)
 				{
-					return (List<Pedido>)ViewState["DadosPedidoAtual"];
+					return (IList<Pedido>)ViewState["DadosPedidoAtual"];
 				}
 				return new List<Pedido>();
 			}
@@ -37,8 +38,6 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 		}
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			//Inicializando atributos
-			PedidoDAO = new PedidoDAO();
 
 			if (!IsPostBack)
 			{
@@ -60,16 +59,15 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 		{
 			try
 			{
-
 				if (Request.QueryString["Filtro"] != null)
 				{
 					string filtro = Request.QueryString["Filtro"];
 
-					DadosPedidosAtual = PedidoDAO.ListarPorCliente(filtro);
+					DadosPedidosAtual = _pedidoDAO.ListarPorCliente(filtro);
 				}
 				else
 				{
-					DadosPedidosAtual = PedidoDAO.ListarTodos();
+					DadosPedidosAtual = _pedidoDAO.ListarTodos();
 				}
 
 				BindData();
@@ -116,23 +114,12 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 			}
 			else
 			{
-				Pedido pedidoSelecionado = new Pedido();
-				foreach (Pedido pedido in DadosPedidosAtual)
-				{
-					if (pedido.IdPedido == idPedidoSelecionado)
-					{
-						pedidoSelecionado = pedido;
-						break;
-					}
-				}
-
 				if (e.CommandName == "Editar")
 				{
 					ListsagemPedidoPanel.Visible = false;
 					FormAddEditPedido.AbrirForm(ModosFomularios.Editar, idPedidoSelecionado);
 				}
 			}
-
 		}
 
 		protected void NovoPedidoButton_Click(object sender, EventArgs e)
@@ -145,7 +132,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 		[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 		public static string ExcluirPedido(int id)
 		{
-			new PedidoDAO().Excluir(id);
+			new PedidoDAO(new BancoDeDados()).Excluir(id);
 
 			var response = new
 			{

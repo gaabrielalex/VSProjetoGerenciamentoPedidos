@@ -1,4 +1,5 @@
 ﻿using DAOGerenciamentoPedidos.Src;
+using DAOGerenciamentoPedidos.Src.Data_Base;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -12,7 +13,7 @@ namespace DAOGerenciamentoPedidos.Test.Src
 		public void AoObterTodosMetodosPagamentoDeveRetornarUmaListaComNoMinimoCincoMetodosPagamento()
 		{
 			// Arrange
-			MetodoPagamentoDAO metodoPagamentoDAO = new MetodoPagamentoDAO();
+			MetodoPagamentoDAO metodoPagamentoDAO = new MetodoPagamentoDAO(new BancoDeDados());
 
 			// Act
 			var metodosPagamento = metodoPagamentoDAO.ListarTodos();

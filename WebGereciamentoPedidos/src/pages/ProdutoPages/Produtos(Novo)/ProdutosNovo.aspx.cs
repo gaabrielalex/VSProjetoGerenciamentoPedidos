@@ -1,4 +1,5 @@
 ﻿using DAOGerenciamentoPedidos.Src;
+using DAOGerenciamentoPedidos.Src.Data_Base;
 using ModelsGerenciamentoPedidos.Src;
 using System;
 using System.Collections.Generic;
@@ -17,14 +18,14 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 {
 	public partial class ProdutosNovo : System.Web.UI.Page
 	{
-		public ProdutoDAO ProdutoDAO;
-		public List<Produto> DadosProdutosAtual
+		private readonly ProdutoDAO _produtoDAO = new ProdutoDAO(new BancoDeDados());
+		public IList<Produto> DadosProdutosAtual
 		{
 			get
 			{
 				if (ViewState["DadosProdutosAtual"] != null)
 				{
-					return (List<Produto>)ViewState["DadosProdutosAtual"];
+					return (IList<Produto>)ViewState["DadosProdutosAtual"];
 				}
 				return new List<Produto>();
 			}
@@ -35,9 +36,6 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 		}
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			//Inicializando atributos
-			ProdutoDAO = new ProdutoDAO();
-
 			if (!IsPostBack)
 			{	
 				if(Session["MensagemInfo"] != null) 
@@ -62,11 +60,11 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 				{
 					string filtro = Request.QueryString["Filtro"];
 
-					DadosProdutosAtual = ProdutoDAO.ListarPorDescricao(filtro);
+					DadosProdutosAtual = _produtoDAO.ListarPorDescricao(filtro);
 				}
 				else
 				{
-					DadosProdutosAtual = ProdutoDAO.ListarTodos();
+					DadosProdutosAtual = _produtoDAO.ListarTodos();
 				}
 
 				BindData();
@@ -113,44 +111,12 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 			}
 			else
 			{
-				Produto produtoSelecionado = new Produto();
-				foreach (Produto produto in DadosProdutosAtual)
-				{
-					if (produto.IdProduto == idProdutoSelecionado)
-					{
-						produtoSelecionado = produto;
-						break;
-					}
-				}
-
-				//Comando antigo
-				//if (e.CommandName == "Excluir")
-				//{
-				//	var ehParaExcluir = PageUtils.SolicitarConfirmacaoViaAPISistemaOperacionalLocal("Deseja realmente excluir o produto?");
-				//	if (!ehParaExcluir)
-				//		return;
-				//	try
-				//	{
-				//		ProdutoDAO.Excluir(idProdutoSelecionado);
-				//		string mensagem = "Registro excluído com sucesso";
-				//		TratarCarregamentoDeDados();
-				//		PageUtils.MostrarMensagemViaToast(mensagem, TiposMensagem.Sucesso, this);
-				//	}
-				//	catch (Exception ex)
-				//	{
-				//		RegistroLog.Log($"Erro ao excluir produto '{ idProdutoSelecionado }' - '{ produtoSelecionado.Descricao }' : '{ex.Message}");
-				//		string mensagem = "Erro ao deletar o produto";
-				//		PageUtils.MostrarMensagemViaToast(mensagem, TiposMensagem.Erro, this);
-				//	}
-
-				//}
 				if (e.CommandName == "Editar")
 				{
 					ListsagemProdutoPanel.Visible = false;
 					FormAddEditProduto.AbrirForm(ModosFomularios.Editar, idProdutoSelecionado);
 				}
 			}
-
 		}
 
 		protected void NovoProdutoButton_Click(object sender, EventArgs e)
@@ -163,7 +129,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 		[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 		public static string ExcluirProduto(int id)
 		{
-			new ProdutoDAO().Excluir(id);
+			new ProdutoDAO(new BancoDeDados()).Excluir(id);
 
 			var response = new
 			{

@@ -1,4 +1,5 @@
 ﻿using DAOGerenciamentoPedidos;
+using DAOGerenciamentoPedidos.Src.Data_Base;
 using DAOGerenciamentoPedidos.Test.Src;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -18,9 +19,9 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 		public void AoPersistirUmObjetoPedidoDeveRetornarOIdDoPedidoInserido()
 		{
 			// Arrange
-			Pedido pedido = DAOFactory.RetornaPedido();
-			
-			PedidoDAO pedidoDAO = new PedidoDAO();
+			Pedido pedido = DAOFactory.RetornarPedido();
+
+			PedidoDAO pedidoDAO = new PedidoDAO(new BancoDeDados());
 			// Act
 			int idPedidoInserido = pedidoDAO.Inserir(pedido);
 			// Assert
@@ -32,8 +33,8 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 		public void AoPersistirUmObjetoPedidoDeveRetornUmRegistroComTodosOsCamposPreenchidosConformeOInserido()
 		{
 			// Arrange
-			Pedido pedido = DAOFactory.RetornaPedido();
-			PedidoDAO pedidoDAO = new PedidoDAO();
+			Pedido pedido = DAOFactory.RetornarPedido();
+			PedidoDAO pedidoDAO = new PedidoDAO(new BancoDeDados());
 
 			// Act
 			int idPedidoInserido = pedidoDAO.Inserir(pedido);
@@ -60,8 +61,8 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 		public void AoCadastrarPedidoEEditaloDeveRetornarOProdutoComTodasAsMudancasRealizadasAoConsultalo()
 		{
 			// Arrange
-			PedidoDAO pedidoDAO = new PedidoDAO();
-			Pedido pedido = DAOFactory.RetornaPedido();
+			PedidoDAO pedidoDAO = new PedidoDAO(new BancoDeDados());
+			Pedido pedido = DAOFactory.RetornarPedido();
 
 			// Act
 			int idPedidoInserido = pedidoDAO.Inserir(pedido);
@@ -120,8 +121,8 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 		public void AoPersistirObjetoPedidoRealizandoASuaExclusaoDeveRetornarNuloAoTentarObteloPeloSeuAntigoID()
 		{
 			//Arrange
-			PedidoDAO pedidoDAO = new PedidoDAO();
-			Pedido pedido = DAOFactory.RetornaPedido();
+			PedidoDAO pedidoDAO = new PedidoDAO(new BancoDeDados());
+			Pedido pedido = DAOFactory.RetornarPedido();
 
 			//Act
 			int idPedidoInserido = pedidoDAO.Inserir(pedido);
@@ -138,11 +139,11 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 		{
 			// Arrange
 			var quantidadePedidosEsperada = 100;
-			PedidoDAO pedidoDAO = new PedidoDAO();
-			List<Pedido> pedidosASeremInseridos = new List<Pedido>();
+			PedidoDAO pedidoDAO = new PedidoDAO(new BancoDeDados());
+			List <Pedido> pedidosASeremInseridos = new List<Pedido>();
 			for (int i = 0; i < quantidadePedidosEsperada; i++)
 			{
-				Pedido pedido = DAOFactory.RetornaPedido();
+				Pedido pedido = DAOFactory.RetornarPedido();
 				pedidosASeremInseridos.Add(pedido);
 			}
 
@@ -160,7 +161,7 @@ namespace TestesGerenciamentoPedidos.DAO_Tests
 				pedidosInseridos[i] = pedidoDAO.ObterPorId(idPedidosInseridos[i]);
 			}
 
-			List<Pedido> listagemPedidos = pedidoDAO.ListarTodos();
+			IList<Pedido> listagemPedidos = pedidoDAO.ListarTodos();
 
 			// Assert
 			listagemPedidos.Should().HaveCountGreaterThanOrEqualTo(quantidadePedidosEsperada, because: $"Deve haver pelo menos {quantidadePedidosEsperada} pedidos cadastrados no banco");

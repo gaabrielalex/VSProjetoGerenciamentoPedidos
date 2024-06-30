@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,10 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Src\Data_Base\ParametroBD.cs" />
+    <Compile Include="Src\Data_Base\ParametroBDFactory.cs" />
     <Compile Include="Src\IDAO.cs" />
+    <Compile Include="Src\ItemPedidoDAO.cs" />
     <Compile Include="Src\MetodoPagamentoDAO.cs" />
     <Compile Include="Src\PedidoDAO.cs" />
-    <Compile Include="Src\Data_Base\DB_Connection.cs" />
+    <Compile Include="Src\Data_Base\BancoDeDados.cs" />
     <Compile Include="Src\ProdutoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,6 +68,9 @@
   <ItemGroup>
     <Content Include="others\ScriptsSQL.txt" />
     <Content Include="others\tablesDB.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

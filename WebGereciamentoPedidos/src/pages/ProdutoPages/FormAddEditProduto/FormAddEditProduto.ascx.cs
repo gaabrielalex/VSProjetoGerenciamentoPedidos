@@ -1,4 +1,5 @@
 ﻿using DAOGerenciamentoPedidos.Src;
+using DAOGerenciamentoPedidos.Src.Data_Base;
 using ModelsGerenciamentoPedidos.Src;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,8 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 {
 	public partial class FormAddEditProduto : System.Web.UI.UserControl
 	{
-		public ProdutoDAO ProdutoDAO;
+		private readonly ProdutoDAO _produtoDAO = new ProdutoDAO(new BancoDeDados());
+
 		public ModosFomularios ModoAtual
 		{
 			get
@@ -48,7 +50,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			ProdutoDAO = new ProdutoDAO();
+
 		}
 
 		public void AbrirForm(ModosFomularios modo, int? idProdutoParaEdicao)
@@ -71,7 +73,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 			try
 			{
 				FormAddEditProdutoTituloMedio.Text = "Editar Produto";
-				ProdutoASerEditado = ProdutoDAO.ObterPorId(idProdutoParaEdicao);
+				ProdutoASerEditado = _produtoDAO.ObterPorId(idProdutoParaEdicao);
 				DescricaoTextFormField.Text = ProdutoASerEditado.Descricao;
 				VlrUnitarioTextFormField.Text = ProdutoASerEditado.VlrUnitario.ToString();
 			}
@@ -106,7 +108,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 			{
 				if((ProdutoASerEditado != null && !ProdutoASerEditado.Descricao.Equals(descricao) && ModoAtual == ModosFomularios.Editar) || ModoAtual == ModosFomularios.Cadastrar) {
 					
-					produtoJaExiste = ProdutoDAO.DescricaoJaExiste(descricao);
+					produtoJaExiste = _produtoDAO.DescricaoJaExiste(descricao);
 					if (produtoJaExiste)
 					{
 						DescricaoTextFormField.ErrorMessage = "Produto já existente!";
@@ -195,7 +197,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 		{
 			try
 			{
-				ProdutoDAO.Inserir(produto);
+				_produtoDAO.Inserir(produto);
 				//Antes de recarrregar a página, guarda a mensagem de sucesso numa session
 				//para que a página principal possa exibi-la depois que for carregada
 				Session["MensagemInfo"] = new MensagemInfo { Mensagem = "Produto cadastrado com sucesso", Tipo = TiposMensagem.Sucesso };
@@ -212,7 +214,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 		{
 			try
 			{
-				ProdutoDAO.Editar(produto, ProdutoASerEditado.IdProduto.Value);
+				_produtoDAO.Editar(produto, ProdutoASerEditado.IdProduto.Value);
 				//Antes de recarrregar a página, guarda a mensagem de sucesso numa session
 				//para que a página principal possa exibi-la depois que for carregada
 				Session["MensagemInfo"] = new MensagemInfo { Mensagem = "Produto editado com sucesso", Tipo = TiposMensagem.Sucesso };
