@@ -19,9 +19,34 @@ namespace DAOGerenciamentoPedidos.Src
 			_bancoDeDados = bancoDeDados;
 		}
 
-		public void Editar(ItemPedido itemPedido, int idItemPedidoASerEditado)
+		public void Editar(ItemPedido itemPedido, int idItemPedido)
 		{
-			throw new NotImplementedException();
+			var query = @"UPDATE item_pedido 
+						SET qtde = @qtde, 
+						vlr_total_item = @vlr_total_item, 
+						id_pedido = @id_pedido, 
+						id_produto = @id_produto
+						WHERE id_item_pedido = @id_item_pedido";
+
+			var parametros = new ParametroBDFactory()
+								.Adicionar("@qtde", itemPedido.Quantidade)
+								.Adicionar("@vlr_total_item", itemPedido.VlrTotalItem)
+								.Adicionar("@id_pedido", itemPedido.IdPedido)
+								.Adicionar("@id_produto", itemPedido.Produto.IdProduto)
+								.Adicionar("@id_item_pedido", idItemPedido)
+								.ObterParametros();
+			try
+			{
+				var linhasAfetadas = _bancoDeDados.Executar(query, parametros);
+				if (linhasAfetadas <= 0)
+				{
+					throw new Erro($"Erro ao editar item do pedido: Nenhuma linha foi afetada - Id: " + idItemPedido);
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Erro($"Erro ao editar item do pedido: {e.ToString()}");
+			}
 		}
 
 		public void Excluir(int id)

@@ -52,7 +52,7 @@ namespace DAOGerenciamentoPedidos.Src
 			try
 			{
 				var linhasAfetadas = _bancoDeDados.Executar(query, parametros);
-				if (linhasAfetadas < 0)
+				if (linhasAfetadas <= 0)
 				{
 					throw new Erro($"Erro ao editar produto: Nenhuma linha foi afetada - Id: " + id);
 				}
@@ -72,7 +72,7 @@ namespace DAOGerenciamentoPedidos.Src
 			try
 			{
 				var linhasAfetadas = _bancoDeDados.Executar(query, parametros);
-				if (linhasAfetadas < 0)
+				if (linhasAfetadas <= 0)
 				{
 					throw new Erro($"Erro ao excluir produto: Nenhuma linha foi afetada - Id: " + id);
 				}

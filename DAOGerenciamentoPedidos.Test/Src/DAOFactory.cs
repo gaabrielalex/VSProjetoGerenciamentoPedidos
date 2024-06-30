@@ -59,10 +59,33 @@ namespace DAOGerenciamentoPedidos.Test.Src
 			};
 		}
 
+		public static Pedido RetornarPedidoAleatorioExistenteNoBancoDeDados()
+		{
+			var pedidoDAO = ObterPedidoDAO();
+			var idPedidoInserido = pedidoDAO.Inserir(RetornarPedido());
+			return pedidoDAO.ObterPorId(idPedidoInserido);
+		}
+
+		public static Produto RetornarProdutoAleatorioExistenteNoBancoDeDados()
+		{
+			var produtoDAO = ObterProdutoDAO();
+			var idProdutoInserido = produtoDAO.Inserir(RetornarProduto());
+			return produtoDAO.ObterPorId(idProdutoInserido);
+		}
+
 		public static ItemPedidoDAO ObterItemPedidoDAO()
 		{
 			return new ItemPedidoDAO(new BancoDeDados());
 		}
+
+		public static PedidoDAO ObterPedidoDAO()
+		{
+			return new PedidoDAO(new BancoDeDados());
+		}
 		
+		public static ProdutoDAO ObterProdutoDAO()
+		{
+			return new ProdutoDAO(new BancoDeDados());
+		}
 	}
 }

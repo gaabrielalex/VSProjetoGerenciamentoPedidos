@@ -66,7 +66,7 @@ namespace DAOGerenciamentoPedidos
 			try
 			{
 				var linhasAfetadas = _bancoDeDados.Executar(query, parametros);
-				if (linhasAfetadas < 0)
+				if (linhasAfetadas <= 0)
 				{
 					throw new Erro("Erro ao editar pedido: Nenhuma linha foi afetada");
 				}
@@ -86,7 +86,7 @@ namespace DAOGerenciamentoPedidos
 			try
 			{
 				var linhasAfetadas = _bancoDeDados.Executar(query, parametros);
-				if (linhasAfetadas < 0)
+				if (linhasAfetadas <= 0)
 				{
 					throw new Erro($"Erro ao excluir pedido: Nenhuma linha foi afetada - Id: " + id);
 				}
