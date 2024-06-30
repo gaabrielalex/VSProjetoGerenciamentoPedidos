@@ -115,5 +115,10 @@ namespace WebGereciamentoPedidos.src.components.DataPicker
 		protected void Page_Load(object sender, EventArgs e)
 		{
 		}
+
+		public void ResetarData()
+		{
+			this.Datetime.Value = string.Empty;
+		}
 	}
 }

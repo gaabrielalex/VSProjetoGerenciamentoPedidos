@@ -49,7 +49,6 @@ namespace WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido
 			TratarCarregamentoDeDados();
 		}
 
-		//TODO: É realmente necessário o mostrar msg via toast com delay ou apenas sem o delay já está suficiente?
 		private void TratarCarregamentoDeDados()
 		{
 			try
@@ -79,7 +78,6 @@ namespace WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido
 			}
 			else
 			{
-				//TODO: Implementar essa parte
 				if (e.CommandName == "Editar")
 				{
 					//FormAddEditProduto.AbrirForm(ModosFomularios.Editar, idProdutoSelecionado);

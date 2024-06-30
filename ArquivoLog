@@ -7878,3 +7878,145 @@ Log Entrada : 17:16:42 domingo, 30 de junho de 2024
   :Erro ao listar itens do pedido: System.NotImplementedException: Método não implementado
    em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 57
 ------------------------------------
+
+Log Entrada : 17:18:36 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Erro ao listar itens do pedido
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 58
+------------------------------------
+
+Log Entrada : 17:18:36 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Erro ao listar itens do pedido
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 58
+------------------------------------
+
+Log Entrada : 17:18:45 domingo, 30 de junho de 2024
+  :
+  :Erro ao obter pedido para edição: System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.ConfigurarFormParaEdicao(Int32 idPedidoParaEdicao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 131
+------------------------------------
+
+Log Entrada : 17:18:45 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Erro ao listar itens do pedido
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 58
+------------------------------------
+
+Log Entrada : 17:19:14 domingo, 30 de junho de 2024
+  :
+  :Erro ao obter pedido para edição: System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.ConfigurarFormParaEdicao(Int32 idPedidoParaEdicao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 131
+------------------------------------
+
+Log Entrada : 17:19:14 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Erro ao listar itens do pedido
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 58
+------------------------------------
+
+Log Entrada : 17:21:00 domingo, 30 de junho de 2024
+  :
+  :Erro ao obter pedido para edição: System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.ConfigurarFormParaEdicao(Int32 idPedidoParaEdicao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 131
+------------------------------------
+
+Log Entrada : 17:21:00 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Erro ao listar itens do pedido
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 58
+------------------------------------
+
+Log Entrada : 17:21:22 domingo, 30 de junho de 2024
+  :
+  :Erro ao obter pedido para edição: System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.ConfigurarFormParaEdicao(Int32 idPedidoParaEdicao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 131
+------------------------------------
+
+Log Entrada : 17:21:35 domingo, 30 de junho de 2024
+  :
+  :Erro ao obter pedido para edição: System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.ConfigurarFormParaEdicao(Int32 idPedidoParaEdicao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 131
+------------------------------------
+
+Log Entrada : 17:25:08 domingo, 30 de junho de 2024
+  :
+  :Erro ao obter pedido para edição: System.Threading.ThreadAbortException: O thread estava sendo anulado.
+   em System.Threading.Thread.AbortInternal()
+   em System.Threading.Thread.Abort(Object stateInfo)
+   em System.Web.HttpResponse.AbortCurrentThread()
+   em System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.RedirecionarParaPaginaAnterior() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 398
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.ConfigurarFormParaEdicao(Int32 idPedidoParaEdicao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 133
+------------------------------------
+
+Log Entrada : 17:25:21 domingo, 30 de junho de 2024
+  :
+  :Erro ao obter pedido para edição: System.Threading.ThreadAbortException: O thread estava sendo anulado.
+   em System.Threading.Thread.AbortInternal()
+   em System.Threading.Thread.Abort(Object stateInfo)
+   em System.Web.HttpResponse.AbortCurrentThread()
+   em System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.RedirecionarParaPaginaAnterior() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 398
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.ConfigurarFormParaEdicao(Int32 idPedidoParaEdicao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 133
+------------------------------------
+
+Log Entrada : 17:27:13 domingo, 30 de junho de 2024
+  :
+  :Erro ao obter pedido para edição: System.Threading.ThreadAbortException: O thread estava sendo anulado.
+   em System.Threading.Thread.AbortInternal()
+   em System.Threading.Thread.Abort(Object stateInfo)
+   em System.Web.HttpResponse.AbortCurrentThread()
+   em System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.RedirecionarParaPaginaAnterior() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 404
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.TratarPedidoNaoEncontrado() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 391
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.ConfigurarFormParaEdicao(Int32 idPedidoParaEdicao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 133
+------------------------------------
+
+Log Entrada : 17:27:55 domingo, 30 de junho de 2024
+  :
+  :Erro ao obter pedido para edição: System.Threading.ThreadAbortException: O thread estava sendo anulado.
+   em System.Threading.Thread.AbortInternal()
+   em System.Threading.Thread.Abort(Object stateInfo)
+   em System.Web.HttpResponse.AbortCurrentThread()
+   em System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.RedirecionarParaPaginaAnterior() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 404
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.TratarPedidoNaoEncontrado() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 391
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.ConfigurarFormParaEdicao(Int32 idPedidoParaEdicao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 133
+------------------------------------
+
+Log Entrada : 17:30:49 domingo, 30 de junho de 2024
+  :
+  :Erro ao obter pedido para edição: System.Threading.ThreadAbortException: O thread estava sendo anulado.
+   em System.Threading.Thread.AbortInternal()
+   em System.Threading.Thread.Abort(Object stateInfo)
+   em System.Web.HttpResponse.AbortCurrentThread()
+   em System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.RedirecionarParaPaginaAnterior() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 406
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.TratarPedidoNaoEncontrado() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 393
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.ConfigurarFormParaEdicao(Int32 idPedidoParaEdicao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 134
+------------------------------------
+
+Log Entrada : 17:30:57 domingo, 30 de junho de 2024
+  :
+  :Erro ao obter pedido para edição: System.Threading.ThreadAbortException: O thread estava sendo anulado.
+   em System.Threading.Thread.AbortInternal()
+   em System.Threading.Thread.Abort(Object stateInfo)
+   em System.Web.HttpResponse.AbortCurrentThread()
+   em System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.RedirecionarParaPaginaAnterior() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 406
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.TratarPedidoNaoEncontrado() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 393
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.ConfigurarFormParaEdicao(Int32 idPedidoParaEdicao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 134
+------------------------------------
+
+Log Entrada : 17:31:19 domingo, 30 de junho de 2024
+  :
+  :Erro ao obter pedido para edição: System.Threading.ThreadAbortException: O thread estava sendo anulado.
+   em System.Threading.Thread.AbortInternal()
+   em System.Threading.Thread.Abort(Object stateInfo)
+   em System.Web.HttpResponse.AbortCurrentThread()
+   em System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.RedirecionarParaPaginaAnterior() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 406
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.TratarPedidoNaoEncontrado() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 393
+   em WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido.FormAddEditPedido.ConfigurarFormParaEdicao(Int32 idPedidoParaEdicao) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs:linha 134
+------------------------------------
