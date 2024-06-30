@@ -7531,3 +7531,326 @@ A instrução foi finalizada.
 ClientConnectionId:ac93032e-5b68-4a9f-b5a0-daff38c36fd3
 Error Number:547,State:0,Class:16
 ------------------------------------
+
+Log Entrada : 12:56:01 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 12:56:20 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 12:59:47 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 13:00:04 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 13:01:25 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 13:01:31 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 13:02:03 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 13:02:11 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 13:02:37 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 13:03:10 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 13:03:14 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 13:03:26 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 13:03:38 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 13:03:49 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 13:03:52 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 13:04:31 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 13:05:06 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 13:11:05 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 13:11:13 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Exception: Id do pedido ainda não foi setado ou foi perdido na viewstate
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.get_IdPedido() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 33
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 68
+------------------------------------
+
+Log Entrada : 13:37:53 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Web.HttpException (0x80004005): Não foi encontrado campo ou propriedade com o nome 'VlrTotal' na fonte de dados selecionada.
+   em System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 83
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 72
+------------------------------------
+
+Log Entrada : 13:38:37 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Web.HttpException (0x80004005): Não foi encontrado campo ou propriedade com o nome 'VlrTotal' na fonte de dados selecionada.
+   em System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 83
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 72
+------------------------------------
+
+Log Entrada : 13:39:20 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Web.HttpException (0x80004005): Não foi encontrado campo ou propriedade com o nome 'VlrTotal' na fonte de dados selecionada.
+   em System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 83
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 72
+------------------------------------
+
+Log Entrada : 13:40:03 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Web.HttpException (0x80004005): Não foi encontrado campo ou propriedade com o nome 'VlrTotal' na fonte de dados selecionada.
+   em System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 83
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 72
+------------------------------------
+
+Log Entrada : 13:40:31 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Web.HttpException (0x80004005): Não foi encontrado campo ou propriedade com o nome 'VlrTotal' na fonte de dados selecionada.
+   em System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 83
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 72
+------------------------------------
+
+Log Entrada : 13:40:56 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Web.HttpException (0x80004005): Não foi encontrado campo ou propriedade com o nome 'VlrTotal' na fonte de dados selecionada.
+   em System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 83
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 72
+------------------------------------
+
+Log Entrada : 13:59:18 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Web.HttpException (0x80004005): Não foi encontrado campo ou propriedade com o nome 'VlrTotal' na fonte de dados selecionada.
+   em System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 83
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 72
+------------------------------------
+
+Log Entrada : 14:06:52 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Web.HttpException (0x80004005): Não foi encontrado campo ou propriedade com o nome 'VlrTotal' na fonte de dados selecionada.
+   em System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 83
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 72
+------------------------------------
+
+Log Entrada : 14:07:21 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Web.HttpException (0x80004005): Não foi encontrado campo ou propriedade com o nome 'VlrTotal' na fonte de dados selecionada.
+   em System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 83
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 72
+------------------------------------
+
+Log Entrada : 14:08:21 domingo, 30 de junho de 2024
+  :
+  :Erro ao listar itens do pedido: System.Web.HttpException (0x80004005): Não foi encontrado campo ou propriedade com o nome 'VlrTotal' na fonte de dados selecionada.
+   em System.Web.UI.WebControls.BoundField.TryGetSimplePropertyValue(Object dataItem, Object& data)
+   em System.Web.UI.WebControls.BoundField.GetValue(Control controlContainer)
+   em System.Web.UI.WebControls.BoundField.OnDataBindField(Object sender, EventArgs e)
+   em System.Web.UI.Control.OnDataBinding(EventArgs e)
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.Control.DataBindChildren()
+   em System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   em System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   em System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   em System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   em System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.BindData() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 83
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido.ListagemItensDoPedido.TratarCarregamentoDeDados() na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs:linha 72
+------------------------------------

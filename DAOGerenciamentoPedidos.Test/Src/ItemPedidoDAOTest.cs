@@ -336,7 +336,7 @@ namespace DAOGerenciamentoPedidos.Test.Src
 			itemPedido4.IdItemPedido = itemPedidoDAO.Inserir(itemPedido4);
 			itemPedido5.IdItemPedido = itemPedidoDAO.Inserir(itemPedido5);
 
-			var itensPedido = itemPedidoDAO.ListarPorIdPedido((int)pedido.IdPedido);
+			var itensPedido = itemPedidoDAO.ListarPorPedido((int)pedido.IdPedido);
 
 			itensPedido.Should().HaveCountGreaterThanOrEqualTo(5, because: "Deve retornar uma lista contendo pelo menos 5 itens do pedido, pois foram inseridos 5 itens do pedido");
 			itensPedido.Should().ContainEquivalentOf(itemPedido1, because: "A lista de itens do pedido deve conter o item do pedido 1 inserido");
@@ -371,7 +371,7 @@ namespace DAOGerenciamentoPedidos.Test.Src
 
 			itemPedidoDAO.Excluir((int)itemPedido3.IdItemPedido);
 
-			var itensPedido = itemPedidoDAO.ListarPorIdPedido((int)pedido.IdPedido);
+			var itensPedido = itemPedidoDAO.ListarPorPedido((int)pedido.IdPedido);
 
 			itensPedido.Should().HaveCountGreaterThanOrEqualTo(4, because: "Deve retornar uma lista contendo pelo menos 4 itens do pedido, pois foram inseridos 5 itens do pedido e excluído um deles");
 			itensPedido.Should().ContainEquivalentOf(itemPedido1, because: "A lista de itens do pedido deve conter o item do pedido 1 inserido");

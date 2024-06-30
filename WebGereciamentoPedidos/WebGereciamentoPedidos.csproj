@@ -230,6 +230,8 @@
     <Content Include="src\components\Titulo\Titulo.ascx" />
     <Content Include="src\components\Titulo\Titulo.css" />
     <Content Include="src\components\Toast\Toast.ascx" />
+    <Content Include="src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx" />
+    <Content Include="src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.css" />
     <Content Include="src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx" />
     <Content Include="src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.css" />
     <Content Include="src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.js" />
@@ -345,6 +347,13 @@
     </Compile>
     <Compile Include="src\components\Toast\Toast.ascx.designer.cs">
       <DependentUpon>Toast.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.cs">
+      <DependentUpon>ListagemItensDoPedido.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\pages\ItemPedidoPages\ListagemItensDoPedido\ListagemItensDoPedido.ascx.designer.cs">
+      <DependentUpon>ListagemItensDoPedido.ascx</DependentUpon>
     </Compile>
     <Compile Include="src\pages\PedidoPages\FormAddEditPedido\FormAddEditPedido.ascx.cs">
       <DependentUpon>FormAddEditPedido.ascx</DependentUpon>

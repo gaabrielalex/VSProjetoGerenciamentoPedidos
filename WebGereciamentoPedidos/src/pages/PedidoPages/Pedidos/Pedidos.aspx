@@ -25,14 +25,14 @@
 		</div>
 	</div>
 
-	<gp:FormAddEditPedido runat="server" id="FormAddEditPedido" />
+	<gp:FormAddEditPedido runat="server" ID="FormAddEditPedido" />
 
 	<asp:UpdatePanel runat="server">
 		<ContentTemplate>
 			<asp:Panel runat="server" ID="ListsagemPedidoPanel">
 				<gp:Titulo runat="server" Text="Pedidos" ID="PedidosTitulo"></gp:Titulo>
 				<div class="filtro-container">
-					<gp:Filtro ID="PedidoFiltro" runat="server" Placeholder="Filtrar pelo cliente..." OnFiltrarClick="ProdutoFiltro_FiltrarClick" />
+					<gp:Filtro ID="PedidoFiltro" runat="server" Placeholder="Filtrar pelo cliente..." OnFiltrarClick="PedidoFiltro_FiltrarClick" />
 					<asp:Button runat="server" ID="NovoPedidoButton" Text="Novo Pedido" OnClick="NovoPedidoButton_Click" />
 				</div>
 				<div class="table-container">
@@ -58,8 +58,7 @@
 										<asp:LinkButton ID="ObservacoesLK" runat="server"
 											Text="Observações" CausesValidation="False"
 											OnClientClick='<%# "return myApp.abrilModalObservacoesPedido(\"" + ((ModelsGerenciamentoPedidos.Src.Pedido)Container.DataItem).Observacoes.ToString().Replace("\"", "\\\"") + "\"); return false;" %>'
-											CssClass='<%# String.IsNullOrEmpty(((ModelsGerenciamentoPedidos.Src.Pedido)Container.DataItem).Observacoes.ToString()) ? "hidden-link" : "" %>'
-											>
+											CssClass='<%# String.IsNullOrEmpty(((ModelsGerenciamentoPedidos.Src.Pedido)Container.DataItem).Observacoes.ToString()) ? "hidden-link" : "" %>'>
 										</asp:LinkButton>
 										<gp:ColunasPadraoTable runat="server" ID="PedidoColunasPadraoTable" IdRegistro='<%# ((ModelsGerenciamentoPedidos.Src.Pedido)Container.DataItem).IdPedido %>'
 											MensagemConfirmacaoExclusao='<%# "Tem certeza que deseja excluir o pedido do(a) cliente \"" + ((ModelsGerenciamentoPedidos.Src.Pedido)Container.DataItem).NomeCliente + "\"?" %>'
@@ -69,6 +68,11 @@
 								<ItemStyle Width="300px" />
 							</asp:TemplateField>
 						</Columns>
+						<EmptyDataTemplate>
+							<div class="empty-data">
+								Nenhum pedido encontrado.
+							</div>
+						</EmptyDataTemplate>
 					</asp:GridView>
 				</div>
 			</asp:Panel>

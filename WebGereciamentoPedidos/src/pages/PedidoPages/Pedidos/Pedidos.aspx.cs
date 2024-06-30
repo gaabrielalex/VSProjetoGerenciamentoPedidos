@@ -84,7 +84,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.Pedidos
 			PedidosGW.DataBind();
 		}
 
-		protected void ProdutoFiltro_FiltrarClick(object sender, EventArgs e)
+		protected void PedidoFiltro_FiltrarClick(object sender, EventArgs e)
 		{
 			String filtro = PedidoFiltro.Text;
 			//Obtem apenas a url sem possíveis query parameters no meio, desta

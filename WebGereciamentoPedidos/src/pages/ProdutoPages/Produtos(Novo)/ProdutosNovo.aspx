@@ -43,6 +43,11 @@
 								<ItemStyle Width="200px" />
 							</asp:TemplateField>
 						</Columns>
+						<EmptyDataTemplate>
+							<div class="empty-data">
+								Nenhum produto encontrado.
+							</div>
+						</EmptyDataTemplate>
 					</asp:GridView>
 				</div>
 			</asp:Panel>

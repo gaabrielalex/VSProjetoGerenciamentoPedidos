@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModelsGerenciamentoPedidos.Src
 {
+	[Serializable]
 	public class ItemPedido
 	{
 		public int? IdItemPedido { get; set; }

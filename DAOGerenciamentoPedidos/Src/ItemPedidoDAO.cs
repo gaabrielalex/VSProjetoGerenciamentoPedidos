@@ -132,7 +132,7 @@ namespace DAOGerenciamentoPedidos.Src
 			}
 		}
 
-		public IList<ItemPedido> ListarPorIdPedido(int idPedido)
+		public IList<ItemPedido> ListarPorPedido(int idPedido)
 		{
 			var query = @"SELECT ip.*, p.*
 						FROM item_pedido ip

@@ -18,6 +18,10 @@ input {
 	border-bottom: 1px solid #ccc;
 }
 
+table .empty-data {
+	font-weight: 500
+}
+
 .erro {
 	color: #dc3545;
 }
