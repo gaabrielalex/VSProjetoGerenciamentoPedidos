@@ -35,5 +35,20 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.PedidoPage
 			JavaScriptSerializer js = new JavaScriptSerializer();
 			return js.Serialize(response);
 		}
+
+		[WebMethod]
+		[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+		public static string ObterProdutoPorId(int idProduto)
+		{
+			var response = new
+			{
+				Message = $"Item pedido '{idProduto}' obtido com sucesso",
+				Produto = new ProdutoDAO(new BancoDeDados()).ObterPorId(idProduto)
+			};
+
+			// Serializa o objeto para JSON
+			JavaScriptSerializer js = new JavaScriptSerializer();
+			return js.Serialize(response);
+		}
 	}
 }
