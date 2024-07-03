@@ -7,20 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
+namespace WebGereciamentoPedidos.src.pages.ProdutoPages.ProdutoPage
 {
 
 
-	public partial class ProdutosNovo
+	public partial class ProdutoPage
 	{
 
 		/// <summary>
-		/// ListagemProdutos control.
+		/// FormAddEditProduto control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::WebGereciamentoPedidos.src.pages.ProdutoPages.ListagemProdutos.ListagemProdutos ListagemProdutos;
+		protected global::WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto.FormAddEditProduto FormAddEditProduto;
 	}
 }

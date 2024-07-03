@@ -14,7 +14,8 @@
 
 	<asp:PlaceHolder runat="server">
 		<%: Scripts.Render("~/bundles/modernizr") %>
-		<%: Scripts.Render("~/Scripts/ScritpsProjeto/Util/Utils.js") %>
+		<%: Scripts.Render("~/Scripts/ScritpsProjeto/utils.js") %>
+		<%: Scripts.Render("~/Scripts/ScritpsProjeto/servico-mensagens-ao-carregar-paginas.js") %>
 	</asp:PlaceHolder>
 
 	<webopt:BundleReference runat="server" Path="~/Content/css" />
