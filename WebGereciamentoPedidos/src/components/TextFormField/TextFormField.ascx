@@ -5,7 +5,8 @@
 <div class="gp-container-input <%=CssClass%>" style="<%=Style%>">
     <asp:Label ID="Label" runat="server"></asp:Label>
     <div class="gp-input">
-	    <asp:TextBox ID="TextBox" runat="server" CssClass="form-control"></asp:TextBox>
+        <input type="hidden" id="InputHiddenIdDado" runat="server" value=""/>
+	    <asp:TextBox ID="TextBox" runat="server" CssClass="form-control" ></asp:TextBox>
         <div class="gp-input-container-custom-validator ">
             <asp:CustomValidator ID="CustomValidator" runat="server" ControlToValidate="TextBox" ErrorMessage=""
             CssClass="erro" OnServerValidate="CustomValidator_ServerValidate" ValidateEmptyText="true"></asp:CustomValidator>
