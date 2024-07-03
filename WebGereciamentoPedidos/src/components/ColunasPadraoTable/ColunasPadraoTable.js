@@ -8,10 +8,8 @@ var myApp = myApp || {};
 		const mensagemConfirmacaoExclusao = $(this).data('mensagem-confirmacao-exclusao');
 		const urlMetodo = $(this).data('url-metodo-exclusao');
 		const callbackSucesso = () => {
-			myApp.showToast("Registro excluído com sucesso", "s");
-			delay(1000).then(() => {
-				window.location.reload();
-			});
+			myApp.ServicoMensagensAoCarregarPaginas.adicionarMensagem("Registro excluído com sucesso", "s");
+			window.location.reload();
 		}
 		const callbackErro = (xhr, status, error) => {
 			myApp.showToast(
@@ -23,9 +21,5 @@ var myApp = myApp || {};
 		myApp.abriModalConfirmacaoExclusaoComAjax(
 			{ idRegistro, mensagemConfirmacaoExclusao, urlMetodo, callbackSucesso, callbackErro }
 		);
-
-		function delay(ms) {
-			return new Promise(resolve => setTimeout(resolve, ms));
-		}
 	});
 })();
