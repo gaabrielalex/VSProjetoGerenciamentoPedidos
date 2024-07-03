@@ -1,0 +1,14 @@
+﻿
+.filtro-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.table-container {
+	height: 65vh;
+}
+
+.table-pesquisa-look-up tbody tr {
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
