@@ -13,7 +13,23 @@ namespace ModelsGerenciamentoPedidos.Src
 		public int IdPedido { get; set; }
 		public Produto Produto { get; set; }
 		public int Quantidade { get; set; }
-		public decimal VlrTotalItem { get; set; }
+
+		private decimal _vlrTotalItem;
+		public decimal VlrTotalItem
+		{
+			get
+			{
+				if (Produto != null && Produto.VlrUnitario != 0)
+				{
+					_vlrTotalItem = Produto.VlrUnitario * Quantidade;
+				}
+				return _vlrTotalItem;
+			}
+			set
+			{
+				_vlrTotalItem = value;
+			}
+		}
 
 		public ItemPedido()
 		{
@@ -34,6 +50,17 @@ namespace ModelsGerenciamentoPedidos.Src
 			Produto = produto;
 			Quantidade = quantidade;
 			VlrTotalItem = vlrTotalItem;
+		}
+
+		public ItemPedido(int idPedido, Produto produto, int quantidade)
+		{
+			IdPedido = idPedido;
+			Produto = produto;
+			Quantidade = quantidade;
+			if(Produto.VlrUnitario == 0)
+				{
+				throw new Exception("Produto não possui valor unitário");
+			}
 		}
 
 		public override bool Equals(object obj)

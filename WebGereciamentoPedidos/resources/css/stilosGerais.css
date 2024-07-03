@@ -40,3 +40,11 @@ table .empty-data {
 .gp-input-container-custom-validator {
 	height: 24.5px;
 }
+
+table tbody tr:hover {
+	background-color: #f9f9f9;
+}
+
+.modal table tbody tr:hover {
+	background-color: #f0f0f0;
+}
