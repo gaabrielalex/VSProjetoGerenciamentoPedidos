@@ -35,6 +35,11 @@ namespace WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido
 				ViewState["DadosItensPedidoAtual"] = value;
 			}
 		}
+
+		public delegate void EventoEdicao(int IdRegistroEdicao);
+
+		public event EventoEdicao AoEditarItemPedido;
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			if(!Page.IsPostBack)
@@ -80,9 +85,10 @@ namespace WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido
 			{
 				if (e.CommandName == "Editar")
 				{
-					//FormAddEditProduto.AbrirForm(ModosFomularios.Editar, idProdutoSelecionado);
+					AoEditarItemPedido?.Invoke(idItemPedidoSelecionado);
 				}
 			}
 		}
+
 	}
 }
