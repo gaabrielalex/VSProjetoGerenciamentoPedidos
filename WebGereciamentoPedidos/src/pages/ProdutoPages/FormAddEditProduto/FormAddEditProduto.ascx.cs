@@ -52,14 +52,17 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			if (Request.QueryString["id"] != null)
+			if (!Page.IsPostBack)
 			{
-				var idProdutoParaEdicao = int.Parse(Request.QueryString["id"]);
-				ConfigurarForm(ModosFomularios.Editar, idProdutoParaEdicao);
-			}
-			else
-			{
-				ConfigurarForm(ModosFomularios.Cadastrar, null);
+				if (Request.QueryString["id"] != null)
+				{
+					var idProdutoParaEdicao = int.Parse(Request.QueryString["id"]);
+					ConfigurarForm(ModosFomularios.Editar, idProdutoParaEdicao);
+				}
+				else
+				{
+					ConfigurarForm(ModosFomularios.Cadastrar, null);
+				}
 			}
 		}
 
