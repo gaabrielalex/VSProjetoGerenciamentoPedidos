@@ -67,6 +67,8 @@
 </asp:Panel>
 
 <script type="text/javascript">
+	initializeScripts();
+
 	// Carregar o script dinamicamente e inicializar a aplicação
 	document.addEventListener('DOMContentLoaded', function () {
 		initializeScripts();

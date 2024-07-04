@@ -108,6 +108,7 @@
 		function initializeScripts() {
 			$.getScript('/src/pages/ProdutoPages/ListagemProdutos/ListagemProdutos.js', () => { });
 			$.getScript('/src/components/ColunasPadraoTable/ColunasPadraoTable.js', () => { });
+			$.getScript('/src/pages/PedidoPages/FormAddEditPedido/FormAddEditPedido.js', () => { });
 		};
 	</script>
 

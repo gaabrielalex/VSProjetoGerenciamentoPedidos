@@ -448,7 +448,10 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 		protected void FormAddEditItemPedido_AposSucessoDoSalvar()
 		{
 			PedidoASerEditado.ItensPedido = (List<ItemPedido>)_itemPedidoDAO.ListarPorPedido(PedidoASerEditado.IdPedido.Value);
+			PedidoASerEditado.RecalcularVlrTotal();
 			VlrSubtotalTextFormField.Text = PedidoASerEditado.VlrSubtotal.ToString();
+			DescontoTextFormField.Text = PedidoASerEditado.Desconto.ToString();
+			VlrTotalTextFormField.Text = PedidoASerEditado.VlrTotal.ToString();
 			ListagemItensDoPedido.CarregarItensPedido(PedidoASerEditado.ItensPedido);
 		}
 	}
