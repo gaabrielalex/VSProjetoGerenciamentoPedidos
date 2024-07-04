@@ -1,0 +1,180 @@
+
+---------- Outros -----------
+- Implementar listview e itemtemplate no projeto
+
+---------- Componentes -----------
+X Criar classe no padrão singleton para realizar a conexão com banco de dados
+
+- Criar componente de um modal de confirmação(Ex: quando deletamos registros temos sempre um dialog que nos pergunta se temos certeza que queremos excluir o registro)
+	- Crie um component do tipo modal, que tem os actions sim e não e varia segundo o texto onde quem for implementar querer colocar nele.
+
+X Criar componente "toast" para comunicar ao usuário sobre erros e sucessos de operações no sistema
+	X Parametrizar o componente para ser de dos tipos: erro e sucesso
+	X Parametrizar o componente para ser possível alterar a mensagem do conteúdo, desta forma a mensagem apresentada no mesmo dependerá de cada caso
+
+x Criar componente de filtragem, ele deve ser do tipo "search-box"
+	- Parametrizar o mesmo para variar segundo o seu "text-hint"(texto sombreado que aparece no dentro da caixa indicando geralmente que tipo de informação deve ser inserido no mesmo)
+	- Parametrizar o mesmo para que o evento(ação) do botão de pesquisar(lupa) seja especificado posteriormente, ou seja, que tipo de ação esse botão fará dependerá de cada implementação do componente
+
+
+------ Interfaces básicas -----------
+- Criar layout padrão da das interfaces(Obs.: é o layout que a maioria da telas deram como parte delas, onde só mudará o conteúdo de uma para outra)
+	- Criar navBar contendo os menus "Produtos" e "Clientes"
+	- Fazer a rota do menu "Produtos" para a página de listagem dos produtos
+	- Fazer a rota do menu "Clientes" para a página de listagem dos clientes
+
+X Desenvolver home_page
+	X Colocar a mensagem de boas-vindas
+
+
+------ CRUD Produto -----------
+- Desenvolver produto_page(página de listagens dos produtos)
+	- Desenvolver tabela para listagem dos produtos
+		- Alimentar a mesma com os dados do banco de dados
+		- Fornecer para cada registro opção:
+			- Editar: 
+				- Adicionar evento clique a essa opção onde a ação consiste em redirecionar usuário para página "Edição Produto", bem como deve ser enviado os dados do registro selecionado para a página de destino para que a mesma possa carregar os campos com essas informações para edição.
+			- Excluir:
+				- Adicionar evento clique a essa opção onde a ação consiste em apresentar o modal de confirmação com mensagem solicitando confirmação de exclusão daquele registro.
+	- Implementar o componente de filtragem para filtrar a listagem dos produtos, sendo a filtragem pela "descrição" do produto
+		- Adicionar na ação de clicar no botão pesquisar(lupa) ação de realizar a filtragem da listagem dos produto 
+	- Adicionar botão "Adicionar Clientes"
+		- Adicionar na ação de clicar no botão ação de redirecionar para a página de "Adicao de Produto"
+
+- Desenvolver produto_add_page(página de cadastro/adição e novos produtos)
+	- Adicionar campos necessários na página
+		- Adicionar campo "Descrição"(nome/descrição do produto)
+			- Adicionar validação de tamanho mínimo de texto igual a 6
+			- Adicionar validação para impedir que o campo fique vazio/nulo
+		- Adicionar campo "Valor unitário"
+			- Adicionar restrição de entrada de dados para tipo numérico(ou seja, só pode inserir números no campo)
+			- Adicionar validação para impedir que o campo fique vazio/nulo
+			- Formatar campo para que o mesmo apresente o valor inserido no padrão monetário(R$ X.XXX,XX)
+	- Adicionar botão de "Salvar"
+		- Adicionar no evento clique desse botão ação de capturar os dados dos campos e realizar a persistência dos mesmos em um novo registro na tabela produtos
+	- Tratar o sucesso ou não do processo de persistência dos dados desse formulário o banco
+		- Caso sucesso deve ser implementado o componente "toast" com mensagem informando do sucesso do cadastrado do produto
+		- Caso falha/erro deve ser implementado o componente "toast" com mensagem informando do erro no cadastrado do produto
+
+- Desenvolver produto_edit_page(página de edição de produtos)
+	- Adicionar campos necessários na página
+		- Adicionar campo "Descrição"(nome/descrição do produto)
+			- Adicionar validação de tamanho mínimo de texto igual a 6
+			- Adicionar validação para impedir que o campo fique vazio/nulo
+		- Adicionar campo "Valor unitário"
+			- Adicionar restrição de entrada de dados para tipo numérico(ou seja, só pode inserir números no campo)
+			- Adicionar validação para impedir que o campo fique vazio/nulo
+			- Formatar campo para que o mesmo apresente o valor inserido no padrão monetário(R$ X.XXX,XX)
+	- Adicionar botão de "Salvar"
+		- Adicionar no evento clique desse botão:
+			- validar todos os campo, caso válido prossiga, caso inválido pare a operação e alerte o usuário que nem todas as informações inseridas nos campos são válidas
+			- ação de capturar os dados dos campos e realizar atualização no registro correspondente no banco de dados
+	- Tratar o sucesso ou não do processo de atualização do registro do produto
+		- Caso sucesso deve ser implementado o componente "toast" com mensagem informando do sucesso da edição do produto
+		- Caso falha/erro deve ser implementado o componente "toast" com mensagem informando do erro na edição do produto
+
+
+------ Mestre Detalhe Pedido/Itens -----------
+- Desenvolver pedido_page(página de listagens dos pedidos e seus itens)
+	- Desenvolver tabela para listagem dos pedidos
+		- Alimentar a mesma com os dados do banco de dados
+		- Fornecer para cada registro opção:
+			- Editar: 
+				- Adicionar evento clique a essa opção onde a ação consiste em redirecionar usuário para página "Edição Pedido", bem como deve ser enviado os dados do registro selecionado para a página de destino para que a mesma possa carregar os campos com essas informações para edição.
+			- Excluir:
+				- Adicionar evento clique a essa opção onde a ação consiste em apresentar o modal de confirmação com mensagem solicitando confirmação de exclusão daquele registro.
+			- @Selecionar
+				- Adicionar evento de clique a essa opção onde a ação consiste em carregar a tabela de listagem dos itens do pedido
+					- Solicitar todos os registros da tabela item pedido que estão relacionados com o registro do pedido solicitou os dados
+					- Carregar a tabela com esses registros
+	- Implementar o componente de filtragem para filtrar a listagem dos pedidos, sendo a filtragem pelo "Cliente" do pedido
+		- Adicionar na ação de clicar no botão pesquisar(lupa) ação de realizar a filtragem da listagem dos pedidos 
+	- Adicionar botão "Adicionar Pedido"
+		- Adicionar na ação de clicar no botão ação de redirecionar para a página de "Adicao de Pedidos"
+	- Adicionar tabela para listagem dos itens do pedido(Obs.: A maneira que ela será carregada está descrito ne uma subtask dessa task marcada com "@"
+		- Fornecer para cada registro opção:
+			- Editar: 
+				- Adicionar evento clique a essa opção onde a ação consiste em carregar os campos da seção "Adicionar/Cadastrar Item" com os dados do item foi solicitado a edição
+			- Excluir:
+				- Adicionar evento clique a essa opção onde a ação consiste em apresentar o modal de confirmação com mensagem solicitando confirmação de exclusão daquele registro.
+	- Adicionar seção de "Adicionar/Cadastrar Item". (Obs.: a mesma consiste em cadastrar um item ao pedido selecionado e editar as informações de um registro que foi selecionado na tabela de listagem de itens do pedido
+		- Desenvolver modal de para pesquisar os produtos
+			- Implementar o componente de filtragem para filtrar a listagem dos produtos, sendo a filtragem pela "descrição" do produto
+				- Adicionar na ação de clicar no botão pesquisar(lupa) ação de realizar a filtragem da listagem dos produto
+			- Adicionar tabela com listagem dos produtos
+				Adicionar opção de selecionar em cada registro listado na tabela
+					- Adicionar na ação clique e essa opção onde a ação consiste em capturar todas as informações necessárias daquele registro e devolver para quem solicitou que este modal fosse aberto
+		- Adicionar campos necessários na seção
+			- Adicionar campo "Produto"
+				- Desabilitar campo para que o mesmo apenas seja preenchido pela pesquisa em "look up"
+				- Adicionar botão "Pesquisar Produto"
+					- Adicionar ao evento de clique do mesmo ação que consiste em abril um modal de pesquisa do produto
+			- Adicionar campo "Valor unitário"
+				- Adicionar restrição de entrada de dados para tipo numérico(ou seja, só pode inserir números no campo)
+				- Adicionar validação para impedir que o campo fique vazio/nulo
+				- Formatar campo para que o mesmo apresente o valor inserido no padrão monetário(R$ X.XXX,XX)
+		-Adicionar botão de "Adicionar/Editar"
+			Adicionar no evento clique no botão ação que consiste em
+				- Caso a operação de edital
+					- Vaidar o ca,ps
+			- Caso a operação seja de adicionar, deve:
+				- validar todos os campo, caso válido prossiga, caso inválido pare a operação e alerte o usuário que nem todas as informações inseridas nos campos são válidas
+				- ação de capturar os dados dos campos e realizar a persistência dos mesmos em um novo registro na tabela item_pedido
+			- Caso seja editar, deve:
+				- validar todos os campo, caso válido prossiga, caso inválido pare a operação e alerte o usuário que nem todas as informações inseridas nos campos são válidas
+				- ação de capturar os dados dos campos e realizar atualização no registro correspondente no banco de dados
+				
+		
+- Desenvolver pedido_add_page(página de cadastro/adição e novos pedidos)
+	- Adicionar campos necessários na página
+		- Adicionar campo "Cliente"(nome do cliente)
+			- Adicionar validação de tamanho mínimo de texto igual a 6
+			- Adicionar validação para impedir que o campo fique vazio/nulo
+		- Adicionar campo "Desconto"
+			- Adicionar restrição de entrada de dados para tipo numérico(ou seja, só pode inserir números no campo)
+			- Adicionar validação para impedir que o campo fique vazio/nulo
+			- Formatar campo para que o mesmo apresente o valor inserido no padrão monetário(R$ X.XXX,XX)
+		- Adicionar campo "Data/Hora"
+			- Adicionar validação para impedir que o campo fique vazio/nulo
+			- Formatar campo para que o mesmo apresente o valor inserido no padrão de data "DD/MM/YYY"
+		- Adicionar campo "Status"
+			- Restringir as opções a: "Aguardando pagamento", "Em separação", "Entregue" e "Cancelado".
+			- O campo que deve ser setado como padrão é o "Aguardando pagamento".
+		- Adicionar campo "Observações"
+			- Adicionar validação de tamanho mínimo de texto igual a 10
+	- Adicionar botão de "Salvar"
+		- Adicionar no evento clique desse botão
+			- validar todos os campo, caso válido prossiga, caso inválido pare a operação e alerte o usuário que nem todas as informações inseridas nos campos são válidas
+			- ação de capturar os dados dos campos e realizar a persistência dos mesmos em um novo registro na tabela pedidos
+	- Tratar o sucesso ou não do processo de persistência dos dados desse formulário o banco
+		- Caso sucesso deve ser implementado o componente "toast" com mensagem informando do sucesso do cadastrado do pedido
+		- Caso falha/erro deve ser implementado o componente "toast" com mensagem informando do erro do cadastrado do pedido
+
+- Desenvolver produto_edit_page(página de edição de produtos)
+	- Adicionar campos necessários na página
+		- Adicionar campo "Cliente"(nome do cliente)
+			- Adicionar validação de tamanho mínimo de texto igual a 6
+			- Adicionar validação para impedir que o campo fique vazio/nulo
+		- Adicionar campo "Desconto"
+			- Adicionar restrição de entrada de dados para tipo numérico(ou seja, só pode inserir números no campo)
+			- Adicionar validação para impedir que o campo fique vazio/nulo
+			- Formatar campo para que o mesmo apresente o valor inserido no padrão monetário(R$ X.XXX,XX)
+		- Adicionar campo "Data/Hora"
+			- Adicionar validação para impedir que o campo fique vazio/nulo
+			- Formatar campo para que o mesmo apresente o valor inserido no padrão de data "DD/MM/YYY"
+		- Adicionar campo "Status"
+			- Restringir as opções a: "Aguardando pagamento", "Em separação", "Entregue" e "Cancelado".
+			- O campo que deve ser setado como padrão é o "Aguardando pagamento".
+		- Adicionar campo "Observações"
+			- Adicionar validação de tamanho mínimo de texto igual a 10
+	- Adicionar botão de "Salvar"
+		- Adicionar no evento clique desse botão
+			- validar todos os campo, caso válido prossiga, caso inválido pare a operação e alerte o usuário que nem todas as informações inseridas nos campos são válidas
+			- ação de capturar os dados dos campos e realizar atualização no registro correspondente no banco de dados
+	- Tratar o sucesso ou não do processo de atualização do registro do pedido
+		- Caso sucesso deve ser implementado o componente "toast" com mensagem informando do sucesso da edição do pedido
+		- Caso falha/erro deve ser implementado o componente "toast" com mensagem informando do erro na edição do pedido
+
+
+
+	
