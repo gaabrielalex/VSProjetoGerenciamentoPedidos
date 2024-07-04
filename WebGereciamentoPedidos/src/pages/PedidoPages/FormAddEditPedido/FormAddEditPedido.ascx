@@ -61,7 +61,13 @@
 	</asp:UpdatePanel>
 
 	<asp:Panel runat="server" ID="DetalhesItensDoPedidoPanel" CssClass="DetalhesItensDoPedidoPanel">
-		<gp:FormAddEditItemPedido runat="server" ID="FormAddEditItemPedido" OnAposSucessoDoSalvar="FormAddEditItemPedido_AposSucessoDoSalvar" ></gp:FormAddEditItemPedido>
+		<div style="display:flex; justify-content: space-between; flex-direction: row">
+			<gp:FormAddEditItemPedido runat="server" ID="FormAddEditItemPedido" OnAposSucessoDoSalvar="FormAddEditItemPedido_AposSucessoDoSalvar" ></gp:FormAddEditItemPedido>
+			<div style="margin-top: 40px">
+				<asp:Button runat="server" ID="VoltarButton" Text="Voltar" CssClass="btn btn-secondary SubmitButtonModalFormAddEditPedido voltar-button" 
+				CausesValidation="false" OnClick="VoltarButton_Click" /></asp:Button>
+			</div>
+		</div>
 		<gp:ListagemItensDoPedido runat="server" ID="ListagemItensDoPedido" OnAoEditarItemPedido="ListagemItensDoPedido_AoEditarItemPedido"></gp:ListagemItensDoPedido>
 	</asp:Panel>
 </asp:Panel>

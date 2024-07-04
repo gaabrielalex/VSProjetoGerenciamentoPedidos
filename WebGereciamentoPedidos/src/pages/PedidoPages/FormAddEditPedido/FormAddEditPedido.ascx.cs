@@ -454,5 +454,11 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			VlrTotalTextFormField.Text = PedidoASerEditado.VlrTotal.ToString();
 			ListagemItensDoPedido.CarregarItensPedido(PedidoASerEditado.ItensPedido);
 		}
-	}
+
+        protected void VoltarButton_Click(object sender, EventArgs e)
+        {
+			Response.Redirect("~/src/pages/PedidoPages/Pedidos/Pedidos.aspx");
+		}
+
+    }
 }

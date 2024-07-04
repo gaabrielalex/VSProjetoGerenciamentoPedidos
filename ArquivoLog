@@ -9073,3 +9073,267 @@ A instrução foi finalizada.
 ClientConnectionId:8bd410f8-ab34-47e2-9738-b56d3f18d59f
 Error Number:547,State:0,Class:16
 ------------------------------------
+
+Log Entrada : 10:37:09 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao excluir produto: System.Data.SqlClient.SqlException (0x80131904): A instrução DELETE conflitou com a restrição do REFERENCE "FK__item_pedi__id_pr__7755B73D". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.item_pedido", column 'id_produto'.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.Src.ProdutoDAO.Excluir(Int32 id) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:linha 74
+ClientConnectionId:bf13b58c-e62e-4fb4-93c4-c0b9bee6a9ef
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 10:52:23 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução UPDATE conflitou com a restrição do FOREIGN KEY "FK__item_pedi__id_pe__76619304". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.pedido", column 'id_pedido'.
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 71
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 40
+ClientConnectionId:a9c88cc7-6d65-4d85-9be9-1cd90188ac77
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 10:52:23 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução UPDATE conflitou com a restrição do FOREIGN KEY "FK__item_pedi__id_pr__7755B73D". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.produto", column 'id_produto'.
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 71
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 40
+ClientConnectionId:a9c88cc7-6d65-4d85-9be9-1cd90188ac77
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 10:52:23 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução UPDATE conflitou com a restrição do CHECK "CK__item_pedid__qtde__74794A92". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.item_pedido", column 'qtde'.
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 71
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 40
+ClientConnectionId:a9c88cc7-6d65-4d85-9be9-1cd90188ac77
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 10:52:23 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução UPDATE conflitou com a restrição do CHECK "CK__item_pedid__qtde__74794A92". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.item_pedido", column 'qtde'.
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 71
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 40
+ClientConnectionId:a9c88cc7-6d65-4d85-9be9-1cd90188ac77
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 10:52:24 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: Nenhuma linha foi afetada - Id: 0
+------------------------------------
+
+Log Entrada : 10:52:24 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao editar item do pedido: Nenhuma linha foi afetada - Id: 0
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 45
+------------------------------------
+
+Log Entrada : 10:52:24 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao excluir item do pedido: Nenhuma linha foi afetada - Id: 0
+------------------------------------
+
+Log Entrada : 10:52:24 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao excluir item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao excluir item do pedido: Nenhuma linha foi afetada - Id: 0
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Excluir(Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 65
+------------------------------------
+
+Log Entrada : 10:52:26 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução INSERT conflitou com a restrição do FOREIGN KEY "FK__item_pedi__id_pe__76619304". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.pedido", column 'id_pedido'.
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 94
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 85
+ClientConnectionId:a9c88cc7-6d65-4d85-9be9-1cd90188ac77
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 10:52:26 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução INSERT conflitou com a restrição do FOREIGN KEY "FK__item_pedi__id_pr__7755B73D". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.produto", column 'id_produto'.
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 94
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 85
+ClientConnectionId:a9c88cc7-6d65-4d85-9be9-1cd90188ac77
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 10:52:26 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução INSERT conflitou com a restrição do CHECK "CK__item_pedid__qtde__74794A92". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.item_pedido", column 'qtde'.
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 94
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 85
+ClientConnectionId:a9c88cc7-6d65-4d85-9be9-1cd90188ac77
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 10:52:26 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução INSERT conflitou com a restrição do CHECK "CK__item_pedid__qtde__74794A92". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.item_pedido", column 'qtde'.
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 94
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 85
+ClientConnectionId:a9c88cc7-6d65-4d85-9be9-1cd90188ac77
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 10:52:32 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução UPDATE conflitou com a restrição do FOREIGN KEY "FK__item_pedi__id_pe__76619304". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.pedido", column 'id_pedido'.
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 71
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 40
+ClientConnectionId:09ce64e0-5a30-4f72-82c6-bf6f02f32906
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 10:52:32 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução UPDATE conflitou com a restrição do FOREIGN KEY "FK__item_pedi__id_pr__7755B73D". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.produto", column 'id_produto'.
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 71
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 40
+ClientConnectionId:09ce64e0-5a30-4f72-82c6-bf6f02f32906
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 10:52:32 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução UPDATE conflitou com a restrição do CHECK "CK__item_pedid__qtde__74794A92". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.item_pedido", column 'qtde'.
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 71
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 40
+ClientConnectionId:09ce64e0-5a30-4f72-82c6-bf6f02f32906
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 10:52:32 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução UPDATE conflitou com a restrição do CHECK "CK__item_pedid__qtde__74794A92". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.item_pedido", column 'qtde'.
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 71
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 40
+ClientConnectionId:09ce64e0-5a30-4f72-82c6-bf6f02f32906
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 10:52:32 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: Nenhuma linha foi afetada - Id: 0
+------------------------------------
+
+Log Entrada : 10:52:32 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao editar item do pedido: Nenhuma linha foi afetada - Id: 0
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 45
+------------------------------------
+
+Log Entrada : 10:52:32 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao excluir item do pedido: Nenhuma linha foi afetada - Id: 0
+------------------------------------
+
+Log Entrada : 10:52:32 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao excluir item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao excluir item do pedido: Nenhuma linha foi afetada - Id: 0
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Excluir(Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 65
+------------------------------------
+
+Log Entrada : 10:52:33 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução INSERT conflitou com a restrição do FOREIGN KEY "FK__item_pedi__id_pe__76619304". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.pedido", column 'id_pedido'.
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 94
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 85
+ClientConnectionId:09ce64e0-5a30-4f72-82c6-bf6f02f32906
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 10:52:33 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução INSERT conflitou com a restrição do FOREIGN KEY "FK__item_pedi__id_pr__7755B73D". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.produto", column 'id_produto'.
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 94
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 85
+ClientConnectionId:09ce64e0-5a30-4f72-82c6-bf6f02f32906
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 10:52:33 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução INSERT conflitou com a restrição do CHECK "CK__item_pedid__qtde__74794A92". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.item_pedido", column 'qtde'.
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 94
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 85
+ClientConnectionId:09ce64e0-5a30-4f72-82c6-bf6f02f32906
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 10:52:33 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução INSERT conflitou com a restrição do CHECK "CK__item_pedid__qtde__74794A92". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.item_pedido", column 'qtde'.
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 94
+   at DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:line 85
+ClientConnectionId:09ce64e0-5a30-4f72-82c6-bf6f02f32906
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 10:52:33 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar produto: System.Data.SqlClient.SqlException (0x80131904): Violação da restrição UNIQUE KEY 'UQ__produto__91D38C28DF026050'. Não é possível inserir a chave duplicada no objeto 'dbo.produto'. O valor de chave duplicada é (Produto Teste Editado AoRealizarEdicaoDeveRetonarTrue).
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 71
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Editar(Produto produto, Int32 id) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 54
+ClientConnectionId:09ce64e0-5a30-4f72-82c6-bf6f02f32906
+Error Number:2627,State:1,Class:14
+------------------------------------
+
+Log Entrada : 10:52:33 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Violação da restrição UNIQUE KEY 'UQ__produto__91D38C28DF026050'. Não é possível inserir a chave duplicada no objeto 'dbo.produto'. O valor de chave duplicada é (Produto Teste).
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 94
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 35
+ClientConnectionId:09ce64e0-5a30-4f72-82c6-bf6f02f32906
+Error Number:2627,State:1,Class:14
+------------------------------------
+
+Log Entrada : 10:52:33 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Violação da restrição UNIQUE KEY 'UQ__produto__91D38C28DF026050'. Não é possível inserir a chave duplicada no objeto 'dbo.produto'. O valor de chave duplicada é (Produto Teste).
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 94
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 35
+ClientConnectionId:09ce64e0-5a30-4f72-82c6-bf6f02f32906
+Error Number:2627,State:1,Class:14
+------------------------------------
+
+Log Entrada : 10:52:33 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Violação da restrição UNIQUE KEY 'UQ__produto__91D38C28DF026050'. Não é possível inserir a chave duplicada no objeto 'dbo.produto'. O valor de chave duplicada é (Produto Teste AoRealizarListagemDeveRetonarUmaListaDeProdutos).
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 94
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 35
+ClientConnectionId:09ce64e0-5a30-4f72-82c6-bf6f02f32906
+Error Number:2627,State:1,Class:14
+------------------------------------
+
+Log Entrada : 10:52:33 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir produto: System.Data.SqlClient.SqlException (0x80131904): Violação da restrição UNIQUE KEY 'UQ__produto__91D38C28DF026050'. Não é possível inserir a chave duplicada no objeto 'dbo.produto'. O valor de chave duplicada é (testeFiltragem1).
+A instrução foi finalizada.
+   at DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:line 94
+   at DAOGerenciamentoPedidos.Src.ProdutoDAO.Inserir(Produto produto) in C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ProdutoDAO.cs:line 35
+ClientConnectionId:09ce64e0-5a30-4f72-82c6-bf6f02f32906
+Error Number:2627,State:1,Class:14
+------------------------------------

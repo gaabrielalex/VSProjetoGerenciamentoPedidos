@@ -27,3 +27,7 @@
 .DetalhesItensDoPedidoPanel {
 	width: 100%;
 }
+
+.voltar-button {
+	max-height: 42px;
+}
