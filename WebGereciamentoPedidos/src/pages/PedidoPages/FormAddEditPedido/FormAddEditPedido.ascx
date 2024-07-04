@@ -5,12 +5,13 @@
 <%@ Register TagPrefix="gp" TagName="DropDownList" Src="~/src/components/GPDropDownList/GPDropDownList.ascx" %>
 <%@ Register TagPrefix="gp" TagName="DataPicker" Src="~/src/components/DataPicker/DataPicker.ascx" %>
 <%@ Register TagPrefix="gp" TagName="ListagemItensDoPedido" Src="~/src/pages/ItemPedidoPages/ListagemItensDoPedido/ListagemItensDoPedido.ascx" %>
+<%@ Register TagPrefix="gp" TagName="FormAddEditItemPedido" Src="~/src/pages/ItemPedidoPages/FormAddEditItemPedido/FormAddEditItemPedido.ascx" %>
 
 <link rel="stylesheet" href="/src/pages/PedidoPages/FormAddEditPedido/FormAddEditPedido.css" />
 
-<asp:UpdatePanel runat="server">
-	<ContentTemplate>
-		<asp:Panel runat="server" ID="MestreDetalhePedidoPanel" CssClass="MestreDetalhePedidoPanel">
+<asp:Panel runat="server" ID="MestreDetalhePedidoPanel" CssClass="MestreDetalhePedidoPanel">
+	<asp:UpdatePanel runat="server">
+		<ContentTemplate>
 			<asp:Panel runat="server" ID="FormAddEditPedidoPanel" DefaultButton="SalvarPedidoButton">
 				<gp:TituloMedio runat="server" ID="FormAddEditPedidoTituloMedio"></gp:TituloMedio>
 				<div class="conteudo-FormAddEditPedidoPanel">
@@ -56,12 +57,14 @@
 					</div>
 				</div>
 			</asp:Panel>
-			<asp:Panel runat="server" ID="DetalhesItensDoPedidoPanel" CssClass="DetalhesItensDoPedidoPanel">
-				<gp:ListagemItensDoPedido runat="server" ID="ListagemItensDoPedido"></gp:ListagemItensDoPedido>
-			</asp:Panel>
-		</asp:Panel>
-	</ContentTemplate>
-</asp:UpdatePanel>
+		</ContentTemplate>
+	</asp:UpdatePanel>
+
+	<asp:Panel runat="server" ID="DetalhesItensDoPedidoPanel" CssClass="DetalhesItensDoPedidoPanel">
+		<gp:FormAddEditItemPedido runat="server" ID="FormAddEditItemPedido" OnAposSucessoDoSalvar="FormAddEditItemPedido_AposSucessoDoSalvar" ></gp:FormAddEditItemPedido>
+		<gp:ListagemItensDoPedido runat="server" ID="ListagemItensDoPedido" OnAoEditarItemPedido="ListagemItensDoPedido_AoEditarItemPedido"></gp:ListagemItensDoPedido>
+	</asp:Panel>
+</asp:Panel>
 
 <script type="text/javascript">
 	// Carregar o script dinamicamente e inicializar a aplicação

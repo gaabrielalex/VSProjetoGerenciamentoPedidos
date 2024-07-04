@@ -141,6 +141,15 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 		protected global::System.Web.UI.WebControls.Panel DetalhesItensDoPedidoPanel;
 
 		/// <summary>
+		/// FormAddEditItemPedido control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido FormAddEditItemPedido;
+
+		/// <summary>
 		/// ListagemItensDoPedido control.
 		/// </summary>
 		/// <remarks>

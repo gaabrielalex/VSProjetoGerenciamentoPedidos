@@ -8449,3 +8449,525 @@ Error Number:8178,State:1,Class:16
    em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 48
    em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.EditarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 192
 ------------------------------------
+
+Log Entrada : 23:39:12 quarta-feira, 3 de julho de 2024
+  :
+  :Erro ao excluir pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução DELETE conflitou com a restrição do REFERENCE "FK__item_pedi__id_pe__55F4C372". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.item_pedido", column 'id_pedido'.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.PedidoDAO.Excluir(Int32 id) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 88
+ClientConnectionId:77ec7e14-0c13-453d-8219-f18eac9b8d4c
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 23:39:16 quarta-feira, 3 de julho de 2024
+  :
+  :Erro ao excluir pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução DELETE conflitou com a restrição do REFERENCE "FK__item_pedi__id_pe__55F4C372". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.item_pedido", column 'id_pedido'.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.PedidoDAO.Excluir(Int32 id) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 88
+ClientConnectionId:77ec7e14-0c13-453d-8219-f18eac9b8d4c
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 23:39:19 quarta-feira, 3 de julho de 2024
+  :
+  :Erro ao excluir pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução DELETE conflitou com a restrição do REFERENCE "FK__item_pedi__id_pe__55F4C372". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.item_pedido", column 'id_pedido'.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.PedidoDAO.Excluir(Int32 id) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 88
+ClientConnectionId:77ec7e14-0c13-453d-8219-f18eac9b8d4c
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 23:39:23 quarta-feira, 3 de julho de 2024
+  :
+  :Erro ao excluir pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução DELETE conflitou com a restrição do REFERENCE "FK__item_pedi__id_pe__55F4C372". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.item_pedido", column 'id_pedido'.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.PedidoDAO.Excluir(Int32 id) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 88
+ClientConnectionId:77ec7e14-0c13-453d-8219-f18eac9b8d4c
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 23:39:26 quarta-feira, 3 de julho de 2024
+  :
+  :Erro ao excluir pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução DELETE conflitou com a restrição do REFERENCE "FK__item_pedi__id_pe__55F4C372". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.item_pedido", column 'id_pedido'.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.PedidoDAO.Excluir(Int32 id) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 88
+ClientConnectionId:77ec7e14-0c13-453d-8219-f18eac9b8d4c
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 23:39:35 quarta-feira, 3 de julho de 2024
+  :
+  :Erro ao excluir pedido: System.Data.SqlClient.SqlException (0x80131904): A instrução DELETE conflitou com a restrição do REFERENCE "FK__item_pedi__id_pe__55F4C372". O conflito ocorreu no banco de dados "DB_Gerenciamento_Pedidos", tabela "dbo.item_pedido", column 'id_pedido'.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.PedidoDAO.Excluir(Int32 id) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\PedidoDAO.cs:linha 88
+ClientConnectionId:77ec7e14-0c13-453d-8219-f18eac9b8d4c
+Error Number:547,State:0,Class:16
+------------------------------------
+
+Log Entrada : 00:07:24 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): Erro de estouro aritmético ao converter numeric no tipo de dados numeric.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 40
+ClientConnectionId:86bcfffb-3e63-46b2-88ef-887402491de1
+Error Number:8115,State:8,Class:16
+------------------------------------
+
+Log Entrada : 00:07:24 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar o item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): Erro de estouro aritmético ao converter numeric no tipo de dados numeric.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 40
+ClientConnectionId:86bcfffb-3e63-46b2-88ef-887402491de1
+Error Number:8115,State:8,Class:16
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 48
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.EditarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 208
+------------------------------------
+
+Log Entrada : 00:07:25 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): Erro de estouro aritmético ao converter numeric no tipo de dados numeric.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 40
+ClientConnectionId:86bcfffb-3e63-46b2-88ef-887402491de1
+Error Number:8115,State:8,Class:16
+------------------------------------
+
+Log Entrada : 00:07:25 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar o item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): Erro de estouro aritmético ao converter numeric no tipo de dados numeric.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 40
+ClientConnectionId:86bcfffb-3e63-46b2-88ef-887402491de1
+Error Number:8115,State:8,Class:16
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 48
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.EditarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 208
+------------------------------------
+
+Log Entrada : 00:08:46 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): Erro de estouro aritmético ao converter numeric no tipo de dados numeric.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 40
+ClientConnectionId:98c41f15-b83d-4bc4-bf28-e3673d6bcb40
+Error Number:8115,State:8,Class:16
+------------------------------------
+
+Log Entrada : 00:08:46 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar o item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): Erro de estouro aritmético ao converter numeric no tipo de dados numeric.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 40
+ClientConnectionId:98c41f15-b83d-4bc4-bf28-e3673d6bcb40
+Error Number:8115,State:8,Class:16
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 48
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.EditarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 208
+------------------------------------
+
+Log Entrada : 00:09:07 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): Erro de estouro aritmético ao converter numeric no tipo de dados numeric.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 40
+ClientConnectionId:98c41f15-b83d-4bc4-bf28-e3673d6bcb40
+Error Number:8115,State:8,Class:16
+------------------------------------
+
+Log Entrada : 00:09:07 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar o item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): Erro de estouro aritmético ao converter numeric no tipo de dados numeric.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 40
+ClientConnectionId:98c41f15-b83d-4bc4-bf28-e3673d6bcb40
+Error Number:8115,State:8,Class:16
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 48
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.EditarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 208
+------------------------------------
+
+Log Entrada : 00:09:36 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): Erro de estouro aritmético ao converter numeric no tipo de dados numeric.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 40
+ClientConnectionId:86bcfffb-3e63-46b2-88ef-887402491de1
+Error Number:8115,State:8,Class:16
+------------------------------------
+
+Log Entrada : 00:09:36 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar o item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): Erro de estouro aritmético ao converter numeric no tipo de dados numeric.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 40
+ClientConnectionId:86bcfffb-3e63-46b2-88ef-887402491de1
+Error Number:8115,State:8,Class:16
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 48
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.EditarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 208
+------------------------------------
+
+Log Entrada : 00:09:39 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): Erro de estouro aritmético ao converter numeric no tipo de dados numeric.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 40
+ClientConnectionId:86bcfffb-3e63-46b2-88ef-887402491de1
+Error Number:8115,State:8,Class:16
+------------------------------------
+
+Log Entrada : 00:09:39 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar o item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): Erro de estouro aritmético ao converter numeric no tipo de dados numeric.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 40
+ClientConnectionId:86bcfffb-3e63-46b2-88ef-887402491de1
+Error Number:8115,State:8,Class:16
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 48
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.EditarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 208
+------------------------------------
+
+Log Entrada : 00:09:40 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): Erro de estouro aritmético ao converter numeric no tipo de dados numeric.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 40
+ClientConnectionId:86bcfffb-3e63-46b2-88ef-887402491de1
+Error Number:8115,State:8,Class:16
+------------------------------------
+
+Log Entrada : 00:09:40 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar o item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): Erro de estouro aritmético ao converter numeric no tipo de dados numeric.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 40
+ClientConnectionId:86bcfffb-3e63-46b2-88ef-887402491de1
+Error Number:8115,State:8,Class:16
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 48
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.EditarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 208
+------------------------------------
+
+Log Entrada : 00:19:33 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): Erro de estouro aritmético ao converter numeric no tipo de dados numeric.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 40
+ClientConnectionId:56d085a1-2dcd-42f5-bf6d-4ee090980a05
+Error Number:8115,State:8,Class:16
+------------------------------------
+
+Log Entrada : 00:19:33 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao editar o item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao editar item do pedido: System.Data.SqlClient.SqlException (0x80131904): Erro de estouro aritmético ao converter numeric no tipo de dados numeric.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.Executar(String sql, List`1 parametros, Boolean EhProcedure) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 71
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 40
+ClientConnectionId:56d085a1-2dcd-42f5-bf6d-4ee090980a05
+Error Number:8115,State:8,Class:16
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Editar(ItemPedido itemPedido, Int32 idItemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 48
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.EditarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 208
+------------------------------------
+
+Log Entrada : 00:45:17 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+------------------------------------
+
+Log Entrada : 00:45:17 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao cadatsrar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 90
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.CadastarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 192
+------------------------------------
+
+Log Entrada : 00:46:14 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+------------------------------------
+
+Log Entrada : 00:46:14 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao cadatsrar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 90
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.CadastarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 192
+------------------------------------
+
+Log Entrada : 00:47:10 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+------------------------------------
+
+Log Entrada : 00:47:10 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao cadatsrar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 90
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.CadastarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 192
+------------------------------------
+
+Log Entrada : 00:49:42 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+------------------------------------
+
+Log Entrada : 00:49:42 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao cadatsrar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 90
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.CadastarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 192
+------------------------------------
+
+Log Entrada : 00:52:10 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+------------------------------------
+
+Log Entrada : 00:52:10 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao cadatsrar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 90
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.CadastarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 192
+------------------------------------
+
+Log Entrada : 00:53:47 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+------------------------------------
+
+Log Entrada : 00:53:47 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao cadatsrar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 90
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.CadastarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 192
+------------------------------------
+
+Log Entrada : 00:54:03 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+------------------------------------
+
+Log Entrada : 00:54:03 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao cadatsrar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 90
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.CadastarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 192
+------------------------------------
+
+Log Entrada : 00:54:25 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+------------------------------------
+
+Log Entrada : 00:54:25 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao cadatsrar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 90
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.CadastarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 192
+------------------------------------
+
+Log Entrada : 00:54:38 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+------------------------------------
+
+Log Entrada : 00:54:38 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao cadatsrar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 90
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.CadastarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 192
+------------------------------------
+
+Log Entrada : 00:54:59 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+------------------------------------
+
+Log Entrada : 00:54:59 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao cadatsrar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 90
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.CadastarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 192
+------------------------------------
+
+Log Entrada : 00:55:16 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): Não é possível inserir um valor explícito para a coluna de identidade na tabela 'item_pedido' quando IDENTITY_INSERT está definido como OFF.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 94
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+ClientConnectionId:aef63874-25d2-47a6-8183-8f99abccd2ef
+Error Number:544,State:1,Class:16
+------------------------------------
+
+Log Entrada : 00:55:16 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao cadatsrar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): Não é possível inserir um valor explícito para a coluna de identidade na tabela 'item_pedido' quando IDENTITY_INSERT está definido como OFF.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 94
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+ClientConnectionId:aef63874-25d2-47a6-8183-8f99abccd2ef
+Error Number:544,State:1,Class:16
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 90
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.CadastarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 192
+------------------------------------
+
+Log Entrada : 00:55:30 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): Não é possível inserir um valor explícito para a coluna de identidade na tabela 'item_pedido' quando IDENTITY_INSERT está definido como OFF.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 94
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+ClientConnectionId:14b971fd-2bb0-46b3-baa6-009239a286f5
+Error Number:544,State:1,Class:16
+------------------------------------
+
+Log Entrada : 00:55:30 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao cadatsrar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): Não é possível inserir um valor explícito para a coluna de identidade na tabela 'item_pedido' quando IDENTITY_INSERT está definido como OFF.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 94
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+ClientConnectionId:14b971fd-2bb0-46b3-baa6-009239a286f5
+Error Number:544,State:1,Class:16
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 90
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.CadastarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 192
+------------------------------------
+
+Log Entrada : 00:56:31 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+------------------------------------
+
+Log Entrada : 00:56:31 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao cadatsrar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao inserir item do pedido: System.InvalidCastException: Objeto não pode ser convertido de DBNull em outros tipos.
+   em System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 90
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.CadastarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 192
+------------------------------------
+
+Log Entrada : 00:57:54 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): Não é possível inserir um valor explícito para a coluna de identidade na tabela 'item_pedido' quando IDENTITY_INSERT está definido como OFF.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 94
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+ClientConnectionId:81ebe550-869d-43b5-92e8-18b37fa2feef
+Error Number:544,State:1,Class:16
+------------------------------------
+
+Log Entrada : 00:57:54 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao cadatsrar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): Não é possível inserir um valor explícito para a coluna de identidade na tabela 'item_pedido' quando IDENTITY_INSERT está definido como OFF.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 94
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+ClientConnectionId:81ebe550-869d-43b5-92e8-18b37fa2feef
+Error Number:544,State:1,Class:16
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 90
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.CadastarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 192
+------------------------------------
+
+Log Entrada : 00:58:07 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): Não é possível inserir um valor explícito para a coluna de identidade na tabela 'item_pedido' quando IDENTITY_INSERT está definido como OFF.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 94
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+ClientConnectionId:81ebe550-869d-43b5-92e8-18b37fa2feef
+Error Number:544,State:1,Class:16
+------------------------------------
+
+Log Entrada : 00:58:07 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao cadatsrar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): Não é possível inserir um valor explícito para a coluna de identidade na tabela 'item_pedido' quando IDENTITY_INSERT está definido como OFF.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 94
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+ClientConnectionId:81ebe550-869d-43b5-92e8-18b37fa2feef
+Error Number:544,State:1,Class:16
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 90
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.CadastarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 192
+------------------------------------
+
+Log Entrada : 00:58:12 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): Não é possível inserir um valor explícito para a coluna de identidade na tabela 'item_pedido' quando IDENTITY_INSERT está definido como OFF.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 94
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+ClientConnectionId:0a8cb93a-bf6a-4542-aeb1-28c2f88c2f6a
+Error Number:544,State:1,Class:16
+------------------------------------
+
+Log Entrada : 00:58:12 quinta-feira, 4 de julho de 2024
+  :
+  :Erro ao cadatsrar item do pedido: UtilsGerenciamentoPedidos.Erro: Erro ao inserir item do pedido: System.Data.SqlClient.SqlException (0x80131904): Não é possível inserir um valor explícito para a coluna de identidade na tabela 'item_pedido' quando IDENTITY_INSERT está definido como OFF.
+A instrução foi finalizada.
+   em DAOGerenciamentoPedidos.Src.Data_Base.BancoDeDados.ExecutarComRetorno(String query, List`1 parametros) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\Data_Base\BancoDeDados.cs:linha 94
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 85
+ClientConnectionId:0a8cb93a-bf6a-4542-aeb1-28c2f88c2f6a
+Error Number:544,State:1,Class:16
+   em DAOGerenciamentoPedidos.Src.ItemPedidoDAO.Inserir(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\DAOGerenciamentoPedidos\Src\ItemPedidoDAO.cs:linha 90
+   em WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido.FormAddEditItemPedido.CadastarItemPedido(ItemPedido itemPedido) na C:\Users\GabrielSilva\Desktop\Projeto-Glayson\VSProjetoGerenciamentoPedidos\WebGereciamentoPedidos\src\pages\ItemPedidoPages\FormAddEditItemPedido\FormAddEditItemPedido.ascx.cs:linha 192
+------------------------------------

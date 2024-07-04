@@ -89,6 +89,5 @@ namespace WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido
 				}
 			}
 		}
-
 	}
 }
