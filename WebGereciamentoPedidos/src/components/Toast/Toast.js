@@ -15,6 +15,9 @@ var myApp = myApp || {};
 		} else if (type === 'e') {
 			toastHeader.innerHTML = 'Erro';
 			toastElement.className = 'toast bg-danger text-white';
+		} else if (type === 'i') {
+			toastHeader.innerHTML = 'Informação';
+			toastElement.className = 'toast bg-info text-white';
 		}
 
 		var toast = new bootstrap.Toast(toastElement);

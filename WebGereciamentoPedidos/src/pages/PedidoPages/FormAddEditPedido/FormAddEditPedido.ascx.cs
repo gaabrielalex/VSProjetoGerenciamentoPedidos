@@ -4,12 +4,17 @@ using DAOGerenciamentoPedidos.Src.Data_Base;
 using ModelsGerenciamentoPedidos.Src;
 using System;
 using System.Collections.Generic;
+using System.EnterpriseServices;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UtilsGerenciamentoPedidos;
+using WebGereciamentoPedidos.src.pages.ItemPedidoPages.FormAddEditItemPedido;
+using WebGereciamentoPedidos.src.pages.ItemPedidoPages.ListagemItensDoPedido;
+using WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_;
 using WebGereciamentoPedidos.src.util;
 using static ModelsGerenciamentoPedidos.Src.StatusPedido;
 using static WebGereciamentoPedidos.src.util.MensagemInfo;
@@ -19,7 +24,10 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 	public partial class FormAddEditPedido : System.Web.UI.UserControl
 	{
 		private readonly PedidoDAO _pedidoDAO = new PedidoDAO(new BancoDeDados());
+		private readonly ItemPedidoDAO _itemPedidoDAO = new ItemPedidoDAO(new BancoDeDados());
 		private readonly MetodoPagamentoDAO _metodoPagamentoDAO = new MetodoPagamentoDAO(new BancoDeDados());
+		private readonly string _tituloPadraoCadastro = "Cadastrar Pedido";
+		private readonly string _tituloPadraoEdicao = "Editar Pedido";
 		public ModosFomularios ModoAtual
 		{
 			get
@@ -51,9 +59,104 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			}
 		}
 
+		public bool EhModoEdicaoSoQueComAparenciaDeCadastro
+		{
+			get
+			{
+				if (ViewState["EhModoEdicaoSoQueComAparenciaDeCadastro"] != null)
+				{
+					return (bool)ViewState["EhModoEdicaoSoQueComAparenciaDeCadastro"];
+				}
+				return false;
+			}
+			set
+			{
+				ViewState["EhModoEdicaoSoQueComAparenciaDeCadastro"] = value;
+			}
+		}
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			if (!Page.IsPostBack)
+			{
+				if (Request.QueryString["id"] != null)
+				{
+					var idPedidoParaEdicao = int.Parse(Request.QueryString["id"]);
+					ConfigurarForm(ModosFomularios.Editar, idPedidoParaEdicao);
+				}
+				else
+				{
+					ConfigurarForm(ModosFomularios.Cadastrar, null);
+				}
+			}
+		}
 
+		private void ConfigurarForm(ModosFomularios modo, int? idPedidoParaEdicao)
+		{
+			ModoAtual = modo;
+			CarregarConfiguracoesPadraoDoForm(idPedidoParaEdicao);
+			if (modo == ModosFomularios.Cadastrar)
+				ConfigurarFormParaCadastro();	
+			else if (idPedidoParaEdicao.HasValue && modo == ModosFomularios.Editar)
+				ConfigurarFormParaEdicao(idPedidoParaEdicao.Value);
+		}
+
+		private void CarregarConfiguracoesPadraoDoForm(int? idPedidoParaEdicao)
+		{
+			if(idPedidoParaEdicao.HasValue)
+			{
+				FormAddEditItemPedido.ConfigurarForm(ModosFomularios.Cadastrar, idPedidoParaEdicao.Value, null);
+			}
+			CarregarTodosOsMetodosPagamento();
+			CarregarTodosOsStatusDoPedido();
+		}
+
+		private void ConfigurarFormParaCadastro()
+		{
+			FormAddEditPedidoTituloMedio.Text = _tituloPadraoCadastro;
+			ClienteTextFormField.Text = string.Empty;
+			ObservacoesTextFormField.Text = string.Empty;
+			VlrSubtotalTextFormField.Text = "00,00";
+			DescontoTextFormField.Text = "00,00";
+			VlrTotalTextFormField.Text = "00,00";
+			MetodoPagtoDropDownList.ClearSelection();
+			StatusDropDownList.ClearSelection();
+			DataHoraPedidoDataPicker.ResetarData();
+			ListagemItensDoPedido.CarregarItensPedido(new List<ItemPedido>());
+		}
+
+		private void ConfigurarFormParaEdicao(int idPedidoParaEdicao)
+		{
+			try
+			{
+				PedidoASerEditado = _pedidoDAO.ObterPorId(idPedidoParaEdicao);
+				if (PedidoASerEditado == null)
+				{
+					TratarPedidoNaoEncontrado();
+					return;
+				}
+				PedidoASerEditado.ItensPedido = (List<ItemPedido>)_itemPedidoDAO.ListarPorPedido(idPedidoParaEdicao);
+
+				if (EhModoEdicaoSoQueComAparenciaDeCadastro)
+					FormAddEditPedidoTituloMedio.Text = _tituloPadraoCadastro;
+				else
+					FormAddEditPedidoTituloMedio.Text = _tituloPadraoEdicao;
+
+				ListagemItensDoPedido.CarregarItensPedido(PedidoASerEditado.ItensPedido);
+				ClienteTextFormField.Text = PedidoASerEditado.NomeCliente;
+				MetodoPagtoDropDownList.SelectedValue = PedidoASerEditado.MetodoPagamento.IdMetodoPagto.ToString();
+				VlrSubtotalTextFormField.Text = PedidoASerEditado.VlrSubtotal.ToString();
+				DescontoTextFormField.Text = PedidoASerEditado.Desconto.ToString();
+				VlrTotalTextFormField.Text = PedidoASerEditado.VlrTotal.ToString();
+				DataHoraPedidoDataPicker.Date = PedidoASerEditado.DtHrPedido;
+				StatusDropDownList.SelectedValue = PedidoASerEditado.StatusPedido.ToString();
+				ObservacoesTextFormField.Text = PedidoASerEditado.Observacoes;
+			}
+			catch (Exception ex)
+			{
+				PageUtils.MostrarMensagemViaToast("Houve um erro ao obter pedido para edição", TiposMensagem.Erro, Page);
+				RegistroLog.Log($"Erro ao obter pedido para edição: {ex.ToString()}");
+			}
 		}
 
 		private void CarregarTodosOsMetodosPagamento()
@@ -90,55 +193,15 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			}
 		}
 
-		public void AbrirForm(ModosFomularios modo, int? idPedidoParaEdicao)
+		protected void CancelarPedidoButton_Click(object sender, EventArgs e)
 		{
-			CarregarTodosOsMetodosPagamento();
-			CarregarTodosOsStatusDoPedido();
-			FormAddEditPedidoPanel.Visible = true;
-			ModoAtual = modo;
-			if (modo == ModosFomularios.Cadastrar)
+			if(ModoAtual == ModosFomularios.Cadastrar)
 				ConfigurarFormParaCadastro();
-			else if (idPedidoParaEdicao.HasValue && modo == ModosFomularios.Editar)
-				ConfigurarFormParaEdicao(idPedidoParaEdicao.Value);
+			else if (ModoAtual == ModosFomularios.Editar)
+				ConfigurarFormParaEdicao(PedidoASerEditado.IdPedido.Value);
 		}
 
-		private void ConfigurarFormParaCadastro()
-		{
-			FormAddEditPedidoTituloMedio.Text = "Cadastrar Pedido";
-			VlrSubtotalTextFormField.Text = "00,00";
-			DescontoTextFormField.Text = "00,00";
-			VlrTotalTextFormField.Text = "00,00";
-		}
-
-		private void ConfigurarFormParaEdicao(int idPedidoParaEdicao)
-		{
-			try
-			{
-				FormAddEditPedidoTituloMedio.Text = "Editar Pedido";
-				PedidoASerEditado = _pedidoDAO.ObterPorId(idPedidoParaEdicao);
-				ClienteTextFormField.Text = PedidoASerEditado.NomeCliente;
-				MetodoPagtoDropDownList.SelectedValue = PedidoASerEditado.MetodoPagamento.IdMetodoPagto.ToString();
-				VlrSubtotalTextFormField.Text = PedidoASerEditado.VlrSubtotal.ToString();
-				DescontoTextFormField.Text = PedidoASerEditado.Desconto.ToString();
-				VlrTotalTextFormField.Text = PedidoASerEditado.VlrTotal.ToString();
-				DataHoraPedidoDataPicker.Date = PedidoASerEditado.DtHrPedido;
-				StatusDropDownList.SelectedValue = PedidoASerEditado.StatusPedido.ToString();
-				ObservacoesTextFormField.Text = PedidoASerEditado.Observacoes;
-
-			}
-			catch (Exception ex)
-			{
-				PageUtils.MostrarMensagemViaToast("Houve um erro ao obter pedido para edição", TiposMensagem.Erro, Page);
-				RegistroLog.Log($"Erro ao obter pedido para edição: {ex.ToString()}");
-			}
-		}
-
-		protected void CancelarButton_Click(object sender, EventArgs e)
-		{
-			Response.Redirect(Request.RawUrl, true);
-		}
-
-		protected void SalvarButton_Click(object sender, EventArgs e)
+		protected void SalvarPedidoButton_Click(object sender, EventArgs e)
 		{
 			if (!Page.IsValid)
 			{
@@ -172,9 +235,11 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 
 			string valueMetodoPAgto = MetodoPagtoDropDownList.SelectedValue;
 			MetodoPagamento metodoPagamento;
-			try {
+			try
+			{
 				metodoPagamento = new MetodoPagamento(int.Parse(valueMetodoPAgto), null);
-			} catch (Exception ex)
+			}
+			catch (Exception ex)
 			{
 				PageUtils.MostrarMensagemViaToast("Houve um erro ao obter o método de pagamento", TiposMensagem.Erro, Page);
 				RegistroLog.Log($"Erro ao obter o método de pagamento: {ex.ToString()}");
@@ -182,7 +247,8 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			}
 
 			DateTime dataHoraPedido;
-			try {
+			try
+			{
 				dataHoraPedido = DataHoraPedidoDataPicker.Date;
 			}
 			catch (Exception ex)
@@ -199,9 +265,9 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 				RegistroLog.Log($"Erro ao obter o método de pagamento, erro de conversão");
 				return null;
 			}
-			
+
 			string observacoes = ObservacoesTextFormField.Text;
-			
+
 			return new Pedido()
 			{
 				NomeCliente = nomeCliente,
@@ -217,11 +283,11 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 		{
 			try
 			{
-				_pedidoDAO.Inserir(Pedido);
-				//Antes de recarrregar a página, guarda a mensagem de sucesso numa session
-				//para que a página principal possa exibi-la depois que for carregada
-				Session["MensagemInfo"] = new MensagemInfo { Mensagem = "Pedido cadastrado com sucesso", Tipo = TiposMensagem.Sucesso };
-				Response.Redirect(Request.RawUrl, false);
+				var idPedidoInserido = _pedidoDAO.Inserir(Pedido);
+				PageUtils.MostrarMensagemViaToast("Pedido cadastrado com sucesso", TiposMensagem.Sucesso, Page);
+
+				EhModoEdicaoSoQueComAparenciaDeCadastro = true;
+				ConfigurarForm(ModosFomularios.Editar, idPedidoInserido);
 			}
 			catch (Exception ex)
 			{
@@ -235,10 +301,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			try
 			{
 				_pedidoDAO.Editar(Pedido, PedidoASerEditado.IdPedido.Value);
-				//Antes de recarrregar a página, guarda a mensagem de sucesso numa session
-				//para que a página principal possa exibi-la depois que for carregada
-				Session["MensagemInfo"] = new MensagemInfo { Mensagem = "Pedido editado com sucesso", Tipo = TiposMensagem.Sucesso };
-				Response.Redirect(Request.RawUrl, false);
+				PageUtils.MostrarMensagemViaToast("Pedido editado com sucesso", TiposMensagem.Sucesso, Page);
 			}
 			catch (Exception ex)
 			{
@@ -338,7 +401,7 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			}
 
 			//Data e hora não pode ser anterior ao ano atual
-			if(dataHoraPedido.Year < DateTime.Now.Year)
+			if (dataHoraPedido.Year < DateTime.Now.Year)
 			{
 				DataHoraPedidoDataPicker.ErrorMessage = "Data e hora do pedido não pode ser anterior ao ano atual!";
 				args.IsValid = false;
@@ -365,5 +428,37 @@ namespace WebGereciamentoPedidos.src.pages.PedidoPages.FormAddEditPedido
 			}
 
 		}
-	}
+
+		private void TratarPedidoNaoEncontrado()
+		{
+			PageUtils.RedirecionarParaPagina(
+				page: Page,
+				request: Request,
+				urlPagina: "~/src/pages/PedidoPages/Pedidos/Pedidos.aspx",
+				MensagemAposRedirecionamento: "Pedido não encontrado!",
+				tipoMensagem: TiposMensagem.Erro
+			);
+		}
+
+		protected void ListagemItensDoPedido_AoEditarItemPedido(int idItemPedido)
+		{
+			FormAddEditItemPedido.ConfigurarForm(ModosFomularios.Editar, PedidoASerEditado.IdPedido.Value, idItemPedido);
+		}
+
+		protected void FormAddEditItemPedido_AposSucessoDoSalvar()
+		{
+			PedidoASerEditado.ItensPedido = (List<ItemPedido>)_itemPedidoDAO.ListarPorPedido(PedidoASerEditado.IdPedido.Value);
+			PedidoASerEditado.RecalcularVlrTotal();
+			VlrSubtotalTextFormField.Text = PedidoASerEditado.VlrSubtotal.ToString();
+			DescontoTextFormField.Text = PedidoASerEditado.Desconto.ToString();
+			VlrTotalTextFormField.Text = PedidoASerEditado.VlrTotal.ToString();
+			ListagemItensDoPedido.CarregarItensPedido(PedidoASerEditado.ItensPedido);
+		}
+
+        protected void VoltarButton_Click(object sender, EventArgs e)
+        {
+			Response.Redirect("~/src/pages/PedidoPages/Pedidos/Pedidos.aspx");
+		}
+
+    }
 }

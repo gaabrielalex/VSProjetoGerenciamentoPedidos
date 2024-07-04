@@ -1,4 +1,5 @@
-﻿using DAOGerenciamentoPedidos.Src;
+﻿using DAOGerenciamentoPedidos;
+using DAOGerenciamentoPedidos.Src;
 using DAOGerenciamentoPedidos.Src.Data_Base;
 using ModelsGerenciamentoPedidos.Src;
 using System;
@@ -8,6 +9,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using UtilsGerenciamentoPedidos;
+using WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_;
 using WebGereciamentoPedidos.src.util;
 using static WebGereciamentoPedidos.src.util.MensagemInfo;
 
@@ -50,18 +52,28 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+			if (!Page.IsPostBack)
+			{
+				if (Request.QueryString["id"] != null)
+				{
+					var idProdutoParaEdicao = int.Parse(Request.QueryString["id"]);
+					ConfigurarForm(ModosFomularios.Editar, idProdutoParaEdicao);
+				}
+				else
+				{
+					ConfigurarForm(ModosFomularios.Cadastrar, null);
+				}
+			}
 		}
 
-		public void AbrirForm(ModosFomularios modo, int? idProdutoParaEdicao)
+		public void ConfigurarForm(ModosFomularios modo, int? idProdutoParaEdicao)
 		{
-			FormAddEditProdutoPanel.Visible = true;
 			ModoAtual = modo;
 			if (modo == ModosFomularios.Cadastrar)
 				ConfigurarFormParaCadastro();
 			else if (idProdutoParaEdicao.HasValue && modo == ModosFomularios.Editar)
 				ConfigurarFormParaEdicao(idProdutoParaEdicao.Value);
-			
+
 		}
 
 		private void ConfigurarFormParaCadastro()
@@ -72,8 +84,13 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 		{
 			try
 			{
-				FormAddEditProdutoTituloMedio.Text = "Editar Produto";
 				ProdutoASerEditado = _produtoDAO.ObterPorId(idProdutoParaEdicao);
+				if (ProdutoASerEditado == null)
+				{
+					TratarProdutoNaoEncontrado();
+					return;
+				}
+				FormAddEditProdutoTituloMedio.Text = "Editar Produto";
 				DescricaoTextFormField.Text = ProdutoASerEditado.Descricao;
 				VlrUnitarioTextFormField.Text = ProdutoASerEditado.VlrUnitario.ToString();
 			}
@@ -89,7 +106,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 			string descricao = args.Value;
 
 			//Validação se campo obrigatório
-			if (descricao == "")
+			if (descricao == string.Empty)
 			{
 				DescricaoTextFormField.ErrorMessage = "Campo obrigatório!";
 				args.IsValid = false;
@@ -106,15 +123,16 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 			bool produtoJaExiste = false;
 			try
 			{
-				if((ProdutoASerEditado != null && !ProdutoASerEditado.Descricao.Equals(descricao) && ModoAtual == ModosFomularios.Editar) || ModoAtual == ModosFomularios.Cadastrar) {
-					
+				if ((ProdutoASerEditado != null && !ProdutoASerEditado.Descricao.Equals(descricao) && ModoAtual == ModosFomularios.Editar) || ModoAtual == ModosFomularios.Cadastrar)
+				{
+
 					produtoJaExiste = _produtoDAO.DescricaoJaExiste(descricao);
 					if (produtoJaExiste)
 					{
 						DescricaoTextFormField.ErrorMessage = "Produto já existente!";
 						args.IsValid = false;
 					}
-				} 
+				}
 			}
 			catch (Exception ex)
 			{
@@ -128,7 +146,7 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 			string vlrUnitario = args.Value;
 
 			//Validação se campo obrigatório
-			if (vlrUnitario == "")
+			if (vlrUnitario == string.Empty)
 			{
 				VlrUnitarioTextFormField.ErrorMessage = "Campo obrigatório!";
 				args.IsValid = false;
@@ -158,12 +176,13 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 
 		protected void CancelarButton_Click(object sender, EventArgs e)
 		{
-			Response.Redirect(Request.RawUrl, true);
+			PageUtils.RedirecionarParaPagina(Page, Request, ProdutosNovo.CaminhoPagina);
 		}
 
 		protected void SalvarButton_Click(object sender, EventArgs e)
 		{
-			if (!Page.IsValid) {
+			if (!Page.IsValid)
+			{
 				PageUtils.FecharLoadingModal(Page);
 				return;
 			}
@@ -198,10 +217,13 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 			try
 			{
 				_produtoDAO.Inserir(produto);
-				//Antes de recarrregar a página, guarda a mensagem de sucesso numa session
-				//para que a página principal possa exibi-la depois que for carregada
-				Session["MensagemInfo"] = new MensagemInfo { Mensagem = "Produto cadastrado com sucesso", Tipo = TiposMensagem.Sucesso };
-				Response.Redirect(Request.RawUrl, false);
+				PageUtils.RedirecionarParaPagina(
+					page: Page,
+					request: Request,
+					urlPagina: ProdutosNovo.CaminhoPagina,
+					MensagemAposRedirecionamento: "Produto cadastrado com sucesso",
+					tipoMensagem: TiposMensagem.Sucesso
+				);
 			}
 			catch (Exception ex)
 			{
@@ -215,16 +237,30 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto
 			try
 			{
 				_produtoDAO.Editar(produto, ProdutoASerEditado.IdProduto.Value);
-				//Antes de recarrregar a página, guarda a mensagem de sucesso numa session
-				//para que a página principal possa exibi-la depois que for carregada
-				Session["MensagemInfo"] = new MensagemInfo { Mensagem = "Produto editado com sucesso", Tipo = TiposMensagem.Sucesso };
-				Response.Redirect(Request.RawUrl, false);
+				PageUtils.RedirecionarParaPagina(
+					page: Page,
+					request: Request,
+					urlPagina: ProdutosNovo.CaminhoPagina,
+					MensagemAposRedirecionamento: "Produto editado com sucesso",
+					tipoMensagem: TiposMensagem.Sucesso
+				);
 			}
 			catch (Exception ex)
 			{
 				PageUtils.MostrarMensagemViaToast("Houve um erro ao editar o produto", TiposMensagem.Erro, Page);
 				RegistroLog.Log($"Erro ao editar produto: {ex.ToString()}");
 			}
+		}
+
+		private void TratarProdutoNaoEncontrado()
+		{
+			PageUtils.RedirecionarParaPagina(
+				page: Page,
+				request: Request,
+				urlPagina: ProdutosNovo.CaminhoPagina,
+				MensagemAposRedirecionamento: "Produto não encontrado!",
+				tipoMensagem: TiposMensagem.Erro
+			);
 		}
 	}
 }

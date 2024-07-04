@@ -1,8 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebGereciamentoPedidos.SiteMaster" %>
 
-<%@Register TagPrefix="gp" TagName="Toast" Src="~/src/components/Toast/Toast.ascx" %>
-<%@Register TagPrefix="gp" TagName="ModalConfirmacaoExclusao" Src="~/src/components/ModalConfirmacaoExclusao/ModalConfirmacaoExclusao.ascx"%>
-<%@Register TagPrefix="gp" TagName="LoadingModal" Src="~/src/components/LoadingModal/LoadingModal.ascx" %>
+<%@ Register TagPrefix="gp" TagName="Toast" Src="~/src/components/Toast/Toast.ascx" %>
+<%@ Register TagPrefix="gp" TagName="ModalConfirmacaoExclusao" Src="~/src/components/ModalConfirmacaoExclusao/ModalConfirmacaoExclusao.ascx" %>
+<%@ Register TagPrefix="gp" TagName="LoadingModal" Src="~/src/components/LoadingModal/LoadingModal.ascx" %>
 
 <!DOCTYPE html>
 
@@ -14,7 +14,8 @@
 
 	<asp:PlaceHolder runat="server">
 		<%: Scripts.Render("~/bundles/modernizr") %>
-		<%: Scripts.Render("~/Scripts/ScritpsProjeto/Util/Utils.js") %>
+		<%: Scripts.Render("~/Scripts/ScritpsProjeto/utils.js") %>
+		<%: Scripts.Render("~/Scripts/ScritpsProjeto/servico-mensagens-ao-carregar-paginas.js") %>
 	</asp:PlaceHolder>
 
 	<webopt:BundleReference runat="server" Path="~/Content/css" />
@@ -90,9 +91,26 @@
 	<gp:Toast runat="server" ID="MasterPageToast"></gp:Toast>
 	<gp:ModalConfirmacaoExclusao runat="server" ID="MasterPageModalConfirmacaoExclusao"></gp:ModalConfirmacaoExclusao>
 	<gp:LoadingModal runat="server" ID="MasterPageLoadingModal"></gp:LoadingModal>
-	
+
 	<asp:ContentPlaceHolder ID="PageScripts" runat="server">
 	</asp:ContentPlaceHolder>
+
+
+	<script type="text/javascript">
+		var myApp = myApp || {};
+
+		// Garantir que a função seja executada após atualizações do UpdatePanel
+		Sys.WebForms.PageRequestManager.getInstance().add_endRequest(function () {
+			initializeScripts();
+		});
+
+		//Scripts que precisam sempre ser recarregados após um postback parcial
+		function initializeScripts() {
+			$.getScript('/src/pages/ProdutoPages/ListagemProdutos/ListagemProdutos.js', () => { });
+			$.getScript('/src/components/ColunasPadraoTable/ColunasPadraoTable.js', () => { });
+			$.getScript('/src/pages/PedidoPages/FormAddEditPedido/FormAddEditPedido.js', () => { });
+		};
+	</script>
 
 	<!-------- Scripts compartilhados -------->
 	<asp:PlaceHolder runat="server">

@@ -11,6 +11,7 @@ namespace WebGereciamentoPedidos.src.util
 		public enum TiposMensagem {
 			Sucesso = 's',
 			Erro = 'e',
+			Informacao = 'i',
 		}
 
 		public string Mensagem {  get; set; }

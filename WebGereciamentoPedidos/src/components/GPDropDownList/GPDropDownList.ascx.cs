@@ -136,6 +136,10 @@ namespace WebGereciamentoPedidos.src.components.GPDropDownList
 			}
 		}
 
+		public void ClearSelection()
+		{
+			this.DropDownList.ClearSelection();
+		}
 		public override void DataBind()
 		{
 			this.DropDownList.DataBind();

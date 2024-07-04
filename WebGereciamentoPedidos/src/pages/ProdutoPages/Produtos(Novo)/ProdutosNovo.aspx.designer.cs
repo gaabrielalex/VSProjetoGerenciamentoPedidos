@@ -15,57 +15,12 @@ namespace WebGereciamentoPedidos.src.pages.ProdutoPages.Produtos_Novo_
 	{
 
 		/// <summary>
-		/// FormAddEditProduto control.
+		/// ListagemProdutos control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::WebGereciamentoPedidos.src.pages.ProdutoPages.FormAddEditProduto.FormAddEditProduto FormAddEditProduto;
-
-		/// <summary>
-		/// ListsagemProdutoPanel control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel ListsagemProdutoPanel;
-
-		/// <summary>
-		/// ProdutosTitulo control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::WebGereciamentoPedidos.src.components.Titulo.Titulo ProdutosTitulo;
-
-		/// <summary>
-		/// ProdutoFiltro control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::WebGereciamentoPedidos.src.components.Filtro ProdutoFiltro;
-
-		/// <summary>
-		/// NovoProdutoButton control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button NovoProdutoButton;
-
-		/// <summary>
-		/// ProdutosGW control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.GridView ProdutosGW;
+		protected global::WebGereciamentoPedidos.src.pages.ProdutoPages.ListagemProdutos.ListagemProdutos ListagemProdutos;
 	}
 }

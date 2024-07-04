@@ -50,6 +50,11 @@ namespace ModelsGerenciamentoPedidos.Src
 			ItensPedido = itensPedido;
 		}
 
+		public void RecalcularVlrTotal()
+		{
+			VlrSubtotal = ItensPedido.Sum(i => i.VlrTotalItem);
+		}
+
 		public override bool Equals(object obj)
 		{
 			return obj is Pedido pedido &&

@@ -1,14 +1,34 @@
-﻿using System;
+﻿using ModelsGerenciamentoPedidos.Src;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace WebGereciamentoPedidos.src.components
 {
 	public partial class TextFormField : System.Web.UI.UserControl
 	{
+		public string IdDado
+		{
+			get
+			{
+				return InputHiddenIdDado.Value;
+			}
+			set
+			{
+				InputHiddenIdDado.Value = value;
+			}
+		}
+		public HtmlInputHidden InputHiddenIdDadox
+		{
+			get
+			{
+				return InputHiddenIdDado;
+			}
+		}
 		public string Style { get; set; }
 		private string _cssClass;
 		public string CssClass
@@ -137,6 +157,18 @@ namespace WebGereciamentoPedidos.src.components
 				{
 					this.TextBox.TextMode = TextBoxMode.MultiLine;
 				}
+			}
+		}
+
+		public TextBoxMode TextMode
+		{
+			get
+			{
+				return this.TextBox.TextMode;
+			}
+			set
+			{
+				this.TextBox.TextMode = value;
 			}
 		}
 

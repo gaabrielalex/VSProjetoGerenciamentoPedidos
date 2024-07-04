@@ -6,7 +6,7 @@
 
 <asp:UpdatePanel runat="server">
 	<ContentTemplate>
-		<asp:Panel runat="server" ID="FormAddEditProdutoPanel" Visible="false" DefaultButton="SalvarButton">
+		<asp:Panel runat="server" ID="FormAddEditProdutoPanel" DefaultButton="SalvarButton">
 			<gp:TituloMedio runat="server" ID="FormAddEditProdutoTituloMedio"></gp:TituloMedio>
 			<div class="conteudo-FormAddEditProdutoPanel">
 				<div class="row">
