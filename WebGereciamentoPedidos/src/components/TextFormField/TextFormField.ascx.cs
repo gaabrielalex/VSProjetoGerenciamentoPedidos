@@ -160,6 +160,18 @@ namespace WebGereciamentoPedidos.src.components
 			}
 		}
 
+		public TextBoxMode TextMode
+		{
+			get
+			{
+				return this.TextBox.TextMode;
+			}
+			set
+			{
+				this.TextBox.TextMode = value;
+			}
+		}
+
 		public event ServerValidateEventHandler ServerValidate;
 		protected void CustomValidator_ServerValidate(object source, ServerValidateEventArgs args)
 		{
